@@ -32,14 +32,6 @@ body {
   }
 } */
 
-@font-face {
-  font-family: 'iran-sans';
-  src: url('./assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf'),
- 
-}
-body{
-  background-color: #fafafa;
-  box-shadow: #fafafa;
-  font-family: 'iran-sans';
-}
-
+/* body{
+  background: url(./assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Light.woff);
+} */
