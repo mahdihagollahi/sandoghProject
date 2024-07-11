@@ -4,7 +4,10 @@ import AdminHeader from '../components/AdminHeader'
 function AdminFristPage() {
   return (
     <div>
-        <AdminHeader/>
+      <div >
+      <AdminHeader/>
+      </div>
+      
     </div>
   )
 }
