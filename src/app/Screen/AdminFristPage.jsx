@@ -24,18 +24,50 @@ import React from 'react'
 import AdminHeader from '../components/AdminHeader'
 import NumberOfMebers from '../components/NumberOfMebers'
 import LoanApplication from '../components/LoanApplication'
+import AdminPageNavbar from '../components/AdminPageNavbarHeader';
 
 
 function AdminFirstPage() {
   return (
-    <div>
-      <AdminHeader />
-      <div className='flex flex-col mr-20  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6 mt-6 mx-4'>
-        <NumberOfMebers />
-        <LoanApplication />
-      </div>
+    <div className=''>
+   
+     
+
+
+
+    
+         <AdminPageNavbar/>
+     
+
+
+
+      <div>
+        
+
+
+
+        <div  className='flex -mt-24 w-full  '>
+        <AdminHeader />
+        </div>
+      
+        <div className='flex flex-col mr-20  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6 mt-6 mx-4'>
+          <NumberOfMebers />
+          <LoanApplication />
+        </div>
+  
+  
+  
+  
+        </div>
+
+
     </div>
+      
+     
+   
   );
 }
 
 export default AdminFirstPage;
+
+
