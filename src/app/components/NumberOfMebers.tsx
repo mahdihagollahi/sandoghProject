@@ -1,22 +1,21 @@
+
+
 import React from 'react'
 import Image from 'next/image'
 import groupImage from '../assent/Img/Iconly.png'
 function NumberOfMebers() {
   return (
     <div>
-        <div className='w-72 h-36 mr-96 '>
-          <div className='bg-[#ffff]  my-6 rounded-md  p-9 shadow-lg flex flex-col gap-9'>
-            <div className='flex justify-between gap-12'>
-            <div>
-             <p className='text-[#2D3748] font-bold text-sm leading-5'>
+        <div className='w-full flex justify-center mt-6 '>
+          <div className='bg-[#ffff]     rounded-md  px-4 py-10 shadow-lg flex flex-col  gap-12 md:items-center md:ml-20 xl:w-72 xl:ml-96'>
+            <div className='flex justify-between gap-20'>
+            <p className='text-[#2D3748] font-bold text-sm leading-5'>
              تعداد اعضای عضو
              </p>
-            </div>
-            <div>
             <Image src={groupImage} width={24} height={24} alt='group'/>
+           
             </div>
-            </div>
-            <div className='flex justify-between'>
+            <div className='flex justify-between gap-[117px] '>
                <div>
                   <p className='font-bold text-[#A0AEC0] text-xs leading-8'>
                   تعداد : 
@@ -35,3 +34,4 @@ function NumberOfMebers() {
 }
 
 export default NumberOfMebers
+
