@@ -13,61 +13,46 @@
 //         <NumberOfMebers/>
 //         <LoanApplication/>
 //       </div>
-      
+
 //     </div>
 //   )
 // }
 
 // export default AdminFristPage
 
-import React from 'react'
-import AdminHeader from '../components/AdminHeader'
-import NumberOfMebers from '../components/NumberOfMebers'
-import LoanApplication from '../components/LoanApplication'
-import AdminPageNavbar from '../components/AdminPageNavbarHeader';
-
+import React from "react";
+import AdminHeader from "../components/AdminHeader";
+import NumberOfMebers from "../components/NumberOfMebers";
+import LoanApplication from "../components/LoanApplication";
+import AdminNavbarHeader from "../components/AdminNavbarHeader";
+import AdminPageNavbar from "../components/AdminPageNavbar";
 
 function AdminFirstPage() {
   return (
-    <div className=''>
-   
-     
-
-
-
-    
-         <AdminPageNavbar/>
-     
-
-
-
-      <div>
-        
-
-
-
-        <div  className='flex -mt-24 w-full  '>
-        <AdminHeader />
-        </div>
-      
-        <div className='flex flex-col mr-20  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6 mt-6 mx-4'>
-          <NumberOfMebers />
-          <LoanApplication />
-        </div>
-  
-  
-  
-  
+    <div className="">
+      <div className="w-full flex flex-col ">
+        <div >
+          <div>
+            <AdminNavbarHeader />
+          </div>
+          <div>
+            <AdminPageNavbar />
+          </div>
         </div>
 
+        <div className="block xl:-mt-[42%]  md:-mt-[46%]">
+          <div className="flex  w-full   ">
+            <AdminHeader />
+          </div>
 
+          <div className="flex flex-col mr-20  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6 mt-6 mx-4">
+            <NumberOfMebers />
+            <LoanApplication />
+          </div>
+        </div>
+      </div>
     </div>
-      
-     
-   
   );
 }
 
 export default AdminFirstPage;
-
-
