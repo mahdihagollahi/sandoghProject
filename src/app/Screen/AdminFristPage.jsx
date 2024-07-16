@@ -26,6 +26,7 @@ import NumberOfMebers from "../components/NumberOfMebers";
 import LoanApplication from "../components/LoanApplication";
 import AdminNavbarHeader from "../components/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPageNavbar";
+import CardAdmin from "../components/CardAdmin";
 
 function AdminFirstPage() {
   return (
@@ -40,14 +41,24 @@ function AdminFirstPage() {
           </div>
         </div>
 
-        <div className="block xl:-mt-[42%]  md:-mt-[46%]">
+        <div className="block xl:-mt-[59%]  md:-mt-[46%]">
           <div className="flex  w-full   ">
             <AdminHeader />
           </div>
 
-          <div className="flex flex-col mr-20  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6 mt-6 mx-4">
+          <div className="flex flex-col mr-[30rem] mt-4 xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
+            <div>
             <NumberOfMebers />
+
+            </div>
+            <div>
             <LoanApplication />
+
+            </div>
+            <div className="">
+            <CardAdmin/>
+
+            </div>
           </div>
         </div>
       </div>

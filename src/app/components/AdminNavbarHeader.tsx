@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import groupImage from '../assent/Img/adminPanel/Group 39513.png'
+import groupImage from '../assent/Img/adminPanel/Group 39513.svg'
 
 function AdminPageNavbar() {
   return (

@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import groupImage from '../assent/Img/adminPanel/Walet.png'
+import groupImage from '../assent/Img/adminPanel/Iconly copy.svg'
 
 function LoanApplication() {
   return (
     <div>
-        <div className='w-full flex  mt-2 '>
-          <div className='bg-[#ffff]     rounded-md  px-4 py-10 shadow-lg flex flex-col  gap-12 md:items-center xl:w-72 '>
+        <div className='w-full flex -mt-24   '>
+          <div className='bg-[#ffff]     rounded-md  px-4 py-5 shadow-lg flex flex-col  gap-12 md:items-center xl:w-72 '>
             <div className='flex justify-between gap-20'>
             <p className='text-[#2D3748] font-bold text-sm leading-5'>
             درخواست های وام 
