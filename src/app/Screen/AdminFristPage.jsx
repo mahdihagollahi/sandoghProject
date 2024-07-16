@@ -27,6 +27,7 @@ import LoanApplication from "../components/LoanApplication";
 import AdminNavbarHeader from "../components/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPageNavbar";
 import CardAdmin from "../components/CardAdmin";
+import NewDepositSlip from "../components/NewDepositSlip";
 
 function AdminFirstPage() {
   return (
@@ -61,6 +62,12 @@ function AdminFirstPage() {
             </div>
           </div>
         </div>
+
+        <div>
+          <NewDepositSlip/>
+        </div>
+
+
       </div>
     </div>
   );
