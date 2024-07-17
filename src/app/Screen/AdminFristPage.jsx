@@ -28,7 +28,8 @@ import AdminNavbarHeader from "../components/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPageNavbar";
 import CardAdmin from "../components/CardAdmin";
 import NewDepositSlip from "../components/NewDepositSlip";
-import SuupportMassge from "../components/SuupportMassge";
+import SuupportMassge from "../components/SupportMassge";
+import CharAdminDashboard from '../components/CharAdminDashboard'
 
 function AdminFirstPage() {
   return (
@@ -70,6 +71,10 @@ function AdminFirstPage() {
 
        <div>
         <SuupportMassge/>
+       </div>
+
+       <div>
+        <CharAdminDashboard/>
        </div>
       </div>
     </div>
