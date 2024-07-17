@@ -28,6 +28,7 @@ import AdminNavbarHeader from "../components/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPageNavbar";
 import CardAdmin from "../components/CardAdmin";
 import NewDepositSlip from "../components/NewDepositSlip";
+import SuupportMassge from "../components/SuupportMassge";
 
 function AdminFirstPage() {
   return (
@@ -67,7 +68,9 @@ function AdminFirstPage() {
           <NewDepositSlip/>
         </div>
 
-
+       <div>
+        <SuupportMassge/>
+       </div>
       </div>
     </div>
   );
