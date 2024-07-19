@@ -4,14 +4,14 @@ import arrowImage from '../assent/Img/adminPanel/arrow.svg'
 
 function SaveInformation() {
   return (
-    <div className='p-4 '>
+    <div className='p-4  '>
         <div className='flex  justify-between items-center mb-2 mt-5  '>
-            <div className=' '>
+            <div className='mr-2 '>
                 <p className='font-bold text-lg'>
                 حساب مدیریت
                 </p>
             </div>
-            <div className='flex justify-end '>
+            <div className='flex justify-end mr-2  '>
               <a href="">
               <Image
                 src={arrowImage}
