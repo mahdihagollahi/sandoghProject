@@ -183,22 +183,23 @@ function AdminPageNavbar() {
               <div className="transition-container relative  "  onMouseEnter={() => handleMouseEnter(image.id)}
               onMouseLeave={() => handleMouseLeave(image.id)} >
             <Image
+            
               src={hoverImage[image.id] ? image.hoverSrc : image.src}
               alt={`Image ${image.id}`}
               width={200}
              
-              className={`transition-opacity duration-300 ease-in-out ${hoverImage[image.id] ? 'opacity-0' : 'opacity-100'}`}            />
+              className={`transition-opacity duration-300 cursor-pointer ease-in-out ${hoverImage[image.id] ? 'opacity-0' : 'opacity-100'}`}            />
                 <Image
                 src={image.hoverSrc}
                 alt={`Image ${image.id} Hover`}
                 width={200}
-                className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out ${hoverImage[image.id] ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute top-0 left-0 cursor-pointer transition-opacity duration-300 ease-in-out ${hoverImage[image.id] ? 'opacity-100' : 'opacity-0'}`}
               />
           </div>
           </div>
         ))}
-        <div className='mr-[1%]'>
-          <Image src={ImageExport} width={60} alt='Exit' />
+        <div className='mr-[1%] mt-[10%] '>
+          <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
         </div>
       </div>
     </div>

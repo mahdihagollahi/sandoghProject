@@ -25,7 +25,7 @@ function SuupportMassge() {
 
              <div className='px-4'>
                {User.map((items) =>(
-                <div key={items.id} className='flex items-center py-4 gap-3  '>
+                <div key={items.id} className='flex items-center py-4 gap-3 cursor-pointer '>
                     <div className='flex-shrink-0'>
                 
                        <Image src={items.src} width={40} height={40} alt='' className='rounded-full'
