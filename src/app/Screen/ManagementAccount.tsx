@@ -1,6 +1,6 @@
 import React from 'react'
 import AdminNavbarHeader from '../components/AdminNavbarHeader'
-import AdminPageNavbar from '../components/AdminNavbarHeader'
+import AdminPageNavbar from '../components/AdminPageNavbar'
 import SaveInformation from '../components/SaveInformation'
 
 function ManagementAccount() {
@@ -8,12 +8,15 @@ function ManagementAccount() {
     <div>
         <div className='flex '> 
             <div>
-               <div>
-          
-               </div>
-               <div>
-                <AdminPageNavbar/>
-               </div>
+               
+            <div >
+          <div>
+            <AdminNavbarHeader />
+          </div>
+          <div>
+            <AdminPageNavbar />
+          </div>
+        </div>
             </div>
             <div>
                <SaveInformation/>
@@ -24,3 +27,4 @@ function ManagementAccount() {
 }
 
 export default ManagementAccount
+

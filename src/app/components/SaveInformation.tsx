@@ -4,38 +4,42 @@ import arrowImage from '../assent/Img/adminPanel/arrow.svg'
 
 function SaveInformation() {
   return (
-    <div>
-        <div className='flex  mr-7'>
-            <div className='mt-10'>
+    <div className='p-4 '>
+        <div className='flex  justify-between items-center mb-2 mt-5  '>
+            <div className=' '>
                 <p className='font-bold text-lg'>
                 حساب مدیریت
                 </p>
             </div>
-            <div>
-                <Image
+            <div className='flex justify-end '>
+              <a href="">
+              <Image
                 src={arrowImage}
                 width={38}
                 height={38}
                 alt='arrow'
+
                 />
+              </a>
+              
             </div>
         </div>
       
-        <div className='w-[60%] h-96    '>
+        <div className=' mx-auto  w-[125vh]     '>
 
-            <div className='bg-white shadow-lg mt-20 px-96 py-10'>
+            <div className='bg-white shadow-lg mt-5 p-6 md:p-10'>
 
 
-            <div className='flex justify-center items-center  '>
+            <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap    '>
               
                    
-              <div className='relative '>
+              <div className='relative w-full md:w-auto'>
               
                   
                <label className='absolute -top-2 z-10 left-[83%] px-3 bg-white py-2'>
                    نام
                  </label>
-                 <input type="text" className="border w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+                 <input type="text" className="border w-96 md:w-96  h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
              
                
@@ -43,13 +47,13 @@ function SaveInformation() {
               </div>
          
 
-              <div className='relative '>
+              <div className='relative w-full md:w-auto '>
               
                   
               <label className='absolute -top-2 z-10 left-[68%] px-3 bg-white py-2'>
               نام خانوادگی
                 </label>
-                <input type="text" className="border w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+                <input type="text" className="border w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
             
               
@@ -61,16 +65,16 @@ function SaveInformation() {
 
 
 
-             <div className='flex justify-center items-center  '>
+             <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap    '>
      
           
-     <div className='relative '>
+     <div className='relative w-full md:w-auto '>
      
          
       <label className='absolute -top-2 z-10 left-[67%] px-3 bg-white py-2'>
       شماره موبایل
         </label>
-        <input type="text" className="border w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+        <input type="text" className="border md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
     
       
@@ -78,13 +82,13 @@ function SaveInformation() {
      </div>
 
 
-     <div className='relative '>
+     <div className='relative  w-full md:w-auto '>
      
          
      <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white  py-2 whitespace-nowrap'>
      کد ملی
        </label>
-       <input type="text" className="border w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+       <input type="text" className="border w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
    
      
@@ -95,7 +99,7 @@ function SaveInformation() {
             </div>
 
             <div className=' flex justify-center mt-20'>
-               <button className='w-[30vw]  flex items-center justify-center h-14 rounded-md px-64 bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap '>
+               <button className='w-[30vw] md:w-2/3 lg:w-3/4  flex items-center justify-center h-14 rounded-md  bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap '>
                ذخیره اطلاعات
                </button>
             </div>
