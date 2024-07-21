@@ -45,8 +45,8 @@ const UserTable = ({ users }) => {
                     <td className="w-2/12 py-2 px-4 ">{user.loans}</td>
                     <td className="w-3/12 py-2 px-4 ">
                       <button className="py-1 px-4 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
+                      <Image src={FillImage} width={24} height={24} alt="" />
                         <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>
-                        <Image src={FillImage} width={24} height={24} alt="" />
                       </button>
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
