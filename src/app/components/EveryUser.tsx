@@ -1,9 +1,12 @@
 import React from 'react';
 import UserTable from '@/app/components/UserTable';
+import Image from 'next/image';
+import backImage from '../assent/Img/adminPanel/back.svg'
 import Image1 from '../assent/Img/adminPanel/Avatar.svg';
 import Image2 from '../assent/Img/adminPanel/Avatar-2.svg';
 import Image3 from '../assent/Img/adminPanel/avatar online copy.svg';
 import Image4 from '../assent/Img/adminPanel/avatar online.svg';
+import ImageSearch from '../assent/Img/adminPanel/Search.svg';
 
 interface User {
   id: number;
@@ -31,11 +34,50 @@ const users: User[] = [
 
 const EveryUser: React.FC = () => {
   return (
-    <div className='container mx-auto p-4'>
+    <div >
+         <div className='flex gap-32  items-center mb-2 mt-5 mr-3  '>
+            <div className='mr-2 '>
+                <p className='font-bold text-lg'>
+                مشاهده کاربران           
+                </p>
+            </div>
+            <div className='flex items-center gap-2 '>
+          <label className="input  flex items-center border border-[#E2E8F0] gap-4  ">
+           
+              <Image
+              src={ImageSearch}
+              width={20}
+              height={20}
+              alt='search'
+              />
+           
+
+            <input className='w-[32rem] h-[32rem]' type="search"   placeholder="جستجو نام کاربری یا شماره تلفن"   />
+          </label>
+
+         
+        </div>
+
+
+            <div className='flex justify-end mr-2  '>
+              <a href="">
+              <Image
+                src={backImage}
+                width={38}
+                height={38}
+                alt='arrow'
+
+                />
+              </a>
+              
+            </div>
+        </div>
       
       <UserTable users={users} />
     </div>
+   
   );
 };
 
 export default EveryUser;
+

@@ -18,8 +18,8 @@ const UserTable = ({ users }) => {
 
   return (
     <div>
-      <div className="p-4">
-        <div className="max-w-full bg-white shadow-md overflow-hidden">
+      <div className="p-4 pl-20 ">
+        <div className="max-w-full bg-white shadow-md overflow-hidden p-10 dark:bg-inherit dark:text-white">
           <table className="w-full table-auto border-collapse">
             <thead className="">
               <tr>
@@ -50,7 +50,7 @@ const UserTable = ({ users }) => {
                       </button>
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
-                      <button className="w-6 h-6">
+                      <button className="w-6 h-6 ">
                         <Image src={DeleteImage} width={34} height={34} alt="حذف" />
                       </button>
                     </td>
