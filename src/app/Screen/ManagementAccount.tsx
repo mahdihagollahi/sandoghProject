@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNavbarHeader from '../components/AdminNavbarHeader'
-import AdminPageNavbar from '../components/AdminPageNavbar'
-import SaveInformation from '../components/SaveInformation'
+import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
+import AdminPageNavbar from '@/app/components/AdminPageNavbar'
+import SaveInformation from '@/app/components/SaveInformation'
 
 function ManagementAccount() {
   return (
