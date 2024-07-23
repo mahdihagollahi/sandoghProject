@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import DetailUser from './Screen/detailUser'
+import LoanApplication from './Screen/LoanApplicationPage'
 // import LandingNavbar from './components/landingNavbar'
 // import AdminFirstPage from './Screen/AdminFristPage'
 // import EveryUser from '@/app/Screen/EveryUser'
@@ -21,8 +22,9 @@ function page() {
       {/* <EveryUser/> */}
       {/* <DeletedUser/> */}
     {/* <detailUser/> */}
-    <DetailUser/>
-      
+    {/* <DetailUser/> */}
+      <LoanApplication/>
+
     </div>
   )
 }

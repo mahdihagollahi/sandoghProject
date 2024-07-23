@@ -76,7 +76,7 @@ function DetailUser() {
          کارت ملی          
          </p>
              <Image
-             src={cardImage}
+             src={cardImage2}
              width={244}
              height={140}
              alt='cardNumber'
