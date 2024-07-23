@@ -1,7 +1,7 @@
 import React from 'react'
 import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import DetailUser from '@/app/components/datailUser'
+import DetailUser from '@/app/components/datailUserComponnent'
 
 function detailUser() {
   return (

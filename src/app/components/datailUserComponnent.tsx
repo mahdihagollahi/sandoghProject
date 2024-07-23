@@ -1,11 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import Image1 from '@/app/assent/Img/adminPanel/Avatar.svg';
+import arrowImage from '../assent/Img/adminPanel/back.svg'
+import cardImage from '@/app/assent/Img/adminPanel/carddetail.svg'
+import cardImage2 from '@/app/assent/Img/adminPanel/carddetail2.png'
+
 
 const userDetail = [
   {
     id: 1,
     src: Image1,
+    
     user: 'الهه علی نیا',
     statuse: false,
     cardNumber: '6219 8619 111 5771',
@@ -22,6 +27,27 @@ const userDetail = [
 function DetailUser() {
   return (
     <div>
+        <div className='flex  justify-between items-center mb-2 mt-9  '>
+            <div className='mr-2 '>
+                <p className='font-bold text-lg'>
+                حساب مدیریت
+                </p>
+            </div>
+            <div className='flex justify-end mr-2  '>
+              <a href="">
+              <Image
+                src={arrowImage}
+                width={38}
+                height={38}
+                alt='arrow'
+
+                />
+              </a>
+              
+            </div>
+        </div>
+
+
       <div  className='flex justify-center'>
         <Image
           src={userDetail[0].src}
@@ -30,6 +56,32 @@ function DetailUser() {
           alt='user'
           className='rounded-sm'
         />
+      </div>
+
+      <div className='flex justify-center mt-5'>
+         <div>
+          <p className='font-normal mr-6 text-[9px] text-[#2D3748]'>
+          شماره کارت
+          </p>
+             <Image
+             src={cardImage}
+             width={244}
+             height={140}
+             alt='cardNumber'
+             />
+         </div>
+
+         <div>
+         <p className='font-normal mr-6 text-[9px] text-[#2D3748]'>
+         کارت ملی          
+         </p>
+             <Image
+             src={cardImage}
+             width={244}
+             height={140}
+             alt='cardNumber'
+             />
+         </div>
       </div>
 
       <div className='mt-10'>
