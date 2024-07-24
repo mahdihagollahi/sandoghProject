@@ -1,24 +1,30 @@
 "use client"
 import React from 'react'
+import DetailUser from './Screen/detailUser'
+import LoanApplication from './Screen/LoanApplicationPage'
 // import LandingNavbar from './components/landingNavbar'
-import AdminFirstPage from './Screen/AdminFristPage'
-import { BrowserRouter ,Routes ,Route } from 'react-router-dom'
-import Service from './components/Service'
+// import AdminFirstPage from './Screen/AdminFristPage'
+// import EveryUser from '@/app/Screen/EveryUser'
+
+// import Service from './components/Service'
+// import ManagementAccount from './Screen/ManagementAccount'
+
+// import detailUser from './Screen/detailUser'
 
 function page() {
   return (
     <div>
-      <BrowserRouter>
+      
+    
       {/* <LandingNavbar/> */}
-      <AdminFirstPage/>
-      <Routes>
-      <Route
-            path="/service"
-            element={<Service />}
-          />
-      </Routes>
+      {/* <AdminFirstPage/> */}
+      {/* <ManagementAccount /> */}
+      {/* <EveryUser/> */}
+      {/* <DeletedUser/> */}
+    {/* <detailUser/> */}
+    {/* <DetailUser/> */}
+      <LoanApplication/>
 
-      </BrowserRouter>
     </div>
   )
 }

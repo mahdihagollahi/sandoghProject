@@ -2,7 +2,11 @@
 import React from "react";
 
 import Image from 'next/image'
+<<<<<<< HEAD
 import vam from "../imag/vam.svg"
+=======
+import vam from "../vam.svg"
+>>>>>>> c92d2fe3d80deba52e3c965832807c592fb453e2
 export default function Requestbox(){
     return(
         <>
