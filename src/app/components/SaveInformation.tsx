@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import arrowImage from '../assent/Img/adminPanel/arrow.svg'
+import arrowImage from '../assent/Img/adminPanel/back.svg'
 
 function SaveInformation() {
   return (

@@ -1,24 +1,4 @@
-// import React from 'react'
-// import AdminHeader from '../components/AdminHeader'
-// import NumberOfMebers from '../components/NumberOfMebers'
-// import LoanApplication from '../components/LoanApplication'
 
-// function AdminFristPage() {
-//   return (
-//     <div>
-//       <div >
-//       <AdminHeader/>
-//       </div>
-//       <div className='flex  mr-20 xl:mr-96 xl:flex-row md:flex md:flex-col sm:mr-10  sm:flex sm:flex-col sm:items-center lg:flex lg:flex-col lg:items-center   '>
-//         <NumberOfMebers/>
-//         <LoanApplication/>
-//       </div>
-
-//     </div>
-//   )
-// }
-
-// export default AdminFristPage
 
 import React from "react";
 import AdminHeader from "../components/AdminHeader";
@@ -28,7 +8,7 @@ import AdminNavbarHeader from "../components/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPageNavbar";
 import CardAdmin from "../components/CardAdmin";
 import NewDepositSlip from "../components/NewDepositSlip";
-import SuupportMassge from "../components/SupportMassge";
+import SupportMassgeDashboard from "../components/SupportMassgeDashboard";
 import CharAdminDashboard from '../components/CharAdminDashboard'
 
 function AdminFirstPage() {
@@ -70,7 +50,7 @@ function AdminFirstPage() {
         </div>
 
        <div>
-        <SuupportMassge/>
+        <SupportMassgeDashboard/>
        </div>
 
        <div>

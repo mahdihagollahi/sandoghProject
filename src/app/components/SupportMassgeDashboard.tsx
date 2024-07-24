@@ -11,7 +11,7 @@ const User =[
     {id: 1 , src:Image3 , name:'سهیلا آمری' , massage:'سلام چرا پیام های یادآوری برای من نمیاد؟' , time: '7:00' },
     {id: 1 , src:Image4 , name:'ابراهیم علی نیا' , massage:'سلام چرا فیش رسیدمو آپلود میکنم ثبت نمیشه؟' , time: '7:00' },
 ];
-function SuupportMassge() {
+function SupportMassgeDashboard() {
   return (
     <div className='flex justify-center mt-2 items-center mr-6  md:justify-center  xl:justify-end xl:ml-6 xl:mt-2'>
         <div className='w-96 max-w-md bg-white shadow-xl rounded-lg px-4 '>
@@ -68,5 +68,5 @@ function SuupportMassge() {
   )
 }
 
-export default SuupportMassge
+export default SupportMassgeDashboard
 
