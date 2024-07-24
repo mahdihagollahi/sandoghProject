@@ -10,18 +10,22 @@ const completions = [
   
   export default function SetedPassword() {
     return (
+      <div>
+      <div className="">
       <div className="flex justify-center">
-        <div className="w-full max-w-3xl border border-gray-300 rounded-lg p-4">
+        <div className="bg-white shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
           {completions.map((item, index) => (
             <div
               key={index}
-              className="flex justify-between border-b last:border-b-0 py-2"
+              className="flex justify-between border-b last:border-b-0 py-9"
             >
+              <span className="font-bold">{item.name}</span>
               <span>{item.status}</span>
-              <span>{item.name}</span>
             </div>
           ))}
         </div>
+      </div>
+      </div>
       </div>
     );
   }

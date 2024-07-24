@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import arrowImage from '../assent/Img/adminPanel/arrow.svg'
+import arrowImage from '../assent/Img/adminPanel/back.svg'
 
 function inputPassword() {
   return (
@@ -12,7 +12,8 @@ function inputPassword() {
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
-              <a href="">
+              <a href="" className='flex items-center'>
+              بازگشت
               <Image
                 src={arrowImage}
                 width={38}
@@ -27,7 +28,7 @@ function inputPassword() {
       
         <div className=' mx-auto  w-[125vh]     '>
 
-            <div className='bg-white shadow-lg mt-5 p-6 md:p-10'>
+            <div className='bg-white shadow-lg mt-5 p-6 md:p-10 rounded-sm'>
 
 
             <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap    '>
@@ -36,7 +37,7 @@ function inputPassword() {
               <div className='relative w-full md:w-auto'>
               
                   
-               <label className='absolute -top-2 z-10 left-[83%] px-3 bg-white py-2'>
+               <label className='absolute -top-2 z-10 left-[73%] px-3 bg-white py-2'>
                    نام کاربری
                  </label>
                  <input type="text" className="border w-96 md:w-96  h-14 border-[#CACACA] rounded-md relative  m-3	"  />

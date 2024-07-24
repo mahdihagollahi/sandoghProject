@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+// import SetUserPassword from './Screen/SetUserPassword'
 // import setedPassword from '../app/components/setedPassword'
 // import DetailUser from './Screen/detailUser'
 // import LoanApplication from './Screen/LoanApplicationPage'
@@ -11,6 +12,7 @@ import React from 'react'
 // import ManagementAccount from './Screen/ManagementAccount'
 
 // import detailUser from './Screen/detailUser'
+import Support from '../app/Screen/Support'
 
 function page() {
   return (
@@ -26,7 +28,8 @@ function page() {
     {/* <DetailUser/> */}
       {/* <LoanApplication/> */}
 
-    
+    {/* <SetUserPassword/> */}
+    <Support/>
 
     </div>
   )

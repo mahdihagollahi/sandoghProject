@@ -1,8 +1,8 @@
 import React from 'react'
 import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import InputPassword from '../components/InputPassword'
-import SetUserPassword from '../components/SetedPassword'
+import SupportMessage from '../components/SupportMessage'
+
 
 function ManagementAccount() {
   return (
@@ -20,8 +20,7 @@ function ManagementAccount() {
         </div>
             </div>
             <div>
-             <InputPassword/>
-             <SetUserPassword/>
+             <SupportMessage/>
             </div>
         </div>
     </div>
