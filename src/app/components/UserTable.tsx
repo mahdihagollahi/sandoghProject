@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import FillImage from '@/app/assent/Img/adminPanel/Fill 396.svg';
-import DeleteImage from '@/app/assent/Img/adminPanel/Delete.svg';
+import iconBackImage from '@/app/assent/Img/adminPanel/getBack.svg';
 import Paginate from './Paginate';
 
 const UserTable = ({ users }) => {
@@ -28,7 +28,7 @@ const UserTable = ({ users }) => {
                 <th className="w-[16%] px-4 py-2">تاریخ عضویت</th>
                 <th className="w-[20%] px-4 py-2">وام های دریافتی</th>
                 <th className="w-[25%] px-[18%] py-2">جزئیات</th>
-                <th className="w-[13%] px-4 py-2">حذف کردن</th>
+                <th className="w-[13%] px-4 py-2">برگرداندن</th>
               </tr>
             </thead>
           </table>
@@ -51,7 +51,7 @@ const UserTable = ({ users }) => {
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
                       <button className="w-6 h-6 ">
-                        <Image src={DeleteImage} width={34} height={34} alt="حذف" />
+                        <Image src={iconBackImage} width={34} height={34} alt="حذف" />
                       </button>
                     </td>
                   </tr>

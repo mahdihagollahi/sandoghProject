@@ -1,7 +1,8 @@
 "use client"
 import React from 'react'
-import DetailUser from './Screen/detailUser'
-import LoanApplication from './Screen/LoanApplicationPage'
+// import setedPassword from '../app/components/setedPassword'
+// import DetailUser from './Screen/detailUser'
+// import LoanApplication from './Screen/LoanApplicationPage'
 // import LandingNavbar from './components/landingNavbar'
 // import AdminFirstPage from './Screen/AdminFristPage'
 // import EveryUser from '@/app/Screen/EveryUser'
@@ -23,7 +24,9 @@ function page() {
       {/* <DeletedUser/> */}
     {/* <detailUser/> */}
     {/* <DetailUser/> */}
-      <LoanApplication/>
+      {/* <LoanApplication/> */}
+
+    
 
     </div>
   )

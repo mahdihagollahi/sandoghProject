@@ -1,11 +1,12 @@
 import React from 'react'
 import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import DetailUser from '@/app/components/DatailUserComponnent'
+import inputPassword from '@/app/components/InputPassword'
 
-function detailUser() {
+function ManagementAccount() {
   return (
-    <div className='flex '> 
+    <div>
+        <div className='flex '> 
             <div>
                
             <div >
@@ -17,14 +18,13 @@ function detailUser() {
           </div>
         </div>
             </div>
-            <div className='flex justify-center'>
-            <DetailUser/>
-                        </div>
-                        </div>
-       
-     
-    
+            <div>
+             <inputPassword/>
+            </div>
+        </div>
+    </div>
   )
 }
 
-export default detailUser
+export default ManagementAccount
+
