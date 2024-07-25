@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DateDropDown from '../components/DateDropDown';
 import CharAdminDashboard from '../components/CharAdminDashboard';
+import ViewDeposit from './ViewDeposit';
 
 interface DataSet {
     label: string;
@@ -71,10 +72,13 @@ export default function FinancialManagement() {
   };
 
   return (
+    <div>
+
+  
     
     <div className="min-h-screen flex flex-col items-center justify-center">
        <div className='flex justify-center  items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
-       <div className=' w-[1022px]  bg-white -mt-[15%]   shadow-xl rounded-lg px-4 '>
+       <div className=' w-[1022px]  bg-white mt-20   shadow-xl rounded-lg px-4 '>
         <div className='flex gap-52 pt-8 '>
         <div className=' mr-[32%] '>
           <p className='font-medium text-sm text-[#394860] mt-2'>
@@ -90,7 +94,14 @@ export default function FinancialManagement() {
         <CharAdminDashboard data={filteredData} />
 
         </div>
+
+        
   </div>
+  </div>
+
+  <div className='mr-[50%] -mt-[15%]'>
+          <ViewDeposit/>
+        </div>
   </div>
   </div>
   );

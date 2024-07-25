@@ -66,12 +66,6 @@ CharAdminDashboard() {
       };
   return (
     <div>
-   
-        {/* <div className='py-4 '>
-          <p className='font-medium text-sm text-[#000000]'>
-          نمودار موجودی 6ماه اول صندوق
-          </p>
-        </div> */}
    <div className='flex justify-center items-center' >
             <div className='w-[80%] h-[400px] m-5' >
                 <Line options={options} data={data} />
