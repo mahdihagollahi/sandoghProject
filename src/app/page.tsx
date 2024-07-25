@@ -1,5 +1,7 @@
 "use client"
 import React from 'react'
+// import ChartComponent from '@/app/components/FundsChart'
+import FinancialManagementPage from './Screen/FinancialManagementPage'
 // import SetUserPassword from './Screen/SetUserPassword'
 // import setedPassword from '../app/components/setedPassword'
 // import DetailUser from './Screen/detailUser'
@@ -12,7 +14,7 @@ import React from 'react'
 // import ManagementAccount from './Screen/ManagementAccount'
 
 // import detailUser from './Screen/detailUser'
-import Support from '../app/Screen/Support'
+// import Support from '../app/Screen/Support'
 
 function page() {
   return (
@@ -29,8 +31,10 @@ function page() {
       {/* <LoanApplication/> */}
 
     {/* <SetUserPassword/> */}
-    <Support/>
+    {/* <Support/> */}
+     <FinancialManagementPage/>
 
+     {/* <ChartComponent /> */}
     </div>
   )
 }
