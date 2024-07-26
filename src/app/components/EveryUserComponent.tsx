@@ -39,7 +39,7 @@ const EveryUser: React.FC = () => {
          <div className='flex gap-32  items-center mb-2 mt-5 mr-3  '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
-                مشاهده کاربران           
+                مدیریت مالی                
                 </p>
             </div>
             <div className='flex items-center gap-2 '>
@@ -61,7 +61,8 @@ const EveryUser: React.FC = () => {
 
 
             <div className='flex justify-end mr-2  '>
-              <a href="">
+              <a href="" className='flex items-center'>
+              بازگشت
               <Image
                 src={backImage}
                 width={38}

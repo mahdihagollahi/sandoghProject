@@ -1,10 +1,9 @@
-
 import React from 'react'
 import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import DeletedUserComponent from '@/app/components/DeletedUserComponent'
+import DepositorsUserFinancial from '@/app/components/DepositorsUserFinancial'
 
-function DeletedUser() {
+function DepositorsUser() {
   return (
     <div>
       
@@ -21,12 +20,12 @@ function DeletedUser() {
         </div>
             </div>
             <div className='w-full '>
-               <DeletedUserComponent/>
+               <DepositorsUserFinancial/>
             </div>
         </div>
     </div>
   )
 }
 
-export default DeletedUser
+export default DepositorsUser
 

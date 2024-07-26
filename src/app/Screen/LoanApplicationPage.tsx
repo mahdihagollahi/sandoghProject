@@ -30,7 +30,7 @@ const users: User[] = [
   { id: 15,  name: 'سکینه داوودی', cash: '5,000,000', date: '1403/03/17' ,  explain:'برای خرج عروسی و مراسم ازدواج  نیاز دارم و حتما باید چک های تالارو پاس کنم بد گیرم اقای قنبری اگه میشه تایید کنید' , modelRequest:'ضروری' },
 ];
 
-const EveryUser: React.FC = () => {
+const LoanApplicationPage: React.FC = () => {
   return (
     <div >
          <div className='flex gap-32  items-center mb-2 mt-5 mr-3  '>
@@ -79,5 +79,5 @@ const EveryUser: React.FC = () => {
   );
 };
 
-export default EveryUser;
+export default LoanApplicationPage;
 

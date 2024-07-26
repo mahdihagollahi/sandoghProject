@@ -12,7 +12,8 @@ function SaveInformation() {
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
-              <a href="">
+              <a href="" className='flex items-center'>
+              بازگشت
               <Image
                 src={arrowImage}
                 width={38}

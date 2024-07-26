@@ -5,8 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-function 
-CharAdminDashboard() {
+function CharAdminDashboard() {
     const data = {
         labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
         datasets: [
@@ -30,7 +29,7 @@ CharAdminDashboard() {
             tension: 0.1,
             pointStyle: 'circle',
             pointRadius: 5, 
-            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
           }
         ]
       };
@@ -65,14 +64,26 @@ CharAdminDashboard() {
         }
       };
   return (
-    <div>
-   <div className='flex justify-center items-center' >
-            <div className='w-[80%] h-[400px] m-5' >
-                <Line options={options} data={data} />
-            </div>
+    <div className='flex justify-center mt-2 items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
+    <div className=' w-[630px] h-[440px] bg-white -mt-[460px]   shadow-xl rounded-lg px-4 '>
+        <div className='py-4 '>
+          <p className='font-medium text-sm text-[#000000]'>
+          نمودار موجودی 6ماه اول صندوق
+          </p>
         </div>
-     </div>
+     <div>
+     <Line
+      
+      options={options}
+    data={data} 
     
+
+    />
+
+     </div>
+  
+    </div>
+        </div>
   )
 }
 
