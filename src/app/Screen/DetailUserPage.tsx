@@ -3,7 +3,7 @@ import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
 import DetailUser from '@/app/components/DatailUserComponnent'
 
-function detailUser() {
+function DetailUserPage() {
   return (
     <div className='flex '> 
             <div>
@@ -27,4 +27,4 @@ function detailUser() {
   )
 }
 
-export default detailUser
+export default DetailUserPage

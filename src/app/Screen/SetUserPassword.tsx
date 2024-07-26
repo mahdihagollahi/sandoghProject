@@ -4,7 +4,7 @@ import AdminPageNavbar from '@/app/components/AdminPageNavbar'
 import InputPassword from '../components/InputPassword'
 import SetUserPassword from '../components/SetedPassword'
 
-function ManagementAccount() {
+function SetUserPasswordPage() {
   return (
     <div>
         <div className='flex '> 
@@ -28,5 +28,5 @@ function ManagementAccount() {
   )
 }
 
-export default ManagementAccount
+export default SetUserPasswordPage
 

@@ -61,7 +61,8 @@ const EveryUser: React.FC = () => {
 
 
             <div className='flex justify-end mr-2  '>
-              <a href="">
+              <a href="" className='flex items-center'>
+              بازگشت
               <Image
                 src={backImage}
                 width={38}

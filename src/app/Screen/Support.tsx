@@ -4,7 +4,7 @@ import AdminPageNavbar from '@/app/components/AdminPageNavbar'
 import SupportMessage from '../components/SupportMessage'
 
 
-function ManagementAccount() {
+function Support() {
   return (
     <div>
         <div className='flex '> 
@@ -27,5 +27,5 @@ function ManagementAccount() {
   )
 }
 
-export default ManagementAccount
+export default Support
 

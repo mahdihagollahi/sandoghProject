@@ -1,9 +1,10 @@
+"use client"
 import React from 'react'
 import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
 import EveryUserComponent from '@/app/components/EveryUserComponent'
 
-function ManagementAccount() {
+function EveryUser() {
   return (
     <div>
       
@@ -27,5 +28,5 @@ function ManagementAccount() {
   )
 }
 
-export default ManagementAccount
+export default EveryUser
 
