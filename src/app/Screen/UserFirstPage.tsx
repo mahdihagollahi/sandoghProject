@@ -1,11 +1,10 @@
 
-
 import React from "react";
 import AdminHeader from "../components/AdminPage/AdminHeader";
 import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
-import UserFirstPage from "../components/UserPage/UserPageNavbar";
+import UserPageNavbar from "../components/UserPage/UserPageNavbar"; 
 import CardUser from "../components/UserPage/CardUser";
-  import ChartPament from "../components/UserPage/ChartPament";
+import ChartPament from "../components/UserPage/ChartPament";
 import RequestBox from "../components/UserPage/RequestBox";
 import Supportbox from "../components/AdminPage/Supportbox";
 
@@ -13,12 +12,12 @@ function UserFirstPage() {
   return (
     <div className="">
       <div className="w-full flex flex-col ">
-        <div >
+        <div>
           <div>
             <AdminNavbarHeader />
           </div>
           <div>
-            <UserFirstPage />
+            <UserPageNavbar /> {/* Updated usage */}
           </div>
         </div>
 
@@ -29,28 +28,27 @@ function UserFirstPage() {
 
           <div className="flex flex-col mr-[30rem] mt-4 xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
             <div>
-              <ChartPament/>
+              <ChartPament />
             </div>
             <div className="">
-            <CardUser/>
-
+              <CardUser />
             </div>
           </div>
         </div>
 
-       <div className="flex justify-end gap-5">
-       <div>
-     <RequestBox/>
-       </div>
+        <div className="flex justify-end gap-5">
+          <div>
+            <RequestBox />
+          </div>
 
-       <div>
-        <Supportbox/>
-       </div>
-       </div>
-     
+          <div>
+            <Supportbox />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default UserFirstPage;
+

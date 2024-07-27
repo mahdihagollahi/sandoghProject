@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import man from "@/src/app/imag/man.svg";
-import icon from "@/src/app/imag/Iconly (1).svg";
+import man from "@/src/app/assent/imag/man.svg";
+import icon from "@/src/app/assent/imag/Iconly (1).svg";
 
-export default function dragphoto() {
+export default function DragPhoto() {
   return (
     <>
       <div className="flex flex-col gap-[28px]">
-        <div className="border-dashed w-[200px]  p-[10px] h-[200px] rounded-md border-2  border-[#4FD1C5]">
+        <div className="border-dashed w-[200px] a  p-[10px] h-[200px] rounded-md border-2  border-[#4FD1C5]">
           <Image
-            className="mr-[150px] mb-[8px] "
+            className="mr-[50%] mb-[8px]  "
             style={{ width: "18px", height: "18px" }}
             src={icon}
             alt=""

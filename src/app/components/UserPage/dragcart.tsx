@@ -3,7 +3,7 @@ import Image from "next/image";
 import icon from "@/src/app/assent/imag/Iconly (1).svg";
 import dragcard from "@/src/app/assent/imag/drapcart.svg"
 
-export default function dragcart() {
+export default function DragCart() {
   return (
     <>
     <div className="flex flex-col gap-[28px]">
