@@ -1,12 +1,13 @@
+
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
 import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import DepositorsUserFinancial from '@/src/app/components/AdminPage/DepositorsUserFinancial'
+import InptUser from '@/src/app/components/UserPage/InputUser'
 
-function DepositorsUser() {
+
+function UserAccount() {
   return (
     <div>
-      
         <div className='flex '> 
             <div>
                
@@ -19,13 +20,14 @@ function DepositorsUser() {
           </div>
         </div>
             </div>
-            <div className='w-full '>
-               <DepositorsUserFinancial/>
+            <div>
+            <InptUser/>
+
             </div>
         </div>
     </div>
   )
 }
 
-export default DepositorsUser
+export default UserAccount
 
