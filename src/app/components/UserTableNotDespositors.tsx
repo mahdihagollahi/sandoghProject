@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import SendIconImage from '@/app/assent/Img/adminPanel/SendIcon.svg';
-import IconlypositionImage from '@/app/assent/Img/adminPanel/Iconlyposition.svg';
+import SendIconImage from '@/src/app/assent/Img/adminPanel/SendIcon.svg';
+import IconlypositionImage from '@/src/app/assent/Img/adminPanel/Iconlyposition.svg';
 import Modal from './Modal';
-import TextAreaComponent from '@/app/components/TextAreaComponent'
+import TextAreaComponent from '@/src/app/components/TextAreaComponent'
 import Paginate from './Paginate';
 
 const UserTable = ({ users }) => {

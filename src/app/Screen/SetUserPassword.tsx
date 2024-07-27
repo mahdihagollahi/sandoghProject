@@ -1,6 +1,6 @@
 import React from 'react'
-import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/app/components/AdminPageNavbar'
+import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
 import InputPassword from '../components/InputPassword'
 import SetUserPassword from '../components/SetedPassword'
 

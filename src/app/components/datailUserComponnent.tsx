@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Image1 from '@/app/assent/Img/adminPanel/Avatar.svg';
+import Image1 from '@/src/app/assent/Img/adminPanel/Avatar.svg';
 import arrowImage from '../assent/Img/adminPanel/back.svg'
-import cardImage from '@/app/assent/Img/adminPanel/carddetail.svg'
-import cardImage2 from '@/app/assent/Img/adminPanel/carddetail2.png'
+import cardImage from '@/src/app/assent/Img/adminPanel/carddetail.svg'
+import cardImage2 from '@/src/app/assent/Img/adminPanel/carddetail2.png'
 
 
 const userDetail = [

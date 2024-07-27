@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTable from '@/app/components/UserTable';
+import UserTable from '@/src/app/components/UserTable';
 import Image from 'next/image';
 import backImage from '../assent/Img/adminPanel/back.svg'
 import Image1 from '../assent/Img/adminPanel/Avatar.svg';

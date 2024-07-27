@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
-import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import EveryUserComponent from '@/app/components/EveryUserComponent'
+import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
+import EveryUserComponent from '@/src/app/components/EveryUserComponent'
 
 function EveryUser() {
   return (

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import AdminFirstPage from '@/app/Screen/AdminFristPage'
+import AdminFirstPage from '@/src/app/Screen/AdminFristPage'
 function page() {
   return (
     <div>

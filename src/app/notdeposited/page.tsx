@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import ThoseWhoHaveNotDeposited from '@/app/Screen/ThoseWhoHaveNotDeposited'
+import ThoseWhoHaveNotDeposited from '@/src/app/Screen/ThoseWhoHaveNotDeposited'
 function page() {
   return (
     <div>

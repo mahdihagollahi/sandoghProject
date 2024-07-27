@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import IconlyImage from '@/app/assent/Img/adminPanel/Iconly.svg'
-import DeletedImage from '@/app/assent/Img/adminPanel/deleted.svg'
+import IconlyImage from '@/src/app/assent/Img/adminPanel/Iconly.svg'
+import DeletedImage from '@/src/app/assent/Img/adminPanel/deleted.svg'
 
 function RoutTableUser() {
   return (

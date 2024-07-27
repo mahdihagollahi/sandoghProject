@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
-import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import SaveInformation from '@/app/components/SaveInformation'
+import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
+import SaveInformation from '@/src/app/components/SaveInformation'
 
 function ManagementAccount() {
   return (

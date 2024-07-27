@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import Image from 'next/image'
-import UserOutlineImage from '@/app/assent/Img/adminPanel/3UserOutline.svg'
-import crossOutline from '@/app/assent/Img/adminPanel/crossOutline.svg'
+import UserOutlineImage from '@/src/app/assent/Img/adminPanel/3UserOutline.svg'
+import crossOutline from '@/src/app/assent/Img/adminPanel/crossOutline.svg'
 
-import IconlyImage from '@/app/assent/Img/adminPanel/Iconly.svg'; 
-import crossActiveImage from '@/app/assent/Img/adminPanel/crossActive.svg'; 
+import IconlyImage from '@/src/app/assent/Img/adminPanel/Iconly.svg'; 
+import crossActiveImage from '@/src/app/assent/Img/adminPanel/crossActive.svg'; 
 
 
 function RoutTableUser() {

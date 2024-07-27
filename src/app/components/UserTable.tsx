@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import FillImage from '@/app/assent/Img/adminPanel/Fill 396.svg';
-import iconBackImage from '@/app/assent/Img/adminPanel/getBack.svg';
+import FillImage from '@/src/app/assent/Img/adminPanel/Fill 396.svg';
+import iconBackImage from '@/src/app/assent/Img/adminPanel/getBack.svg';
 import Paginate from './Paginate';
 import Link from 'next/link';
 

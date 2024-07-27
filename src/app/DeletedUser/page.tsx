@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import DeletedUser from '@/app/Screen/DeletedUser'
+import DeletedUser from '@/src/app/Screen/DeletedUser'
 function page() {
   return (
     <div>

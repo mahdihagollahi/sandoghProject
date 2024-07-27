@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/app/components/AdminPageNavbar'
-import FinancialManagement from '@/app/components/FinancialManagement'
+import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
+import FinancialManagement from '@/src/app/components/FinancialManagement'
 
 function FinancialManagementPage() {
   return (

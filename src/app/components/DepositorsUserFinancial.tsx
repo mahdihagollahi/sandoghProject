@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTableNotDespositors from '@/app/components/UserTableNotDespositors';
+import UserTableNotDespositors from '@/src/app/components/UserTableNotDespositors';
 import Image from 'next/image';
 import backImage from '../assent/Img/adminPanel/back.svg'
 import RoutTableFiancial from './RoutTableFinancial';

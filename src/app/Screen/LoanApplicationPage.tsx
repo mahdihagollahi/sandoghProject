@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import backImage from '../assent/Img/adminPanel/back.svg'
 import ImageSearch from '../assent/Img/adminPanel/Search.svg';
-import LoanAplicationTable from '@/app/components/LoanAplicationTable';
+import LoanAplicationTable from '@/src/app/components/LoanAplicationTable';
 
 interface User {
   id: number;
