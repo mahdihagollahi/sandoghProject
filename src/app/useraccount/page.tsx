@@ -1,11 +1,11 @@
 "use client"
 import React from 'react'
-import DetailUserPage from '../components/AdminPage/datailUserComponnent'
+import UserAccount from '../Screen/UserAccount'
 
 function page() {
   return (
     <div>
-        <DetailUserPage/>
+        <UserAccount/>
     </div>
   )
 }

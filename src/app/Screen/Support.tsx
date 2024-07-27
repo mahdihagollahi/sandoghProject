@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
-import SupportMessage from '../components/SupportMessage'
+import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
+import SupportMessage from '../components/AdminPage/SupportMessage'
 
 
 function Support() {

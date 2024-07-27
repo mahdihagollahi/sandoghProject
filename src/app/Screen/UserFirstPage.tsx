@@ -2,16 +2,14 @@
 
 import React from "react";
 import AdminHeader from "../components/AdminPage/AdminHeader";
-import NumberOfMebers from "../components/AdminPage/LoanApplication";
-import LoanApplication from "../components/AdminPage/LoanApplication";
 import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
-import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
-import CardAdmin from "../components/AdminPage/CardAdmin";
-import NewDepositSlip from "../components/AdminPage/NewDepositSlip";
-import SupportMassgeDashboard from "../components/AdminPage/SupportMassgeDashboard";
-import CharAdminDashboard from '../components/AdminPage/CharAdminDashboard'
+import UserFirstPage from "../components/UserPage/UserPageNavbar";
+import CardUser from "../components/UserPage/CardUser";
+  import ChartPament from "../components/UserPage/ChartPament";
+import RequestBox from "../components/UserPage/RequestBox";
+import Supportbox from "../components/AdminPage/Supportbox";
 
-function AdminFirstPage() {
+function UserFirstPage() {
   return (
     <div className="">
       <div className="w-full flex flex-col ">
@@ -20,7 +18,7 @@ function AdminFirstPage() {
             <AdminNavbarHeader />
           </div>
           <div>
-            <AdminPageNavbar />
+            <UserFirstPage />
           </div>
         </div>
 
@@ -31,34 +29,28 @@ function AdminFirstPage() {
 
           <div className="flex flex-col mr-[30rem] mt-4 xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
             <div>
-            <NumberOfMebers />
-
-            </div>
-            <div>
-            <LoanApplication />
-
+              <ChartPament/>
             </div>
             <div className="">
-            <CardAdmin/>
+            <CardUser/>
 
             </div>
           </div>
         </div>
 
-        <div>
-          <NewDepositSlip/>
-        </div>
-
+       <div className="flex justify-end gap-5">
        <div>
-        <SupportMassgeDashboard/>
+     <RequestBox/>
        </div>
 
        <div>
-        <CharAdminDashboard/>
+        <Supportbox/>
        </div>
+       </div>
+     
       </div>
     </div>
   );
 }
 
-export default AdminFirstPage;
+export default UserFirstPage;

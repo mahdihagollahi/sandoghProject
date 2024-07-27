@@ -1,8 +1,8 @@
 
 import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
-import DeletedUserComponent from '@/src/app/components/DeletedUserComponent'
+import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
+import DeletedUserComponent from '@/src/app/components/AdminPage/DeletedUserComponent'
 
 function DeletedUser() {
   return (
