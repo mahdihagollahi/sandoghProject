@@ -4,6 +4,8 @@ import Image1 from '../assent/Img/adminPanel/Avatar.svg';
 import Image2 from '../assent/Img/adminPanel/Avatar-2.svg';
 import Image3 from '../assent/Img/adminPanel/avatar online copy.svg';
 import Image4 from '../assent/Img/adminPanel/avatar online.svg';
+import Link from 'next/link';
+
 
 const User =[
     {id: 1 , src:Image1 , name:'الهه علی نیا' , massage:'سلام چرا وام من واریز نمیشه؟' , time: '7:00' },
@@ -25,7 +27,7 @@ function SupportMassgeDashboard() {
 
              <div className='px-4'>
                {User.map((items) =>(
-                <div key={items.id} className='flex items-center py-4 gap-3 cursor-pointer '>
+                <div key={items.id} className='flex items-center py-4 gap-3  '>
                     <div className='flex-shrink-0'>
                 
                        <Image src={items.src} width={40} height={40} alt='' className='rounded-full'
@@ -55,10 +57,13 @@ function SupportMassgeDashboard() {
                ))}
             </div>
 
-            <div className='flex justify-center py-8'>
-          <button className='bg-[#4FD1C5] text-white py-2 px-24 rounded-lg'>
+            <div className='flex justify-center py-8' >
+              <Link href='/support' passHref>
+              <button className='bg-[#4FD1C5] text-white py-2 px-24 rounded-lg'  >
             دیدن همه
           </button>
+              </Link>
+        
         </div>
 
         </div>

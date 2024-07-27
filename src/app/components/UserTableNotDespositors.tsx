@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import iconEyeImage from '@/app/assent/Img/adminPanel/eye.svg';
-import iconCrossImage from '@/app/assent/Img/adminPanel/cross.svg';
-import iconTikImage from '@/app/assent/Img/adminPanel/tik.svg';
+import SendIconImage from '@/app/assent/Img/adminPanel/SendIcon.svg';
+import IconlypositionImage from '@/app/assent/Img/adminPanel/Iconlyposition.svg';
+import Modal from './Modal';
+import TextAreaComponent from '@/app/components/TextAreaComponent'
 import Paginate from './Paginate';
 
 const UserTable = ({ users }) => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const itemsPerPage = 7;
 
   const pageClick = (data) => {
@@ -16,6 +18,14 @@ const UserTable = ({ users }) => {
   const offset = currentPage * itemsPerPage;
   const currentPageData = users.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(users.length / itemsPerPage);
+
+  const handleOpenModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <div>
@@ -30,10 +40,10 @@ const UserTable = ({ users }) => {
                 تاریخ سر رسید
                 </th>
                 <th className="w-[12%] px-4 pl-10 py-2">
-                رسید ها
+               یادآوری
                 </th>
                 <th className="w-[12%]  py-2">
-                تعیین وضعیت
+                وضعیت
                 </th>
               </tr>
             </thead>
@@ -48,23 +58,23 @@ const UserTable = ({ users }) => {
                     <td className="w-2/12 py-2 px-4 ">{user.joinDate}</td>
                  
                     <td className="w-3/12 py-2 px-4 ">
-                      <button className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
-                      <Image src={iconEyeImage} width={24} height={24} alt="" />
+                      <button className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
+                         onClick={handleOpenModal}
+                      >
+                      <Image src={SendIconImage} width={24} height={24} alt="" />
                         <p className="font-normal text-sm text-teal-400">
-                        فیش واریزی
+                        ارسال یادآوری                        
                         </p>
                       </button>
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
-                    <div className='flex gap-8'>
+                    
                     <button className="w-6 h-6 ">
-                        <Image src={iconCrossImage} width={820} height={820} alt="حذف" />
+                        <Image src={IconlypositionImage} width={1020} height={1020} alt="وضعیت" />
                       </button>
 
-                      <button className="w-6 h-6 ">
-                        <Image src={iconTikImage} width={60} height={60} alt="اضافه" />
-                      </button>
-                    </div>
+                      
+                   
                      
                     </td>
                   </tr>
@@ -82,6 +92,9 @@ const UserTable = ({ users }) => {
           pageCount={pageCount}
           pageClick={pageClick}
         />
+         <Modal isVisible={isModalVisible} >
+        <TextAreaComponent onClose={handleCloseModal} /> 
+      </Modal>
     </div>
   );
 };

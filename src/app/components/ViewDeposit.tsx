@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Money from '@/app/assent/Img/adminPanel/3D money card.svg'
+import Link from 'next/link';
 function ViewDeposit() {
   return (
     <div>
@@ -23,9 +24,12 @@ function ViewDeposit() {
                 </p>
             </div>
             <div>
+               <Link href='/detailuser' passHref>
                <button className='bg-[#4FD1C5] rounded-md py-2 px-4 text-white'>
                 مشاهده
                </button>
+               </Link>
+             
             </div>
            </div>
 
@@ -36,9 +40,11 @@ function ViewDeposit() {
                 </p>
             </div>
             <div>
+            <Link href='/notdeposited' passHref>
                <button className='bg-[#4FD1C5] rounded-md py-2 px-4 text-white'>
                 مشاهده
                </button>
+               </Link>
                </div>
                </div>
                <div className="absolute bottom-4 left-4 right-4 flex justify-center">

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTableNotDespositors from '@/app/components/UserTableNotDespositors';
+import UserTableFinancial from '@/app/components/UserTableFinancial';
 import Image from 'next/image';
 import backImage from '../assent/Img/adminPanel/back.svg'
 import RoutTableFiancial from './RoutTableFinancial';
@@ -27,7 +27,7 @@ const users: User[] = [
   { id: 15,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
 ];
 
-const DepositorsUserFinancial: React.FC = () => {
+const NotDepositorsUserFinancial: React.FC = () => {
   return (
     <div >
          <div className='flex gap-[74%]  items-center mb-2 mt-5 mr-3  '>
@@ -56,11 +56,12 @@ const DepositorsUserFinancial: React.FC = () => {
       <div>
         <RoutTableFiancial/>
       </div>
-      <UserTableNotDespositors users={users} />
+      <UserTableFinancial users={users} />
     </div>
    
   );
 };
 
-export default DepositorsUserFinancial;
+export default NotDepositorsUserFinancial;
+
 

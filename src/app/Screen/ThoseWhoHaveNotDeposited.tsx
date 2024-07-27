@@ -3,7 +3,7 @@ import AdminNavbarHeader from '@/app/components/AdminNavbarHeader'
 import AdminPageNavbar from '@/app/components/AdminPageNavbar'
 import DepositorsUserFinancial from '@/app/components/DepositorsUserFinancial'
 
-function ManagementAccount() {
+function ThoseWhoHaveNotDeposited() {
   return (
     <div>
       
@@ -27,5 +27,5 @@ function ManagementAccount() {
   )
 }
 
-export default ManagementAccount
+export default ThoseWhoHaveNotDeposited
 
