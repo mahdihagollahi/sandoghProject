@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTableNotDespositors from '@/src/app/components/AdminPage/UserTableNotDespositors';
+import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import RoutTableFiancial from './RoutTableFinancial';
@@ -56,7 +56,7 @@ const DepositorsUserFinancial: React.FC = () => {
       <div>
         <RoutTableFiancial/>
       </div>
-      <UserTableNotDespositors users={users} />
+      <UserTableDespositors users={users} />
     </div>
    
   );

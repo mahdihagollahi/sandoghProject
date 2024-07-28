@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import SendIconImage from '@/src/app/assent/Img/adminPanel/SendIcon.svg';
-import IconlypositionImage from '@/src/app/assent/Img/adminPanel/Iconlyposition.svg';
+import EyeIconImage from '@/src/app/assent/Img/adminPanel/eye.svg';
+import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
+import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
 import Modal from './Modal';
 import TextAreaComponent from '@/src/app/components/AdminPage/TextAreaComponent'
 import Paginate from './Paginate';
@@ -35,15 +36,15 @@ const UserTable = ({ users }) => {
             <thead className="">
               <tr>
               
-                <th className="w-[10%] pl-8  py-2">نام کاربر</th>
-                <th className="w-[33%]  pl-24 py-2">
+                <th className="w-[10%] pl-8 py-2">نام کاربر</th>
+                <th className="w-[23%] pl-24 py-2">
                 تاریخ سر رسید
                 </th>
-                <th className="w-[12%] pl-36  py-2">
-               یادآوری
+                <th className="w-[12%]  pl-36 py-2">
+                رسید ها                
                 </th>
                 <th className="w-[12%]  py-2">
-                وضعیت
+                تعیین وضعیت                
                 </th>
               </tr>
             </thead>
@@ -61,17 +62,24 @@ const UserTable = ({ users }) => {
                       <button className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
                          onClick={handleOpenModal}
                       >
-                      <Image src={SendIconImage} width={24} height={24} alt="" />
+                      <Image src={EyeIconImage } width={24} height={24} alt="" />
                         <p className="font-normal text-sm text-teal-400">
-                        ارسال یادآوری                        
+                        فیش واریزی                    
                         </p>
                       </button>
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
-                    
+                    <div className='flex gap-5'>
                     <button className="w-6 h-6 ">
-                        <Image src={IconlypositionImage} width={1020} height={1020} alt="وضعیت" />
+                        <Image src={IconlytikImage} width={1020} height={1020} alt="وضعیت" />
                       </button>
+
+                      <button className="w-6 h-6 ">
+                        <Image src={IconlycrossImage} width={1020} height={1020} alt="وضعیت" />
+                      </button>
+                    </div>
+                    
+                   
 
                       
                    

@@ -9,7 +9,7 @@ import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
 import CardAdmin from "../components/AdminPage/CardAdmin";
 import NewDepositSlip from "../components/AdminPage/NewDepositSlip";
 import SupportMassgeDashboard from "../components/AdminPage/SupportMassgeDashboard";
-import CharAdminDashboard from '../components/AdminPage/CharAdminDashboard'
+import CharAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
 function AdminFirstPage() {
   return (

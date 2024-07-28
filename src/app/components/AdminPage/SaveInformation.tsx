@@ -40,7 +40,7 @@ function SaveInformation() {
                <label className='absolute -top-2 z-10 left-[83%] px-3 bg-white py-2'>
                    نام
                  </label>
-                 <input type="text" className="border w-96 md:w-96  h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+                 <input type="text" className="border pr-4 w-96 md:w-96  h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
              
                
@@ -54,7 +54,7 @@ function SaveInformation() {
               <label className='absolute -top-2 z-10 left-[68%] px-3 bg-white py-2'>
               نام خانوادگی
                 </label>
-                <input type="text" className="border w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+                <input type="text" className="border w-96 pr-4 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
             
               
@@ -75,7 +75,7 @@ function SaveInformation() {
       <label className='absolute -top-2 z-10 left-[67%] px-3 bg-white py-2'>
       شماره موبایل
         </label>
-        <input type="text" className="border md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+        <input type="text" className="border pr-4 md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
     
       
@@ -89,7 +89,7 @@ function SaveInformation() {
      <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white  py-2 whitespace-nowrap'>
      کد ملی
        </label>
-       <input type="text" className="border w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
+       <input type="text" className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  />
 
    
      

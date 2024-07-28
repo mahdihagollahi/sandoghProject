@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
@@ -20,7 +20,7 @@ import ImagePoshtibani from '@/src/app/assent/Img/adminPanel/Poshtibani.svg';
 import ImagePoshtibaniHover from '@/src/app/assent/Img/adminPanel/PoshtibaniHover.svg';
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 
-const images = [
+const Navbar = [
   { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/dashboard' },
   { id: 2, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
   { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
@@ -33,7 +33,20 @@ const images = [
 function AdminPageNavbar() {
   const [hoverImage, setHoverImage] = useState<{ [key: number]: boolean }>({});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [clickedImage, setClickedImage] = useState<number | null>(null);
   const isMobile = useMediaQuery({ maxWidth: 800 });
+
+
+  useEffect(() => {
+    
+    const storedClickedImage = localStorage.getItem('clickedImage');
+    if (storedClickedImage) {
+      const imageId = parseInt(storedClickedImage, 10);
+      setClickedImage(imageId);
+      setHoverImage((prev) => ({ ...prev, [imageId]: true }));
+    }
+  }, []);
+
 
   const handleMouseEnter = (id: number) => {
     setHoverImage((prev) => ({ ...prev, [id]: true }));
@@ -47,6 +60,12 @@ function AdminPageNavbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleClick = (id: number) => {
+    setClickedImage(id);
+    setHoverImage((prev) => ({ ...prev, [id]: true }));
+    localStorage.setItem('clickedImage', id.toString());
+  };
+
   return (
     <div>
       {isMobile ? (
@@ -58,11 +77,14 @@ function AdminPageNavbar() {
         </div>
       ) : null}
       <div className={`flex w-80 flex-col mt-5 mr-10 gap-9 ${isMobile && !isMenuOpen ? 'hidden' : ''}`}>
-        {images.map((image) => (
+        {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
-            <div className="relative mt-4" onMouseEnter={() => handleMouseEnter(image.id)} onMouseLeave={() => handleMouseLeave(image.id)}>
+            <div className="relative mt-4" 
+            onMouseEnter={() => handleMouseEnter(image.id)}
+             onMouseLeave={() => handleMouseLeave(image.id)}    
+             onClick={() => handleClick(image.id)} >
               <Image
-                src={hoverImage[image.id] ? image.hoverSrc : image.src}
+                src={hoverImage[image.id] || clickedImage === image.id ? image.hoverSrc : image.src}
                 alt={`Image ${image.id}`}
                 width={200}
                 height={200}

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTable from '@/src/app/components/AdminPage/UserTable';
+import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import Image1 from '@/src/app/assent/Img/adminPanel/Avatar.svg';
@@ -36,7 +36,7 @@ const users: User[] = [
 const EveryUser: React.FC = () => {
   return (
     <div >
-         <div className='flex gap-32  items-center mb-2 mt-5 mr-3  '>
+         <div className='flex gap-24  items-center mb-2 mt-5 mr-3  '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
                 مشاهده کاربران           
@@ -77,7 +77,7 @@ const EveryUser: React.FC = () => {
       <div>
         <RoutTableUser/>
       </div>
-      <UserTable users={users} />
+      <UserDeleteTable users={users} />
     </div>
    
   );

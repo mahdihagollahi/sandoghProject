@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import DetailUserPage from '../components/AdminPage/datailUserComponnent'
+import DetailUserPage from '../Screen/DetailUserPage'
 
 function page() {
   return (
