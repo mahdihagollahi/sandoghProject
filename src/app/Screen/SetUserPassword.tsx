@@ -1,8 +1,8 @@
 import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
-import InputPassword from '../components/InputPassword'
-import SetUserPassword from '../components/SetedPassword'
+import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
+import InputPassword from '../components/AdminPage/InputPassword'
+import SetUserPassword from '../components/AdminPage/SetedPassword'
 
 function SetUserPasswordPage() {
   return (

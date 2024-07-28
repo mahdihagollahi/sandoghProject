@@ -1,15 +1,15 @@
 
 
 import React from "react";
-import AdminHeader from "../components/AdminHeader";
-import NumberOfMebers from "../components/NumberOfMebers";
-import LoanApplication from "../components/LoanApplication";
-import AdminNavbarHeader from "../components/AdminNavbarHeader";
-import AdminPageNavbar from "../components/AdminPageNavbar";
-import CardAdmin from "../components/CardAdmin";
-import NewDepositSlip from "../components/NewDepositSlip";
-import SupportMassgeDashboard from "../components/SupportMassgeDashboard";
-import CharAdminDashboard from '../components/CharAdminDashboard'
+import AdminHeader from "../components/AdminPage/AdminHeader";
+import NumberOfMebers from "../components/AdminPage/LoanApplication";
+import LoanApplication from "../components/AdminPage/LoanApplication";
+import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
+import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
+import CardAdmin from "../components/AdminPage/CardAdmin";
+import NewDepositSlip from "../components/AdminPage/NewDepositSlip";
+import SupportMassgeDashboard from "../components/AdminPage/SupportMassgeDashboard";
+import CharAdminDashboard from '../components/AdminPage/CharAdminDashboard'
 
 function AdminFirstPage() {
   return (

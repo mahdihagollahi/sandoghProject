@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPageNavbar'
-import DepositorsUserFinancial from '@/src/app/components/DepositorsUserFinancial'
+import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
+import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
+import DepositorsUserFinancial from '@/src/app/components/AdminPage/DepositorsUserFinancial'
 
 function DepositorsUser() {
   return (

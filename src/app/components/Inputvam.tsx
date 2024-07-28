@@ -12,7 +12,7 @@ function Inputvam() {
   return (
     <>
       <div className="w-[950px] shadow-md rounded-md pb-10 pt-10">
-        <div className="flex flex-grow justify-around p-[40px] w-[900px] opacity-[70%] border-b-2 ">
+        <div className="flex flex-grow justify-around p-[40px] w-[900px]  border-b-2 ">
           <span>شماره درخواست</span>
           <span>مبلغ وام</span>
           <span>تاریخ درخواست</span>
