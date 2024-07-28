@@ -24,7 +24,7 @@ function ViewDeposit() {
                 </p>
             </div>
             <div>
-               <Link href='/detailuser' passHref>
+               <Link href='/deposited' passHref>
                <button className='bg-[#4FD1C5] rounded-md py-2 px-4 text-white'>
                 مشاهده
                </button>

@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-function CharAdminDashboard() {
+function ChartAdminDashboard() {
     const data = {
         labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
         datasets: [
@@ -87,7 +87,7 @@ function CharAdminDashboard() {
   )
 }
 
-export default CharAdminDashboard
+export default ChartAdminDashboard
 
 
 

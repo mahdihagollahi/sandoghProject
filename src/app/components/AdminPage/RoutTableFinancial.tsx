@@ -1,32 +1,36 @@
-import React,{useState} from 'react'
+import React,{useState , useEffect} from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import UserOutlineImage from '@/src/app/assent/Img/adminPanel/3UserOutline.svg'
+import UserHoverImage from '@/src/app/assent/Img/adminPanel/Iconly.svg';
 import crossOutline from '@/src/app/assent/Img/adminPanel/crossOutline.svg'
-
-import IconlyImage from '@/src/app/assent/Img/adminPanel/Iconly.svg'; 
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/crossActive.svg'; 
 
 
 function RoutTableUser() {
+  const [selectedTab, setSelectedTab] = useState('');
 
-  const [currentImage, setCurrentImage] = useState(UserOutlineImage);
-  const [currentActiveImage, setcurrentActiveImage] = useState(crossOutline);
+  useEffect(() => {
+    const storedTab = localStorage.getItem('selectedTab');
+    if (storedTab) {
+      setSelectedTab(storedTab);
+    }
+  }, []);
 
-  const handleImageChange = () => {
-    setCurrentImage(IconlyImage);
+  const handleTabClick = (tab) => {
+    setSelectedTab(tab);
+    localStorage.setItem('selectedTab', tab);
   };
 
-  const handleImageChangeCross = () => {
-    setcurrentActiveImage(crossActiveImage);
-  };
-
+  
   return (
     <div>
         <div>
             <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 bg-white h-16 rounded-md '>
-              <div className='flex  items-center gap-2 active:border-b-2 active:border-[#4FD1C5]'  onClick={handleImageChange}>
+            <div className={`flex items-center gap-2 ${selectedTab === 'deposited' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
+            <Link href='/deposited' className='flex items-center gap-2' onClick={() => handleTabClick('deposited')}>
                  <Image
-                 src={currentImage}
+                 src={selectedTab === 'deposited' ? UserHoverImage : UserOutlineImage}
                  width={25}
                  height={25}
                  alt='men'
@@ -34,13 +38,13 @@ function RoutTableUser() {
                  <p className='font-bold text-sm text-[#2D3748]'> 
                  واریز کرده ها                
                   </p>
+                  </Link>
               </div>
 
-              <div className='flex items-center gap-2 active:border-b-2 active:border-[#4FD1C5]'
-              onClick={handleImageChangeCross}
-              >
+              <div className={`flex items-center gap-2 ${selectedTab === 'notdeposited' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
+            <Link href='/notdeposited' className='flex items-center gap-2' onClick={() => handleTabClick('notdeposited')}>
                  <Image
-                 src={currentActiveImage}
+                 src={selectedTab === 'notdeposited' ? crossActiveImage : crossOutline}
                  width={25}
                  height={25}
                  alt='men'
@@ -48,6 +52,7 @@ function RoutTableUser() {
                  <p className='font-bold text-sm text-[#2D3748]'> 
                  واریز نکرده ها                 
                  </p>
+                 </Link>
               </div>
             </div>
         </div>

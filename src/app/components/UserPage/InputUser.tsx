@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import DragPhoto from './dragphoto';
-import DragCart from './dragcart';
+import DragPhoto from './DragPhoto';
+import DragCart from './DragCart';
 
 function InptUser() {
   return (
@@ -30,7 +30,7 @@ function InptUser() {
       
         <div className=' mx-auto  w-[125vh]     '>
 
-            <div className='bg-white shadow-lg mt-5 p-6 md:p-10'>
+            <div className='bg-white shadow-lg mt-5 p-6 '>
 
 
 

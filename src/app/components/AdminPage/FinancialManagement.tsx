@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DateDropDown from '@/src/app/components/AdminPage/DateDropDown';
-import CharAdminDashboard from '@/src/app/components/AdminPage/CharAdminDashboard';
+import CharAdminDashboard from '@/src/app/components/AdminPage/ChartAdminDashboard';
 import ViewDeposit from './ViewDeposit';
 
 interface DataSet {

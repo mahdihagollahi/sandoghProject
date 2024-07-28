@@ -1,7 +1,7 @@
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
 import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import DepositorsUserFinancial from '@/src/app/components/AdminPage/DepositorsUserFinancial'
+import NotDepositorsUserFinancial from '@/src/app/components/AdminPage/NotDepositorsUserFinancial'
 
 function ThoseWhoHaveNotDeposited() {
   return (
@@ -20,7 +20,7 @@ function ThoseWhoHaveNotDeposited() {
         </div>
             </div>
             <div className='w-full '>
-               <DepositorsUserFinancial/>
+               <NotDepositorsUserFinancial/>
             </div>
         </div>
     </div>

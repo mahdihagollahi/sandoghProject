@@ -17,7 +17,7 @@ function UserFirstPage() {
             <AdminNavbarHeader />
           </div>
           <div>
-            <UserPageNavbar /> {/* Updated usage */}
+            <UserPageNavbar />
           </div>
         </div>
 

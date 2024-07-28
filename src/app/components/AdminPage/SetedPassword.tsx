@@ -12,7 +12,7 @@ const completions = [
     return (
       <div>
       <div className="">
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <div className="bg-white shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
           {completions.map((item, index) => (
             <div
