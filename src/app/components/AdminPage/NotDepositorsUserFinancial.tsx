@@ -3,7 +3,7 @@ import UserTableFinancial from '@/src/app/components/AdminPage/UserTableNotDespo
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import RoutTableFiancial from './RoutTableFinancial';
-
+import Link from 'next/link';
 interface User {
   id: number;
   name: string;
@@ -40,16 +40,19 @@ const NotDepositorsUserFinancial: React.FC = () => {
 
 
             <div className='flex justify-end mr-2  '>
-              <a href="" className='flex items-center'>
-              بازگشت
-              <Image
-                src={backImage}
-                width={38}
-                height={38}
-                alt='arrow'
+            <Link href="/showuserdetail">
+             
+             <div  className='flex items-center'>
+             بازگشت
+             <Image
+               src={backImage}
+               width={38}
+               height={38}
+               alt='arrow'
 
-                />
-              </a>
+               />
+             </div>
+             </Link>
               
             </div>
         </div>
