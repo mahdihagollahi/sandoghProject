@@ -13,8 +13,8 @@ import CharAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
 function AdminFirstPage() {
   return (
-    <div className="">
-      <div className="w-full flex flex-col ">
+    <div className="overflow-y-hidden">
+      <div className=" flex flex-col ">
         <div >
           <div>
             <AdminNavbarHeader />

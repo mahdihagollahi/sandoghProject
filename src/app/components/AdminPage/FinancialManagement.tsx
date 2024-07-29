@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import Image from 'next/image';
+import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import DateDropDown from '@/src/app/components/AdminPage/DateDropDown';
-import CharAdminDashboard from '@/src/app/components/AdminPage/ChartAdminDashboard';
+import ChartMounthFinantial from '@/src/app/components/AdminPage/ChartMounthFinantial';
+import ChartFinancial from '@/src/app/components/AdminPage/chartFinancial';
+
 import ViewDeposit from './ViewDeposit';
 
 interface DataSet {
@@ -75,23 +79,38 @@ export default function FinancialManagement() {
     <div>
 
   
-    
-    <div className="min-h-screen flex flex-col items-center justify-center">
-       <div className='flex justify-center  items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
-       <div className=' w-[1022px]  bg-white mt-20   shadow-xl rounded-lg px-4 '>
-        <div className='flex gap-52 pt-8 '>
-        <div className=' mr-[32%] '>
-          <p className='font-medium text-sm text-[#394860] mt-2'>
-          نمودار موجودی 6ماه اول صندوق
-          </p>
+<div className='flex mt-8  justify-between items-center mb-2   '>
+            <div className='mr-2 '>
+                <p className='font-bold text-lg'>
+                حساب مدیریت
+                </p>
+            </div>
+            <div className='ml-10   '>
+              <a href="" className='flex items-center'>
+              بازگشت
+              <Image
+                src={arrowImage}
+                width={38}
+                height={38}
+                alt='arrow'
+
+                />
+              </a>
+              
+            </div>
         </div>
 
-        <div className=' '>
+
+    <div className="mt-6 ">
+       <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
+       <div className='  bg-white    shadow-xl rounded-lg px-12 '>
+        <div className='flex gap-52 pt-8 '>
+        <div className=' mr-[50%]'>
         <DateDropDown onSelectYear={handleSelectYear} />
         </div>
         </div>
         <div className='pb-10'>
-        <CharAdminDashboard data={filteredData} />
+        <ChartMounthFinantial data={filteredData} />
 
         </div>
 
@@ -99,9 +118,27 @@ export default function FinancialManagement() {
   </div>
   </div>
 
-  <div className='mr-[50%] -mt-[15%]'>
-          <ViewDeposit/>
+
+     <div className='flex justify-between mt-8 gap-4  items-center'>
+
+    
+     <div className='flex   items-center   md:justify-center  xl:justify-center   xl:mt-2'>
+     <div className='  bg-white    shadow-xl rounded-lg '>
+     <div className='flex  pt-8 '>
+        <div className=' mr-[24%]'>
+        <DateDropDown onSelectYear={handleSelectYear} />
         </div>
+        </div>
+         
+          <ChartFinancial data={filteredData}/>
+        </div>
+        </div>
+
+        <div className='ml-12 '>
+        
+         <ViewDeposit/>
+        </div>
+  </div>
   </div>
   </div>
   );

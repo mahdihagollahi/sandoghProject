@@ -20,10 +20,10 @@ const Dropdown: React.FC<DropdownProps> = ({ onSelectYear }) => {
   };
 
   return (
-    <div className="relative inline-block text-right">
+    <div className="relative mr-56 inline-block text-right">
       <button
         onClick={toggleDropdown}
-        className="bg-teal-400 text-white font-semibold py-2 px-4 rounded-md flex items-center justify-between w-36"
+        className="bg-teal-400 text-white font-semibold py-2 px-2 rounded-md flex items-center justify-between w-28"
       >
         <span>{selectedYear}</span>
         <svg

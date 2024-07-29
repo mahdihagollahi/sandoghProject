@@ -16,7 +16,6 @@ const ChartComponent = () => {
           const {ctx, chartArea} = chart;
 
           if (!chartArea) {
-            // This case happens on initial chart load
             return null;
           }
 
@@ -64,7 +63,24 @@ const ChartComponent = () => {
     },
   };
 
-  return <Line data={data} options={options} />;
+  return (
+<div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
+  <div className='w-[510px] h-[302px] rounded-lg bg-inherit'>
+  <div className=' mr-8 mb-10'>
+          <p className='font-medium -mt-10 text-sm text-[#000000]'>
+          نمودار صندوق
+          </p>
+        </div>
+  <Line data={data} options={options} />
+
+  </div>
+
+ 
+  </div>
+ 
+  )
+  
+  
 };
 
 export default ChartComponent;
