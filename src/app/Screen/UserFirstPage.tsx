@@ -6,7 +6,7 @@ import UserPageNavbar from "../components/UserPage/UserPageNavbar";
 import CardUser from "../components/UserPage/CardUser";
 import ChartPament from "../components/UserPage/ChartPament";
 import RequestBox from "../components/UserPage/RequestBox";
-import Supportbox from "../components/AdminPage/Supportbox";
+import Supportbox from "../components/UserPage/Supportbox";
 
 function UserFirstPage() {
   return (

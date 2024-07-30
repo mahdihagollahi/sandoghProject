@@ -48,7 +48,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
+            className="border w-72  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
           />
         </div>
 
@@ -58,7 +58,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border w-72  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py- "
           />
         </div>
 
@@ -68,7 +68,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
       </div>
@@ -80,7 +80,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
+            className="border w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
           />
         </div>
 
@@ -90,7 +90,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
 
@@ -100,7 +100,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
+            className="border  w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3  py-5"
           />
         </div>
       </div>
@@ -112,7 +112,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
 
@@ -122,7 +122,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-72   h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
 
@@ -132,7 +132,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-72  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
       </div>
@@ -144,7 +144,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[282px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-72 h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
 
@@ -154,7 +154,7 @@ function InptUser() {
           </label>
           <input
             type="text"
-            className="border  w-[600px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
+            className="border  w-[600px]  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md   m-3 py-5 "
           />
         </div>
       </div>
