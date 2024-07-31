@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import loagin from "../assent/imag/loagin.png";
-import Group from "../assent/imag/Group 39519.svg";
-import loagimg from "../assent/imag/tiny-sponsors-giving-donations-startup-project-person-raising-money-online-financial-growth-flat-vector-illustration-crowdfunding-internet-cooperation-concept-banner-website-design 1.svg";
+import loagin from "@/src/app/assent/Img/userPanel/loagin.png";
+import Group from "@/src/app/assent/Img/userPanel/Group 39519.svg";
+import loagimg from "@/src/app/assent/Img/userPanel/man.svg";
 
 export default function Landing() {
   return (

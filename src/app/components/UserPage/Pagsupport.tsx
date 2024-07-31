@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import exper from "../assent/imag/Exclamation.svg";
+import exper from "@/src/app/assent/Img/userPanel/Exclamation.svg";
 
 function Pagsupport() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import search from "../assent/imag/Search.png";
-import Exclamation from "../assent/imag/Exclamation.svg";
+import search from "@/src/app/assent/Img/userPanel/Search.png";
+import Exclamation from "@/src/app/assent/Img/userPanel/Exclamation.svg";
 
 const user = [
   { id: 1, name: "حامد رحمانی" },

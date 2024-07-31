@@ -2,7 +2,7 @@
 import React from "react";
 
 import Image from 'next/image'
-import vam from "../imag/vam.svg"
+import vam from "@/src/app/assent/Img/userPanel/vam.svg"
 export default function Requestbox(){
     return(
         <>
