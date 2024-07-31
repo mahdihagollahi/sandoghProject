@@ -29,7 +29,7 @@ const Navbar = [
   { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
   { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
   { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
-  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '' },
+  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
   { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
 ];
 

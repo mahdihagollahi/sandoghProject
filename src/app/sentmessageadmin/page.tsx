@@ -1,11 +1,10 @@
-"use client"
 import React from 'react'
 import SentedMassegePage from '@/src/app/Screen/SentedMassegePageAdmin'
 
 function page() {
   return (
     <div>
-      <SentedMassegePage/>
+        <SentedMassegePage/>
     </div>
   )
 }

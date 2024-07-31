@@ -28,7 +28,7 @@ const Navbar = [
   { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: '/everyuser' },
   { id: 4, src: payInstallments, hoverSrc: payInstallmentsHover, link: '/allloanaplication' },
   { id: 5, src: RequestInstallments, hoverSrc: RequestnstallmentsHover, link: '/userpass' },
-  { id: 6, src: ImageMessage, hoverSrc: ImageMessageHover, link: '/support' },
+  { id: 6, src: ImageMessage, hoverSrc: ImageMessageHover, link: '/sentedmassageuser' },
   { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '/showuserdetail' },
   
   { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: '/support' },
