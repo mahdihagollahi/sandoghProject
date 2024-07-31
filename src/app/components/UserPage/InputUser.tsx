@@ -1,6 +1,5 @@
-
 import React from "react";
-export default function InptUser() {
+export default function inputuser() {
   return (
     <>
       <div className="flex flex-row gap-3 w-[60%]">

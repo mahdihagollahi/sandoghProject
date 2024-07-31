@@ -2,7 +2,7 @@
 import React from "react";
 
 
-function page() {
+function Zamen() {
   const list = [{  id: 1,name: "الهه علی نیا", date: "1403/09/23" }];
 
   return (
@@ -46,4 +46,4 @@ function page() {
     
   
 
-export default page;
+export default Zamen;

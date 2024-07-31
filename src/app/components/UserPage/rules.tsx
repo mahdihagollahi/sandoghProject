@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import pozetiv from "@/src/app/assent/imag/pozetiv.svg";
-import negtiv from "@/src/app/assent/imag/negtiv.svg";
-import pen from "@/src/app/assent/imag/pen.svg";
+import pozetiv from "../assent/imag/pozetiv.svg";
+import negtiv from "../assent/imag/negtiv.svg";
+import pen from "../assent/imag/pen.svg";
 
 export default function rules() {
   return (

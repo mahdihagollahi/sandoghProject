@@ -2,8 +2,8 @@
 import React from "react";
 
 import Image from 'next/image'
-import vam from "@/src/app/assent/imag/vam.svg"
-export default function RequestBox(){
+import vam from "../imag/vam.svg"
+export default function Requestbox(){
     return(
         <>
          <div className="w-[417px] h-[350px] p-[24px] text-right rounded-md shadow-lg ">

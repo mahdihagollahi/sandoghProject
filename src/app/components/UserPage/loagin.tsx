@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import greenBackground from "@/src/app/imag/Image.png";
+import greenBackground from "../imag/Image.png";
 
 export default function loagin() {
   return (

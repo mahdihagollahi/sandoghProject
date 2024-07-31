@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import icon from "@/src/app/assent/imag/Iconly (1).svg";
-import dragcard from "@/src/app/assent/imag/drapcart.svg"
+import icon from "../assent/imag/Iconly (1).svg";
+import dragcard from "../assent/imag/drapcart.svg"
 
 export default function dragcart() {
   return (

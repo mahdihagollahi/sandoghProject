@@ -54,7 +54,7 @@ const options = {
   },
 };
 
-const ChartPament = () => {
+const App = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-[617px] h-[250px] bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md  ">
@@ -68,4 +68,4 @@ const ChartPament = () => {
   );
 };
 
-export default ChartPament;
+export default App;

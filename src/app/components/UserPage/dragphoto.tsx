@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import man from "@/src/app/imag/man.svg";
-import icon from "@/src/app/imag/Iconly (1).svg";
+import man from "../imag/man.svg";
+import icon from "../imag/Iconly (1).svg";
 
 export default function dragphoto() {
   return (
