@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
+<<<<<<< HEAD
 import greenBackground from "../imag/Image.png";
+=======
+import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
+>>>>>>> 300e17b12a1b69154e25cc4c2d1a82a533b28c05
 
-export default function loagin() {
+export default function Loagin() {
   return (
     <div className="relative h-[500px]">
       <div>

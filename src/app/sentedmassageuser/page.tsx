@@ -1,11 +1,10 @@
-"use client"
 import React from 'react'
-import DetailUserPage from '../Screen/DetailUserPage'
+import SentedMassegeUserPage from '@/src/app/Screen/SentedMassgeUser'
 
 function page() {
   return (
     <div>
-        <DetailUserPage/>
+        <SentedMassegeUserPage/>
     </div>
   )
 }

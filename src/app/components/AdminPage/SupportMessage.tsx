@@ -5,6 +5,7 @@ import Image2 from '@/src/app/assent/Img/adminPanel/Avatar-2.svg';
 import Image3 from '@/src/app/assent/Img/adminPanel/avatar online copy.svg';
 import Image4 from '@/src/app/assent/Img/adminPanel/avatar online.svg';
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
+import Link from 'next/link';
 
 const message = [
     {id:1 ,src:Image1, name:'امیر قنبری' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
@@ -49,7 +50,7 @@ function SupportMessage() {
                 </p>
             </div>
             <div className='bg-white w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
-
+                <Link href='/supportchat'>
                 {message.map((user,index )=>(
                   <div key={index} className={`flex w-[100%] mt-10 py-4 gap-4  items-start rounded-md ${
                     index %2 === 0 ? 'bg-[#4FD1C50D] border-r-4 border-[#00A991]'  : 'bg-[#2D37480D] border-r-4 border-[#2D3748]'
@@ -65,12 +66,13 @@ function SupportMessage() {
                         {user.message}
                        </p>
                      </div>
+                     
                   </div>
                  
 
 
                 ))}
-
+               </Link>
             </div>
         </div>
     </div>

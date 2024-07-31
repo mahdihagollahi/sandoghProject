@@ -1,30 +1,32 @@
 import React from 'react';
-import UserTableNotDespositors from '@/src/app/components/AdminPage/UserTableNotDespositors';
+import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import RoutTableFiancial from './RoutTableFinancial';
+import Link from 'next/link';
 
 interface User {
   id: number;
   name: string;
   joinDate: string;
   loans: string;
+  depositAmount:string
 }
 
 const users: User[] = [
-  { id: 1 , name: 'امیر قنبری', joinDate: '1404/01/16', loans: '1 وام' },
-  { id: 2,  name: 'مینا قنبری', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 3,  name: 'فاطمه طالبیان', joinDate: '1404/01/16', loans: '2 وام' },
-  { id: 4,  name: 'نگین سعیدی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 5,  name: 'کنی سپهری', joinDate: '1404/01/16', loans: '2 وام' },
-  { id: 6,  name: 'نگین سعیدی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 8,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 9,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 10,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 12,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 13,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 14,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 15,  name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
+  { id: 1 , name: 'امیر قنبری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '1 وام' },
+  { id: 2,  name: 'مینا قنبری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 3,  name: 'فاطمه طالبیان', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '2 وام' },
+  { id: 4,  name: 'نگین سعیدی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 5,  name: 'کنی سپهری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '2 وام' },
+  { id: 6,  name: 'نگین سعیدی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 8,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 9,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 10,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 12,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 13,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 14,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
+  { id: 15,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
 ];
 
 const DepositorsUserFinancial: React.FC = () => {
@@ -40,7 +42,9 @@ const DepositorsUserFinancial: React.FC = () => {
 
 
             <div className='flex justify-end mr-2  '>
-              <a href="" className='flex items-center'>
+              <Link href="/showuserdetail">
+             
+              <div  className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -49,14 +53,14 @@ const DepositorsUserFinancial: React.FC = () => {
                 alt='arrow'
 
                 />
-              </a>
-              
+              </div>
+              </Link>
             </div>
         </div>
       <div>
         <RoutTableFiancial/>
       </div>
-      <UserTableNotDespositors users={users} />
+      <UserTableDespositors users={users} />
     </div>
    
   );

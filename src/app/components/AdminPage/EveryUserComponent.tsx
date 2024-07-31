@@ -37,10 +37,10 @@ const users: User[] = [
 const EveryUser: React.FC = () => {
   return (
     <div >
-         <div className='flex gap-32  items-center mb-2 mt-5 mr-3  '>
+         <div className='flex gap-24  items-center mb-2 mt-5 mr-3  '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
-                مدیریت مالی                
+                مشاهده کاربران                
                 </p>
             </div>
             <div className='flex items-center gap-2 '>

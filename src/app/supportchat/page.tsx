@@ -1,11 +1,11 @@
 "use client"
 import React from 'react'
-import DetailUserPage from '../Screen/DetailUserPage'
+import SupportChatPage from '../Screen/SupportChatPage'
 
 function page() {
   return (
     <div>
-        <DetailUserPage/>
+        <SupportChatPage/>
     </div>
   )
 }

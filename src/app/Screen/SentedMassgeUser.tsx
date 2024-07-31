@@ -1,12 +1,12 @@
+"use client"
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import NotDepositorsUserFinancial from '@/src/app/components/AdminPage/NotDepositorsUserFinancial'
+import SentedMassege from '../components/UserPage/sendmassege'
+import UserPageNavbar from '../components/UserPage/UserPageNavbar'
 
-function ThoseWhoHaveNotDeposited() {
+function ManagementAccount() {
   return (
     <div>
-      
         <div className='flex '> 
             <div>
                
@@ -15,17 +15,17 @@ function ThoseWhoHaveNotDeposited() {
             <AdminNavbarHeader />
           </div>
           <div>
-            <AdminPageNavbar />
+            <UserPageNavbar />
           </div>
         </div>
             </div>
-            <div className='w-full '>
-               <NotDepositorsUserFinancial/>
+            <div>
+              <SentedMassege/>
             </div>
         </div>
     </div>
   )
 }
 
-export default ThoseWhoHaveNotDeposited
+export default ManagementAccount
 

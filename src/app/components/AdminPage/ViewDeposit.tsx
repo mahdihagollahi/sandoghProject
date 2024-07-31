@@ -5,7 +5,7 @@ import Link from 'next/link';
 function ViewDeposit() {
   return (
     <div>
-       <div className="flex items-center justify-center min-h-screen ">
+       <div className="flex items-center justify-center ">
         <div className='w-[442px] h-[402px] bg-white shadow-md rounded-md p-6 relative'>
            <div>
             <p className='font-medium text-base text-[#394860] mb-6 items-start'>
@@ -24,7 +24,7 @@ function ViewDeposit() {
                 </p>
             </div>
             <div>
-               <Link href='/detailuser' passHref>
+               <Link href='/deposited' passHref>
                <button className='bg-[#4FD1C5] rounded-md py-2 px-4 text-white'>
                 مشاهده
                </button>

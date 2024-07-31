@@ -34,8 +34,8 @@ function DetailUser() {
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
-              <a href="">
-                
+              <a href="/everyuser" className='flex items-center'>
+                بازگشت
               <Image
                 src={arrowImage}
                 width={38}
@@ -47,6 +47,8 @@ function DetailUser() {
               
             </div>
         </div>
+
+<div className='bg-white  shadow-lg mt-5 px-28 py-20  cursor-pointer rounded-sm'>
 
 
       <div  className='flex justify-center'>
@@ -89,13 +91,14 @@ function DetailUser() {
 
      
       <div className='flex'>
-        <div className='relative w-full md:w-auto'>
+        <div className='relative '>
           <label className='absolute -top-2 z-10 left-[83%] px-3 bg-white py-2 dark:bg-black'>
             نام
           </label>
           <input
             type='text'
-            className='border w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3'
+           
+            className='border w-[100%] md:w-96 h-14 text-black px-40 border-[#CACACA] rounded-md relative m-3'
           />
         </div>
         <div className='relative w-full md:w-auto'>
@@ -173,7 +176,11 @@ function DetailUser() {
       </div>
 
     </div>
+    </div>
   );
 }
 
 export default DetailUser;
+
+
+

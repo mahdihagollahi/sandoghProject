@@ -1,11 +1,13 @@
+"use client"
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
 import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import DetailUser from '@/src/app/components/AdminPage/DetailUserComponnent'
+import SentedMassege from '../components/UserPage/sendmassege'
 
-function DetailUserPage() {
+function ManagementAccount() {
   return (
-    <div className='flex '> 
+    <div>
+        <div className='flex '> 
             <div>
                
             <div >
@@ -17,14 +19,13 @@ function DetailUserPage() {
           </div>
         </div>
             </div>
-            <div className='flex justify-center'>
-            <DetailUser/>
-                        </div>
-                        </div>
-       
-     
-    
+            <div>
+              <SentedMassege/>
+            </div>
+        </div>
+    </div>
   )
 }
 
-export default DetailUserPage
+export default ManagementAccount
+
