@@ -8,24 +8,25 @@ import CardImage from '@/src/app/assent/Img/adminPanel/Credit Card.png'
 function CardUser() {
   return (
     <div className='flex flex-col items-center'>
-      <div className='w-full mt-2'>
-        <div className='bg-white rounded-md p-2 shadow-lg md:items-center xl:w-96 mx-auto'>
-          <div className='flex justify-center'>
+      <div className='w-full '>
+        <div className='bg-white rounded-md py-20 shadow-md md:items-center xl:w-96 '>
+          <div className='flex justify-center '>
             <Image
-              className='mr-10'
+              className=''
               src={CardImage}
               width={300}
               height={70}
               alt='Card'
             />
           </div>
-        </div>
-
-        <div className='mt-8 mx-auto pb-3 pt-2 px-3 w-full md:w-80 h-10 border border-[#394860] cursor-pointer'>
-          <button className='flex justify-between items-center  bg-[#394860] w-full '>
+          <div className='mt-8 mx-auto pb-3 pt-2  w-full md:w-80 rounded-md h-10 border border-opacity-50 border-[#394860] cursor-pointer'>
+          <button className='flex justify-between items-center pr-20 text-[#394860] w-full '>
           شماره کارت را کپی کنید
           </button>
         </div>
+        </div>
+
+        
       </div>
     </div>
   )

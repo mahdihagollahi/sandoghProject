@@ -1,32 +1,35 @@
 
 import React from "react";
-import AdminHeader from "../components/AdminPage/AdminHeader";
-import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
-import UserPageNavbar from "../components/UserPage/UserPageNavbar"; 
-import CardUser from "../components/UserPage/CardUser";
-import ChartPament from "../components/UserPage/ChartPament";
-import RequestBox from "../components/UserPage/RequestBox";
-import Supportbox from "../components/UserPage/Supportbox";
+import UserHeader from "@/src/app/components/UserPage/UserHeader";
+import UserNavbarHeader from "@/src/app/components/UserPage/UserNavbarHeader";
+import UserPageNavbar from "@/src/app/components/UserPage/UserPageNavbar"; 
+import CardUser from "@/src/app/components/UserPage/CardUser";
+import ChartPament from "@/src/app/components/UserPage/ChartPayment";
+import RequestBox from "@/src/app/components/UserPage/RequestBox";
+import Supportbox from "@/src/app/components/UserPage/Supportbox";
 
 function UserFirstPage() {
   return (
-    <div className="">
+    <div className="bg-[#F8F9FA]">
       <div className="w-full flex flex-col ">
         <div>
           <div>
-            <AdminNavbarHeader />
+            <UserNavbarHeader/>
           </div>
           <div>
             <UserPageNavbar />
           </div>
         </div>
 
-        <div className="block xl:-mt-[61%]  md:-mt-[46%]">
+        <div className="block xl:-mt-[68%]  md:-mt-[46%]">
           <div className="flex  w-full   ">
-            <AdminHeader />
+            <UserHeader />
           </div>
 
-          <div className="flex flex-col mr-[30rem] mt-4 xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
+          <div
+           className="flex flex-row  mt-8   gap-9  mr-[27%]"
+         
+           >
             <div>
               <ChartPament />
             </div>
@@ -36,15 +39,14 @@ function UserFirstPage() {
           </div>
         </div>
 
-        <div className="flex justify-end gap-5">
-          <div>
-            <RequestBox />
-          </div>
-
-          <div>
-            <Supportbox />
-          </div>
-        </div>
+        <div className="flex flex-row justify-end ml-4 gap-10 mt-10">
+      <div className="">
+        <RequestBox />
+      </div>
+      
+        <Supportbox />
+    
+    </div>
       </div>
     </div>
   );
