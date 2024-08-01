@@ -70,7 +70,7 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
   };
 
   return (
-    <div>
+    <div className="bg-[#F8F9FA]">
       {isMobile ? (
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
           <span>Admin Panel</span>
