@@ -6,7 +6,7 @@ import MoneyImage from '@/src/app/assent/Img/adminPanel/3D money card.svg'
 function NewDepositSlip() {
   return (
     <div>
-        <div className='mr-96 -mt-20'>
+        <div className='mr-96 ml-8 -mt-[12%]'>
         <div className='flex justify-between gap-12 shadow-lg w-[59%] h-[20%]  rounded-md p-6 bg-[#ffff]'>
 
         <div className='flex flex-col gap-9'>

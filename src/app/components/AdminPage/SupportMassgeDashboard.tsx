@@ -15,7 +15,7 @@ const User =[
 ];
 function SupportMassgeDashboard() {
   return (
-    <div className='flex justify-center mt-2 items-center mr-6  md:justify-center  xl:justify-end xl:ml-6 xl:mt-2'>
+    <div className='flex justify-center mt-4 items-center   md:justify-center  xl:justify-end xl:ml-10 xl:mt-6'>
         <div className='w-96 max-w-md bg-white shadow-xl rounded-lg px-4 '>
             <div className='py-4 '>
              
