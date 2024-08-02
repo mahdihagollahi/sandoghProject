@@ -9,11 +9,11 @@ import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
 import CardAdmin from "../components/AdminPage/CardAdmin";
 import NewDepositSlip from "../components/AdminPage/NewDepositSlip";
 import SupportMassgeDashboard from "../components/AdminPage/SupportMassgeDashboard";
-import CharAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
+import ChartAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
 function AdminFirstPage() {
   return (
-    <div className="overflow-y-hidden ">
+    <div className="overflow-y-hidden bg-[#F8F9FA] ">
       <div className=" flex flex-col ">
         <div >
           <div>
@@ -29,7 +29,7 @@ function AdminFirstPage() {
             <AdminHeader />
           </div>
 
-          <div className="flex flex-col mr-[30rem] mt-4 xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
+          <div className="flex flex-col mr-[30rem]  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
             <div>
             <NumberOfMebers />
 
@@ -54,7 +54,7 @@ function AdminFirstPage() {
        </div>
 
        <div>
-        <CharAdminDashboard/>
+        <ChartAdminDashboard/>
        </div>
       </div>
     </div>

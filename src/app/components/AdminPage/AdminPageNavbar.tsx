@@ -31,6 +31,7 @@ const Navbar = [
   { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
   { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
   { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+ 
 ];
 
 function AdminPageNavbar() {
@@ -98,7 +99,7 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
             </div>
           </Link>
         ))}
-        <div className='mr-[1%] mt-[10%]'>
+        <div className='mr-[1%] mt-[7%]'>
           <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
         </div>
       </div>
