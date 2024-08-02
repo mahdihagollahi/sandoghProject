@@ -88,10 +88,10 @@ function SentedMassege() {
   ]
   return (
     <div>
-        <div className='flex  justify-between items-center mb-2 mt-5  '>
-            <div className='mr-2 '>
+        <div className='flex  justify-between items-center mb-2 mt-10  '>
+            <div className='mr-2  '>
                 <p className='font-bold text-lg'>
-                حساب مدیریت
+                پیام ها                
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
@@ -108,7 +108,7 @@ function SentedMassege() {
               
             </div>
         </div>
-      <div className="flex flex-col gap-[5px]">
+      <div className="flex flex-col gap-[5px] mt-10">
         {massege.map((user , index)=>(
 
         <div key={index} className={`p-[10px] w-[1025px] h-[100px] ${
