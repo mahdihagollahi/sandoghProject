@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import greenBackground from "@/src/app/imag/Image.png";
+import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 
-export default function loagin() {
+
+export default function Loagin() {
   return (
     <div className="relative h-[500px]">
       <div>

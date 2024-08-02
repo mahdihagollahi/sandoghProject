@@ -64,8 +64,8 @@ function ChartAdminDashboard() {
         }
       };
   return (
-    <div className='flex justify-center mt-2 items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
-    <div className=' w-[630px] h-[440px] bg-white -mt-[460px]   shadow-xl rounded-lg px-4 '>
+    <div className='flex justify-center  items-center  md:justify-center  xl:justify-center xl:ml-14  '>
+    <div className=' w-[609px] h-[456px] bg-white -mt-[460px] py-10 ml-6 shadow-xl rounded-lg px-6 '>
         <div className='py-4 '>
           <p className='font-medium text-sm text-[#000000]'>
           نمودار موجودی 6ماه اول صندوق

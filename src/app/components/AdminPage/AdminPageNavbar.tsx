@@ -18,16 +18,20 @@ import ImageEconomi from '@/src/app/assent/Img/adminPanel/Economi.svg';
 import ImageEconomiHover from '@/src/app/assent/Img/adminPanel/EconomiHover.svg';
 import ImagePoshtibani from '@/src/app/assent/Img/adminPanel/Poshtibani.svg';
 import ImagePoshtibaniHover from '@/src/app/assent/Img/adminPanel/PoshtibaniHover.svg';
+import ImageMassege from '@/src/app/assent/Img/adminPanel/massege.svg'
+import ImageMassegeHover from '@/src/app/assent/Img/adminPanel/massegeHover.svg'
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 
 const Navbar = [
   { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/dashboard' },
-  { id: 2, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
   { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
   { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
   { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
   { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
   { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
+  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
+  { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+ 
 ];
 
 function AdminPageNavbar() {
@@ -67,7 +71,7 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
   };
 
   return (
-    <div>
+    <div className="bg-[#F8F9FA]">
       {isMobile ? (
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
           <span>Admin Panel</span>
@@ -95,7 +99,7 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
             </div>
           </Link>
         ))}
-        <div className='mr-[1%] mt-[10%]'>
+        <div className='mr-[1%] mt-[7%]'>
           <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
         </div>
       </div>

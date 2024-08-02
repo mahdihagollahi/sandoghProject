@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import eshterak from "@/src/app/assent/imag/Wallet.svg";
-import vamghest from "@/src/app/assent/imag/vamghest.svg";
+import eshterak from "@/src/app/assent/Img/userPanel/Wallet.svg";
+import vamghest from "@/src/app/assent/Img/userPanel/vamghest.svg";
 
 export default function buttompament() {
   return (

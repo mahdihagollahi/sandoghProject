@@ -22,6 +22,13 @@ const [newMessage, setNewMessage]=useState('')
     setNewMessage('');
   }
  }
+
+ const handelKeyDown = (e) =>{
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    handelSend()
+  }
+ }
   return (
     <div>
         
@@ -91,6 +98,8 @@ const [newMessage, setNewMessage]=useState('')
                      className='flex-grow border-none outline-none p-2 px-6 text-right'
                      value={newMessage}
                      onChange={(e) => setNewMessage(e.target.value)}
+                     onKeyDown={handelKeyDown}
+                    
                      />
 
                      <button className='bg-[#4FD1C5] rounded-md text-white px-4 py-2 ml-4'
@@ -110,3 +119,4 @@ const [newMessage, setNewMessage]=useState('')
 }
 
 export default SupportChatComponent
+

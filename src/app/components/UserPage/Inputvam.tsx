@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import search from "../assent/imag/Search.png";
-import Exclamation from "../assent/imag/Exclamation.svg";
+import search from "@/src/app/assent/Img/userPanel/Search.png";
+import Exclamation from "@/src/app/assent/Img/userPanel/Exclamation.svg";
 
 const user = [
   { id: 1, name: "حامد رحمانی" },
@@ -12,7 +12,7 @@ function Inputvam() {
   return (
     <>
       <div className="w-[950px] shadow-md rounded-md pb-10 pt-10">
-        <div className="flex flex-grow justify-around p-[40px] w-[900px] opacity-[70%] border-b-2 ">
+        <div className="flex flex-grow justify-around p-[40px] w-[900px]  border-b-2 ">
           <span>شماره درخواست</span>
           <span>مبلغ وام</span>
           <span>تاریخ درخواست</span>

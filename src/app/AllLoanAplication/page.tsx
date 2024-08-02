@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import LoanApplicationPage from '../Screen/LoanApplicationPage'
+import LoanApplicationPage from '../Screen/EveryLoanApplicationPage'
 
 function page() {
   return (

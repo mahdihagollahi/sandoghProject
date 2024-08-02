@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import user from "@/src/app/assent/imag/user.svg";
+import user from "@/src/app/assent/Img/userPanel/user.svg";
 
 export default function Inactiv() {
   return (

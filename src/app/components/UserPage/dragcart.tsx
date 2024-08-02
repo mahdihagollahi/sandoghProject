@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Image from "next/image";
-import icon from "@/src/app/assent/imag/Iconly (1).svg";
-import dragcard from "@/src/app/assent/imag/drapcart.svg"
+import icon from "@/src/app/assent/Img/userPanel/Iconly (1).svg";
+import dragcard from "@/src/app/assent/Img/userPanel/drapcart.svg"
 
 export default function DragCart() {
   const [uploadedImage , setUplodedImage]=useState(null)
