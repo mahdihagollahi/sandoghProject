@@ -13,7 +13,7 @@ import CharAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
 function AdminFirstPage() {
   return (
-    <div className="overflow-y-hidden">
+    <div className="overflow-y-hidden ">
       <div className=" flex flex-col ">
         <div >
           <div>

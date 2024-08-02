@@ -1,11 +1,11 @@
 "use client"
 import React from 'react'
-import LoanApplicationPage from '../Screen/EveryLoanApplicationPage'
+import CheckedLoanApplicationPage from '../Screen/CheckedLoanApplicationPage'
 
 function page() {
   return (
     <div>
-        <LoanApplicationPage/>
+        <CheckedLoanApplicationPage/>
     </div>
   )
 }
