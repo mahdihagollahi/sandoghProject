@@ -4,7 +4,7 @@ import EyeIconImage from '@/src/app/assent/Img/adminPanel/eye.svg';
 import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
 import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
 import Modal from './Modal';
-import TextAreaComponent from '@/src/app/components/AdminPage/TextAreaComponent'
+import DepositSlip from '@/src/app/components/AdminPage/DepositSlip'
 import Paginate from './Paginate';
 
 const UserTable = ({ users }) => {
@@ -114,7 +114,7 @@ const UserTable = ({ users }) => {
           pageClick={pageClick}
         />
          <Modal isVisible={isModalVisible} >
-        <TextAreaComponent onClose={handleCloseModal} /> 
+        <DepositSlip onClose={handleCloseModal} users={users}/> 
       </Modal>
     </div>
   );

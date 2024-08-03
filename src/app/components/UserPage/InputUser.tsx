@@ -1,15 +1,13 @@
-<<<<<<< HEAD
-import React from "react";
-export default function inputuser() {
-=======
+
 import React from 'react'
 import Image from 'next/image';
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import DragPhoto from './DragPhoto';
-import DragCart from './DragCart';
+import DragPhoto from '@/src/app/components/UserPage/dragphoto';
+import DragCart from '@/src/app/components/UserPage/dragcart';
+export default function inputuser() {
 
-function InptUser() {
->>>>>>> 300e17b12a1b69154e25cc4c2d1a82a533b28c05
+
+
   return (
     <div className='p-4  '>
         <div className='flex  justify-between items-center mb-2 mt-5  '>
@@ -199,15 +197,3 @@ function InptUser() {
    
   )
 }
-
-export default InptUser
-
-
-
-
-
-
-
-
-
-

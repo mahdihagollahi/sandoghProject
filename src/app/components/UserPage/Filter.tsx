@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import filter from "../assent/imag/filter.svg";
-import flash from "../assent/imag/flash.svg";
+import filter from "@/src/app/assent/Img/userPanel/filter.svg";
+import flash from "@/src/app/assent/Img/userPanel/flash.svg";
 
 export default function Filter() {
   return (

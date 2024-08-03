@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import useImage from '@/src/app/assent/Img/adminPanel/40px.png'
-function AdminHeader() {
+function UserHeader() {
   const User =[
     {id:1 , name:'امیر محمد قنبری' , image:useImage}
   ]
@@ -32,4 +32,4 @@ function AdminHeader() {
   )
 }
 
-export default AdminHeader
+export default UserHeader

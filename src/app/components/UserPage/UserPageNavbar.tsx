@@ -25,11 +25,11 @@ import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 const Navbar = [
   { id: 1, src: dashboardUser, hoverSrc: ImageDashboardHover, link: '/dashboarduser' },
   { id: 2, src: mangmentUser, hoverSrc: mangmentUserHover, link: '/useraccount' },
-  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: '/everyuser' },
-  { id: 4, src: payInstallments, hoverSrc: payInstallmentsHover, link: '/allloanaplication' },
-  { id: 5, src: RequestInstallments, hoverSrc: RequestnstallmentsHover, link: '/userpass' },
+  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: '' },
+  { id: 4, src: payInstallments, hoverSrc: payInstallmentsHover, link: '' },
+  { id: 5, src: RequestInstallments, hoverSrc: RequestnstallmentsHover, link: '' },
   { id: 6, src: ImageMessage, hoverSrc: ImageMessageHover, link: '/sentedmassageuser' },
-  { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '/showuserdetail' },
+  { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '' },
   
   { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: '/support' },
  
@@ -73,7 +73,7 @@ function UserPageNavbar() {
 
 
   return (
-    <div>
+    <div className="bg-[#F8F9FA]">
       {isMobile ? (
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
           <span>Admin Panel</span>

@@ -50,8 +50,8 @@ import EditIcon from '@/src/app/assent/Img/adminPanel/Edit.svg'
 function CardAdmin() {
   return (
     <div className='flex flex-col items-center'>
-      <div className='w-full mt-2'>
-        <div className='bg-white rounded-md p-2 shadow-lg md:items-center xl:w-96 mx-auto'>
+      <div className='w-full mt-6'>
+        <div className='bg-white rounded-md py-12 shadow-lg md:items-center xl:w-96 mx-auto'>
           <div className='flex justify-center'>
             <Image
               className=' flex justify-center'

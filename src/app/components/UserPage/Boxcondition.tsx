@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import jaryan from "../assent/imag/jaryan.svg";
-import radshodeh from "../assent/imag/radshode.svg";
-import taied from "../assent/imag/taied.svg";
+import jaryan from "@/src/app/assent/Img/userPanel/jaryan.svg";
+import radshodeh from "@/src/app/assent/Img/userPanel/radshode.svg";
+import taied from "@/src/app/assent/Img/userPanel/taied.svg";
 
 function Boxcondition() {
   return (
