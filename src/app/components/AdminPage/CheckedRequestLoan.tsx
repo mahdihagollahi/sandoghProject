@@ -50,17 +50,18 @@ const users: User[] = [
 const RequestLoan: React.FC = () => {
   return (
     <div >
-         <div className='flex justify-between  items-center mb-2 mt-5 mr-3  '>
+         <div className='flex justify-between  items-center mb-2 mt-10 mr-3  '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
-                مشاهده کاربران           
+                درخواست وام                
                 </p>
             </div>
            
 
 
-            <div className='flex justify-end mr-2  '>
-              <a href="">
+            <div  >
+              <a href="" className='flex items-center ml-7' >
+                بازگشت
               <Image
                 src={backImage}
                 width={38}
