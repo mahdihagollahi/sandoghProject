@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+/* @layer base{
   @font-face{
     font-family: 'IRANSans';
     font-style: light;
     font-weight: 300;
-    src: url(/src/app/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Light.woff)format('woff');
+    src: url(/src/app/assent//IranSansX/IranSansX/Variable/webfont/staticfonts/IRANSansX-Regular.woff)format('woff');
   } 
 
   @font-face{
     font-family: 'IRANSans';
     font-style: normal;
     font-weight: 400;
-    src: url(/src/app/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Black.woff)format('woff');
+    src: url(/src/app/assent/IranSansX/IranSansX/Farsinumerals/Webfonts/Woff/IRANSansXFaNum-Regular.woff)format('woff');
   } 
 
   @font-face{
     font-family: 'IRANSans';
     font-style: medium;
     font-weight:500;
-    src: url(/src/app/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Medium.woff)format('woff');
+    src: url(/src/app/assent/IranSansX/IranSansX/Farsinumerals/Webfonts/Woff/IRANSansXFaNum-Medium.woff)format('woff');
   } 
 
   @font-face{
     font-family: 'IRANSans';
     font-style: bold;
     font-weight: 700;
-    src: url(/src/app/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Bold.woff)format('woff');
+    src: url(/src/app/assent/IranSansX/IranSansX/Farsinumerals/Webfonts/Woff/IRANSansXFaNum-Bold.woff)format('woff');
   } 
  
-}
+} */
 html, body {
   background-color: #F8F9FA;
  
   
 }
   
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Bold.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Bold.ttf') format('ttf');
+  font-weight: Bold;
+  font-style: Bold;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Medium.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Medium.ttf') format('ttf');
+  font-weight: Medium;
+  font-style: Medium;
+}
