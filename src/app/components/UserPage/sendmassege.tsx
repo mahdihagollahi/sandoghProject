@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from "next/image";
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
+import BankGuarantor from './BankGuarantor';
 
 
 function SentedMassege() {
@@ -18,7 +19,7 @@ function SentedMassege() {
                 پیام ها                
                 </p>
             </div>
-            <div className='flex justify-end mr-2  '>
+            <div className='flex justify-end ml-10  '>
               <a href="" className='flex items-center'>
               بازگشت
               <Image
@@ -32,7 +33,8 @@ function SentedMassege() {
               
             </div>
         </div>
-      <div className="flex flex-col gap-[5px] mt-10">
+        <BankGuarantor/>
+      <div className="flex flex-col gap-[5px] mt-1">
         {massege.map((user , index)=>(
 
         <div key={index} className={`p-[10px] w-[1025px] h-[100px] ${
