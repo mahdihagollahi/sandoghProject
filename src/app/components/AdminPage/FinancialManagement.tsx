@@ -82,7 +82,7 @@ export default function FinancialManagement() {
 <div className='flex mt-8  justify-between items-center mb-2   '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
-                مدیریت مالی                
+                حساب مدیریت
                 </p>
             </div>
             <div className='ml-10   '>
