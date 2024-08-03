@@ -26,7 +26,7 @@ function RoutRequestLoan() {
   return (
     <div>
         <div>
-            <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 bg-white h-16 rounded-md '>
+            <div className='flex w-[400px] shadow-md justify-between px-10 mt-8  bg-white h-16 rounded-md '>
             <div className={`flex items-center gap-2 ${selectedTab === 'allloanaplication' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
             <Link href='/allloanaplication' className='flex items-center gap-2' onClick={() => handleTabClick('allloanaplication')}>
                  <Image

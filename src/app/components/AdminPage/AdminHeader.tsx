@@ -6,8 +6,8 @@ function AdminHeader() {
     {id:1 , name:'امیر محمد قنبری' , image:useImage}
   ]
   return (
-    <div  className='w-full    '>
-        <div className=' flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4  ml-3 md:mr-20 md:ml-3   lg:mr-20 lg:ml-3  xl:mr-96  rounded-md shadow-lg  py-3 px-6 h-auto md:h-16 '>
+    <div  className='w-[97%]    '>
+        <div className=' flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4  ml-3 md:mr-20 md:ml-3   lg:mr-20 lg:ml-3  xl:mr-[28%]  rounded-md shadow-lg  py-3 px-3 h-auto md:h-16 '>
         <div className='flex items-center mb-4 md:mb-0 '>
             <p className='mt-1 text-[#2D3748] font-light text-lg  '>
                 سلام ،  وقت شما بخیر  به بخش داشبورد خوش آمدید ، گزارشات مورد نیاز شما در اختیار شماست !
