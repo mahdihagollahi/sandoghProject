@@ -1,8 +1,8 @@
 "use client";
 import React, { useCallback, useState } from "react";
 import Image from "next/image";
-import cardfish from "../assent/imag/Fill 425.svg";
-import trash from "../assent/imag/trash.svg";
+import cardfish from "@/src/app/assent/Img/userPanel/Fill 425.svg";
+import trash from "@/src/app/assent/Img/userPanel/trash.svg";
 import { useDropzone } from "react-dropzone";
 
 const Dragfish: React.FC = () => {
@@ -23,8 +23,8 @@ const Dragfish: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="border-dashed w-[400px] p-[10px] h-[250px] rounded-md border-2 flex flex-col items-center justify-center border-[#4FD1C5]">
+      <div className="flex flex-col bg-white p-10">
+        <div className="border-dashed w-[400px] p-[10px] h-[250px]  rounded-md border-2 flex flex-col items-center justify-center border-[#4FD1C5]">
           <div
             {...getRootProps()}
             className="flex flex-col gap-[20px] justify-center items-center"
@@ -73,8 +73,18 @@ const Dragfish: React.FC = () => {
             توضیحات
           </span>
         </div>
-        <ul className="text-[#2D3748] opacity-[80%] list-disc list-inside text-sm mt-5">
+        <ul className="text-[#2D374880] opacity-[80%] list-disc list-inside text-sm mt-5">
           <li>لطفا بیش از 100 کاراکتر توضیحات ننویسید !</li>
+          <li>
+       
+حجم عکس ها بیشتر از 2 مگابایت نباشن
+          </li>
+          <li>
+عکس کاملا واضح و  باشد و مبلغ قابل خواندن باشد
+          </li>
+          <li>
+بعد از بارگذاری ، فیش توسط مدیر تایید یا رد میشود و در بخش نمایش اقساط شما نشان داده میشود
+          </li>
         </ul>
       </div>
     </>

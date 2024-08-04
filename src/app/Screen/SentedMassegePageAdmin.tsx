@@ -2,7 +2,7 @@
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
 import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import SentedMassege from '../components/UserPage/sendmassege'
+import SentedMassege from '../components/UserPage/SendMassege'
 
 function ManagementAccount() {
   return (

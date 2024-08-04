@@ -14,7 +14,7 @@ function Tablesum() {
 
   return (
     <>
-      <div className="w-[38%] p-6 shadow-md rounded-md">
+      <div className="w-[100%] p-6 shadow-md rounded-md">
         <div>
           <span className="font-bold">صورت حساب پرداخت شما</span>
         </div>
@@ -22,7 +22,7 @@ function Tablesum() {
           <div>
             <span className="font-bold">شماره</span>
             {list.map((item, index) => (
-              <div>
+              <div key={index}>
                 <div className="mt-3">
                   <span>{item.name}</span>
                 </div>
@@ -32,7 +32,7 @@ function Tablesum() {
           <div>
             <span className="font-bold mr-2">مبلغ</span>
             {list.map((item, index) => (
-              <div>
+              <div key={index}>
                 <div className="mt-3">
                   <span>{item.payment}</span>
                 </div>
@@ -42,7 +42,7 @@ function Tablesum() {
           <div>
             <span className="font-bold mr-5">تاریخ</span>
             {list.map((item, index) => (
-              <div>
+              <div key={index}>
                 <div className="mt-3">
                   <span>{item.date}</span>
                 </div>
@@ -53,7 +53,7 @@ function Tablesum() {
         <div className="flex flex-row justify-between mt-5">
           <span className="font-bold">مجموع مبلغ واریزی : </span>
           {sum.map((task) => (
-            <div>{task.sum}میلیون تومان</div>
+            <div key={task}>{task.sum}میلیون تومان</div>
           ))}
         </div>
       </div>

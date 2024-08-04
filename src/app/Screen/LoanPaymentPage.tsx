@@ -1,12 +1,13 @@
-"use client"
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
-import SentedMassege from '../components/UserPage/SendMassege'
 import UserPageNavbar from '../components/UserPage/UserPageNavbar'
+import LoanPaymentComponent from '../components/UserPage/LoanPaymentComponent'
 
-function ManagementAccount() {
+
+function LoanPayment() {
   return (
     <div>
+      
         <div className='flex '> 
             <div>
                
@@ -19,13 +20,15 @@ function ManagementAccount() {
           </div>
         </div>
             </div>
-            <div>
-              <SentedMassege/>
-            </div>
+            <div className='w-full '>
+            <LoanPaymentComponent/>
         </div>
+        </div>
+       
+   
+
     </div>
   )
 }
 
-export default ManagementAccount
-
+export default LoanPayment

@@ -1,8 +1,8 @@
 
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
 import InptUser from '@/src/app/components/UserPage/InputUser'
+import UserPageNavbar from '../components/UserPage/UserPageNavbar'
 
 
 function UserAccount() {
@@ -16,7 +16,7 @@ function UserAccount() {
             <AdminNavbarHeader />
           </div>
           <div>
-            <AdminPageNavbar />
+            <UserPageNavbar />
           </div>
         </div>
             </div>
