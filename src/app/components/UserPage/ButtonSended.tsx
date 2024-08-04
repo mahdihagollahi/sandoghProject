@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import send from ".@/src/app/assent/Img/userPanel/send.svg"
+import send from "@/src/app/assent/Img/userPanel/send.svg"
 
 
 
-function buttomersal() {
+function ButtonSended() {
   return (
     <>
       <div>
@@ -17,4 +17,4 @@ function buttomersal() {
   );
 }
 
-export default buttomersal;
+export default ButtonSended;

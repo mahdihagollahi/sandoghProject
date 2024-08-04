@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import Dragfish from './dragfish';
-import Tablesum from './Tablesum';
-import CardUserLoan from './CardUserLoan';
+import BoxCondition from './BoxCondition';
+import InputVam from './InputVam';
 import ButtonSended from './ButtonSended';
-const LoanPaymentComponent: React.FC = () => {
+import Filter from './Filter';
+function RequestLoanAplicationComponent() {
   return (
-    <div >
-         <div className='flex gap-[79%] items-center mb-2 mt-10   '>
+    <div>
+ <div className='flex justify-between items-center mb-2 mt-12   '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
-                پرداخت قسط                
+                درخواست وام                
                 </p>
             </div>
           
@@ -31,35 +31,22 @@ const LoanPaymentComponent: React.FC = () => {
               
             </div>
         </div>
-      <div className='flex mt-10 gap-5'>
-       <div>
+       
         <div>
-        <Dragfish/>
-
+            <Filter/>
         </div>
-        <div>
 
+        <div className='mt-10'>
+            <BoxCondition/>
         </div>
-       </div>
-
-       <div  className='flex flex-col gap-5'>
-        <div className=''>
-        <CardUserLoan/>
-
+        <div className='mt-10'>
+            <InputVam/>
         </div>
-        <div>
-            <Tablesum/>
+        <div className='mt-10'>
+            <ButtonSended/>
         </div>
-       </div>
-      </div>
-      <div className='mt-10'>
-      <ButtonSended/>
-
-      </div>
     </div>
-   
-  );
-};
+  )
+}
 
-export default LoanPaymentComponent;
-
+export default RequestLoanAplicationComponent
