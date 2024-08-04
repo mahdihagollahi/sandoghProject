@@ -46,7 +46,7 @@ export default function inputuser() {
                    
             
         <div className="relative ">
-          <label className="absolute -top-2 z-10 left-[73%] px-3 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[73%] px-3 bg-white ">
             * نام
           </label>
           <input
@@ -56,17 +56,17 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[59%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[59%] px-1 bg-white ">
             * نام خانوادگی
           </label>
           <input
             type="text"
-            className="border w-72  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py- "
+            className="border w-72  h-[32px]  text-[#050505]	border-[#B0E4DD] rounded-md relative  m-3 py-5 "
           />
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[66%] px-3 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[66%] px-3 bg-white ">
             * کد ملی
           </label>
           <input
@@ -78,7 +78,7 @@ export default function inputuser() {
 
       <div className="flex flex-row gap-3 w-[60%]">
         <div className="relative ">
-          <label className="absolute -top-2 z-10 left-[54%] px-3 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[54%] px-3 bg-white ">
             *شماره موبایل
           </label>
           <input
@@ -98,7 +98,7 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[43%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[43%] px-1 bg-white ">
             * شماره تماس ضروری
           </label>
           <input
@@ -110,7 +110,7 @@ export default function inputuser() {
 
       <div className="flex flex-row gap-3 w-[60%] mt-10">
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[71%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[71%] px-1 bg-white ">
             * خیابان
           </label>
           <input
@@ -120,7 +120,7 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white ">
             * کوچه
           </label>
           <input
@@ -130,7 +130,7 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[77%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[77%] px-1 bg-white ">
             * شهر
           </label>
           <input
@@ -142,7 +142,7 @@ export default function inputuser() {
 
       <div className="flex flex-row gap-3 w-[60%]">
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[76%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[76%] px-1 bg-white ">
             * پلاک
           </label>
           <input
@@ -152,7 +152,7 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[78%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[78%] px-1 bg-white ">
             توضیحات بیشتر
           </label>
           <input
@@ -164,7 +164,7 @@ export default function inputuser() {
 
       <div className="flex flex-row gap-3 w-[60%] mt-10">
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[76%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[76%] px-1 bg-white ">
             * شماره شبا
           </label>
           <input
@@ -174,7 +174,7 @@ export default function inputuser() {
         </div>
 
         <div className="relative w-full md:w-auto ">
-          <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white py-2">
+          <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white ">
             * شماره کارت
           </label>
           <input

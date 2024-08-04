@@ -5,20 +5,20 @@ import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 
 export default function Loagin() {
   return (
-    <div className="relative h-[500px]">
+    <div className="relative h-[450px]">
       <div>
         <Image
           sizes="100vw"
           style={{
             width: "100%",
-            height: "260px",
+            height: "350px",
           }}
           src={greenBackground}
           alt=""
         />
       </div>
-      <div className="bg-white flex justify-center content-center  absolute top-[40px] left-[320px] rounded-[30px] shadow-md">
-        <div className="w-[626px] h-[488px] rounded-[30px] p-[40px] shadow-md">
+      <div  className="bg-white flex justify-center  absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
+        <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md">
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1 ">
               <div>
@@ -85,7 +85,7 @@ export default function Loagin() {
             </div>
           </div>
 
-          <button className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px] mr-[55px] mt-[65px]">
+          <button className="bg-[#4FD1C5] w-[420px] h-[56px]  text-white rounded-[5px] mr-[55px] mt-[65px]">
             ورود
           </button>
         </div>
