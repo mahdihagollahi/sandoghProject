@@ -1,19 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import CardUser from './CardUser';
 import Dragfish from './dragfish';
-import Tablesum from './Tablesum';
-
-
-
-
-
-
+import Tablesum from './TableSum';
+import CardUserLoan from './CardUserLoan';
 const LoanPaymentComponent: React.FC = () => {
   return (
     <div >
-         <div className='flex gap-24  items-center mb-2 mt-10 mr-3  '>
+         <div className='flex gap-[79%] items-center mb-2 mt-10   '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
                 پرداخت قسط                
@@ -22,7 +16,7 @@ const LoanPaymentComponent: React.FC = () => {
           
 
 
-            <div className='flex justify-end mr-2  '>
+            <div className='flex justify-end  '>
               <a href="" className='flex items-center'>
               بازگشت
               <Image
@@ -36,7 +30,7 @@ const LoanPaymentComponent: React.FC = () => {
               
             </div>
         </div>
-      <div className='flex '>
+      <div className='flex mt-10 gap-5'>
        <div>
         <div>
         <Dragfish/>
@@ -47,9 +41,9 @@ const LoanPaymentComponent: React.FC = () => {
         </div>
        </div>
 
-       <div  className='flex flex-col'>
-        <div className='p-8'>
-        <CardUser/>
+       <div  className='flex flex-col gap-5'>
+        <div className=''>
+        <CardUserLoan/>
 
         </div>
         <div>

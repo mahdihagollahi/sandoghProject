@@ -6,19 +6,19 @@ function Tablesum() {
     { id: 1, name: "قسط 1", payment: "500,000", date: "1402/11/12" },
     { id: 2, name: "قسط 2", payment: "500,000", date: "1402/01/22" },
     { id: 3, name: "قسط 3", payment: "500,000", date: "1402/07/23" },
-    { id: 4, name: "قسط 4", payment: "500,000", date: "1402/12/10" },
-    { id: 5, name: "قسط 5", payment: "500,000", date: "1402/02/12" },
-    { id: 6, name: "قسط 6", payment: "500,000", date: "1402/03/30" },
+    // { id: 4, name: "قسط 4", payment: "500,000", date: "1402/12/10" },
+    // { id: 5, name: "قسط 5", payment: "500,000", date: "1402/02/12" },
+    // { id: 6, name: "قسط 6", payment: "500,000", date: "1402/03/30" },
   ];
   const sum = [{ id: 1, sum: "3,000,000" }];
 
   return (
     <>
-      <div className="w-[100%] p-6 shadow-md rounded-md">
+      <div className="w-11/12 px-3 py-7 shadow-md rounded-md bg-white">
         <div>
-          <span className="font-bold">صورت حساب پرداخت شما</span>
+          <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
         </div>
-        <div className="flex flex-row justify-between w-[500px] mt-10 mr-3">
+        <div className="flex flex-row justify-around w-[500px] mt-10 ">
           <div>
             <span className="font-bold">شماره</span>
             {list.map((item, index) => (
@@ -30,9 +30,9 @@ function Tablesum() {
             ))}
           </div>
           <div>
-            <span className="font-bold mr-2">مبلغ</span>
+            <span className="font-bold mr-1">مبلغ</span>
             {list.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="bg-white">
                 <div className="mt-3">
                   <span>{item.payment}</span>
                 </div>
@@ -40,7 +40,7 @@ function Tablesum() {
             ))}
           </div>
           <div>
-            <span className="font-bold mr-5">تاریخ</span>
+            <span className="font-bold mr-1">تاریخ</span>
             {list.map((item, index) => (
               <div key={index}>
                 <div className="mt-3">
@@ -50,10 +50,17 @@ function Tablesum() {
             ))}
           </div>
         </div>
-        <div className="flex flex-row justify-between mt-5">
-          <span className="font-bold">مجموع مبلغ واریزی : </span>
+        <div className="flex flex-row gap-28 mt-5">
+          <span className="font-bold mr-10">مجموع مبلغ واریزی : </span>
           {sum.map((task) => (
-            <div key={task}>{task.sum}میلیون تومان</div>
+            <div key={task} className="flex items-center gap-1" >
+              <p className="text-[#4FD1C5]">
+              {task.sum}
+              </p>
+              <p>
+                میلیون تومان
+              </p>
+            </div>
           ))}
         </div>
       </div>
