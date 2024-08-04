@@ -2,9 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import BoxCondition from './BoxCondition';
-import InputVam from './InputVam';
-import ButtonSended from './ButtonSended';
-import Filter from './Filter';
+
 import Jaryan from './Jaryan';
 function CurrentLoanAplicationComponent() {
   return (
