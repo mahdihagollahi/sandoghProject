@@ -1,9 +1,9 @@
 import React from "react";
 
-function radrequst() {
+function RequestRejection() {
   return (
     <>
-      <div className="w-[950px] h-[538px] rounded-md shadow-md p-10">
+      <div className="w-[100%] h-[538px] bg-white rounded-md shadow-md p-10">
         <div className="flex flex-row justify-around p-[40px] -mt-5 w-[900px]  border-b-2 ">
           <span>شماره درخواست</span>
           <span>مبلغ وام</span>
@@ -40,4 +40,4 @@ function radrequst() {
   );
 }
 
-export default radrequst;
+export default RequestRejection;
