@@ -1,9 +1,9 @@
 import React from "react";
 
-function Taiedrequst() {
+function AcceptRequest() {
   return (
     <>
-      <div className="w-[950px] h-[638px] rounded-md shadow-md p-10">
+      <div className="w-[100%] bg-white h-[638px] rounded-md shadow-md p-10">
         <div className="flex flex-row justify-around p-[20px] -mt-5 w-[900px] -mr-6  border-b-2 ">
           <span>شماره درخواست</span>
           <span>مبلغ وام</span>
@@ -43,4 +43,4 @@ function Taiedrequst() {
   );
 }
 
-export default Taiedrequst;
+export default AcceptRequest;
