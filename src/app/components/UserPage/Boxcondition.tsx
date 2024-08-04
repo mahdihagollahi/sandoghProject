@@ -24,7 +24,6 @@ function BoxCondition() {
   return (
     <>
       <div className="flex flex-row w-[1026px] h-[85px] bg-white justify-around shadow-md rounded-md items-center ">
-        {/* <div className="w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5]  "> */}
         <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'currentloanaplication' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
         <Link href='/currentloanaplication' onClick={() => handleTabClick('currentloanaplication')}>
           <button className="flex flex-row items-center gap-3 mt-[25px] ">
@@ -37,13 +36,12 @@ function BoxCondition() {
           </button>
           </Link>
         </div>
-        {/* <div className="w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5]  "> */}
-        <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === '' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
+        <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'requestrejectionloan' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
 
-        <Link href='/' onClick={() => handleTabClick('')}>
+        <Link href='/requestrejectionloan' onClick={() => handleTabClick('requestrejectionloan')}>
           <button className="flex flex-row gap-3 mt-[25px]">
             <Image className="w-[24px] h-[24px] mr-[60px]" 
-                 src={selectedTab === '' ? ImageCrossActive : radshodeh}
+                 src={selectedTab === 'requestrejectionloan' ? ImageCrossActive : radshodeh}
                  alt="" />
             <span>رد شده</span>
           </button>
