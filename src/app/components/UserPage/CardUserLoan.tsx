@@ -1,10 +1,13 @@
+
+
+
 import React from 'react'
 import Image from 'next/image'
-import CopyIcon from '@/src/app/assent/Img/userPanel/copy.svg'
 import CardImage from '@/src/app/assent/Img/adminPanel/Credit Card.png'
+import CopyIcon from '@/src/app/assent/Img/userPanel/copy.svg'
 
-function CardUser() {
-  const cardNumber={number:'6037998323457865'}
+function CardUserLoan() {
+    const cardNumber = { number: '6037998323457865' }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(cardNumber.number)
@@ -17,8 +20,8 @@ function CardUser() {
   }
   return (
     <div className='flex flex-col items-center'>
-      <div className='w-full '>
-        <div className='bg-white rounded-md py-20 shadow-md md:items-center xl:w-96 '>
+      <div className='w-[90%] ml-10'>
+        <div className='bg-white rounded-md py-20  shadow-md md:items-center xl:w-full '>
           <div className='flex justify-center '>
             <Image
               className=''
@@ -33,13 +36,17 @@ function CardUser() {
            onClick={copyToClipboard}
           >
             <Image src={CopyIcon} width={20} height={20} alt='copy'/>
+
+           
           شماره کارت را کپی کنید
           </button>
         </div>
         </div>
+
+        
       </div>
     </div>
   )
 }
 
-export default CardUser
+export default CardUserLoan

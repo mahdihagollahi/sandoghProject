@@ -23,11 +23,16 @@ const Dragfish: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col bg-white p-10">
-        <div className="border-dashed w-[400px] p-[10px] h-[250px]  rounded-md border-2 flex flex-col items-center justify-center border-[#4FD1C5]">
+      <div className="flex flex-col pr-16 shadow-md bg-white p-8">
+        <div className="mb-5 ">
+          <p className="font-medium ">
+          آپلود فیش واریزی
+          </p>
+        </div>
+        <div className="border-dashed w-[400px] p-4  h-[250px]  rounded-md border-2 flex flex-col items-center justify-center border-[#4FD1C5]">
           <div
             {...getRootProps()}
-            className="flex flex-col gap-[20px] justify-center items-center"
+            className="flex flex-col gap-5 justify-center items-center"
           >
             <input {...getInputProps()} />
             {imageSrc ? (
@@ -51,7 +56,7 @@ const Dragfish: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-row gap-2 mt-5">
+        <div className="flex flex-row gap-3 mt-8">
           <div className="relative">
             <input className="border-[#4FD1C5] rounded-md border-[1px] w-[110px] h-[42px]" />
             <span className="absolute -top-[8px] right-2 text-xs bg-white">
@@ -67,13 +72,13 @@ const Dragfish: React.FC = () => {
             </div>
           </button>
         </div>
-        <div className="relative mt-5">
-          <input className="border-[#4FD1C5] rounded-md border-[1px] w-[400px] h-[100px]" />
+        <div className="relative mt-10">
+          <input className="border-[#4FD1C5] rounded-md border w-[400px] h-[100px] overflow-scroll " type="text" />
           <span className="absolute -top-[8px] right-3 text-xs bg-white">
             توضیحات
           </span>
         </div>
-        <ul className="text-[#2D374880] opacity-[80%] list-disc list-inside text-sm mt-5">
+        <ul className="text-[#2D374880] opacity-[80%] list-disc list-inside text-sm mt-10">
           <li>لطفا بیش از 100 کاراکتر توضیحات ننویسید !</li>
           <li>
        
