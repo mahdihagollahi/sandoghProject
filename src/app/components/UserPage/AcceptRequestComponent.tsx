@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import BoxCondition from './Boxcondition';
-import RequestRejection from './RequestRejection';
-function RequestRejectionLoanComponent() {
+import AcceptRequest from './AcceptRequst';
+function AcceptRequestComponent() {
   return (
     <div>
  <div className='flex justify-between items-center mb-2 mt-10   '>
@@ -37,10 +37,10 @@ function RequestRejectionLoanComponent() {
             <BoxCondition/>
         </div>
        <div className='mt-10'>
-        <RequestRejection/>
+        <AcceptRequest/>
        </div>
     </div>
   )
 }
 
-export default RequestRejectionLoanComponent
+export default AcceptRequestComponent

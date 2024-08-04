@@ -49,12 +49,12 @@ function BoxCondition() {
 
         </div>
         {/* <div className="w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5]  "> */}
-        <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === '' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
+        <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'acceptrequest' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
 
-        <Link href='/' onClick={() => handleTabClick('')}>
+        <Link href='/acceptrequest' onClick={() => handleTabClick('acceptrequest')}>
           <button className="flex flex-row gap-3 mt-[25px]">
             <Image className="w-[24px] h-[24px] mr-[60px]" 
-                 src={selectedTab === '' ? TikImage :taied }
+                 src={selectedTab === 'acceptrequest' ? TikImage :taied }
                  alt="" />
             <span>تایید شده</span>
           </button>
