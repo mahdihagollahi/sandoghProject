@@ -29,7 +29,7 @@ const Navbar = [
   { id: 4, src: payInstallments, hoverSrc: payInstallmentsHover, link: '/loanpayment' },
   { id: 5, src: RequestInstallments, hoverSrc: RequestnstallmentsHover, link: '/requestloanaplication' },
   { id: 6, src: ImageMessage, hoverSrc: ImageMessageHover, link: '/sentedmassageuser' },
-  { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '' },
+  { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '/supportticket' },
   
   { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: '/support' },
  
