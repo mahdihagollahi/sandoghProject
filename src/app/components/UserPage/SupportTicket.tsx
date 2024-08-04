@@ -1,11 +1,37 @@
 import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import exper from "@/src/app/assent/Img/userPanel/Exclamation.svg";
 
-function Pagsupport() {
+function SupportTicket() {
   return (
     <>
-      <div className="flex flex-col gap-10 px-16">
+     <div className='flex justify-between items-center mb-2 mt-12   '>
+            <div className='mr-2 '>
+                <p className='font-bold text-lg'>
+                درخواست وام                
+                </p>
+            </div>
+          
+
+
+            <div className='flex justify-end  '>
+              <a href="" className='flex items-center'>
+              بازگشت
+              <Image
+                src={backImage}
+                width={38}
+                height={38}
+                alt='arrow'
+
+                />
+              </a>
+              
+            </div>
+        </div>
+
+
+      <div className="flex flex-col gap-10 px-16 mt-10">
         <div>نیاز به پشتیبانی دارید ؟</div>
         <div className="flex flex-row gap-1">
           <Image src={exper} alt="" />
@@ -54,4 +80,4 @@ function Pagsupport() {
   );
 }
 
-export default Pagsupport;
+export default SupportTicket;
