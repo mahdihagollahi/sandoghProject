@@ -2,7 +2,7 @@
 import React from "react";
 import Landing from "./components/UserPage/landing";
 
-import Inputvam from "./components/UserPage/Inputvam";
+import Inputvam from "./components/UserPage/InputVam";
 
 function page() {
   return (
