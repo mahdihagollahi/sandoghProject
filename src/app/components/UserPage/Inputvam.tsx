@@ -2,6 +2,10 @@ import React from "react";
 import Image from "next/image";
 import search from "@/src/app/assent/Img/userPanel/Search.png";
 import Exclamation from "@/src/app/assent/Img/userPanel/Exclamation.svg";
+import DatePicker from "react-multi-date-picker"
+import "react-multi-date-picker/styles/colors/green.css";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 
 const user = [
   { id: 1, name: "حامد رحمانی" },
@@ -20,22 +24,28 @@ function Inputvam() {
         </div>
         <div className="flex flex-grow justify-around p-[40px] w-[900px] mr-[40px]  ">
           <input
-            className="border-[1px] w-[148px] h-[56px] rounded-md p-2"
+            className="border-[1px] w-[148px] h-[56px] rounded-md p-2 border-[#92A9BD]"
             type="text"
             placeholder="شماره"
           />
           <input
-            className="border-[1px] w-[148px] h-[56px] rounded-md p-2"
+            className="border-[1px] w-[148px] h-[56px] rounded-md p-2 border-[#92A9BD]"
             type="text"
             placeholder="مبلغ"
           />
+          
+          <div style={{ direction: "rtl" }}>
+            <DatePicker
+              style={{border:"1px",width:"148px",height:"56px", borderRadius:"8px",padding:"4px",borderColor:"#92A9BD",borderStyle:"solid"}}
+              placeholder="تاریخ"
+              className="green "
+              calendar={persian}
+              locale={persian_fa}
+              calendarPosition="bottom-right"
+            />
+          </div>
           <input
-            className="border-[1px] w-[148px] h-[56px] rounded-md p-2"
-            type="text"
-            placeholder="تاریخ"
-          />
-          <input
-            className="border-[1px] w-[248px] h-[56px] rounded-md p-2"
+            className="border-[1px] w-[248px] h-[56px] rounded-md p-2 border-[#92A9BD]"
             type="text"
             placeholder="توضیحات"
           />
@@ -49,7 +59,7 @@ function Inputvam() {
                 alt=""
               />
               <input
-                className=" p-[8px] w-[402px] h-[56px] absolute pr-12 rounded-md border-[1px]"
+                className=" p-[8px] w-[402px] h-[56px] absolute pr-12 rounded-md border-[1px] border-[#92A9BD]"
                 type="text"
                 placeholder="جستجو نام کاربری یا شماره تلفن ضامن"
               />

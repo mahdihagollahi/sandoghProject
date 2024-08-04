@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-import Landing from "./components/UserPage/Landing";
+import Inputvam from "./components/UserPage/Inputvam";
 
 function page() {
   return (
     <>
-     <Landing/>
+   <Inputvam/>
     </>
   );
 }
