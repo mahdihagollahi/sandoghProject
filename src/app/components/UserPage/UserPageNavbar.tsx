@@ -31,7 +31,7 @@ const Navbar = [
   { id: 6, src: ImageMessage, hoverSrc: ImageMessageHover, link: '/sentedmassageuser' },
   { id: 7, src: SupportUser, hoverSrc: SupportUserHover, link: '/supportticket' },
   
-  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: '/support' },
+  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: '/ruleuser' },
  
  
   

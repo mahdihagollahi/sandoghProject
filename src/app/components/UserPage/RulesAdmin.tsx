@@ -1,13 +1,37 @@
 import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import pozetiv from "@/src/app/assent/Img/userPanel/pozetiv.svg";
 import negtiv from "@/src/app/assent/Img/userPanel/negtiv.svg";
 import pen from "@/src/app/assent/Img/userPanel/pen.svg";
 
-export default function rules() {
+export default function RulesUser() {
   return (
     <>
-      <div className="p-[40px] w-[950px] h-[2487px]">
+     <div className='flex justify-between items-center mb-2 mt-10   '>
+            <div className='mr-2 '>
+                <p className='font-bold text-lg'>
+                تنظیمات                
+                </p>
+            </div>
+          
+
+
+            <div className='flex justify-end  '>
+              <a href="/requestloanaplication" className='flex items-center'>
+              بازگشت
+              <Image
+                src={backImage}
+                width={38}
+                height={38}
+                alt='arrow'
+
+                />
+              </a>
+              
+            </div>
+        </div>
+      <div className="p-[40px] w-[950px] mt-10 h-[2487px]">
         <div className="flex flex-row justify-between w-[837px]">
           <div className="flex flex-row gap-[100px]">
             <span>تعداد وام های مجاز برای هر کاربر</span>
