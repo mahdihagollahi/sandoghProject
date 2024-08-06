@@ -30,7 +30,7 @@ function DepositReceiptComponent() {
 
 
             <div className='flex justify-end mr-20  '>
-              <a href="" className='flex items-center'>
+              <a href="/deposited" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
