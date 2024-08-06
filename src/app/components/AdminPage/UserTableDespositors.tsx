@@ -6,7 +6,7 @@ import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
 import Modal from './Modal';
 import DepositSlip from '@/src/app/components/AdminPage/DepositSlip'
 import Paginate from './Paginate';
-
+import Link from 'next/link'
 const UserTable = ({ users }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -72,6 +72,7 @@ const UserTable = ({ users }) => {
                     
                  
                     <td className="w-3/12 py-2 px-4 ">
+                    <Link href='/depositreceipt'>
                       <button className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
                          onClick={handleOpenModal}
                       >
@@ -80,6 +81,7 @@ const UserTable = ({ users }) => {
                         فیش واریزی                    
                         </p>
                       </button>
+                      </Link>
                     </td>
                     <td className="w-1/12 py-2 px-4 ">
                     <div className='flex gap-5'>
