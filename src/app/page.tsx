@@ -2,7 +2,6 @@
 import React from "react";
 import Landing from "./components/UserPage/landing";
 
-import Inputvam from "./components/UserPage/InputVam";
 
 function page() {
   return (
@@ -16,7 +15,7 @@ function page() {
         </div>
       </div> */}
       <Landing/>
-   <Inputvam/>
+      
     </>
   );
 }
