@@ -4,7 +4,7 @@ import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import Link from "next/link";
 
 
-export default function Loagin() {
+export default function LoginAdmin() {
   return (
     <div className="relative h-[450px]">
       <div>
@@ -82,12 +82,11 @@ export default function Loagin() {
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder=" رمز عبور"
                 type="password"
-
               />
               <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
             </div>
           </div>
-          <Link href='/dashboarduser'>
+          <Link href='/dashboard'>
 
           <button className="bg-[#4FD1C5] w-[420px] h-[56px]  text-white rounded-[5px] mr-[55px] mt-[65px]">
             ورود

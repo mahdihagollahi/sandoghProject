@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import loagin from "@/src/app/assent/Img/userPanel/loagin.png";
 import Group from "@/src/app/assent/Img/userPanel/Group 39519.svg";
 import loagimg from "@/src/app/assent/Img/userPanel/menWithBollon.svg";
@@ -7,7 +8,7 @@ import loagimg from "@/src/app/assent/Img/userPanel/menWithBollon.svg";
 export default function Landing() {
   return (
     <>
-      <div className="relative ">
+      <div className="relative bg-[#F8F9FA] ">
         <div>
           <Image
             sizes="100vw"
@@ -40,11 +41,17 @@ export default function Landing() {
             بخواهند میتوانند مبلغ پیشنهادی خود را اعلام کنند و وام دریافت کنند .
           </p>
         </div>
-        <button className="bg-[#4FD1C5] w-[300px] h-[56px] text-white rounded-[5px] absolute top-[45%] right-[2.5%]">
+        <Link href='/loginuser'>
+     
+        <button className="bg-[#4FD1C5] w-[300px] h-[56px] text-white rounded-[5px] absolute top-[40%] right-[2.5%]">
           ورود کاربران
         </button>
+        </Link>
+        <div className="bg-[#F8F9FA]">
+
+    
         <div>
-          <p className="w-[1080px]  mr-[2.5%] mt-[10%] opacity-[60%]">
+          <p className="w-[1080px]   mr-[2.5%] mt-[18%] opacity-[60%]">
             برای عضویت در صندوق مهر به عنوان کاربر ، شما ابتدا باید با مدیر
             صندوق هماهنگ و اعلام عضویت کنید ، سپس نام کاربری و رمز شما در سیستم
             ثبت و آماده ورود به صندوق میشوید ، اگر نام کاربری و رمز شما تایید
@@ -57,6 +64,7 @@ export default function Landing() {
         <div>
           <p className="opacity-[60%] mt-[60px] flex justify-center">کلیه حقوق سایت محفوظ و متعلق به طراح  <span  className="text-[#4FD1C5]"> Ghanbaryamir2000@gmail.com </span> می‌باشد.</p>
         </div>
+      </div>
       </div>
     </>
   );
