@@ -13,7 +13,7 @@ function UserTableReceipt({ users }) {
               <tr>
                 <th className="w-[10%] pb-6">نام کاربر</th> 
                 <th className="w-[29%] pl-10 pb-6">مبلغ واریز</th> 
-                <th className="w-[23%] pl-24 pb-6">تاریخ</th> 
+                <th className="w-[23%] pl-32 pb-6">تاریخ</th> 
                 <th className="w-[12%] whitespace-nowrap pl-32 pb-6">توضیحات کاربر</th> 
                 <th className="w-[12%] whitespace-nowrap pb-6">تعیین وضعیت</th> 
               </tr>
