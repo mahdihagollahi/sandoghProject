@@ -39,7 +39,7 @@ const [newMessage, setNewMessage]=useState('')
                 </p>
             </div>
             <div className=' absolute flex mr-[67%]   '>
-              <a href=""className='flex items-center'>
+              <a href="/support"className='flex items-center'>
               بازگشت
               <Image
                 src={arrowImage}
