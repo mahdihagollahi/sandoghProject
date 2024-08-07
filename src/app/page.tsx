@@ -1,14 +1,11 @@
 "use client";
 import React from "react";
-<<<<<<< HEAD
 import Landing from "./components/UserPage/landing";
 
-=======
 import Image from "next/image";
 import clock from "@/src/app/assent/Img/userPanel/clock.png";
 import back from "@/src/app/assent/Img/userPanel/back.svg";
 import logo from "@/src/app/assent/Img/userPanel/logo.svg"
->>>>>>> calender
 
 function page() {
   return (
@@ -43,7 +40,6 @@ function page() {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       </div> */}
       <Landing/>
       
