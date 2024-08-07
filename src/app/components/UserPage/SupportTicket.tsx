@@ -69,9 +69,9 @@ function SupportTicket() {
         </div>
         <div className="relative">
           <div>
-            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4"></textarea>
+            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4 bg-inherit"></textarea>
           </div>
-          <div className="absolute top-0 right-4 p-1 bg-white">
+          <div className="absolute top-0 right-4 p-1 bg-[#F8F9FA]">
             سوال خود را در این قسمت تایپ کنید
           </div>
         </div>
