@@ -7,9 +7,9 @@ function SupportTicket() {
   return (
     <>
      <div className='flex justify-between items-center mb-2 mt-12   '>
-            <div className='mr-2 '>
+            <div className='mr-16 '>
                 <p className='font-bold text-lg'>
-                درخواست وام                
+                  پشتیبانی
                 </p>
             </div>
           

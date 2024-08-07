@@ -24,7 +24,7 @@ function AdminFirstPage() {
           </div>
         </div>
 
-        <div className="block xl:-mt-[68%]  md:-mt-[46%]">
+        <div className="block xl:-mt-[75%]  md:-mt-[46%]">
           <div className="flex  w-full   ">
             <AdminHeader />
           </div>

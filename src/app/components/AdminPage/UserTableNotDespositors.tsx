@@ -37,10 +37,10 @@ const UserTable = ({ users }) => {
               <th className="w-[20%] pl-8  py-2">شماره قسط</th>
                 <th className="w-[20%] pl-8  py-2">نام کاربر</th>
                 <th className="w-[29%] pl-20  py-2">مبلغ واریز</th>
-                <th className="w-[23%]  pl-24 py-2">
+                <th className="w-[23%]  pl-24 py-2 whitespace-nowrap">
                 تاریخ سر رسید
                 </th>
-                <th className="w-[12%] pl-[133px]  py-2">
+                <th className="w-[12%] pl-[110px]  py-2">
                یادآوری
                 </th>
                 {/* <th className="w-[12%]  py-2">

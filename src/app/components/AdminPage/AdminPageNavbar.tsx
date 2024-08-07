@@ -20,6 +20,8 @@ import ImagePoshtibani from '@/src/app/assent/Img/adminPanel/Poshtibani.svg';
 import ImagePoshtibaniHover from '@/src/app/assent/Img/adminPanel/PoshtibaniHover.svg';
 import ImageMassege from '@/src/app/assent/Img/adminPanel/massege.svg'
 import ImageMassegeHover from '@/src/app/assent/Img/adminPanel/massegeHover.svg'
+import ImageSetting from '@/src/app/assent/Img/adminPanel/setting.svg'
+import ImageSettingHover from '@/src/app/assent/Img/adminPanel/settingHover.svg'
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 
 const Navbar = [
@@ -28,9 +30,10 @@ const Navbar = [
   { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
   { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
   { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
-  { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
-  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
-  { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/ruleuser' },
+  { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
+  { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
+  { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
  
 ];
 
