@@ -3,6 +3,9 @@ import Image from 'next/image'
 import groupImage from '@/src/app/assent/Img/adminPanel/Iconly copy.svg'
 
 function LoanApplication() {
+  const loanAplication =[
+    {id:1 , number:'24'}
+  ]
   return (
     <div>
         <div className='w-full flex -mt-[54%]   '>
@@ -23,7 +26,8 @@ function LoanApplication() {
                </div>
                <div>
                <p className='font-bold text-[#A0AEC0] text-xs leading-8'>
-24 نفر در صف 
+                    {loanAplication.number}
+                    نفر عضو 
                   </p>
                </div>
             </div>

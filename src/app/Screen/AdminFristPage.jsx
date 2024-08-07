@@ -2,7 +2,7 @@
 
 import React from "react";
 import AdminHeader from "../components/AdminPage/AdminHeader";
-import NumberOfMebers from "../components/AdminPage/LoanApplication";
+import NumberOfMebers from "../components/AdminPage/NumberOfMebers";
 import LoanApplication from "../components/AdminPage/LoanApplication";
 import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
 import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
