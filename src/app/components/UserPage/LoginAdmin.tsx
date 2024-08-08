@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
-import Link from "next/link";
+import axios from "axios";
 
 
 export default function LoginAdmin() {
+  const [username , setUsername]=useState('')
+  const [password , setPassword]=useState('')
+  const [errorMessage , setErrorMessage]=useState('')
+
+  const handleLogin = async () => {
+    try{
+      const response =await axios.post("https://shabab.v1r.ir/api/auth/login/admin" ,{
+        user_name:username,
+        password:password,
+      });
+      if (response.status === 200 && response.data.token) {
+        localStorage.setItem('authToken', response.data.token);
+        window.location.href = "/dashboard";
+      }else{
+        setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است')
+      }
+      }
+      catch(error) {
+        if(error.response){
+          setErrorMessage(error.response.data.message || "ورود ناموفق بود.");
+
+        }else if (error.request) {
+          setErrorMessage("پاسخی از سرور دریافت نشد. لطفاً دوباره تلاش کنید.");
+        } else {
+          setErrorMessage("مشکلی در ارسال درخواست به وجود آمد.");
+        }
+    }
+  }
   return (
     <div className="relative h-[450px]">
       <div>
@@ -71,6 +99,8 @@ export default function LoginAdmin() {
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder="نام کاربری"
+                value={username}
+                onChange={(e)=> setUsername(e.target.value)}
               />
               <span className="text-[#999999]">
                 نام کاربری ، شماره ملی شما است
@@ -82,16 +112,23 @@ export default function LoginAdmin() {
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder=" رمز عبور"
                 type="password"
+                value={password}
+                onChange={(e)=> setPassword(e.target.value)}
               />
               <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
             </div>
           </div>
-          <Link href='/dashboard'>
+          {errorMessage && (
+            <div className="text-red-500 text-center mt-4">{errorMessage}</div>
+          )}
+         
 
-          <button className="bg-[#4FD1C5] w-[420px] h-[56px]  text-white rounded-[5px] mr-[55px] mt-[65px]">
+          <button className="bg-[#4FD1C5] w-[420px] h-[56px]  text-white rounded-[5px] mr-[55px] mt-[65px]"
+            onClick={handleLogin}
+          >
             ورود
           </button>
-          </Link>
+          
         </div>
       </div>
     </div>

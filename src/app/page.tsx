@@ -43,10 +43,15 @@ function page() {
       </div> */}
       <Landing/>
       
-=======
+
       </div>
->>>>>>> calender
+
     </>
   );
 }
 export default page;
+
+
+
+
+
