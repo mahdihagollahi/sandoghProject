@@ -3,36 +3,40 @@ import Image from "next/image";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import axios from "axios";
 
+interface LoginResponse {
+  token?: string;
+  message?: string;
+}
 
-export default function LoginAdmin() {
-  const [username , setUsername]=useState('')
-  const [password , setPassword]=useState('')
-  const [errorMessage , setErrorMessage]=useState('')
+const LoginAdmin: React.FC = () => {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleLogin = async () => {
-    try{
-      const response =await axios.post("https://shabab.v1r.ir/api/auth/login/admin" ,{
-        user_name:username,
-        password:password,
+    try {
+      const response = await axios.post<LoginResponse>("https://shabab.v1r.ir/api/auth/login/admin", {
+        user_name: username,
+        password: password,
       });
+
       if (response.status === 200 && response.data.token) {
         localStorage.setItem('authToken', response.data.token);
         window.location.href = "/dashboard";
-      }else{
-        setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است')
+      } else {
+        setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است');
       }
+    } catch (error: any) {
+      if (error.response) {
+        setErrorMessage(error.response.data.message || "ورود ناموفق بود.");
+      } else if (error.request) {
+        setErrorMessage("پاسخی از سرور دریافت نشد. لطفاً دوباره تلاش کنید.");
+      } else {
+        setErrorMessage("مشکلی در ارسال درخواست به وجود آمد.");
       }
-      catch(error) {
-        if(error.response){
-          setErrorMessage(error.response.data.message || "ورود ناموفق بود.");
-
-        }else if (error.request) {
-          setErrorMessage("پاسخی از سرور دریافت نشد. لطفاً دوباره تلاش کنید.");
-        } else {
-          setErrorMessage("مشکلی در ارسال درخواست به وجود آمد.");
-        }
     }
   }
+
   return (
     <div className="relative h-[450px]">
       <div>
@@ -46,10 +50,10 @@ export default function LoginAdmin() {
           alt=""
         />
       </div>
-      <div  className="bg-white flex justify-center  absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
+      <div className="bg-white flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
         <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md">
           <div className="flex flex-row-reverse justify-between">
-            <div className="flex flex-row gap-1 ">
+            <div className="flex flex-row gap-1">
               <div>
                 <span>بازگشت</span>
               </div>
@@ -94,26 +98,26 @@ export default function LoginAdmin() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[20px] justify-center item-center  mt-[50px] mr-[55px]">
+          <div className="flex flex-col gap-[20px] justify-center item-center mt-[50px] mr-[55px]">
             <div className="flex flex-col">
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder="نام کاربری"
                 value={username}
-                onChange={(e)=> setUsername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
               <span className="text-[#999999]">
                 نام کاربری ، شماره ملی شما است
               </span>
             </div>
 
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
-                placeholder=" رمز عبور"
+                placeholder="رمز عبور"
                 type="password"
                 value={password}
-                onChange={(e)=> setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
             </div>
@@ -121,16 +125,17 @@ export default function LoginAdmin() {
           {errorMessage && (
             <div className="text-red-500 text-center mt-4">{errorMessage}</div>
           )}
-         
 
-          <button className="bg-[#4FD1C5] w-[420px] h-[56px]  text-white rounded-[5px] mr-[55px] mt-[65px]"
+          <button
+            className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px] mr-[55px] mt-[65px]"
             onClick={handleLogin}
           >
             ورود
           </button>
-          
         </div>
       </div>
     </div>
   );
 }
+
+export default LoginAdmin;

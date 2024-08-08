@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import Modal from '../components/AdminPage/Modal'
-import Modalout from '../components/UserPage/Modalout';
+import Modalout from '../components/UserPage/ModaloutAdmin';
 
-function ExitPage() {
+function ExitPageUser() {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,11 +18,12 @@ function ExitPage() {
   };
   return (
     <div>
+      <Modalout/>
 
-        <Modalout handleCloseModal={handleCloseModal}/>
-        <Modal isVisible={isModalVisible}/>
+        {/* <Modalout handleCloseModal={handleCloseModal}/> */}
+        {/* <Modal isVisible={isModalVisible}/> */}
     </div>
   )
 }
 
-export default ExitPage
+export default ExitPageUser

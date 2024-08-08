@@ -102,9 +102,12 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
             </div>
           </Link>
         ))}
-        <div className='mr-[1%] mt-[7%]'>
+        <Link href='/exitadmin'>
+    
+        <button className='mr-[1%] mt-[7%]'>
           <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
-        </div>
+        </button>
+        </Link>
       </div>
     </div>
   );

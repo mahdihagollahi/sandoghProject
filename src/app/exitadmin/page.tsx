@@ -1,11 +1,11 @@
- "use client"
+"use client"
 import React from 'react'
-import ExitPage from '../Screen/ExitPage'
+import ExitPageAdmin from '../Screen/ExitPageAdmin'
 
 function page() {
   return (
     <div>
-        <ExitPage/>
+        <ExitPageAdmin/>
     </div>
   )
 }
