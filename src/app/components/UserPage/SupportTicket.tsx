@@ -16,7 +16,7 @@ function SupportTicket() {
 
 
             <div className='flex justify-end  '>
-              <a href="" className='flex items-center'>
+              <a href="/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -69,7 +69,7 @@ function SupportTicket() {
         </div>
         <div className="relative">
           <div>
-            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4 bg-inherit"></textarea>
+            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4 bg-inherit py-10 px-5" ></textarea>
           </div>
           <div className="absolute top-0 right-4 p-1 bg-[#F8F9FA]">
             سوال خود را در این قسمت تایپ کنید
