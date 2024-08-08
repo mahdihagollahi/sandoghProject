@@ -103,7 +103,7 @@ function UserPageNavbar() {
           </Link>
         ))}
         <div className='mr-[1%] mt-[10%]'>
-          <Link href='/exit'>
+          <Link href='/exituser'>
           <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
 
           </Link>
