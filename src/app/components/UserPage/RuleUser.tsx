@@ -1,13 +1,30 @@
 "use client";
-import React from "react";
+import React,{useState} from "react";
 import Image from "next/image";
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
-
-// import edit from "@/src/app/assent/Img/userPanel/edit.png";
 import posetiv from "@/src/app/assent/Img/userPanel/posetiv.svg";
 import negetiv from "@/src/app/assent/Img/userPanel/negtiv.svg";
 
 function RuleUser() {
+  const [counter,setcounter]=useState(0)
+  const[vam,setvam]=useState(0)
+  function posetive(){
+    setcounter(counter+1)
+  }
+  function negtiv(){
+    if (counter>0){
+    setcounter(counter-1)
+  }
+  }
+
+  function vamposetive(){
+    setvam(vam+1)
+  }
+  function vamnegtiv(){
+    if(vam>0){
+      setvam(vam-1)
+    }
+  }
   return (
     <>
      <div className='flex gap-[70%] items-center mb-2 mt-12   '>
@@ -34,10 +51,7 @@ function RuleUser() {
             </div>
         </div>
       <div className="flex flex-col gap-7 p-10 mt-10 w-[90%] shadow-md rounded-md">
-        {/* <div className="flex flex-row gap-4">
-          <Image className="w-[15px] h-[15px]" src={edit} alt="" />
-          <h3>قوانین و مقررات</h3>
-        </div> */}
+       
         <div className=" p-5 border-[1px] border-slate-500 flex flex-col gap-8 w-[90%]">
           <div className="flex flex-col">
             <span className="font-bold">پرداخت اقساط </span>
@@ -76,18 +90,22 @@ function RuleUser() {
           <div className=" flex flex-row gap-9">
             <span>تعداد مجاز ضامن ها برای هر کاربر</span>
             <div className="flex flex-row gap-4">
-              <Image src={posetiv} alt=""/>
-              <span>counter</span>
-              <Image src={negetiv} alt=""/>
+              <Image onClick={()=>posetive()} src={posetiv} alt=""/>
+              <span>{counter}</span>
+              <Image onClick={()=>negtiv()} src={negetiv} alt=""/>
             </div>
           </div>
           <div className=" flex flex-row gap-9 mt-[10px]">
             <span>تعداد وام های مجاز برای هر کاربر</span>
             <div className="flex flex-row gap-4">
-              <Image src={posetiv} alt=""/>
-              <span>counter2</span>
-              <Image src={negetiv} alt=""/>
+              <Image onClick={()=>vamposetive()} src={posetiv} alt=""/>
+              <span>{vam}</span>
+              <Image onClick={()=>vamnegtiv()} src={negetiv} alt=""/>
             </div>
+          </div>
+          <div className="flex flex-row gap-4 mt-[10px]">
+            <span>مبلغ حق اشتراک را مشخص کنید</span>
+            <input className="w-28 border-[1px] border-[#CACACA] rounded-md p-2" type="number" placeholder="مبلغ به ریال"/>
           </div>
         </div>
       </div>

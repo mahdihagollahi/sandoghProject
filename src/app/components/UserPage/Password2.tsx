@@ -1,21 +1,35 @@
 "use client";
 import React from "react";
-<<<<<<< HEAD
-import Landing from "./components/UserPage/landing";
-
 import Image from "next/image";
 import clock from "@/src/app/assent/Img/userPanel/clock.png";
 import back from "@/src/app/assent/Img/userPanel/back.svg";
-import logo from "@/src/app/assent/Img/userPanel/logo.svg"
-=======
-import Login from "./components/UserPage/loagin";
->>>>>>> loginuser-api
+import logo from "@/src/app/assent/Img/userPanel/logo.svg";
+import { useState,useEffect } from "react";
 
-function page() {
- 
+
+function Password2() {
+
+  const [time, setTime] = useState(120);
+
+  useEffect(() => {
+    if (time > 0) {
+      const timer = setInterval(() => {
+        setTime((prevTime) => prevTime - 1);
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+  }, [time]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? `0${secs}` : secs}`;
+  };
+
+
   return (
     <>
-<<<<<<< HEAD
       <div className="w-[40%] p-8 shadow-md rounded-md ">
       <div className="flex flex-row justify-between  ">
             <div className="flex flex-row gap-4">
@@ -40,28 +54,17 @@ function page() {
               className="border-[1px] border-solid rounded-md p-3 border-[#d7d7d7] mt-3 w-96"
               placeholder="شماره موبایل را وارد کنید"
             />
-            <div className="flex flex-row gap-3 -mt-3">
+            <div className="flex flex-row gap-1 -mt-3">
               <Image className="w-4 h-4 mt-1" src={clock} alt="" />
+              <span className="text-[#4FD1C5]">{formatTime(time)}</span>
               <span>تا دریافت مجدد کد</span>
             </div>
           </div>
         </div>
-      </div> */}
-      <Landing/>
-      
 
       </div>
 
-=======
-    <Login/>
-     
->>>>>>> loginuser-api
     </>
   );
 }
-export default page;
-
-
-
-
-
+export default Password2;
