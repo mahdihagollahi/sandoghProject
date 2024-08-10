@@ -5,7 +5,7 @@ import eyes from "@/src/app/assent/Img/userPanel/eyes.svg";
 import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
 import reject from "@/src/app/assent/Img/userPanel/reject.svg";
 
-function page() {
+function Tableenseraf() {
   const user = [
     {
       id: 1,
@@ -74,4 +74,4 @@ function page() {
     </>
   );
 }
-export default page;
+export default Tableenseraf;
