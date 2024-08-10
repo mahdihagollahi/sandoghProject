@@ -3,6 +3,7 @@ import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import EveryLoanAplicationTable from '@/src/app/components/AdminPage/EveryLoanAplicationTable';
 import RoutRequestLoan from './RoutRequestLoan';
+import SwichButton from './SwichButton';
 
 interface User {
   id: number;
@@ -72,8 +73,14 @@ const EveryRequestLoan: React.FC = () => {
               </a>
             </div>
         </div>
-      <div>
-      <RoutRequestLoan/>
+      <div className='flex gap-[47%] items-center'>
+        <div>
+        <RoutRequestLoan/>
+
+        </div>
+        <div>
+           <SwichButton/>
+        </div>
       </div>
       <div className='mt-4'>
       <EveryLoanAplicationTable users={users} />
