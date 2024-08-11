@@ -79,4 +79,3 @@ const UserTable = ({ users }) => {
 
 export default UserTable;
 
-

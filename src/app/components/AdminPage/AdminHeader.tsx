@@ -1,50 +1,48 @@
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import Image from 'next/image';
-import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png'
+import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png';
 import axios from 'axios';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
 
 interface User {
   name: string;
   image: string;
 }
 
+
+const fetchUserData = async (): Promise<User> => {
+  const token = localStorage.getItem('authToken');
+
+  if (!token) {
+    throw new Error('No token found, please log in.');
+  }
+
+  const response = await axios.post<User>(
+    'https://shabab.v1r.ir/api/auth/me',
+    {},
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    }
+  );
+
+  return {
+    name: response.data.name || 'نام کاربر نیست',
+    image: response.data.image || IconImage,
+  };
+};
+
 const AdminHeader: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
+  const { data: user, error, isLoading }: UseQueryResult<User, Error> = useQuery({
+    queryKey: ['user'], 
+    queryFn: fetchUserData,
+  });
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const token = localStorage.getItem('authToken'); 
-
-      if (!token) {
-        console.error('No token found, please log in.');
-        return;
-      }
-
-      try {
-        const response = await axios.post<User>(
-          'https://shabab.v1r.ir/api/auth/me',
-          {},
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`, 
-            },
-          }
-        );
-
-        console.log(response.data); 
-
-        setUser({
-          name: response.data.name || 'نام کاربر نیست',
-          image: response.data.image || IconImage, // مقدار پیش‌فرض برای تصویر
-        });
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+  if (isLoading) return <p>در حال بارگذاری...</p>;
+  if (error) return <p>خطا در بارگذاری داده‌ها: {error.message}</p>;
 
   return (
     <div className='w-[97%]'>
@@ -59,7 +57,7 @@ const AdminHeader: React.FC = () => {
             {user && (
               <Image
                 className='bg-[#FFFFFF] rounded-full'
-                src={user.image} // استفاده از تصویر دریافت شده از API
+                src={user.image} 
                 alt='user'
                 width={40}
                 height={40}
