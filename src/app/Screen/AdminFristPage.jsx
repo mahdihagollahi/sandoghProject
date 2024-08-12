@@ -13,7 +13,7 @@ import ChartAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
 function AdminFirstPage() {
   return (
-    <div className="overflow-y-hidden bg-[#F8F9FA] font-custom">
+    <div className="overflow-y-hidden bg-[#F8F9FA] pb-[15%] font-custom">
       <div className=" flex flex-col ">
         <div >
           <div>
@@ -53,7 +53,7 @@ function AdminFirstPage() {
         <SupportMassgeDashboard/>
        </div>
 
-       <div>
+       <div className="mt-[19.5%]">
         <ChartAdminDashboard/>
        </div>
       </div>
