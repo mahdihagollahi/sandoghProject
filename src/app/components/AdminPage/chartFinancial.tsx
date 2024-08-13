@@ -1,33 +1,53 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-const ChartComponent = () => {
-  const data = {
-    labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+const fetchChartData = async () => {
+  const API_URL = 'https://shabab.v1r.ir/api/factors/index/1';
+  const response = await axios.put(API_URL);
+  return response.data;
+};
+
+function ChartFinancial() {
+  const query = useQuery({
+    queryKey: ['chartData'],
+    queryFn: fetchChartData,
+  });
+
+  const { data } = query;
+
+  
+
+  const chartData = data || {};
+
+  const chartConfig = {
+    labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
     datasets: [
       {
-        label: 'موجودی صندوق',
-        data: [20, 80, 100, 120, 80, 60, 40, 80, 100, 140, 180, 200],
-        borderColor: (context) => {
-          const chart = context.chart;
-          const {ctx, chartArea} = chart;
-
-          if (!chartArea) {
-            return null;
-          }
-
-          const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-          gradient.addColorStop(0, 'rgba(75, 192, 192, 1)');
-          gradient.addColorStop(1, 'rgba(0, 0, 0, 1)');
-
-          return gradient;
-        },
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-        tension: 0.4,
+        label: 'درامد',
+        data: chartData.income ,
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        fill: false,
+        tension: 0.1,
+        pointStyle: 'circle',
+        pointRadius: 5,
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+      },
+      {
+        label: 'خروجی',
+        data: chartData.outcome ,
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        fill: false,
+        tension: 0.1,
+        pointStyle: 'circle',
+        pointRadius: 5,
+        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
       },
     ],
   };
@@ -36,29 +56,27 @@ const ChartComponent = () => {
     responsive: true,
     plugins: {
       legend: {
-        display: false,
+        position: 'bottom',
       },
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            let label = context.dataset.label || '';
-            if (label) {
-              label += ': ';
-            }
-            label += context.parsed.y;
-            return label;
-          },
-        },
+      title: {
+        display: false,
       },
     },
     scales: {
-      x: {
-        display: true,
-      },
       y: {
-        display: true,
-        suggestedMin: 0,
-        suggestedMax: 200,
+        beginAtZero: true,
+        ticks: {
+          callback: function (value) {
+            return value + ' م';
+          },
+        },
+      },
+      x: {
+        ticks: {
+          callback: function (value, index, values) {
+            return this.getLabelForValue(value);
+          },
+        },
       },
     },
   };
@@ -71,7 +89,7 @@ const ChartComponent = () => {
           نمودار صندوق
           </p>
         </div>
-  <Line data={data} options={options} />
+  <Line   data={chartConfig} options={options} />
 
   </div>
 
@@ -83,4 +101,4 @@ const ChartComponent = () => {
   
 };
 
-export default ChartComponent;
+export default ChartFinancial;
