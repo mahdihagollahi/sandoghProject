@@ -3,7 +3,7 @@ import Image from 'next/image';
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import DateDropDown from '@/src/app/components/AdminPage/DateDropDown';
 import ChartMounthFinantial from '@/src/app/components/AdminPage/ChartMounthFinantial';
-import ChartFinancial from '@/src/app/components/AdminPage/ChartFinancial';
+import ChartFinancial from '@/src/app/components/AdminPage/chartFinancial';
 
 import ViewDeposit from './ViewDeposit';
 
