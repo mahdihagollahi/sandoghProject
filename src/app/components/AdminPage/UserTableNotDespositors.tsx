@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import SendIconImage from '@/src/app/assent/Img/adminPanel/SendIcon.svg';
-import IconlypositionImage from '@/src/app/assent/Img/adminPanel/Iconlyposition.svg';
 import Modal from './Modal';
 import TextAreaComponent from '@/src/app/components/AdminPage/TextAreaComponent'
 import Paginate from './Paginate';
@@ -75,16 +74,7 @@ const UserTable = ({ users }) => {
                         </p>
                       </button>
                     </td>
-                    {/* <td className="w-1/12 py-2 px-4 ">
-                    
-                    <button className="w-6 h-6 ">
-                        <Image src={IconlypositionImage} width={1020} height={1020} alt="وضعیت" />
-                      </button>
-
-                      
                    
-                     
-                    </td> */}
                   </tr>
                 ))}
               </tbody>
