@@ -125,14 +125,14 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import EveryLoanAplicationTable from '@/src/app/components/AdminPage/EveryLoanAplicationTable';
 import RoutRequestLoan from './RoutRequestLoan';
 import SwichButton from './SwichButton';
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
 
-interface User {
+interface Loan {
   id: number;
   name: string;
   amount: string;
@@ -145,64 +145,73 @@ interface User {
 
 const fetchLoans = async () => {
   try {
-    const token = localStorage.getItem('authToken'); // دریافت توکن از localStorage
+    const token = localStorage.getItem('authToken');
 
     const response = await axios.post('https://shabab.v1r.ir/api/loans/show/admin', {}, {
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json' // اضافه کردن Content-Type
+        'Content-Type': 'application/json'
       }
     });
 
-    return response.data.map((loan: any) => ({
-      id: loan.id,
-      name: `${loan.user.first_name} ${loan.user.last_name}`,
-      amount: `${loan.price.toLocaleString()} تومان`,
-      date: new Date(loan.created_at).toLocaleDateString('fa-IR'),
-      description: loan.user_description,
-      type: loan.type === 'urgent' ? 'ضروری' : 'معمولی',
-      requestNumber: loan.loan_number,
-      guarantors: loan.guarantors_accept === 'accepted' ? 'نامشخص' : 'رحمانی'
-    }));
+    // فرض بر این است که response.data شامل فیلد count و loans است
+    const { count, loans } = response.data;
+
+    return {
+      count, // اضافه کردن count به داده‌ها
+      loans: loans.map((loan: any) => ({
+        id: loan.id,
+        name: `${loan.user.first_name} ${loan.user.last_name}`,
+        amount: `${loan.price.toLocaleString()} تومان`,
+        date: new Date(loan.created_at).toLocaleDateString('fa-IR'),
+        description: loan.user_description,
+        type: loan.type === 'urgent' ? 'ضروری' : 'معمولی',
+        requestNumber: loan.loan_number,
+        guarantors: loan.guarantors_accept === 'accepted' ? 'نامشخص' : 'رحمانی'
+      }))
+    };
   } catch (error) {
     console.error('Error fetching loan data:', error);
-    throw error; // اطمینان از اینکه خطا به `React Query` منتقل می‌شود
+    throw error;
   }
 };
 
 const EveryRequestLoan: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState(false);
 
-  const { data: users = [], isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['loans'],
     queryFn: fetchLoans
   });
 
+  const count = data?.count;
+  const users = data?.loans || [];
+
   if (isLoading) {
-    return(
+    return (
       <div>
-          <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
-        <div className='mr-2'>
-          <p className='font-bold text-lg'>درخواست وام</p>
+        <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
+          <div className='mr-2'>
+            <p className='font-bold text-lg'>درخواست وام</p>
+          </div>
+          <div>
+            <a href="" className='flex items-center ml-7'>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt='arrow' />
+            </a>
+          </div>
         </div>
-        <div>
-          <a href="" className='flex items-center ml-7'>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt='arrow' />
-          </a>
+        <div className='flex gap-[47%] items-center'>
+          <div>
+            <RoutRequestLoan />
+          </div>
+          <div>
+            <SwichButton setIsUrgent={setIsUrgent} />
+          </div>
         </div>
-      </div>
-      <div className='flex gap-[47%] items-center'>
-        <div>
-          <RoutRequestLoan />
+        <div className='mt-4'>
+          در حال بارگزاری
         </div>
-        <div>
-          <SwichButton setIsUrgent={setIsUrgent} />
-        </div>
-      </div>
-      <div className='mt-4'>
-       در حال بارگزاری
-      </div>
       </div>
     );
   }
@@ -210,28 +219,28 @@ const EveryRequestLoan: React.FC = () => {
   if (isError) {
     return (
       <div>
-           <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
-        <div className='mr-2'>
-          <p className='font-bold text-lg'>درخواست وام</p>
+        <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
+          <div className='mr-2'>
+            <p className='font-bold text-lg'>درخواست وام</p>
+          </div>
+          <div>
+            <a href="" className='flex items-center ml-7'>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt='arrow' />
+            </a>
+          </div>
         </div>
-        <div>
-          <a href="" className='flex items-center ml-7'>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt='arrow' />
-          </a>
+        <div className='flex gap-[47%] items-center'>
+          <div>
+            <RoutRequestLoan />
+          </div>
+          <div>
+            <SwichButton setIsUrgent={setIsUrgent} />
+          </div>
         </div>
-      </div>
-      <div className='flex gap-[47%] items-center'>
-        <div>
-          <RoutRequestLoan />
+        <div className='mt-4'>
+          خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
         </div>
-        <div>
-          <SwichButton setIsUrgent={setIsUrgent} />
-        </div>
-      </div>
-      <div className='mt-4'>
-      خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
-      </div>
       </div>
     );
   }
@@ -258,6 +267,9 @@ const EveryRequestLoan: React.FC = () => {
         <div>
           <SwichButton setIsUrgent={setIsUrgent} />
         </div>
+      </div>
+      <div className='mt-4'>
+        تعداد درخواست‌ها: {count}
       </div>
       <div className='mt-4'>
         <EveryLoanAplicationTable users={filteredUsers} />

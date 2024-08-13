@@ -321,7 +321,7 @@ import Paginate from './Paginate';
 // ایجاد یک hook برای ارسال درخواست به API
 const useAcceptLoanRequest = () => {
   const queryClient = useQueryClient();
-  const token = localStorage.getItem('token'); // توکن را از localStorage دریافت کنید.
+  const token = localStorage.getItem('authToken'); 
 
   return useMutation(
     async ({ id, status }) => {
@@ -333,7 +333,7 @@ const useAcceptLoanRequest = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // توکن را به هدر اضافه کنید.
+            Authorization: `Bearer ${token}`, 
           },
         }
       );
@@ -341,13 +341,12 @@ const useAcceptLoanRequest = () => {
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries('loans'); // بعد از موفقیت، کوئری‌ها را مجدد بارگیری کنید.
+        queryClient.invalidateQueries('loans'); 
       },
     }
   );
 };
 
-// کامپوننت اصلی
 const UserTable = ({ users }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 7;
