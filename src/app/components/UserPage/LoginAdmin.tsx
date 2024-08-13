@@ -115,7 +115,7 @@ const LoginAdmin: React.FC = () => {
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder="رمز عبور"
-                type="password"
+                type="text"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
