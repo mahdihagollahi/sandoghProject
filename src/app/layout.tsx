@@ -9,16 +9,12 @@ const queryClient = new QueryClient();
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-    <html lang="fa" dir="rtl">
-      <body>
-       
+      <html lang="fa" dir="rtl">
+        <body>
           {children}
           <ReactQueryDevtools initialIsOpen={false} />
-      
-      </body>
-    </html>
+        </body>
+      </html>
     </QueryClientProvider>
   );
 }
-
-
