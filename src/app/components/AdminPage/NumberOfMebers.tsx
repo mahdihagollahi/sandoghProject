@@ -5,7 +5,7 @@ import axios from 'axios'
 
 interface UserIdResponse {
   user_id: number;
-  [key: string]: any; // این بخش به شما اجازه می‌دهد تا داده‌های دیگری که ممکن است در response.data باشد را هم بگیرید
+  [key: string]: any; 
 }
 
 function NumberOfMebers() {
