@@ -12,9 +12,9 @@ interface User {
 
 
 const fetchUserData = async (): Promise<User> => {
-  const token = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('authToken');
 
-  if (!token) {
+  if (!authToken) {
     throw new Error('No token found, please log in.');
   }
 
@@ -24,7 +24,7 @@ const fetchUserData = async (): Promise<User> => {
     {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${authToken}`,
       },
     }
   );
@@ -41,8 +41,34 @@ const AdminHeader: React.FC = () => {
     queryFn: fetchUserData,
   });
 
-  if (isLoading) return <p>در حال بارگذاری...</p>;
-  if (error) return <p>خطا در بارگذاری داده‌ها: {error.message}</p>;
+  if (isLoading) return (
+    <div className='w-[97%]'>
+      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
+        <div className='flex items-center mb-4 md:mb-0'>
+          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+            سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
+          </p>
+        </div>
+        <div className='flex justify-between gap-4'>
+          در حال بارگذاری...
+        </div>
+      </div>
+    </div>
+  );
+  if (error) return (
+    <div className='w-[97%]'>
+      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
+        <div className='flex items-center mb-4 md:mb-0'>
+          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+            سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
+          </p>
+        </div>
+        <div className='flex justify-between gap-4'>
+         خطا:{error.message}
+        </div>
+      </div>
+    </div>
+  );;
 
   return (
     <div className='w-[97%]'>

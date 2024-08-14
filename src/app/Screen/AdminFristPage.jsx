@@ -17,12 +17,17 @@ function AdminFirstPage() {
       <div className=" flex flex-col ">
         <div >
           <div>
+          <div>
             <AdminNavbarHeader />
           </div>
           <div>
             <AdminPageNavbar />
           </div>
         </div>
+        </div>
+        <div>
+
+       
 
         <div className="block xl:-mt-[75%]  md:-mt-[46%]">
           <div className="flex  w-full   ">
@@ -52,11 +57,15 @@ function AdminFirstPage() {
        <div>
         <SupportMassgeDashboard/>
        </div>
+<div>
 
-       <div className="mt-[19.5%]">
+       <div className="mt-[19%]">
         <ChartAdminDashboard/>
+        </div>
+
        </div>
       </div>
+    </div>
     </div>
   );
 }
