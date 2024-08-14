@@ -26,35 +26,35 @@
 //                <div>
 
 //              <div className='px-4'>
-//                {User.map((items) =>(
-//                 <div key={items.id} className='flex items-center py-4 gap-3  '>
-//                     <div className='flex-shrink-0'>
+              //  {User.map((items) =>(
+              //   <div key={items.id} className='flex items-center py-4 gap-3  '>
+              //       <div className='flex-shrink-0'>
                 
-//                        <Image src={items.src} width={40} height={40} alt='' className='rounded-full'
-//                        />
-//                         </div>   
+              //          <Image src={items.src} width={40} height={40} alt='' className='rounded-full'
+              //          />
+              //           </div>   
                        
-//                             <div className='ml-4 flex-grow'>
-//                                <p className='font-medium text-sm leading-6 text-[#2D3748]'>
-//                                 {items.name}
-//                                </p>
+              //               <div className='ml-4 flex-grow'>
+              //                  <p className='font-medium text-sm leading-6 text-[#2D3748]'>
+              //                   {items.name}
+              //                  </p>
 
-//                                <p className='font-normal text-xs  text-[#A0AEC0]'>
-//                                 {items.massage}
-//                                </p>
-//                             </div>
+              //                  <p className='font-normal text-xs  text-[#A0AEC0]'>
+              //                   {items.massage}
+              //                  </p>
+              //               </div>
 
                           
                        
-//                         <div className='text-xs text-[#A0AEC0]'>
+              //           <div className='text-xs text-[#A0AEC0]'>
                          
-//                             {items.time}
+              //               {items.time}
                          
-//                         </div>
-//                     </div>
+              //           </div>
+              //       </div>
 
               
-//                ))}
+              //  ))}
 //             </div>
 
 //             <div className='flex justify-center py-8' >
@@ -81,33 +81,32 @@ import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image'; // اگر لازم است برای تصاویر
 
-// تعریف نوع برای پیام‌ها
 interface Message {
   id: number;
   title: string | null;
+  name: string
   description: string;
   status: string;
   ticket_id: number;
+  time: string
   priority: string;
   created_at: string;
   updated_at: string;
 }
 
-// فانکشن برای گرفتن توکن از localStorage
 const getToken = (): string | null => {
-  return localStorage.getItem('token');
+  return localStorage.getItem('authToken');
 };
 
-// فانکشنی برای گرفتن داده‌ها از API با توکن
 const fetchMessages = async (): Promise<Message[]> => {
-  const token = getToken();
-  if (!token) {
+  const authToken = getToken();
+  if (!authToken) {
     throw new Error('No token found');
   }
 
   const { data } = await axios.get<Message[]>('https://shabab.v1r.ir/api/messages/index', {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${authToken}`,
     },
   });
 
@@ -191,11 +190,10 @@ const SupportMassgeDashboard: React.FC = () => {
         </div>
         <div>
           <div className='px-4'>
-            {messages.map((item) => (
+            {/* {messages.map((item) => (
               <div key={item.id} className='flex items-center py-4 gap-3'>
                 <div className='flex-shrink-0'>
-                  {/* اگر تصاویر استفاده می‌کنید، از اینجا اضافه کنید */}
-                </div>
+              </div>
                 <div className='ml-4 flex-grow'>
                   <p className='font-medium text-sm leading-6 text-[#2D3748]'>
                     {item.title || 'بدون عنوان'}
@@ -214,7 +212,37 @@ const SupportMassgeDashboard: React.FC = () => {
                   </p>
                 </div>
               </div>
-            ))}
+            ))} */}
+
+{messages.map((item) =>(
+                <div key={item.id} className='flex items-center py-4 gap-3  '>
+                    <div className='flex-shrink-0'>
+                
+                       {/* <Image src={items.src} width={40} height={40} alt='' className='rounded-full'
+                       /> */}
+                        </div>   
+                       
+                            <div className='ml-4 flex-grow'>
+                               <p className='font-medium text-sm leading-6 text-[#2D3748]'>
+                                {item.name}
+                               </p>
+
+                               <p className='font-normal text-xs  text-[#A0AEC0]'>
+                                {item.description}
+                               </p>
+                            </div>
+
+                          
+                       
+                        <div className='text-xs text-[#A0AEC0]'>
+                         
+                            {item.time}
+                         
+                        </div>
+                    </div>
+
+              
+               ))}
           </div>
           <div className='flex justify-center py-8'>
             <Link href='/support' passHref>
