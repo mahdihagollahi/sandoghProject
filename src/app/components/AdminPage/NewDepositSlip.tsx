@@ -131,7 +131,7 @@ function NewDepositSlip() {
   const query = useQuery({
     queryKey: ['depositSlip'],
     queryFn: () => fetchDepositSlip(token || ''),
-    enabled: !!token, // اجرا تنها زمانی که توکن وجود دارد
+    enabled: !!token, 
   });
 
   if (query.isLoading) return <div>Loading...</div>;
