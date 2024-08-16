@@ -49,7 +49,7 @@ function ExitPageAdmin() {
   };
 
   return (
-    <div>
+    <div className='dark:bg-black'>
      
       <Modal isVisible={isModalVisible}>
         <ModaloutAdmin handleCloseModal={handleCloseModal} />

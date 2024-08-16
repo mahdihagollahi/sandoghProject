@@ -10,6 +10,10 @@ html, body {
 }
   
 
+.dark html, .dark body {
+  background-color: #000000; /* یا هر رنگ دلخواه */
+}
+
 @font-face {
   font-family: 'IRANSans';
   src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf'),

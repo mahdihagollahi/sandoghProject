@@ -21,13 +21,13 @@ function SentedMassege() {
   ];
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-2 mt-10">
-        <div className="mr-2">
-          <p className="font-bold text-lg">پیام ها</p>
+    <div className="dark:bg-black">
+      <div className="flex justify-between className='dark:bg-black'  items-center mb-2 mt-10">
+        <div className="mr-2 className='dark:bg-black'">
+          <p className="font-bold dark:text-white text-lg">پیام ها</p>
         </div>
-        <div className="flex justify-end ml-10">
-          <a href="" className="flex items-center">
+        <div className="flex className='dark:bg-black' justify-end ml-10">
+          <a href="" className="flex dark:text-white items-center">
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </a>
@@ -35,11 +35,11 @@ function SentedMassege() {
       </div>
       <div>{massege.length > 0 ? <BankGuarantor /> : <NotGuarantor />}</div>
 
-      <div className="flex flex-col gap-[5px] mt-1">
+      <div className="flex className='dark:bg-black' flex-col gap-[5px] mt-1">
         {massege.map((msg, index) => (
           <div
             key={index}
-            className={`p-[10px] w-[1025px] h-[100px] ${
+            className={`p-[10px] w-[1025px] h-[100px]  ${
               index % 2 === 0
                 ? "bg-[#d7ebe8] border-r-[3px] border-[#4FD1C5]"
                 : "bg-[#d4d4d4] border-r-[3px] border-[#394860]"

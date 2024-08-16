@@ -85,7 +85,7 @@ function ChartFinancial() {
 <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
   <div className='w-[510px] h-[302px] rounded-lg bg-inherit'>
   <div className=' mr-8 mb-10'>
-          <p className='font-medium -mt-10 text-sm text-[#000000]'>
+          <p className='font-medium -mt-10 text-sm dark:text-white text-[#000000]'>
           نمودار صندوق
           </p>
         </div>

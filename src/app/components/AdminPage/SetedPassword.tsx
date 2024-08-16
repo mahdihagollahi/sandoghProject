@@ -41,19 +41,19 @@ export default function SetedPassword() {
     <div>
       <div className="">
         <div className="flex justify-center">
-          <div className="bg-white shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
             {completions.length > 0 ? (
               completions.map((item, index) => (
                 <div
                   key={index}
                   className="flex justify-between border-b last:border-b-0 py-9"
                 >
-                  <span className="font-bold">{item.name}</span>
-                  <span>تکمیل شده</span>
+                  <span className="font-bold dark:text-white">{item.name}</span>
+                  <span className="dark:text-white">تکمیل شده</span>
                 </div>
               ))
             ) : (
-              <p>داده‌ای یافت نشد</p>
+              <p className="dark:text-white">داده‌ای یافت نشد</p>
             )}
           </div>
         </div>

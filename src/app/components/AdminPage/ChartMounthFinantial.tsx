@@ -84,7 +84,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
     <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
     <div className=' w-[880px] h-[390px] bg-inherit   rounded-lg  pr-20 '>
         <div className='  mb-10'>
-          <p className='font-medium -mt-10 text-sm text-[#000000]'>
+          <p className='font-medium -mt-10 text-sm dark:text-white text-[#000000]'>
           نمودار موجودی 6ماه اول صندوق
           </p>
         </div>

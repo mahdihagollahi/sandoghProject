@@ -192,10 +192,10 @@ const EveryRequestLoan: React.FC = () => {
       <div>
         <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
           <div className='mr-2'>
-            <p className='font-bold text-lg'>درخواست وام</p>
+            <p className='font-bold text-lg dark:text-white'>درخواست وام</p>
           </div>
           <div>
-            <a href="" className='flex items-center ml-7'>
+            <a href="" className='flex dark:text-white items-center ml-7'>
               بازگشت
               <Image src={backImage} width={38} height={38} alt='arrow' />
             </a>

@@ -23,9 +23,9 @@ const Dropdown: React.FC<DropdownProps> = ({ onSelectYear }) => {
     <div className="relative mr-56 inline-block text-right">
       <button
         onClick={toggleDropdown}
-        className="bg-teal-400 text-white font-semibold py-2 px-2 rounded-md flex items-center justify-between w-28"
+        className="bg-teal-400 text-white dark:text-white font-semibold py-2 px-2 rounded-md flex items-center justify-between w-28"
       >
-        <span>{selectedYear}</span>
+        <span className='dark:text-white'>{selectedYear}</span>
         <svg
           className={`w-4 h-4 ml-2 transition-transform ${isOpen ? 'rotate-180' : ''}`}
           fill="none"

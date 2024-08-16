@@ -53,15 +53,15 @@ function InputPassword() {
   };
 
   return (
-    <div className='p-4'>
+    <div className='p-4 dark:text-white'>
       <div className='flex justify-between items-center mb-2 mt-5'>
         <div className='mr-2'>
-          <p className='font-bold text-lg'>
+          <p className='font-bold dark:text-white text-lg'>
             تعیین رمز کاربران
           </p>
         </div>
         <div className='flex justify-end mr-2'>
-          <a href="" className='flex items-center'>
+          <a href="" className='flex dark:text-white items-center'>
             بازگشت
             <Image
               src={arrowImage}
@@ -73,12 +73,12 @@ function InputPassword() {
         </div>
       </div>
 
-      <div className='mx-auto w-[125vh]'>
-        <div className='bg-white shadow-lg mt-5 p-6 md:p-10 rounded-sm'>
+      <div className='mx-auto w-[125vh] '>
+        <div className='bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 rounded-sm'>
           <form onSubmit={handleSubmit}>
             <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap'>
               <div className='relative w-full md:w-auto'>
-                <label className='absolute -top-2 z-10 left-[73%] px-3 bg-white py-2'>
+                <label className='absolute -top-2 z-10 left-[73%] px-3 dark:bg-black dark:text-white bg-white py-2'>
                   نام کاربری
                 </label>
                 <input
@@ -90,7 +90,7 @@ function InputPassword() {
               </div>
 
               <div className='relative w-full md:w-auto'>
-                <label className='absolute -top-2 z-10 left-[68%] px-3 bg-white py-2'>
+                <label className='absolute -top-2 z-10 left-[68%] px-3 dark:bg-[#030303] dark:text-white bg-white py-2'>
                   شماره موبایل
                 </label>
                 <input

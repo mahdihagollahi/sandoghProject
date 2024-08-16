@@ -43,13 +43,13 @@ const AdminHeader: React.FC = () => {
 
   if (isLoading) return (
     <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
+      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
         <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+          <p className='mt-1 text-[#2D3748] dark:text-white font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
-        <div className='flex justify-between gap-4'>
+        <div className='flex justify-between dark:text-white gap-4'>
           در حال بارگذاری...
         </div>
       </div>
@@ -57,13 +57,13 @@ const AdminHeader: React.FC = () => {
   );
   if (error) return (
     <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
+      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
         <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+          <p className='mt-1 text-[#2D3748] font-light dark:text-white text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
-        <div className='flex justify-between gap-4'>
+        <div className='flex justify-between dark:text-white gap-4'>
          خطا:{error.message}
         </div>
       </div>
@@ -72,9 +72,9 @@ const AdminHeader: React.FC = () => {
 
   return (
     <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
+      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
         <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+          <p className='mt-1 text-[#2D3748] dark:text-white font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
@@ -82,7 +82,7 @@ const AdminHeader: React.FC = () => {
           <div>
             {user && (
               <Image
-                className='bg-[#FFFFFF] rounded-full'
+                className='bg-[#FFFFFF] dark:bg-black rounded-full'
                 src={user.image} 
                 alt='user'
                 width={40}
@@ -91,7 +91,7 @@ const AdminHeader: React.FC = () => {
             )}
           </div>
           <div className='hidden lg:inline lg:h-auto md:mb-4'>
-            <p className='text-[#2D3748] mt-2 flex items-center font-medium text-base'>
+            <p className='text-[#2D3748] mt-2 flex dark:text-white items-center font-medium text-base'>
               {user?.name}
             </p>
           </div>
