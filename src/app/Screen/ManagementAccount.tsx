@@ -6,7 +6,7 @@ import SaveInformation from '@/src/app/components/AdminPage/SaveInformation'
 
 function ManagementAccount() {
   return (
-    <div>
+    <div className='dark:bg-black'>
         <div className='flex '> 
             <div>
                

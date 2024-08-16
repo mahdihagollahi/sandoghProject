@@ -168,7 +168,7 @@ const EveryUser: React.FC = () => {
   });
 
   if (isLoading) return (
-    <div>
+    <div className='dark:bg-black'>
       <div className="flex gap-24 items-center mb-2 mt-5 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مشاهده کاربران</p>
@@ -177,7 +177,7 @@ const EveryUser: React.FC = () => {
           <label className="input flex items-center border border-[#E2E8F0] gap-4">
             <Image src={ImageSearch} width={20} height={20} alt="search" />
             <input
-              className="w-[32rem] h-[32rem]"
+              className="w-[32rem] h-[32rem] "
               type="search"
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
@@ -200,7 +200,7 @@ const EveryUser: React.FC = () => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div>
+    <div className='dark:bg-black'>
       <div className="flex gap-24 items-center mb-2 mt-5 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مشاهده کاربران</p>

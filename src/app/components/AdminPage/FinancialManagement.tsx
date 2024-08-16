@@ -81,12 +81,12 @@ export default function FinancialManagement() {
   
 <div className='flex mt-8  justify-between items-center mb-2   '>
             <div className='mr-2 '>
-                <p className='font-bold text-lg'>
+                <p className='font-bold dark:text-white text-lg'>
                 مدیریت مالی                
                 </p>
             </div>
             <div className='ml-10   '>
-              <a href="" className='flex items-center'>
+              <a href="" className='flex dark:text-white items-center'>
               بازگشت
               <Image
                 src={arrowImage}
@@ -103,7 +103,7 @@ export default function FinancialManagement() {
 
     <div className="mt-6 ">
        <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
-       <div className='  bg-white    shadow-xl rounded-lg px-12 '>
+       <div className='  bg-white dark:bg-black   shadow-xl rounded-lg px-12 '>
         <div className='flex gap-52 pt-8 '>
         <div className=' mr-[50%]'>
         <DateDropDown onSelectYear={handleSelectYear} />
@@ -123,7 +123,7 @@ export default function FinancialManagement() {
 
     
      <div className='flex   items-center   md:justify-center  xl:justify-center   xl:mt-2'>
-     <div className='  bg-white    shadow-xl rounded-lg '>
+     <div className='  bg-white  dark:bg-black    shadow-xl rounded-lg '>
      <div className='flex  pt-8 '>
         <div className=' mr-[24%]'>
         <DateDropDown onSelectYear={handleSelectYear} />

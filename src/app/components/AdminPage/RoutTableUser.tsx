@@ -25,7 +25,7 @@ function RoutTableUser() {
 
   return (
     <div>
-      <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 bg-white h-16 rounded-md'>
+      <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 dark:bg-black bg-white h-16 rounded-md'>
         <div
           className={`flex items-center gap-2 ${selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
           onMouseEnter={() => setHoveredTab('everyuser')}
@@ -38,7 +38,7 @@ function RoutTableUser() {
               height={25}
               alt='every user'
             />
-            <p className='font-bold text-sm text-[#2D3748]'>
+            <p className='font-bold text-sm dark:text-white text-[#2D3748]'>
               همه کاربران
             </p>
           </Link>
@@ -56,7 +56,7 @@ function RoutTableUser() {
               height={25}
               alt='deleted user'
             />
-            <p className='font-bold text-sm text-[#2D3748]'>
+            <p className='font-bold text-sm  dark:text-white text-[#2D3748]'>
               حذف شده ها
             </p>
           </Link>

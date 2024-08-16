@@ -14,7 +14,7 @@ const SwichButton = ({ setIsUrgent }) => {
 
   return (
     <div className='flex items-center mt-9'>
-      <p className='text-[#000000] font-normal ml-3'>{isOn ? 'ضروری' : 'معمولی'}</p>
+      <p className='text-[#000000] font-normal dark:text-white ml-3'>{isOn ? 'ضروری' : 'معمولی'}</p>
       <div
         className={`w-16 h-10 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300  ${
           isOn ? 'bg-[#409981]' : 'bg-teal-100'

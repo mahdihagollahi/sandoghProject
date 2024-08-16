@@ -22,12 +22,12 @@ function SupportMessage() {
 
 <div className='flex gap-[500px] justify-between items-center mb-2 mt-10  '>
             <div className='mr-4  '>
-                <p className='font-bold text-lg'>
+                <p className='font-bold dark:text-white text-lg'>
                 پشتیبانی
                 </p>
             </div>
             <div className=' absolute flex mr-[60.5%]   '>
-              <a href=""className='flex items-center'>
+              <a href=""className='flex  dark:text-white items-center'>
               بازگشت
               <Image
                 src={arrowImage}
@@ -45,11 +45,11 @@ function SupportMessage() {
         <div>
         
             <div className='py-2 mt-5' >
-                <p className='font-bold'>
+                <p className='font-bold  dark:text-white'>
                 پیام های در انتظار پاسخگویی
                 </p>
             </div>
-            <div className='bg-white w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+            <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
                 <Link href='/supportchat'>
                 {message.map((user,index )=>(
                   <div key={index} className={`flex w-[100%] mt-10 py-4 gap-4  items-start rounded-md ${
@@ -59,10 +59,10 @@ function SupportMessage() {
                  
                      <Image src={user.src} width={40} height={40} alt='user' className='rounded-full'/>
                      <div className='text-right'>
-                       <p className='font-bold text-[#003B33]'>
+                       <p className='font-bold dark:text-white text-[#003B33]'>
                         {user.name}
                        </p>
-                       <p className='text-[#003B33] font-normal'>
+                       <p className='text-[#003B33] dark:text-white font-normal'>
                         {user.message}
                        </p>
                      </div>

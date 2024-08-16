@@ -15,11 +15,11 @@ const User =[
 ];
 function SupportMassgeDashboard() {
   return (
-    <div className='flex justify-center mt-4 items-center   md:justify-center  xl:justify-end xl:ml-10 xl:mt-6'>
-        <div className='w-96 max-w-md bg-white shadow-xl rounded-lg px-4 '>
+    <div className='flex justify-center mt-4 items-center bg-white dark:bg-black  md:justify-center  xl:justify-end xl:ml-10 xl:mt-6'>
+        <div className='w-96 max-w-md  dark:bg-black  shadow-xl rounded-lg px-4 '>
             <div className='py-4 '>
              
-                <p className='font-bold text-sm px-7 text-[#2D3748]'>
+                <p className='font-bold text-sm dark:text-white px-7 text-[#2D3748]'>
                 پیام های پشتیبانی
                 </p>
                </div>
@@ -35,18 +35,18 @@ function SupportMassgeDashboard() {
                         </div>   
                        
                             <div className='ml-4 flex-grow'>
-                               <p className='font-medium text-sm leading-6 text-[#2D3748]'>
+                               <p className='font-medium text-sm leading-6 dark:text-white text-[#2D3748]'>
                                 {items.name}
                                </p>
 
-                               <p className='font-normal text-xs  text-[#A0AEC0]'>
+                               <p className='font-normal text-xs dark:text-white  text-[#A0AEC0]'>
                                 {items.massage}
                                </p>
                             </div>
 
                           
                        
-                        <div className='text-xs text-[#A0AEC0]'>
+                        <div className='text-xs dark:text-white text-[#A0AEC0]'>
                          
                             {items.time}
                          

@@ -51,7 +51,7 @@ function CardAdmin() {
   return (
     <div className='flex flex-col items-center'>
       <div className='w-full mt-6'>
-        <div className='bg-white rounded-md py-12 shadow-lg md:items-center xl:w-96 mx-auto'>
+        <div className='bg-white dark:bg-black rounded-md py-12 shadow-lg md:items-center xl:w-96 mx-auto'>
           <div className='flex justify-center'>
             <Image
               className=' flex justify-center'
@@ -62,7 +62,7 @@ function CardAdmin() {
             />
           </div>
           <div className='mt-8 mx-auto pb-3 pt-2 px-3 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
-          <button className='flex justify-between items-center gap-3 bg-white w-full '>
+          <button className='flex justify-between items-center gap-3 dark:bg-black text-white bg-white w-full '>
             آیا شماره کارت صندوق را تغییر میدهید ؟ 
             <Image
               src={EditIcon}
