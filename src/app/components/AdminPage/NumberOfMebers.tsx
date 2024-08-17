@@ -50,7 +50,7 @@ function NumberOfMebers() {
 
   return (
     <>
-      <div className='w-full flex -mt-[50%] '>
+      <div className='w-full flex  '>
         <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72 '>
           <div className='flex justify-between gap-20'>
             <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>

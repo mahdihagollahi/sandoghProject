@@ -136,8 +136,8 @@ function NewDepositSlip() {
 
   if (query.isLoading) return (
     <div>
-       <div className='mr-96 ml-8 -mt-[12%]'>
-        <div className='flex justify-between gap-12 shadow-lg w-[59%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+       <div className='mr-96 ml-8 '>
+        <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
           <div className='flex flex-col gap-9'>
             <div>
               <p className='font-bold text-sm dark:text-white leading-8 text-[#2D3748]'>
@@ -166,9 +166,9 @@ function NewDepositSlip() {
 
     return (
       <div>
-         <div className='mr-96 ml-8 -mt-[12%]'>
-          <div className='flex justify-between gap-12 shadow-lg w-[59%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
-            <div className='flex flex-col gap-9'>
+         <div className='mr-96 ml-8 '>
+         <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+         <div className='flex flex-col gap-9'>
               <div>
                 <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
                 An error occurred: {query.error.message}                
@@ -198,9 +198,9 @@ function NewDepositSlip() {
 
   return (
     <div>
-      <div className='mr-96 ml-8 -mt-[12%]'>
-        <div className='flex justify-between gap-12 shadow-lg w-[59%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
-          <div className='flex flex-col gap-9'>
+      <div className='mr-96 ml-8 '>
+      <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+      <div className='flex flex-col gap-9'>
             <div>
               <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
                 {numberLoan} فیش واریزی جدید
