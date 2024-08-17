@@ -42,28 +42,28 @@ const AdminHeader: React.FC = () => {
   });
 
   if (isLoading) return (
-    <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
-        <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] dark:text-white font-light text-lg'>
+    <div className=''>
+      <div className='flex gap-4 w-full flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[12%] rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+        <div className='flex items-center gap-40 mb-4 md:mb-0'>
+          <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-white font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
-        <div className='flex justify-between dark:text-white gap-4'>
+        <div className='flex justify-between mr-60 mt-2 dark:text-white gap-4'>
           در حال بارگذاری...
         </div>
       </div>
     </div>
   );
   if (error) return (
-    <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
-        <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] font-light dark:text-white text-lg'>
+    <div className=''>
+      <div className='flex gap-4 w-full flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[12%] rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+      <div className='flex items-center gap-40 mb-4 md:mb-0'>
+          <p className='mt-1 whitespace-nowrap text-[#2D3748] font-light dark:text-white text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
-        <div className='flex justify-between dark:text-white gap-4'>
+        <div className='flex justify-between mr-52 mt-2 dark:text-white gap-4'>
          خطا:{error.message}
         </div>
       </div>
@@ -71,14 +71,14 @@ const AdminHeader: React.FC = () => {
   );;
 
   return (
-    <div className='w-[97%]'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[28%] rounded-md shadow-lg py-3 px-3 h-auto md:h-16'>
-        <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] dark:text-white font-light text-lg'>
+    <div className=''>
+      <div className='flex gap-4 w-full flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[12%] rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+      <div className='flex items-center  mb-4 md:mb-0'>
+          <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-white font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
-        <div className='flex justify-between gap-4'>
+        <div className='flex justify-between mr-40 gap-4'>
           <div>
             {user && (
               <Image

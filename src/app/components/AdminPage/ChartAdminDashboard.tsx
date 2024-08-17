@@ -86,7 +86,7 @@ function ChartAdminDashboard() {
 
   return (
     <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14'>
-      <div className='w-[609px] h-[456px] dark:bg-black bg-white -mt-[460px] py-10 ml-6 shadow-xl rounded-lg px-6'>
+      <div className='w-[609px] h-[456px] dark:bg-black bg-white -mt-[55%] py-10 ml-6 shadow-xl rounded-lg px-6'>
         <div className='py-4'>
           <p className='font-medium dark:text-white text-sm text-[#000000]'>
             نمودار موجودی 6ماه اول صندوق

@@ -49,10 +49,10 @@ function LoanApplication() {
 
   return (
     <div>
-        <div className='w-full flex -mt-[54%]   '>
+        <div className='w-full flex    '>
           <div className='bg-[#ffff]  dark:bg-black   rounded-md  px-4 py-5 shadow-lg flex flex-col  gap-12 md:items-center xl:w-72 '>
             <div className='flex justify-between gap-20'>
-            <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
+            <p className='text-[#2D3748] dark:text-white  font-bold text-sm leading-5'>
             درخواست های وام 
 
                          </p>
@@ -61,16 +61,16 @@ function LoanApplication() {
             </div>
             <div className='flex justify-between gap-[117px] '>
                <div>
-                  <p className='font-bold dark:text-white text-[#A0AEC0] text-xs leading-8'>
+                  <p className='font-bold dark:text-white whitespace-normal text-[#A0AEC0] text-xs leading-8'>
                   تعداد : 
                   </p>
                </div>
                <div className='flex items-center gap-1'>
-              <p className='font-bold text-[#A0AEC0] dark:text-white text-xs leading-8'>
+              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
                 {loading ? 'در حال بارگذاری...' : responseData ? JSON.stringify(responseData)  : 'اطلاعات موجود نیست'}
             
               </p>
-              <p className='font-bold text-[#A0AEC0] dark:text-white text-xs leading-8'>
+              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
                 نفر در صف
                </p>
                </div>
