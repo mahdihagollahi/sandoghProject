@@ -43,7 +43,7 @@ const AdminHeader: React.FC = () => {
 
   if (isLoading) return (
     <div className=''>
-      <div className='flex gap-4 w-full flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[12%] rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+      <div className='flex gap-4 w-full flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-[12%] rounded-md  shadow-md py-3 px-3 h-auto md:h-16'>
         <div className='flex items-center gap-40 mb-4 md:mb-0'>
           <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-white font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
