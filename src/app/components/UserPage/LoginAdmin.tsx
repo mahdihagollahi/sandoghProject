@@ -1,9 +1,12 @@
 
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Image from "next/image";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import axios from "axios";
+import Link from "next/link";
+import Modal from '../AdminPage/Modal';
+import Password2 from "./Password2";
 
 
 interface LoginResponse {
@@ -16,6 +19,9 @@ const LoginAdmin: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+ 
+
 
   const handleLogin = async () => {
     try {
@@ -41,6 +47,9 @@ const LoginAdmin: React.FC = () => {
     }
   }
 
+
+
+  
   return (
     <div className="relative h-[450px]">
       <div>
@@ -104,18 +113,20 @@ const LoginAdmin: React.FC = () => {
 
           <div className="flex flex-col gap-[20px] justify-center item-center mt-[50px] mr-[55px]">
             <div className="flex flex-col">
+            <span className="text-[#999999]">
+                نام کاربری ، شماره ملی شما است
+              </span>
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder="نام کاربری"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-              <span className="text-[#999999]">
-                نام کاربری ، شماره ملی شما است
-              </span>
+              
             </div>
 
             <div className="flex flex-col relative">
+            <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 placeholder="رمز عبور"
@@ -123,9 +134,9 @@ const LoginAdmin: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
+             
               <div
-                className="absolute top-1/2 right-96 transform -translate-y-6 cursor-pointer "
+                className="absolute top-14 right-96 transform -translate-y-6 cursor-pointer "
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
@@ -163,10 +174,19 @@ const LoginAdmin: React.FC = () => {
                   
                 )}
               </div>
+              <div>
+                  <Link href='/forgetpassword'>
+                  <p className="text-[#394860] text-sm mt-1">
+                    فراموشی رمز؟
+                  </p>
+                  </Link>
+                </div>
             </div>
           </div>
           {errorMessage && (
-            <div className="text-red-500 text-center mt-4">{errorMessage}</div>
+            <div className="bg-[#FFF2F2] text-[#C30000] text-base font-normal text-center mt-4">
+               رمزعبور را اشتباه وارد کردید
+            </div>
           )}
 
           <button
@@ -177,6 +197,7 @@ const LoginAdmin: React.FC = () => {
           </button>
         </div>
       </div>
+     
     </div>
   );
 }

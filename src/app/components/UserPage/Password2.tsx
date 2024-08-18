@@ -7,7 +7,7 @@ import logo from "@/src/app/assent/Img/userPanel/logo.svg";
 import { useState,useEffect } from "react";
 
 
-function Password2() {
+function Password2({handleCloseModal}) {
 
   const [time, setTime] = useState(120);
 
@@ -30,8 +30,12 @@ function Password2() {
 
   return (
     <>
+       <div className="flex justify-center mt-64  items-center">
       <div className="w-[40%] p-8 shadow-md rounded-md ">
-      <div className="flex flex-row justify-between  ">
+     
+
+        
+      <div className="flex flex-row  justify-between  ">
             <div className="flex flex-row gap-4">
              <Image className="w-6 " src={logo} alt=""/>
              <span className="text-[#394860] font-bold ">صندوق قرض الحسنه مهر</span>
@@ -61,7 +65,15 @@ function Password2() {
             </div>
           </div>
         </div>
-
+      <div>
+      <button
+            className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px] mr-[55px] mt-10"
+            onClick={handleCloseModal}
+          >
+           ارسال
+          </button>
+      </div>
+      </div>
       </div>
 
     </>

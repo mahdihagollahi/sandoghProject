@@ -25,15 +25,15 @@ import ImageSettingHover from '@/src/app/assent/Img/adminPanel/settingHover.svg'
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 
 const Navbar = [
-  { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/dashboard' },
-  { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
-  { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
-  { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
-  { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
-  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/ruleuser' },
-  { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
-  { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
-  { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+  { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/Rout/dashboard' },
+  { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/Rout/everyuser' },
+  { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/Rout/allloanaplication' },
+  { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/Rout/userpass' },
+  { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/Rout/showuserdetail' },
+  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/Rout/ruleuser' },
+  { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/Rout/support' },
+  { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/Rout/sentmessageadmin' },
+  { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/Rout/management' },
  
 ];
 
@@ -102,7 +102,7 @@ const [clickedImage, setClickedImage] = useState<number | null>(null);
             </div>
           </Link>
         ))}
-        <Link href='/exitadmin'>
+        <Link href='/Rout/exitadmin'>
     
         <button className='mr-[1%] mt-[7%]'>
           <Image src={ImageExport} width={60} alt='Exit' className='cursor-pointer' />
