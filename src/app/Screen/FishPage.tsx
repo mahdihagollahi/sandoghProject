@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 
 function FishPage() {
   const { data, error, isLoading } = useQuery({
-    queryKey: ["fetchImage"], // کلید کوئری
+    queryKey: ["fetchImage"], 
     queryFn: async () => {
       const token = localStorage.getItem("authToken");
 
