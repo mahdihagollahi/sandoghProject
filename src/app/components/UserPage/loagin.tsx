@@ -29,11 +29,9 @@ export default function Login() {
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("authToken", response.data.token);
 
-        window.location.href = "/dashboarduser";
+        window.location.href = "/Rout/dashboarduser";
       }
-      // else {
-      //   setError("خطایی در دریافت توکن وجود دارد.");
-      // }
+     
     } catch (err: any) {
       if (err.response && err.response.data) {
         setError(
