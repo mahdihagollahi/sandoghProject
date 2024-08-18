@@ -11,7 +11,7 @@ html, body {
   
 
 .dark html, .dark body {
-  background-color: #000000; /* یا هر رنگ دلخواه */
+  background-color: #000000; 
 }
 
 @font-face {
@@ -38,3 +38,5 @@ html, body {
   font-weight: Medium;
   font-style: Medium;
 }
+
+
