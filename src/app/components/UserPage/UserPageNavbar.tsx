@@ -32,35 +32,35 @@ const Navbar = [
     id: 2,
     src: mangmentUser,
     hoverSrc: mangmentUserHover,
-    link: "/ًRout/useraccount",
+    link: "/Rout/useraccount",
   },
   { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: "" },
   {
     id: 4,
     src: payInstallments,
     hoverSrc: payInstallmentsHover,
-    link: "/ًRout/loanpayment",
+    link: "/Rout/loanpayment",
   },
   {
     id: 5,
     src: RequestInstallments,
     hoverSrc: RequestnstallmentsHover,
-    link: "/ًRout/requestloanaplication",
+    link: "/Rout/requestloanaplication",
   },
   {
     id: 6,
     src: ImageMessage,
     hoverSrc: ImageMessageHover,
-    link: "/ًRout/sentedmassageuser",
+    link: "/Rout/sentedmassageuser",
   },
   {
     id: 7,
     src: SupportUser,
     hoverSrc: SupportUserHover,
-    link: "/ًRout/supportticket",
+    link: "/Rout/supportticket",
   },
 
-  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: "/ًRout/ruleuser" },
+  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: "/Rout/ruleuser" },
 ];
 
 function UserPageNavbar() {

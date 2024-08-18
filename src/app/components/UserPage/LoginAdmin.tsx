@@ -32,7 +32,7 @@ const LoginAdmin: React.FC = () => {
 
       if (response.status === 200 && response.data.token) {
         localStorage.setItem('authToken', response.data.token);
-        window.location.href = "/dashboard";
+        window.location.href = "/Rout/dashboard";
       } else {
         setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است');
       }

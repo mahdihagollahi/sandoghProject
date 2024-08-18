@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import CardImage from '@/src/app/assent/Img/adminPanel/Credit Card.png'
+import Background from '@/src/app/assent/Img/adminPanel/Background.png'
 import EditIcon from '@/src/app/assent/Img/adminPanel/Edit.svg'
 
 function CardAdmin() {
@@ -11,7 +11,7 @@ function CardAdmin() {
           <div className='flex justify-center'>
             <Image
               className=' flex justify-center'
-              src={CardImage}
+              src={Background}
               width={300}
               height={70}
               alt='Card'
