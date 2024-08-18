@@ -31,7 +31,7 @@ function RoutRequestLoan() {
             onMouseEnter={() => setHoveredTab('allloanaplication')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/allloanaplication' className='flex items-center gap-2' onClick={() => handleTabClick('allloanaplication')}>
+            <Link href='/Rout/allloanaplication' className='flex items-center gap-2' onClick={() => handleTabClick('allloanaplication')}>
               <Image
                 src={selectedTab === 'allloanaplication' || hoveredTab === 'allloanaplication' ? UserHoverImage : UserOutlineImage}
                 width={25}
@@ -49,7 +49,7 @@ function RoutRequestLoan() {
             onMouseEnter={() => setHoveredTab('checkedrequestloan')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/checkedrequestloan' className='flex items-center gap-2' onClick={() => handleTabClick('checkedrequestloan')}>
+            <Link href='/Rout/checkedrequestloan' className='flex items-center gap-2' onClick={() => handleTabClick('checkedrequestloan')}>
               <Image
                 src={selectedTab === 'checkedrequestloan' || hoveredTab === 'checkedrequestloan' ? crossActiveImage : crossOutline}
                 width={25}

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import groupImage from '@/src/app/assent/Img/adminPanel/Group 39513.svg'
 import Link from 'next/link'
 
-function AdminPageNavbar() {
+function AdminNavbarHeader() {
   return (
     <div>
         <div className='flex items-center mt-10 mr-10  '>
@@ -27,5 +27,5 @@ function AdminPageNavbar() {
   )
 }
 
-export default AdminPageNavbar
+export default AdminNavbarHeader
 

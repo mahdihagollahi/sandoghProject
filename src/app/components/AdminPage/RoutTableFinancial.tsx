@@ -31,7 +31,7 @@ function RoutTableUser() {
             onMouseEnter={() => setHoveredTab('deposited')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/deposited' className='flex items-center gap-2' onClick={() => handleTabClick('deposited')}>
+            <Link href='/Rout/deposited' className='flex items-center gap-2' onClick={() => handleTabClick('deposited')}>
               <Image
                 src={selectedTab === 'deposited' || hoveredTab === 'deposited' ? UserHoverImage : UserOutlineImage}
                 width={25}
@@ -49,7 +49,7 @@ function RoutTableUser() {
             onMouseEnter={() => setHoveredTab('notdeposited')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/notdeposited' className='flex items-center gap-2' onClick={() => handleTabClick('notdeposited')}>
+            <Link href='/Rout/notdeposited' className='flex items-center gap-2' onClick={() => handleTabClick('notdeposited')}>
               <Image
                 src={selectedTab === 'notdeposited' || hoveredTab === 'notdeposited' ? crossActiveImage : crossOutline}
                 width={25}
