@@ -54,9 +54,9 @@ function CardAdmin() {
   };
 
   if (isLoading) return (
-    <div className='flex flex-col items-center'>
-      <div className='w-full'>
-        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-96 mx-auto'>
+    <div className='flex flex-col items-center mr-3'>
+      <div className=''>
+        <div className='bg-white dark:bg-black rounded-md  py-[15%] shadow-lg md:items-center xl:w-[120%] '>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -80,9 +80,9 @@ function CardAdmin() {
     </div>
   );
   if (error) return (
-    <div className='flex flex-col items-center'>
-    <div className='w-full'>
-      <div className='bg-white dark:bg-black rounded-md py-[16%] shadow-lg md:items-center xl:w-96 mx-auto'>
+    <div className='flex flex-col items-center mr-3'>
+      <div className=''>
+        <div className='bg-white dark:bg-black rounded-md  py-[13%] shadow-lg md:items-center xl:w-[116%] '>
         <div className='relative flex justify-center items-center h-48'>
           <div
             className='absolute inset-0 w-80 h-40 mr-8  rounded-3xl'
@@ -111,9 +111,9 @@ function CardAdmin() {
   )
 
   return (
-    <div className='flex flex-col items-center'>
-      <div className='w-full'>
-        <div className='bg-white dark:bg-black rounded-md py-[16%] shadow-lg md:items-center xl:w-96 mx-auto'>
+    <div className='flex flex-col items-center mr-3'>
+    <div className=''>
+      <div className='bg-white dark:bg-black rounded-md  py-[10%] shadow-lg md:items-center xl:w-[120%] '>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8  rounded-3xl'
