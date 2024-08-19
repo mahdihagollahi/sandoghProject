@@ -22,6 +22,9 @@ import ImageMassege from '@/src/app/assent/Img/adminPanel/massege.svg'
 import ImageMassegeHover from '@/src/app/assent/Img/adminPanel/massegeHover.svg'
 import ImageSetting from '@/src/app/assent/Img/adminPanel/setting.svg'
 import ImageSettingHover from '@/src/app/assent/Img/adminPanel/settingHover.svg'
+import deleteUser from '@/src/app/assent/Img/adminPanel/DeleteUserNotHover.svg'
+import deleteUserHover from '@/src/app/assent/Img/adminPanel/DeleteUser.svg'
+
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';
 
 const Navbar = [
@@ -34,7 +37,8 @@ const Navbar = [
   { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/Rout/support' },
   { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/Rout/sentmessageadmin' },
   { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/Rout/management' },
- 
+  { id: 11, src: deleteUser, hoverSrc: deleteUserHover, link: '/Rout/userdeleteadmin' },
+
 ];
 
 function AdminPageNavbar() {
