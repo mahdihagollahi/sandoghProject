@@ -54,7 +54,7 @@ function InputPassword() {
 
   return (
     <div className='p-4 dark:text-white'>
-      <div className='flex justify-between items-center mb-2 mt-5'>
+      <div className='flex justify-between items-center mb-2 mt-7'>
         <div className='mr-2'>
           <p className='font-bold dark:text-white text-lg'>
             تعیین رمز کاربران

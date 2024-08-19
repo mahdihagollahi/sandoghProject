@@ -169,7 +169,7 @@ const EveryUser: React.FC = () => {
 
   if (isLoading) return (
     <div className='dark:bg-black'>
-      <div className="flex gap-24 items-center mb-2 mt-5 mr-3">
+      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مشاهده کاربران</p>
         </div>

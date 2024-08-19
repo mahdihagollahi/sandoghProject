@@ -97,7 +97,7 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href="/depositreceipt">
+                      <Link href="/Rout/depositreceipt">
                         <button
                           className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
                           onClick={handleOpenModal}
