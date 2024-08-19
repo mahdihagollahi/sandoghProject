@@ -31,7 +31,7 @@ function RoutTableUser() {
           onMouseEnter={() => setHoveredTab('everyuser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
+          <Link href='/Rout/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
             <Image
               src={selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? IconlyHoverImage : IconlyImage}
               width={25}
@@ -49,7 +49,7 @@ function RoutTableUser() {
           onMouseEnter={() => setHoveredTab('deleteduser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
+          <Link href='/Rout/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
             <Image
               src={selectedTab === 'deleteduser' || hoveredTab === 'deleteduser' ? DeletedHoverImage : DeletedImage}
               width={25}

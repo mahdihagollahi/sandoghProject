@@ -40,3 +40,9 @@ html, body {
 }
 
 
+.container {
+  width: 1024px; 
+  height: 768px;  
+  overflow: auto; 
+  box-sizing: border-box;
+}

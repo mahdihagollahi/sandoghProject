@@ -70,7 +70,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
 
   return (
     <div >
-         <div className='flex gap-[74%]  items-center mb-2 mt-5 mr-3  '>
+         <div className='flex gap-[74%]  items-center mb-2 mt-12 mr-3  '>
             <div className='mr-2 '>
                 <p className='font-bold text-lg'>
                 مدیریت مالی               

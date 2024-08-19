@@ -22,7 +22,7 @@ import ImageMassege from '@/src/app/assent/Img/adminPanel/massege.svg'
 import ImageMassegeHover from '@/src/app/assent/Img/adminPanel/massegeHover.svg'
 import ImageSetting from '@/src/app/assent/Img/adminPanel/setting.svg'
 import ImageSettingHover from '@/src/app/assent/Img/adminPanel/settingHover.svg'
-import deleteUser from '@/src/app/assent/Img/adminPanel/DeleteUserNotHover.svg'
+import deleteUser from '@/src/app/assent/Img/adminPanel/DeletedUserNotHover.svg'
 import deleteUserHover from '@/src/app/assent/Img/adminPanel/DeleteUser.svg'
 
 import ImageExport from '@/src/app/assent/Img/adminPanel/Exit.svg';

@@ -75,7 +75,7 @@ const DepositorsUserFinancial: React.FC = () => {
           <p className='font-bold text-lg'>مدیریت مالی</p>
         </div>
         <div className='flex justify-end mr-2'>
-          <Link href="/showuserdetail">
+          <Link href="/Rout/showuserdetail">
             <div className='flex items-center'>
               بازگشت
               <Image src={backImage} width={38} height={38} alt='arrow' />
