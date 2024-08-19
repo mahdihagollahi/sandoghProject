@@ -1,13 +1,10 @@
 
 
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
-import Modal from '../AdminPage/Modal';
-import Password2 from "./Password2";
-
 
 interface LoginResponse {
   token?: string;
@@ -20,15 +17,15 @@ const LoginAdmin: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
- 
-
-
   const handleLogin = async () => {
     try {
-      const response = await axios.post<LoginResponse>("https://shabab.v1r.ir/api/auth/login/admin", {
-        user_name: username,
-        password: password,
-      });
+      const response: AxiosResponse<LoginResponse> = await axios.post(
+        "https://hosseinshabab.iapp.ir/api/auth/login/admin",
+        {
+          user_name: username,
+          password: password,
+        }
+      );
 
       if (response.status === 200 && response.data.token) {
         localStorage.setItem('authToken', response.data.token);
@@ -45,9 +42,7 @@ const LoginAdmin: React.FC = () => {
         setErrorMessage("مشکلی در ارسال درخواست به وجود آمد.");
       }
     }
-  }
-
-
+  };
 
   
   return (

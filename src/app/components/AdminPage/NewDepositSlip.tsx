@@ -106,7 +106,7 @@ import axios from 'axios';
 import MoneyImage from '@/src/app/assent/Img/adminPanel/3D money card.svg';
 
 const fetchDepositSlip = async (token: string) => {
-  const response = await axios.get('https://shabab.v1r.ir/api/factors/factorCnt', {
+  const response = await axios.get('https://hosseinshabab.iapp.ir/api/factors/factorCnt', {
     headers: {
    
       'Authorization': `Bearer ${token}`
@@ -136,8 +136,8 @@ function NewDepositSlip() {
 
   if (query.isLoading) return (
     <div>
-       <div className='mr-96 ml-8 '>
-        <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+       <div className='ml-8 mr-20 -mt-[15.55%]'>
+        <div className='flex justify-between gap-12 shadow-lg w-[60%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
           <div className='flex flex-col gap-9'>
             <div>
               <p className='font-bold text-sm dark:text-white leading-8 text-[#2D3748]'>
@@ -166,8 +166,8 @@ function NewDepositSlip() {
 
     return (
       <div>
-         <div className='mr-96 ml-8 '>
-         <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+        <div className='ml-8 mr-20 -mt-[14%]'>
+         <div className='flex justify-between gap-12 shadow-lg w-[61%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
          <div className='flex flex-col gap-9'>
               <div>
                 <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
@@ -198,8 +198,8 @@ function NewDepositSlip() {
 
   return (
     <div>
-      <div className='mr-96 ml-8 '>
-      <div className='flex justify-between gap-12 shadow-lg w-[123%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+    <div className='ml-8 mr-20 -mt-[15.55%]'>
+      <div className='flex justify-between gap-12 shadow-lg w-[60%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
       <div className='flex flex-col gap-9'>
             <div>
               <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
