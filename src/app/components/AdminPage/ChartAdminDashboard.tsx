@@ -10,7 +10,7 @@ import axios from 'axios';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const fetchChartData = async () => {
-  const API_URL = 'https://shabab.v1r.ir/api/factors/index/1';
+  const API_URL = 'http://hosseinshabab.iapp.ir/api/factors/index/1';
   const response = await axios.put(API_URL);
   return response.data;
 };

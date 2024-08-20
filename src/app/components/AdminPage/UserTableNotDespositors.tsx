@@ -48,7 +48,7 @@ const UserTable = ({ users }) => {
 
     try {
       const response = await axios.post(
-        'https://shabab.v1r.ir/api/installments/show/admin',
+        'http://hosseinshabab.iapp.ir/api/installments/show/admin',
         {
           userId: selectedUser.id, 
           message: message,

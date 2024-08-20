@@ -19,7 +19,7 @@ const LoginAdmin: React.FC = () => {
   const handleLogin = async () => {
     try {
       const response: AxiosResponse<LoginResponse> = await axios.post(
-        "https://hosseinshabab.iapp.ir/api/auth/login/admin",
+        "http://hosseinshabab.iapp.ir/api/auth/login/admin",
         {
           user_name: username,
           password: password,

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import axios from 'axios';
-import EyeIconImage from '@/src/app/assent/Img/adminPanel/eye.svg';
-import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
-import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
-import statusIconImage from '@/src/app/assent/Img/adminPanel/statusIcon.svg';
-import Modal from './Modal';
-import DepositSlip from '@/src/app/components/AdminPage/DepositSlip';
-import Paginate from './Paginate';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Image from "next/image";
+import axios from "axios";
+import EyeIconImage from "@/src/app/assent/Img/adminPanel/eye.svg";
+import IconlytikImage from "@/src/app/assent/Img/adminPanel/tik.svg";
+import IconlycrossImage from "@/src/app/assent/Img/adminPanel/cross.svg";
+import statusIconImage from "@/src/app/assent/Img/adminPanel/statusIcon.svg";
+import Modal from "./Modal";
+import DepositSlip from "@/src/app/components/AdminPage/DepositSlip";
+import Paginate from "./Paginate";
+import Link from "next/link";
 
 interface User {
   id: number;
@@ -24,30 +24,35 @@ interface UserTableProps {
 const UserTable: React.FC<UserTableProps> = ({ users }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [statusUpdateError, setStatusUpdateError] = useState<string | null>(null);
+  const [statusUpdateError, setStatusUpdateError] = useState<string | null>(
+    null
+  );
   const itemsPerPage = 7;
 
   const axiosInstance = axios.create({
-    baseURL: 'https://shabab.v1r.ir/api',
+    baseURL: "http://hosseinshabab.iapp.ir/api",
   });
 
   axiosInstance.interceptors.request.use((config) => {
-    const authToken = localStorage.getItem('authToken');
+    const authToken = localStorage.getItem("authToken");
     if (authToken) {
       config.headers.Authorization = `Bearer ${authToken}`;
     }
     return config;
   });
 
-  const handleStatusChange = async (userId: number, status: 'accept' | 'pending' | 'reject') => {
+  const handleStatusChange = async (
+    userId: number,
+    status: "accept" | "pending" | "reject"
+  ) => {
     try {
-      await axiosInstance.post('/factors/accept', {
+      await axiosInstance.post("/factors/accept", {
         userId,
         accept_status: status,
       });
     } catch (error) {
-      setStatusUpdateError('مشکلی در تغییر وضعیت به وجود آمده است.');
-      console.error('Error:', error);
+      setStatusUpdateError("مشکلی در تغییر وضعیت به وجود آمده است.");
+      console.error("Error:", error);
     }
   };
 
@@ -88,12 +93,12 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
               <tbody className="divide-y divide-gray-200 space-y-4">
                 {currentPageData.map((user, index) => (
                   <tr key={index} className="">
-                    <td className="w-2/12 py-8 px-4 flex gap-20">قسط{user.id}</td>
+                    <td className="w-2/12 py-8 px-4 flex gap-20">
+                      قسط{user.id}
+                    </td>
                     <td className="w-2/12 py-8 pr-12">{user.name}</td>
                     <td className="w-[25%] py-8 pr-10 text-[#718096]">
-                      <p>
-                        {user.depositAmount} تومان
-                      </p>
+                      <p>{user.depositAmount} تومان</p>
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
                     <td className="w-3/12 py-2 px-4">
@@ -102,7 +107,12 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
                           className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
                           onClick={handleOpenModal}
                         >
-                          <Image src={EyeIconImage} width={24} height={24} alt="" />
+                          <Image
+                            src={EyeIconImage}
+                            width={24}
+                            height={24}
+                            alt=""
+                          />
                           <p className="font-normal text-sm text-teal-400">
                             فیش واریزی
                           </p>
@@ -113,23 +123,38 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
                       <div className="flex gap-5">
                         <button
                           className="w-6 h-6"
-                          onClick={() => handleStatusChange(user.id, 'accept')}
+                          onClick={() => handleStatusChange(user.id, "accept")}
                         >
-                          <Image src={IconlytikImage} width={1020} height={1020} alt="تایید" />
+                          <Image
+                            src={IconlytikImage}
+                            width={1020}
+                            height={1020}
+                            alt="تایید"
+                          />
                         </button>
 
                         <button
                           className="w-6 h-6"
-                          onClick={() => handleStatusChange(user.id, 'pending')}
+                          onClick={() => handleStatusChange(user.id, "pending")}
                         >
-                          <Image src={statusIconImage} width={1020} height={1020} alt="انتظار" />
+                          <Image
+                            src={statusIconImage}
+                            width={1020}
+                            height={1020}
+                            alt="انتظار"
+                          />
                         </button>
 
                         <button
                           className="w-6 h-6"
-                          onClick={() => handleStatusChange(user.id, 'reject')}
+                          onClick={() => handleStatusChange(user.id, "reject")}
                         >
-                          <Image src={IconlycrossImage} width={1020} height={1020} alt="رد" />
+                          <Image
+                            src={IconlycrossImage}
+                            width={1020}
+                            height={1020}
+                            alt="رد"
+                          />
                         </button>
                       </div>
                     </td>
@@ -148,7 +173,9 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
       <Modal isVisible={isModalVisible}>
         <DepositSlip onClose={handleCloseModal} users={users} />
       </Modal>
-      {statusUpdateError && <div className="text-red-500">{statusUpdateError}</div>}
+      {statusUpdateError && (
+        <div className="text-red-500">{statusUpdateError}</div>
+      )}
     </div>
   );
 };

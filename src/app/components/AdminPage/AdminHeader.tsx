@@ -19,7 +19,7 @@ const fetchUserData = async (): Promise<User> => {
   }
 
   const response = await axios.post<User>(
-   'https://hosseinshabab.iapp.ir/api/auth/me',
+   'http://hosseinshabab.iapp.ir/api/auth/me',
     {},
     {
       headers: {

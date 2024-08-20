@@ -106,7 +106,7 @@ import axios from 'axios';
 import MoneyImage from '@/src/app/assent/Img/adminPanel/3D money card.svg';
 
 const fetchDepositSlip = async (token: string) => {
-  const response = await axios.get('https://hosseinshabab.iapp.ir/api/factors/factorCnt', {
+  const response = await axios.get('http://hosseinshabab.iapp.ir/api/factors/factorCnt', {
     headers: {
    
       'Authorization': `Bearer ${token}`

@@ -20,7 +20,7 @@ export default function SetedPassword() {
       }
 
       try {
-        const response: AxiosResponse<UserData> = await axios.put("https://shabab.v1r.ir/api/users/index", {}, {
+        const response: AxiosResponse<UserData> = await axios.put("http://hosseinshabab.iapp.ir/api/users/index", {}, {
           headers: {
             Authorization: `Bearer ${authToken}`
           },

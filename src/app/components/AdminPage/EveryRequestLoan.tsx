@@ -22,7 +22,7 @@ const fetchLoans = async () => {
   try {
     const token = localStorage.getItem('authToken');
 
-    const response = await axios.post('https://shabab.v1r.ir/api/loans/show/admin', {}, {
+    const response = await axios.post('http://hosseinshabab.iapp.ir/api/loans/show/admin', {}, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'

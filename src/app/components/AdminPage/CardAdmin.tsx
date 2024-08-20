@@ -18,7 +18,7 @@ const fetchUserData = async (): Promise<UserData> => {
     throw new Error('No auth token found');
   }
 
-  const response = await axios.get<UserData>('https://shabab.v1r.ir/api/settings/index', {
+  const response = await axios.get<UserData>('http://hosseinshabab.iapp.ir/api/settings/index', {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
