@@ -55,4 +55,6 @@ html, body {
   height: 768px;  
   overflow: auto; 
   box-sizing: border-box;
+  padding-bottom: 0;
+  background-color: #F8F9FA;
 }

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: 'https://shabab.v1r.ir/api',
+  baseURL: 'http://hosseinshabab.iapp.ir/api',
   headers: {
     'Content-Type': 'application/json',
   },
