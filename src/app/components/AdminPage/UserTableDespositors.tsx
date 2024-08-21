@@ -183,8 +183,6 @@
 // export default UserTable;
 
 
-
-
 import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
@@ -205,10 +203,10 @@ interface User {
 }
 
 interface UserTableProps {
-  users?: User[];  // Optional prop, default to an empty array
+  users?: User[];
 }
 
-const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
+const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [statusUpdateError, setStatusUpdateError] = useState<string | null>(null);
@@ -293,58 +291,46 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href="/Rout/depositreceipt">
-                        <button
-                          className="py-2 px-6 border flex items-center gap-2 border-teal-400 p-1 rounded-md"
+                      <Link href="/Rout/deposit">
+                        <a
+                          className="bg-blue-600 text-white py-1 px-3 rounded"
                           onClick={handleOpenModal}
                         >
                           <Image
                             src={EyeIconImage}
-                            width={24}
-                            height={24}
-                            alt=""
+                            width={20}
+                            height={20}
+                            alt="eye"
                           />
-                          <p className="font-normal text-sm text-teal-400">
-                            فیش واریزی
-                          </p>
-                        </button>
+                        </a>
                       </Link>
+                      <Modal
+                        isVisible={isModalVisible}
+                        onClose={handleCloseModal}
+                      >
+                        <DepositSlip />
+                      </Modal>
                     </td>
-                    <td className="w-1/12 py-2 px-4">
-                      <div className="flex gap-5">
+                    <td className="py-8">
+                      <div className="flex justify-center gap-2">
                         <button
-                          className="w-6 h-6"
                           onClick={() => handleStatusChange(user.id, "accept")}
                         >
                           <Image
                             src={IconlytikImage}
-                            width={24}
-                            height={24}
-                            alt="تایید"
+                            width={20}
+                            height={20}
+                            alt="accept"
                           />
                         </button>
-
                         <button
-                          className="w-6 h-6"
-                          onClick={() => handleStatusChange(user.id, "pending")}
-                        >
-                          <Image
-                            src={statusIconImage}
-                            width={24}
-                            height={24}
-                            alt="انتظار"
-                          />
-                        </button>
-
-                        <button
-                          className="w-6 h-6"
                           onClick={() => handleStatusChange(user.id, "reject")}
                         >
                           <Image
                             src={IconlycrossImage}
-                            width={24}
-                            height={24}
-                            alt="رد"
+                            width={20}
+                            height={20}
+                            alt="reject"
                           />
                         </button>
                       </div>
@@ -353,22 +339,22 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                 ))}
               </tbody>
             </table>
+            <Paginate
+              pageCount={pageCount}
+              onPageChange={pageClick}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+            />
           </div>
         </div>
       </div>
-      <Paginate
-        currentPageData={currentPageData}
-        pageCount={pageCount}
-        pageClick={pageClick}
-      />
-      <Modal isVisible={isModalVisible}>
-        <DepositSlip onClose={handleCloseModal} users={users} />
-      </Modal>
       {statusUpdateError && (
-        <div className="text-red-500">{statusUpdateError}</div>
+        <div className="bg-red-600 text-white p-4 rounded">
+          {statusUpdateError}
+        </div>
       )}
     </div>
   );
 };
 
-export default UserTable;
+export default UserTableDespositors;
