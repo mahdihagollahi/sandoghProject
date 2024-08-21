@@ -95,6 +95,7 @@
 
 
 
+
 import React from 'react';
 import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
 import Image from 'next/image';
@@ -108,8 +109,15 @@ interface User {
   id: number;
   name: string;
   joinDate: string;
-  loans: string;
-  depositAmount: string;
+  depositAmount: number;
+}
+
+interface PaginatedResponse {
+  current_page: number;
+  data: User[];
+  last_page: number;
+  per_page: number;
+  total: number;
 }
 
 const axiosInstance = axios.create({
@@ -130,10 +138,10 @@ axiosInstance.interceptors.request.use(
 const fetchUsers = async () => {
   try {
     const response = await axiosInstance.get('http://hosseinshabab.iapp.ir/api/factors/index');
-    return response.data;
+    return response.data as PaginatedResponse;
   } catch (error) {
     console.error('Error fetching users:', error);
-    throw error; 
+    throw error;
   }
 };
 
@@ -149,7 +157,7 @@ const updateUser = async (updatedUser: User) => {
 const DepositorsUserFinancial: React.FC = () => {
   const queryClient = useQueryClient();
 
-  const { data: users = [], isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
   });
@@ -168,47 +176,14 @@ const DepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
-  if (isLoading) return(
-    <div>
-    <div className='flex gap-[74%] items-center mb-2 mt-10 mr-3'>
-      <div className='mr-2'>
-        <p className='font-bold text-lg'>مدیریت مالی</p>
-      </div>
-      <div className='flex justify-end mr-2'>
-        <Link href="/Rout/showuserdetail">
-          <div className='flex items-center'>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt='arrow' />
-          </div>
-        </Link>
-      </div>
-    </div>
-    <div>
-      <RoutTableFiancial />
-    </div>
-    <UserTableDespositors users={users} />
-  </div>
+  if (isLoading) return (
+    <div>Loading...</div>
   );
-  if (isError) return(  <div>
-  <div className='flex gap-[74%] items-center mb-2 mt-10 mr-3'>
-    <div className='mr-2'>
-      <p className='font-bold text-lg'>مدیریت مالی</p>
-    </div>
-    <div className='flex justify-end mr-2'>
-      <Link href="/Rout/showuserdetail">
-        <div className='flex items-center'>
-          بازگشت
-          <Image src={backImage} width={38} height={38} alt='arrow' />
-        </div>
-      </Link>
-    </div>
-  </div>
-  <div>
-    <RoutTableFiancial />
-  </div>
-  <UserTableDespositors users={users} />
-</div>
-  )
+
+  if (isError) return (
+    <div>Error: {error.message}</div>
+  );
+
   return (
     <div>
       <div className='flex gap-[74%] items-center mb-2 mt-10 mr-3'>
@@ -227,7 +202,7 @@ const DepositorsUserFinancial: React.FC = () => {
       <div>
         <RoutTableFiancial />
       </div>
-      <UserTableDespositors users={users} />
+      <UserTableDespositors users={data?.data || []} />
     </div>
   );
 };
