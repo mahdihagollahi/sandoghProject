@@ -150,7 +150,7 @@ const fetchUsers = async (): Promise<User[]> => {
     }
   );
 
-  return response.data.map((user: any) => ({
+  return response.data.users.map((user: any) => ({
     id: user.id,
     src: user.avatar_url || "/default-avatar.png",
     name: `${user.first_name} ${user.last_name}`,
@@ -158,6 +158,7 @@ const fetchUsers = async (): Promise<User[]> => {
     loans: "0 وام",
   }));
 };
+
 
 const EveryUser: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
