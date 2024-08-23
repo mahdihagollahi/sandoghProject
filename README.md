@@ -39,8 +39,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 > A loan fund from which people can borrow and receive facilities
 
-![Logo](../Sandogh/src/app/assent/Img/userPanel/Logo.png)
-
+<!-- ![Logo](src/app/assent/Img/userPanel/Logo.png) -->
+![Logo](https://www.figma.com/design/SKD6hEtAyUmE3kfXbZ1dZ9/%D9%82%D8%B1%D8%B6-%D8%A7%D9%84%D8%AD%D8%B3%D9%86%D9%87-016?node-id=843-10278&t=3K1xYwQM7LlwvSwT-4
+)
 
 
 
