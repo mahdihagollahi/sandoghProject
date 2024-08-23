@@ -32,6 +32,7 @@
 > to run sandoghProject with npm
 
 ```bash
+cd sandoghProject
   npm install
   npm run dev
 ```
