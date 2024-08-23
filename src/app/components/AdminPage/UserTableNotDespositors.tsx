@@ -127,13 +127,24 @@ import Modal from './Modal';
 import TextAreaComponent from '@/src/app/components/AdminPage/TextAreaComponent';
 import Paginate from './Paginate';
 
-const UserTableFinancial = ({ users }) => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedUser, setSelectedUser] = useState(null);
+interface User {
+  id: number;
+  name: string;
+  depositAmount: number | string;
+  joinDate: string;
+}
+
+interface UserTableFinancialProps {
+  users: User[];
+}
+
+const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users }) => {
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const itemsPerPage = 7;
 
-  const pageClick = (data) => {
+  const pageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
 
@@ -141,7 +152,7 @@ const UserTableFinancial = ({ users }) => {
   const currentPageData = users.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(users.length / itemsPerPage);
 
-  const handleOpenModal = (user) => {
+  const handleOpenModal = (user: User) => {
     setSelectedUser(user);
     setIsModalVisible(true);
   };
@@ -151,16 +162,14 @@ const UserTableFinancial = ({ users }) => {
     setSelectedUser(null);
   };
 
-  const handleSend = async (message) => {
-    // Ensure that this function is implemented properly in the actual codebase if needed
+  const handleSend = async (message: string) => {
     if (!selectedUser) {
       console.error('No user selected');
       return;
     }
 
     try {
-      // Logic for sending a message to the API (if needed)
-      // This might be moved to another component or handled differently
+      // ارسال پیام به کاربر
       console.log('Sending message:', message);
       handleCloseModal();
     } catch (error) {
@@ -188,7 +197,7 @@ const UserTableFinancial = ({ users }) => {
               <tbody className="divide-y divide-gray-200 space-y-4">
                 {currentPageData.map((user, index) => (
                   <tr key={index}>
-                    <td className="w-2/12 py-8 px-4 flex gap-20">قسط {user.id}</td>
+                    <td className="w-2/12 py-8 px-4 flex gap-20 whitespace-nowrap">قسط {user.id}</td>
                     <td className="w-[16%] py-8 px-4">{user.name}</td>
                     <td className="w-[25%] py-8 px-4 text-[#718096]">
                       <p>{user.depositAmount} تومان</p>

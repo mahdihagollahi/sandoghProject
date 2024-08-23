@@ -6,9 +6,9 @@ import UserHoverImage from '@/src/app/assent/Img/adminPanel/WaletHover.png';
 import crossOutline from '@/src/app/assent/Img/adminPanel/checked.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/checkedHover.png';
 
-function RoutRequestLoan() {
-  const [selectedTab, setSelectedTab] = useState('');
-  const [hoveredTab, setHoveredTab] = useState('');
+const RoutRequestLoan: React.FC = () => {
+  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   useEffect(() => {
     const storedTab = localStorage.getItem('selectedTab');
@@ -17,7 +17,7 @@ function RoutRequestLoan() {
     }
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
     localStorage.setItem('selectedTab', tab);
   };

@@ -7,9 +7,9 @@ import DeletedImage from '@/src/app/assent/Img/adminPanel/deleted.svg';
 import DeletedHoverImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 import Link from 'next/link';
 
-function RoutTableUser() {
-  const [selectedTab, setSelectedTab] = useState('');
-  const [hoveredTab, setHoveredTab] = useState('');
+const RoutTableUser: React.FC = () => {
+  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   useEffect(() => {
     const storedTab = localStorage.getItem('selectedTab');
@@ -18,10 +18,11 @@ function RoutTableUser() {
     }
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
     localStorage.setItem('selectedTab', tab);
   };
+
 
   return (
     <div>

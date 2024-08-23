@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
@@ -5,7 +6,17 @@ import ChekedLoanAplicationTable from '@/src/app/components/AdminPage/ChekedLoan
 import RoutRequestLoan from './RoutRequestLoan';
 import SwichButton from './SwichButton';
 
-const users = [
+interface User {
+  name: string;
+  requestNumber: number;
+  amount: string;
+  date: string;
+  type: 'ضروری' | 'معمولی';
+  guarantors: string[];
+  description: string;
+}
+
+const users: User[] = [
   {
     name: "کتی سپهری",
     requestNumber: 3,
@@ -35,8 +46,8 @@ const users = [
   },
 ];
 
-const RequestLoan = () => {
-  const [isUrgent, setIsUrgent] = useState(false);
+const RequestLoan: React.FC = () => {
+  const [isUrgent, setIsUrgent] = useState<boolean>(false);
 
   const filteredUsers = users.filter(user => isUrgent ? user.type === 'ضروری' : user.type === 'معمولی');
 
@@ -76,3 +87,4 @@ const RequestLoan = () => {
 };
 
 export default RequestLoan;
+

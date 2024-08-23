@@ -243,10 +243,9 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
     setCurrentPage(data.selected);
   };
 
-  // Ensure users is an array
   if (!Array.isArray(users)) {
     console.error("Invalid prop: users should be an array.");
-    return null; // Or handle the error accordingly
+    return null; 
   }
 
   const offset = currentPage * itemsPerPage;
@@ -318,6 +317,16 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
                         >
                           <Image
                             src={IconlytikImage}
+                            width={20}
+                            height={20}
+                            alt="accept"
+                          />
+                        </button>
+                        <button
+                          onClick={() => handleStatusChange(user.id, "pending")}
+                        >
+                          <Image
+                            src={statusIconImage}
                             width={20}
                             height={20}
                             alt="accept"

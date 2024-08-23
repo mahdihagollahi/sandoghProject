@@ -1,109 +1,11 @@
-// import React, { useState, useEffect } from 'react';
-// import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
-// import Image from 'next/image';
-// import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
-// import RoutTableFiancial from './RoutTableFinancial';
-// import Link from 'next/link';
-// import axios from 'axios';
-// import { useMutation, useQueryClient } from '@tanstack/react-query';
-
-// interface User {
-//   id: number;
-//   name: string;
-//   joinDate: string;
-//   loans: string;
-//   depositAmount: string;
-// }
-
-// const DepositorsUserFinancial: React.FC = () => {
-//   const [users, setUsers] = useState<User[]>([]);
-//   const queryClient = useQueryClient();
-
-//   const axiosInstance = axios.create({
-//     baseURL: 'https://shabab.v1r.ir/api',
-//   });
-
-//   axiosInstance.interceptors.request.use(
-//     (config) => {
-//       const authToken = localStorage.getItem('authToken');
-//       if (authToken) {
-//         config.headers.Authorization = `Bearer ${authToken}`;
-//       }
-//       return config;
-//     },
-//     (error) => Promise.reject(error)
-//   );
-
-//   const fetchUsers = async () => {
-//     try {
-//       const response = await axiosInstance.get('http://hosseinshabab.iapp.ir/api/factors/index'); 
-//       setUsers(response.data);
-//     } catch (error) {
-//       console.error('Error fetching users:', error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchUsers();
-//   }, []);
-
-//   const updateUser = async (id: number, data: any) => {
-//     const response = await axiosInstance.put(`/factors/index/${id}`, data, {
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
-//     return response.data;
-//   };
-
-//   const mutation = useMutation({
-//     mutationFn: (updatedUser: User) => updateUser(updatedUser.id, updatedUser),
-//     onSuccess: () => {
-//       queryClient.invalidateQueries(['users']);
-//       fetchUsers(); 
-//     },
-//   });
-
-//   const handleUpdate = (user: User) => {
-//     mutation.mutate(user);
-//   };
-
-//   return (
-//     <div>
-//       <div className='flex gap-[74%] items-center mb-2 mt-10 mr-3'>
-//         <div className='mr-2'>
-//           <p className='font-bold text-lg'>مدیریت مالی</p>
-//         </div>
-//         <div className='flex justify-end mr-2'>
-//           <Link href="/Rout/showuserdetail">
-//             <div className='flex items-center'>
-//               بازگشت
-//               <Image src={backImage} width={38} height={38} alt='arrow' />
-//             </div>
-//           </Link>
-//         </div>
-//       </div>
-//       <div>
-//         <RoutTableFiancial />
-//       </div>
-//       <UserTableDespositors users={users} />
-//     </div>
-//   );
-// };
-
-// export default DepositorsUserFinancial;
-
-
-
-
-import React from 'react';
-import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
-import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
-import RoutTableFiancial from './RoutTableFinancial';
-import Link from 'next/link';
-import axios from 'axios';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import React from "react";
+import UserTableDespositors from "@/src/app/components/AdminPage/UserTableDespositors";
+import Image from "next/image";
+import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import RoutTableFiancial from "./RoutTableFinancial";
+import Link from "next/link";
+import axios from "axios";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface User {
   id: number;
@@ -121,12 +23,12 @@ interface PaginatedResponse {
 }
 
 const axiosInstance = axios.create({
-  baseURL: 'https://shabab.v1r.ir/api',
+  baseURL: "https://shabab.v1r.ir/api",
 });
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const authToken = localStorage.getItem('authToken');
+    const authToken = localStorage.getItem("authToken");
     if (authToken) {
       config.headers.Authorization = `Bearer ${authToken}`;
     }
@@ -137,20 +39,26 @@ axiosInstance.interceptors.request.use(
 
 const fetchUsers = async () => {
   try {
-    const response = await axiosInstance.get('http://hosseinshabab.iapp.ir/api/factors/index');
+    const response = await axiosInstance.get(
+      "http://hosseinshabab.iapp.ir/api/factors/index"
+    );
     return response.data as PaginatedResponse;
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error("Error fetching users:", error);
     throw error;
   }
 };
 
 const updateUser = async (updatedUser: User) => {
-  const response = await axiosInstance.put(`/factors/index/${updatedUser.id}`, updatedUser, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = await axiosInstance.put(
+    `/factors/index/${updatedUser.id}`,
+    updatedUser,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   return response.data;
 };
 
@@ -158,17 +66,17 @@ const DepositorsUserFinancial: React.FC = () => {
   const queryClient = useQueryClient();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ['users'],
+    queryKey: ["users"],
     queryFn: fetchUsers,
   });
 
   const mutation = useMutation({
     mutationFn: updateUser,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.invalidateQueries({ queryKey: ["users"] });
     },
     onError: (error) => {
-      console.error('Error updating user:', error);
+      console.error("Error updating user:", error);
     },
   });
 
@@ -176,25 +84,21 @@ const DepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
-  if (isLoading) return (
-    <div>Loading...</div>
-  );
+  if (isLoading) return <div>Loading...</div>;
 
-  if (isError) return (
-    <div>Error: {error.message}</div>
-  );
+  if (isError) return <div>Error: {error.message}</div>;
 
   return (
     <div>
-      <div className='flex gap-[74%] items-center mb-2 mt-10 mr-3'>
-        <div className='mr-2'>
-          <p className='font-bold text-lg'>مدیریت مالی</p>
+      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="mr-2">
+          <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
-        <div className='flex justify-end mr-2'>
+        <div className="flex justify-end mr-2">
           <Link href="/Rout/showuserdetail">
-            <div className='flex items-center'>
+            <div className="flex items-center">
               بازگشت
-              <Image src={backImage} width={38} height={38} alt='arrow' />
+              <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
           </Link>
         </div>

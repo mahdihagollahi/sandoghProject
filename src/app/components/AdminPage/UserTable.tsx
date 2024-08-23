@@ -5,11 +5,22 @@ import iconDeletImage from '@/src/app/assent/Img/adminPanel/Delete.svg';
 import Paginate from './Paginate';
 import Link from 'next/link';
 
-const UserTable = ({ users }) => {
-  const [currentPage, setCurrentPage] = useState(0);
+interface User {
+  src: string;
+  name: string;
+  joinDate: string;
+  loans: number | string;
+}
+
+interface UserTableProps {
+  users: User[];
+}
+
+const UserTable: React.FC<UserTableProps> = ({ users }) => {
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 7;
 
-  const pageClick = (data) => {
+  const pageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
 

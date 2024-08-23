@@ -1,13 +1,17 @@
 "use client"
 import React, { useState } from 'react';
 
-const SwichButton = ({ setIsUrgent }) => {
-  const [isOn, setIsOn] = useState(false);
+interface SwichButtonProps {
+  setIsUrgent: (isUrgent: boolean) => void;
+}
+
+const SwichButton: React.FC<SwichButtonProps> = ({ setIsUrgent }) => {
+  const [isOn, setIsOn] = useState<boolean>(false);
 
   const toggleSwitch = () => {
     setIsOn(prevState => {
       const newIsOn = !prevState;
-      setIsUrgent(newIsOn);  // ارسال وضعیت جدید به والد
+      setIsUrgent(newIsOn);  
       return newIsOn;
     });
   };

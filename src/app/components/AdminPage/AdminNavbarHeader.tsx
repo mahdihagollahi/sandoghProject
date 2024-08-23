@@ -8,7 +8,7 @@ function AdminNavbarHeader() {
   return (
     <div>
         <div className='flex items-center mt-10 mr-10  '>
-          <Link href='/dashboard'>
+          <Link href='/Rout/dashboard'>
             <div className='flex gap-6 border-b-2 pb-9 w-[260px]'>
                 <div className=''>
                 <Image src={groupImage} width={48} height={48} alt='group'/>

@@ -7,8 +7,8 @@ import crossOutline from '@/src/app/assent/Img/adminPanel/crossOutline.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 
 function RoutTableUser() {
-  const [selectedTab, setSelectedTab] = useState('');
-  const [hoveredTab, setHoveredTab] = useState('');
+  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   useEffect(() => {
     const storedTab = localStorage.getItem('selectedTab');
@@ -17,7 +17,7 @@ function RoutTableUser() {
     }
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab : string) => {
     setSelectedTab(tab);
     localStorage.setItem('selectedTab', tab);
   };

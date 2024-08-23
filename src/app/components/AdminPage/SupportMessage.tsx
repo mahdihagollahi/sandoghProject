@@ -134,7 +134,6 @@ function SupportMessage() {
 
     response.data.data.forEach(user => {
       user.tickets.forEach(ticket => {
-        // بررسی وجود پیام‌ها قبل از استفاده از آن‌ها
         if (ticket.response_status === 'pending' && ticket.type === 'unsystematic' && Array.isArray(ticket.messages)) {
           messages.push(...ticket.messages);
         }
