@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +33,60 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
+
+# Sandogh Project
+
+> A loan fund from which people can borrow and receive facilities
+
+![Logo](../Sandogh/src/app/assent/Img/userPanel/Logo.png)
+
+
+
+
+![Commit Badge](https://img.shields.io/github/commit-activity/y/mahdihagollahi/sandoghProject)
+
+- 💵 You will receive the amount quickly
+- 💳 The money is deposited in the account card
+  <!-- - ⚖️ This project is legal -->
+  <!-- - 🪪 -->
+  <!-- - 🔑 -->
+  <!-- - 🔒 -->
+
+
+
+## Installation
+
+> First, clone the project
+
+```bash
+  git clone https://github.com/mahdihagollahi/sandoghProject.git
+```
+
+> to run sandoghProject with npm
+
+```bash
+  npm install
+  npm run dev
+```
+
+
+
+
+## Screenshots
+
+
+![App Screenshot](../Sandogh/src/app/assent/Img/userPanel/User/payment%20receipt.svg)
+
+![Commit Badge](../Sandogh/src/app/assent/Img/adminPanel/Admin%20Dashboard.svg)
+
+
+## Support
+
+> For support, email haghollahimahdi@gmail.com or join our Slack channel.
+
+
+## Authors
+
+- [@mahdihaghollahi](https://github.com/mahdihagollahi)
+- [@developersamari](https://github.com/developersamari)
