@@ -1,70 +1,114 @@
-import React from 'react';
-import UserTableDespositors from '@/src/app/components/AdminPage/UserTableDespositors';
-import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import RoutTableFiancial from './RoutTableFinancial';
-import Link from 'next/link';
+import React from "react";
+import UserTableDespositors from "@/src/app/components/AdminPage/UserTableDespositors";
+import Image from "next/image";
+import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import RoutTableFiancial from "./RoutTableFinancial";
+import Link from "next/link";
+import axios from "axios";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface User {
   id: number;
   name: string;
   joinDate: string;
-  loans: string;
-  depositAmount:string
+  depositAmount: number;
 }
 
-const users: User[] = [
-  { id: 1 , name: 'امیر قنبری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '1 وام' },
-  { id: 2,  name: 'مینا قنبری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 3,  name: 'فاطمه طالبیان', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '2 وام' },
-  { id: 4,  name: 'نگین سعیدی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 5,  name: 'کنی سپهری', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '2 وام' },
-  { id: 6,  name: 'نگین سعیدی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 8,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 9,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 10,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 12,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 13,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 14,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-  { id: 15,  name: 'سکینه داوودی', joinDate: '1404/01/16', depositAmount:'5,000,000' , loans: '0 وام' },
-];
+interface PaginatedResponse {
+  current_page: number;
+  data: User[];
+  last_page: number;
+  per_page: number;
+  total: number;
+}
+
+const axiosInstance = axios.create({
+  baseURL: "https://shabab.v1r.ir/api",
+});
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const authToken = localStorage.getItem("authToken");
+    if (authToken) {
+      config.headers.Authorization = `Bearer ${authToken}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+const fetchUsers = async () => {
+  try {
+    const response = await axiosInstance.get(
+      "http://hosseinshabab.iapp.ir/api/factors/index"
+    );
+    return response.data as PaginatedResponse;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+};
+
+const updateUser = async (updatedUser: User) => {
+  const response = await axiosInstance.put(
+    `/factors/index/${updatedUser.id}`,
+    updatedUser,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  return response.data;
+};
 
 const DepositorsUserFinancial: React.FC = () => {
+  const queryClient = useQueryClient();
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["users"],
+    queryFn: fetchUsers,
+  });
+
+  const mutation = useMutation({
+    mutationFn: updateUser,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["users"] });
+    },
+    onError: (error) => {
+      console.error("Error updating user:", error);
+    },
+  });
+
+  const handleUpdate = (user: User) => {
+    mutation.mutate(user);
+  };
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (isError) return <div>Error: {error.message}</div>;
+
   return (
-    <div >
-         <div className='flex gap-[74%]  items-center mb-2 mt-5 mr-3  '>
-            <div className='mr-2 '>
-                <p className='font-bold text-lg'>
-                مدیریت مالی               
-                 </p>
-            </div>
-           
-
-
-            <div className='flex justify-end mr-2  '>
-              <Link href="/showuserdetail">
-             
-              <div  className='flex items-center'>
-              بازگشت
-              <Image
-                src={backImage}
-                width={38}
-                height={38}
-                alt='arrow'
-
-                />
-              </div>
-              </Link>
-            </div>
+    <div>
+      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="mr-2">
+          <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
-      <div>
-        <RoutTableFiancial/>
+        <div className="flex justify-end mr-2">
+          <Link href="/Rout/showuserdetail">
+            <div className="flex items-center">
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
+          </Link>
+        </div>
       </div>
-      <UserTableDespositors users={users} />
+      <div>
+        <RoutTableFiancial />
+      </div>
+      <UserTableDespositors users={data?.data || []} />
     </div>
-   
   );
 };
 
 export default DepositorsUserFinancial;
-

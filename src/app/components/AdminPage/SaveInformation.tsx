@@ -9,14 +9,14 @@ function SaveInformation() {
   const [phonenumber , setPhonenumber]=useState<string>('')
   return (
     <div className='p-4  '>
-        <div className='flex  justify-between items-center mb-2 mt-5  '>
+        <div className='flex  justify-between items-center mb-2 mt-7  '>
             <div className='mr-2 '>
-                <p className='font-bold text-lg'>
+                <p className='font-bold dark:text-white text-lg'>
                 حساب مدیریت
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
-              <a href="" className='flex items-center'>
+              <a href="" className='flex dark:text-white items-center'>
               بازگشت
               <Image
                 src={arrowImage}
@@ -32,7 +32,7 @@ function SaveInformation() {
       
         <div className=' mx-auto  w-[125vh]     '>
 
-            <div className='bg-white shadow-lg mt-5 p-6 md:p-10'>
+            <div className='bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10'>
 
 
             <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap    '>
@@ -41,7 +41,7 @@ function SaveInformation() {
               <div className='relative w-full md:w-auto'>
               
                   
-               <label className='absolute -top-2 z-10 left-[83%] px-3 bg-white py-2'>
+               <label className='absolute -top-2 z-10 left-[83%] px-3 dark:bg-black dark:text-white bg-white py-2'>
                    نام
                  </label>
                  <input type="text" className="border pr-4 w-96 md:w-96  h-14 border-[#CACACA] rounded-md relative  m-3	" 
@@ -59,7 +59,7 @@ function SaveInformation() {
               <div className='relative w-full md:w-auto '>
               
                   
-              <label className='absolute -top-2 z-10 left-[68%] px-3 bg-white py-2'>
+              <label className='absolute -top-2 z-10 left-[68%] px-3 dark:bg-black dark:text-white bg-white py-2'>
               نام خانوادگی
                 </label>
                 <input type="text" className="border w-96 pr-4 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  
@@ -83,7 +83,7 @@ function SaveInformation() {
      <div className='relative w-full md:w-auto '>
      
          
-      <label className='absolute -top-2 z-10 left-[67%] px-3 bg-white py-2'>
+      <label className='absolute -top-2 z-10 left-[67%] px-3 dark:bg-black dark:text-white bg-white py-2'>
       شماره موبایل
         </label>
         <input type="text" className="border pr-4 md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative  m-3	" 
@@ -101,7 +101,7 @@ function SaveInformation() {
      <div className='relative  w-full md:w-auto '>
      
          
-     <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white  py-2 whitespace-nowrap'>
+     <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white dark:bg-black dark:text-white  py-2 whitespace-nowrap'>
      کد ملی
        </label>
        <input type="text" className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative  m-3	"  

@@ -1,32 +1,68 @@
+import axios, { AxiosResponse } from "axios";
+import { useEffect, useState } from "react";
 
-const completions = [
-    { name: "امیر قنبری", status: "تکمیل شد" },
-    { name: "مینا قنبری", status: "تکمیل شد" },
-    { name: "نگین سعیدی", status: "تکمیل شد" },
-    { name: "سهیلا ابراهیمی", status: "تکمیل شد" },
-    { name: "فاطمه طالبیان", status: "تکمیل شد" },
-    { name: "سکینه داوودی", status: "تکمیل شد" },
-  ];
-  
-  export default function SetedPassword() {
-    return (
-      <div>
+interface UserData {
+  first_name: string | null;
+  last_name: string | null;
+}
+
+export default function SetedPassword() {
+  const [completions, setCompletions] = useState<{ name: string }[]>([]); 
+
+  useEffect(() => {
+    const fetchCompletions = async () => {
+      const authToken = localStorage.getItem("authToken"); 
+      console.log(authToken);
+
+      if (!authToken) {
+        console.error("توکن موجود نیست.");
+        return;
+      }
+
+      try {
+        const response: AxiosResponse<UserData> = await axios.put("http://hosseinshabab.iapp.ir/api/users/index", {}, {
+          headers: {
+            Authorization: `Bearer ${authToken}`
+          },
+        });
+
+        const fullName = `${response.data.first_name || ""} ${response.data.last_name || ""}`.trim();
+        setCompletions([{ name: fullName }]);
+
+      } catch (error) {
+        console.error("خطا در دریافت داده‌ها:", error);
+      }
+    };
+
+    fetchCompletions(); 
+  }, []);
+
+  return (
+    <div>
       <div className="">
-      <div className="flex justify-center ">
-        <div className="bg-white shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
-          {completions.map((item, index) => (
-            <div
-              key={index}
-              className="flex justify-between border-b last:border-b-0 py-9"
-            >
-              <span className="font-bold">{item.name}</span>
-              <span>{item.status}</span>
-            </div>
-          ))}
+        <div className="flex justify-center">
+          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+            {completions.length > 0 ? (
+              completions.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between border-b last:border-b-0 py-9"
+                >
+                  <span className="font-bold dark:text-white">{item.name}</span>
+                  <span className="dark:text-white">تکمیل شده</span>
+                </div>
+              ))
+            ) : (
+              <p className="dark:text-white">داده‌ای یافت نشد</p>
+            )}
+          </div>
         </div>
       </div>
-      </div>
-      </div>
-    );
-  }
-  
+    </div>
+  );
+}
+
+
+
+
+

@@ -3,7 +3,15 @@ import Image from 'next/image';
 import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
 import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
 
-function UserTableReceipt({ users }) {
+interface User {
+  name: string;
+  depositAmount: string;
+  joinDate: string;
+  Description: string;
+}
+
+
+const UserTableReceipt : React.FC<User>  = ({ users }) => {
   return (
     <div>
       <div className="p-4 pl-20">
@@ -22,16 +30,16 @@ function UserTableReceipt({ users }) {
           <div>
             <table className="w-full mt-[3%] table-auto border-collapse">
               <tbody className="divide-y divide-gray-200 space-y-4">
-                {users.map((user, index) => (
-                  <tr key={index}>
-                    <td className="w-2/12 py-8 pr-12">{user.name}</td>
+            
+                  <tr>
+                    <td className="w-2/12 py-8 pr-12">{users.name}</td>
                     <td className="w-[25%] py-8 pr-10 text-[#718096]">
                       <p>
-                        {user.depositAmount} تومان
+                        {users.depositAmount} تومان
                       </p>
                     </td>
-                    <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
-                    <td className="w-3/12 py-2 px-4  whitespace-nowrap">{user.Description}</td>
+                    <td className="w-2/12 py-2 px-4">{users.joinDate}</td>
+                    <td className="w-3/12 py-2 px-4  whitespace-nowrap">{users.Description}</td>
                     <td className="w-1/12 py-2 px-4">
                       <div className="flex gap-5">
                         <button className="w-6 h-6">
@@ -43,7 +51,7 @@ function UserTableReceipt({ users }) {
                       </div>
                     </td>
                   </tr>
-                ))}
+               
               </tbody>
             </table>
           </div>

@@ -6,7 +6,7 @@ import DeletedUserComponent from '@/src/app/components/AdminPage/DeletedUserComp
 
 function DeletedUser() {
   return (
-    <div>
+    <div className='dark:bg-black'>
       
         <div className='flex '> 
             <div>

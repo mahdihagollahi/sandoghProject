@@ -4,25 +4,38 @@
 
 
 html, body {
+  font-family: 'IRANSans' !important;
   background-color: #F8F9FA;
+ 
  
   
 }
   
 
+
+.dark html, .dark body {
+  background-color: #000000; 
+}
+
 @font-face {
   font-family: 'IRANSans';
-  src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf'),
-       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/public/assent/IranSansX/IranSansX/NonEnglish/IRANSansXNoEn-Light.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Light.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Light.woff') format('woff'),
+       url('/public/assent/IranSansX/IranSansX/iransansX\ family/IRANSansX-Light') format('ttf');
+  font-weight: 300;
+  font-style: light;
 }
 
 
 @font-face {
   font-family: 'IRANSans';
   src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Bold.ttf') format('ttf'),
-       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Bold.ttf') format('ttf');
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Bold.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/NonEnglish/IRANSansXNoEn-Bold.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Bold.woff') format('woff'),
+       url('/public/assent/IranSansX/IranSansX/Webfonts/fonts/woff2/IRANSansX-Bold.woff2') format('woff2'),
+       url('/public/assent/IranSansX/IranSansX/iransansX\ family/IRANSansXFaNum-Bold.ttf') format('ttf');
   font-weight: Bold;
   font-style: Bold;
 }
@@ -30,7 +43,20 @@ html, body {
 @font-face {
   font-family: 'IRANSans';
   src: url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Medium.ttf') format('ttf'),
-       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Medium.ttf') format('ttf');
+       url('/public/assent/IranSansX/IranSansX/Farsinumerals/IRANSansXFaNum-Medium.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/NonEnglish/IRANSansXNoEn-Medium.ttf') format('ttf'),
+       url('/public/assent/IranSansX/IranSansX/Webfonts/fonts/woff/IRANSansX-Medium.woff') format('woff'),
+       url('/public/assent/IranSansX/IranSansX/Webfonts/fonts/woff2/IRANSansX-Medium.woff2') format('woff2'),
+       url('/public/assent/IranSansX/IranSansX/iransansX\ family/IRANSansXFaNum-Medium.ttf') format('ttf');
   font-weight: Medium;
   font-style: Medium;
+}
+
+.container {
+  width: 1024px; 
+  height: 768px;  
+  overflow: auto; 
+  box-sizing: border-box;
+  padding-bottom: 0;
+  background-color: #F8F9FA;
 }

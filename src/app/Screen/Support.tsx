@@ -6,7 +6,7 @@ import SupportMessage from '../components/AdminPage/SupportMessage'
 
 function Support() {
   return (
-    <div>
+    <div className='dark:bg-black '>
         <div className='flex '> 
             <div>
                

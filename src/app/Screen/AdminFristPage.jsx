@@ -1,6 +1,4 @@
-
-
-import React from "react";
+import React from 'react'
 import AdminHeader from "../components/AdminPage/AdminHeader";
 import NumberOfMebers from "../components/AdminPage/NumberOfMebers";
 import LoanApplication from "../components/AdminPage/LoanApplication";
@@ -11,54 +9,47 @@ import NewDepositSlip from "../components/AdminPage/NewDepositSlip";
 import SupportMassgeDashboard from "../components/AdminPage/SupportMassgeDashboard";
 import ChartAdminDashboard from '../components/AdminPage/ChartAdminDashboard'
 
-function AdminFirstPage() {
+
+function AdminFristPage() {
   return (
-    <div className="overflow-y-hidden bg-[#F8F9FA] font-custom">
-      <div className=" flex flex-col ">
-        <div >
-          <div>
-            <AdminNavbarHeader />
-          </div>
-          <div>
-            <AdminPageNavbar />
-          </div>
-        </div>
-
-        <div className="block xl:-mt-[75%]  md:-mt-[46%]">
-          <div className="flex  w-full   ">
-            <AdminHeader />
-          </div>
-
-          <div className="flex flex-col mr-[30rem]  xl:ml-32 xl:flex-row xl:justify-center lg:items-center sm:items-center md:items-center gap-6  mx-4">
-            <div>
-            <NumberOfMebers />
-
-            </div>
-            <div>
-            <LoanApplication />
-
-            </div>
-            <div className="">
-            <CardAdmin/>
-
-            </div>
-          </div>
-        </div>
-
+    <div className="overflow-y-hidden dark:bg-black bg-[#F8F9FA]  pb-[2%] font-custom">
+     <div className='flex ml-40'>
         <div>
-          <NewDepositSlip/>
+          <div >
+          <AdminNavbarHeader/>
+          </div>
+           <AdminPageNavbar/>
         </div>
-
-       <div>
-        <SupportMassgeDashboard/>
-       </div>
-
-       <div>
-        <ChartAdminDashboard/>
-       </div>
-      </div>
+        <div>
+          <div className=''>
+          <AdminHeader/>
+          </div>
+          <div className='flex xl: mt-4 xl:mr-20'>
+           <div >
+           <NumberOfMebers/>
+           </div>
+           <div>
+            <LoanApplication/>
+           </div>
+           <div>
+            <CardAdmin/>
+           </div>
+           </div>
+           <div className=''>
+            <NewDepositSlip/>
+           </div>
+        </div>
+     </div>
+     <div className='flex'>
+            <div className='-mt-[50%] mr-[30%]'>
+              <ChartAdminDashboard/>
+            </div>
+            <div className='-mt-[51.5%] -mr-[5%] '>
+              <SupportMassgeDashboard/>
+            </div>
+        </div>
     </div>
-  );
+  )
 }
 
-export default AdminFirstPage;
+export default AdminFristPage

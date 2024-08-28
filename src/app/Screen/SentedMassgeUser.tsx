@@ -6,20 +6,20 @@ import UserPageNavbar from '../components/UserPage/UserPageNavbar'
 
 function ManagementAccount() {
   return (
-    <div>
-        <div className='flex '> 
-            <div>
+    <div className='dark:bg-black'>
+        <div className='flex dark:bg-black '> 
+            <div className='dark:bg-black'>
                
-            <div >
-          <div>
+            <div className='dark:bg-black'>
+          <div className='dark:bg-black'>
             <AdminNavbarHeader />
           </div>
-          <div>
+          <div className='dark:bg-black'>
             <UserPageNavbar />
           </div>
         </div>
             </div>
-            <div>
+            <div className='dark:bg-black'>
               <SentedMassege/>
             </div>
         </div>

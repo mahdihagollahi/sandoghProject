@@ -5,11 +5,22 @@ import iconBackImage from '@/src/app/assent/Img/adminPanel/getBack.svg';
 import Paginate from './Paginate';
 import Link from 'next/link';
 
-const UserTable = ({ users }) => {
-  const [currentPage, setCurrentPage] = useState(0);
+interface User {
+  src: string;
+  name: string;
+  joinDate: string;
+  loans: number | string;
+}
+
+interface UserTableProps {
+  users: User[];
+}
+
+const UserTable: React.FC<UserTableProps> = ({ users }) => {
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 7;
 
-  const pageClick = (data) => {
+  const pageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
 
@@ -45,7 +56,7 @@ const UserTable = ({ users }) => {
                     <td className="w-2/12 py-2 px-4 ">{user.joinDate}</td>
                     <td className="w-2/12 py-2 px-4 ">{user.loans}</td>
                     <td className="w-3/12 py-2 px-4 ">
-                    <Link href='/detailuser' passHref>
+                    <Link href='/Rout/detailuser' passHref>
                     <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                       <Image src={FillImage} width={24} height={24} alt="" />
                         <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>

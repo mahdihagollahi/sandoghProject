@@ -7,8 +7,8 @@ import crossOutline from '@/src/app/assent/Img/adminPanel/crossOutline.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 
 function RoutTableUser() {
-  const [selectedTab, setSelectedTab] = useState('');
-  const [hoveredTab, setHoveredTab] = useState('');
+  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   useEffect(() => {
     const storedTab = localStorage.getItem('selectedTab');
@@ -17,7 +17,7 @@ function RoutTableUser() {
     }
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab : string) => {
     setSelectedTab(tab);
     localStorage.setItem('selectedTab', tab);
   };
@@ -31,7 +31,7 @@ function RoutTableUser() {
             onMouseEnter={() => setHoveredTab('deposited')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/deposited' className='flex items-center gap-2' onClick={() => handleTabClick('deposited')}>
+            <Link href='/Rout/deposited' className='flex items-center gap-2' onClick={() => handleTabClick('deposited')}>
               <Image
                 src={selectedTab === 'deposited' || hoveredTab === 'deposited' ? UserHoverImage : UserOutlineImage}
                 width={25}
@@ -49,7 +49,7 @@ function RoutTableUser() {
             onMouseEnter={() => setHoveredTab('notdeposited')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/notdeposited' className='flex items-center gap-2' onClick={() => handleTabClick('notdeposited')}>
+            <Link href='/Rout/notdeposited' className='flex items-center gap-2' onClick={() => handleTabClick('notdeposited')}>
               <Image
                 src={selectedTab === 'notdeposited' || hoveredTab === 'notdeposited' ? crossActiveImage : crossOutline}
                 width={25}

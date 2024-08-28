@@ -12,7 +12,7 @@ export default function Loagin() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "https://shabab.v1r.ir/api/auth/login",
+        "https://hosseinshabab.iapp.ir/api/auth/login",
         {
           username: username,
           password: password,
@@ -29,11 +29,9 @@ export default function Loagin() {
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("authToken", response.data.token);
 
-        window.location.href = "/dashboarduser";
+        window.location.href = "/Rout/dashboarduser";
       }
-      // else {
-      //   setError("خطایی در دریافت توکن وجود دارد.");
-      // }
+     
     } catch (err: any) {
       if (err.response && err.response.data) {
         setError(

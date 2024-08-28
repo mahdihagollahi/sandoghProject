@@ -15,11 +15,12 @@ const User =[
 ];
 function SupportMassgeDashboard() {
   return (
-    <div className='flex justify-center mt-4 items-center   md:justify-center  xl:justify-end xl:ml-10 xl:mt-6'>
-        <div className='w-96 max-w-md bg-white shadow-xl rounded-lg px-4 '>
+    
+    <div className='flex justify-center mt-4 items-center    md:justify-center   xl:justify-end  xl:mt-6'>
+        <div className='w-96 max-w-md bg-white  dark:bg-black xl:py-1 shadow-xl rounded-lg px-4 '>
             <div className='py-4 '>
              
-                <p className='font-bold text-sm px-7 text-[#2D3748]'>
+                <p className='font-bold text-sm dark:text-white px-7 text-[#2D3748]'>
                 پیام های پشتیبانی
                 </p>
                </div>
@@ -35,18 +36,18 @@ function SupportMassgeDashboard() {
                         </div>   
                        
                             <div className='ml-4 flex-grow'>
-                               <p className='font-medium text-sm leading-6 text-[#2D3748]'>
+                               <p className='font-medium text-sm leading-6 dark:text-white text-[#2D3748]'>
                                 {items.name}
                                </p>
 
-                               <p className='font-normal text-xs  text-[#A0AEC0]'>
+                               <p className='font-normal text-xs dark:text-white  text-[#A0AEC0]'>
                                 {items.massage}
                                </p>
                             </div>
 
                           
                        
-                        <div className='text-xs text-[#A0AEC0]'>
+                        <div className='text-xs dark:text-white text-[#A0AEC0]'>
                          
                             {items.time}
                          
@@ -75,3 +76,91 @@ function SupportMassgeDashboard() {
 
 export default SupportMassgeDashboard
 
+
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import Link from 'next/link';
+
+// interface MessageDetail {
+//   id: number;
+//   title: string | null;
+//   description: string;
+//   status: string;
+//   ticket_id: number;
+// }
+
+// interface Message {
+//   id: number;
+//   name: string;
+//   type: string;
+//   response_status: string;
+//   created_at: string;
+//   updated_at: string;
+//   user_id: number;
+//   messages: MessageDetail[];
+// }
+
+// const getToken = (): string | null => {
+//   return localStorage.getItem('authToken');
+// };
+
+// const fetchMessages = async (): Promise<Message[]> => {
+//   const authToken = getToken();
+//   if (!authToken) {
+//     throw new Error('No token found');
+//   }
+
+//   try {
+//     const response = await axios.get<Message[]>('https://shabab.v1r.ir/api/messages/index', {
+//       headers: {
+//         Authorization: `Bearer ${authToken}`,
+//       },
+//     });
+//     console.log("API Response:", response.data);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error fetching messages:", error);
+//     throw error;
+//   }
+// };
+
+// const SupportMessageDashboard: React.FC = () => {
+//   const [messages, setMessages] = useState<Message[]>([]);
+//   const [isLoading, setIsLoading] = useState<boolean>(true);
+//   const [error, setError] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     const getData = async () => {
+//       try {
+//         const data = await fetchMessages();
+//         setMessages(data);
+//       } catch (err) {
+//         setError(err instanceof Error ? err.message : 'Unknown error');
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+
+//     getData();
+//   }, []);
+
+ 
+//   return (
+//     <div>
+//       {messages.map((item) => (
+//         <div key={item.id}>
+//           <h3>{item.name || 'بدون نام'}</h3>
+//           {item.messages.map((msg) => (
+//             <p key={msg.id}>{msg.description}</p>
+//           ))}
+//           <span>{new Date(item.created_at).toLocaleString()}</span>
+//         </div>
+//       ))}
+//       <Link href='/support' passHref>
+//         <button>دیدن همه</button>
+//       </Link>
+//     </div>
+//   );
+// };
+
+// export default SupportMessageDashboard;

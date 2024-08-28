@@ -6,7 +6,7 @@ import EveryUserComponent from '@/src/app/components/AdminPage/EveryUserComponen
 
 function EveryUser() {
   return (
-    <div>
+    <div className='dark:bg-black font-custom'>
       
         <div className='flex '> 
             <div>
