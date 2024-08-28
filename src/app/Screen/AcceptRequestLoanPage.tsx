@@ -6,7 +6,7 @@ import AcceptRequestComponent from '../components/UserPage/AcceptRequestComponen
 function AcceptRequestLoanPage() {
   return (
     <div>
-        <div className='flex '> 
+        <div className='flex dark:bg-black '> 
             <div>
                
             <div >
