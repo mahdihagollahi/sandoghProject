@@ -4,7 +4,7 @@ import Image from "next/image";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import Link from "next/link";
 
-export default function Login() {
+export default function Loagin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
