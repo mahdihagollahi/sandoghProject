@@ -74,12 +74,12 @@ const Modalout: React.FC<ModaloutProps> = ({ handleCloseModal }) => {
       <h4 className="font-bold dark:text-white">خروج</h4>
       <p className="dark:text-white">آیا از خروج خود اطمینان دارید؟</p>
       <div className="flex flex-row-reverse gap-2">
-        <Link href='/loginadmin'>
+        <Link href='/Rout/loginadmin'>
           <button className="text-red-500 py-2 px-10 hover:bg-[#FFF2F2] hover:rounded-md">
             خروج
           </button>
         </Link>
-        <Link href='/dashboard'>
+        <Link href='/Rout/dashboard'>
         <button
           className="text-[#1D91CC] py-2 px-10 hover:bg-blue-100 hover:rounded-md"
           onClick={handleCloseModal}

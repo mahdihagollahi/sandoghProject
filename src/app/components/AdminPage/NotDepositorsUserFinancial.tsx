@@ -41,7 +41,7 @@ const toPersianDigits = (num: number | string): string => {
 
 const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await axiosInstance.get("http://hosseinshabab.iapp.ir/api/installments/show/admin");
+    const response = await axiosInstance.get("https://mohammadelia30.ir/shabab/api/installments/show/admin");
     console.log("API response:", response.data);
 
     if (response.data && Array.isArray(response.data.data)) {

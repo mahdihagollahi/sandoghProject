@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
@@ -9,18 +6,26 @@ import axios from 'axios';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-
-
 interface ChartData {
   income: number[];
   outcome: number[];
 }
 
-
-
 const fetchChartData = async (): Promise<ChartData> => {
-    const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
-  const response = await axios.put(API_URL);
+  const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
+
+  const authToken = localStorage.getItem('authToken');
+
+  if (!authToken) {
+    throw new Error('No auth token found');
+  }
+
+  const response = await axios.get(API_URL, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
   return response.data;
 };
 
@@ -32,8 +37,6 @@ function ChartAdminDashboard() {
 
   const { data } = query;
 
-  
-
   const chartData = data || {};
 
   const chartConfig = {
@@ -41,7 +44,7 @@ function ChartAdminDashboard() {
     datasets: [
       {
         label: 'درامد',
-        data: chartData.income || [120, 90, 60, 30, 10, 0], // به فرض داده‌های ورودی از API
+        data: chartData.income || [120, 90, 60, 30, 10, 0], // Fallback data if API fails
         borderColor: 'rgba(54, 162, 235, 1)',
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         fill: false,
@@ -52,7 +55,7 @@ function ChartAdminDashboard() {
       },
       {
         label: 'خروجی',
-        data: chartData.outcome || [120, 90, 60, 30, 10, 0], // به فرض داده‌های ورودی از API
+        data: chartData.outcome || [120, 90, 60, 30, 10, 0], // Fallback data if API fails
         borderColor: 'rgba(255, 99, 132, 1)',
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         fill: false,
@@ -95,7 +98,7 @@ function ChartAdminDashboard() {
 
   return (
     <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14'>
-      <div className='w-[609px] h-[456px] dark:bg-black bg-white  py-10 ml-6 shadow-xl rounded-lg px-6'>
+      <div className='w-[609px] h-[456px] dark:bg-black bg-white py-10 ml-6 shadow-xl rounded-lg px-6'>
         <div className='py-4'>
           <p className='font-medium dark:text-white text-sm text-[#000000]'>
             نمودار موجودی 6ماه اول صندوق
@@ -110,3 +113,4 @@ function ChartAdminDashboard() {
 }
 
 export default ChartAdminDashboard;
+
