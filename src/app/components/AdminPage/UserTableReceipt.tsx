@@ -3,15 +3,20 @@ import Image from 'next/image';
 import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
 import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
 
-interface User {
-  name: string;
-  depositAmount: string;
-  joinDate: string;
-  Description: string;
+interface UserDetailsProps {
+  user: {
+    first_name: string;
+    last_name: string;
+    debt: number;
+    created_at: string;
+    address: string;
+  } | null;
 }
 
-
-const UserTableReceipt : React.FC<User>  = ({ users }) => {
+const UserTableReceipt: React.FC<UserDetailsProps> = ({ user }) => {
+  if (!user) {
+    return null;
+  }
   return (
     <div>
       <div className="p-4 pl-20">
@@ -32,14 +37,14 @@ const UserTableReceipt : React.FC<User>  = ({ users }) => {
               <tbody className="divide-y divide-gray-200 space-y-4">
             
                   <tr>
-                    <td className="w-2/12 py-8 pr-12">{users.name}</td>
+                    <td className="w-2/12 py-8 pr-12">{`${user.first_name} ${user.last_name}`}</td>
                     <td className="w-[25%] py-8 pr-10 text-[#718096]">
                       <p>
-                        {users.depositAmount} تومان
+                      {user.debt.toLocaleString()} تومان
                       </p>
                     </td>
-                    <td className="w-2/12 py-2 px-4">{users.joinDate}</td>
-                    <td className="w-3/12 py-2 px-4  whitespace-nowrap">{users.Description}</td>
+                    <td className="w-2/12 py-2 px-4">{new Date(user.created_at).toLocaleDateString()}</td>
+                    <td className="w-3/12 py-2 px-4  whitespace-nowrap">{user.address}</td>
                     <td className="w-1/12 py-2 px-4">
                       <div className="flex gap-5">
                         <button className="w-6 h-6">
@@ -62,3 +67,7 @@ const UserTableReceipt : React.FC<User>  = ({ users }) => {
 }
 
 export default UserTableReceipt;
+
+
+
+

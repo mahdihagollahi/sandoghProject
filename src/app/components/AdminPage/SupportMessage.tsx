@@ -150,27 +150,104 @@ function SupportMessage() {
     staleTime: 1000 * 60 * 5,
   });
 
-  if (!authToken) {
-    return (
-      <div>
-        <p>لطفا وارد شوید.</p>
-        <Link href="/login">به صفحه ورود بروید</Link>
-      </div>
-    );
-  }
+  // if (!authToken) {
+  //   return (
+  //     <div>
+  //       <p>لطفا وارد شوید.</p>
+  //       <Link href="/login">به صفحه ورود بروید</Link>
+  //     </div>
+  //   );
+  // }
 
   if (isLoading) {
-    return <p>در حال بارگذاری...</p>;
+    return(
+      <div>
+      <div>
+    <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
+      <div className='mr-4'>
+        <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
+      </div>
+      <div className='absolute flex mr-[60.5%]'>
+        <Link href="/" className='flex dark:text-white items-center'>
+          بازگشت
+          <Image src={arrowImage} width={38} height={38} alt='arrow' />
+        </Link>
+      </div>
+    </div>
+
+    <div>
+      <div className='py-2 mt-5'>
+        <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
+      </div>
+      <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+      <div>
+          <div className="flex justify-center items-center ">
+            <span className="loading loading-dots text-accent loading-lg"></span>
+          </div>
+        </div>      </div>
+    </div>
+  </div>
+    </div>
+    )
   }
 
   if (error) {
-    return <p>خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'نامشخص'}</p>;
+    return (
+      <div>
+      <div>
+    <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
+      <div className='mr-4'>
+        <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
+      </div>
+      <div className='absolute flex mr-[60.5%]'>
+        <Link href="/" className='flex dark:text-white items-center'>
+          بازگشت
+          <Image src={arrowImage} width={38} height={38} alt='arrow' />
+        </Link>
+      </div>
+    </div>
+
+    <div>
+      <div className='py-2 mt-5'>
+        <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
+      </div>
+      <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+      <p>خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'نامشخص'}</p>;
+      </div>
+    </div>
+  </div>
+    </div>
+    )
   }
+  if (!data || data.length === 0) {
+    return (
+      <div>
+        <div>
+      <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
+        <div className='mr-4'>
+          <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
+        </div>
+        <div className='absolute flex mr-[60.5%]'>
+          <Link href="/" className='flex dark:text-white items-center'>
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt='arrow' />
+          </Link>
+        </div>
+      </div>
 
-  // if (!data || data.length === 0) {
-  //   return <p>هیچ پیامی یافت نشد.</p>;
-  // }
-
+      <div>
+        <div className='py-2 mt-5'>
+          <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
+        </div>
+        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+        <p>هیچ پیامی یافت نشد.</p>
+        </div>
+      </div>
+    </div>
+      </div>
+    );
+  }
+ 
   return (
     <div>
       <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
