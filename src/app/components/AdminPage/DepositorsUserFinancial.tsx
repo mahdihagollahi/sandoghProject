@@ -23,7 +23,7 @@ interface PaginatedResponse {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://shabab.v1r.ir/api",
+  baseURL: "https://mohammadelia30.ir/shabab/api",
 });
 
 axiosInstance.interceptors.request.use(

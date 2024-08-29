@@ -24,7 +24,7 @@ function NumberOfMebers() {
 
         console.log("Using token:", authToken);
 
-        const response = await axios.get<UserIdResponse>('http://hosseinshabab.iapp.ir/api/users/memberCnt', {
+        const response = await axios.get<UserIdResponse>('https://mohammadelia30.ir/shabab/api/users/memberCnt', {
           headers: {
             Authorization: `Bearer ${authToken}`, 
           },

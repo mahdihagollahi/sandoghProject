@@ -127,7 +127,7 @@ const useAcceptLoanRequest = () => {
   return useMutation(
     async ({ id, status }: AcceptLoanRequestParams) => {
       const response = await axios.post(
-        'http://hosseinshabab.iapp.ir/api/loans/accept/admin',
+        'https://mohammadelia30.ir/shabab/api/loans/accept/admin',
         {
           id,
           admin_accept: status,

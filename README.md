@@ -4,9 +4,9 @@
 
 
 
-![Logo](https://github.com/mahdihagollahi/Bank-getway-Redux-TS/blob/master/src/assets/Img/logoProject.png)
+![Logo](https://github.com/mahdihagollahi/sandoghProject/blob/developer/src/app/assent/Img/userPanel/Logo.png)
 
-<!-- ![Commit Badge](https://img.shields.io/github/commit-activity/y/mahdihagollahi/sandoghProject) -->
+![Commit Badge](https://img.shields.io/github/commit-activity/y/mahdihagollahi/sandoghProject)
 
 - 💵 You will receive the amount quickly
 - 💳 The money is deposited in the account card
@@ -33,12 +33,9 @@ cd sandoghProject
 
 ## Screenshots
 
-![App Screenshot](https://github.com/mahdihagollahi/BankGetWay-Redux/blob/master/src/assets/Img/Screen.png)
+![App Screenshot](https://github.com/mahdihagollahi/sandoghProject/blob/developer/src/app/assent/Img/userPanel/User/payment%20receipt.svg)
 
-![Commit Badge](https://github.com/mahdihagollahi/BankGetWay-Redux/blob/master/src/assets/Img/Card2.png)
-
-
-![Commit Badge](https://github.com/mahdihagollahi/BankGetWay-Redux/blob/master/src/assets/Img/History.png)
+![Commit Badge](https://github.com/mahdihagollahi/sandoghProject/blob/developer/src/app/assent/Img/adminPanel/Admin%20Dashboard.svg)
 
 ## Support
 
@@ -47,4 +44,7 @@ cd sandoghProject
 ## Authors
 
 - [mahdihaghollahi](https://github.com/mahdihagollahi)
-
+- [developersamari](https://github.com/developersamari)
+- [HosseinShabab](https://github.com/HosseinShabab)
+- [ajnimaa](https://github.com/ajnimaa)
+- [Alibabooo1384](https://github.com/Alibabooo1384)

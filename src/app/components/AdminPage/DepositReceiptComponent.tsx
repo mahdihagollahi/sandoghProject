@@ -22,7 +22,7 @@ async function fetchUsers() {
     throw new Error('Token not found');
   }
 
-  const response = await axios.put('http://hosseinshabab.iapp.ir/api/installments/show/admin', {}, {
+  const response = await axios.put('https://mohammadelia30.ir/shabab/api/installments/show/admin', {}, {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },

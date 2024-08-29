@@ -19,7 +19,7 @@ interface ChartData {
 
 
 const fetchChartData = async (): Promise<ChartData> => {
-    const API_URL = 'http://hosseinshabab.iapp.ir/api/factors/index/1';
+    const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
   const response = await axios.put(API_URL);
   return response.data;
 };
