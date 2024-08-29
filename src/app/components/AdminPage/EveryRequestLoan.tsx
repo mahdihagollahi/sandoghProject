@@ -29,6 +29,7 @@ const fetchLoans = async () => {
       }
     });
 
+    console.log('Response data:', response.data); // گزارش داده‌های دریافتی
     const { count, loans } = response.data;
 
     return {
@@ -46,9 +47,14 @@ const fetchLoans = async () => {
     };
   } catch (error) {
     console.error('Error fetching loan data:', error);
+    if (axios.isAxiosError(error)) {
+      console.error('Error response data:', error.response?.data); // گزارش داده‌های خطا
+      console.error('Error response status:', error.response?.status); // وضعیت خطا
+    }
     throw error;
   }
 };
+
 
 const EveryRequestLoan: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState(false);

@@ -1,49 +1,76 @@
-import axios, { AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import { FC } from 'react';
 
 interface UserData {
   first_name: string | null;
   last_name: string | null;
 }
 
-export default function SetedPassword() {
-  const [completions, setCompletions] = useState<{ name: string }[]>([]); 
+const fetchUserData = async () => {
+  const authToken = localStorage.getItem("authToken");
+  if (!authToken) {
+    throw new Error("توکن موجود نیست.");
+  }
 
-  useEffect(() => {
-    const fetchCompletions = async () => {
-      const authToken = localStorage.getItem("authToken"); 
-      console.log(authToken);
+  const response = await axios.put<UserData>("https://mohammadelia30.ir/shabab/api/users/index", {}, {
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    },
+  });
 
-      if (!authToken) {
-        console.error("توکن موجود نیست.");
-        return;
-      }
+  return response.data;
+};
 
-      try {
-        const response: AxiosResponse<UserData> = await axios.put("https://mohammadelia30.ir/shabab/api/users/index", {}, {
-          headers: {
-            Authorization: `Bearer ${authToken}`
-          },
-        });
+const SetedPassword: FC = () => {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['userData'], 
+    queryFn: fetchUserData, 
+  });
 
-        const fullName = `${response.data.first_name || ""} ${response.data.last_name || ""}`.trim();
-        setCompletions([{ name: fullName }]);
+  const completions = data ? [
+    {
+      name: `${data.first_name || ""} ${data.last_name || ""}`.trim()
+    }
+  ] : [];
 
-      } catch (error) {
-        console.error("خطا در دریافت داده‌ها:", error);
-      }
-    };
+  if (isLoading) {
+    return (
+      <div>
+         <div className="">
+        <div className="flex justify-center">
+          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+           <div className='flex justify-center items-center'>
+           <span className="loading loading-dots text-accent loading-lg"></span>
+           </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    );
+  }
 
-    fetchCompletions(); 
-  }, []);
+  if (error) {
+    return (
+      <div>
+         <div className="">
+        <div className="flex justify-center">
+          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+           <div>
+           <p className="dark:text-white">خطا در دریافت داده‌ها: {(error as Error).message}</p>           </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    );
+  }
 
   return (
     <div>
       <div className="">
         <div className="flex justify-center">
           <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
-            {completions.length > 0 ? (
-              completions.map((item, index) => (
+            {completions.map((item, index) => (
                 <div
                   key={index}
                   className="flex justify-between border-b last:border-b-0 py-9"
@@ -52,9 +79,7 @@ export default function SetedPassword() {
                   <span className="dark:text-white">تکمیل شده</span>
                 </div>
               ))
-            ) : (
-              <p className="dark:text-white">داده‌ای یافت نشد</p>
-            )}
+            }
           </div>
         </div>
       </div>
@@ -62,6 +87,7 @@ export default function SetedPassword() {
   );
 }
 
+export default SetedPassword;
 
 
 
