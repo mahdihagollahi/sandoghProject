@@ -25,7 +25,6 @@ const fetchUserData = async (): Promise<UserData> => {
 
   const cardNumberString = response.data.card_number.toString();
 
-  console.log('Received card_number:', cardNumberString); // بررسی مقدار card_number در console
 
   return {
     fund_name: response.data.fund_name,
