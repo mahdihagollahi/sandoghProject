@@ -1,12 +1,7 @@
-
-
-
-
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { FC } from 'react';
 
-// تعریف نوع داده‌ها
 interface UserData {
   first_name: string | null;
   last_name: string | null;
