@@ -34,7 +34,7 @@ function NumberOfMembers() {
     return(
      
           <div className='w-full flex'>
-      <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-8 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72'>
+      <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72'>
         <div className='flex justify-between gap-20'>
           <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
             تعداد اعضای عضو
@@ -48,10 +48,8 @@ function NumberOfMembers() {
             </p>
           </div>
           <div className='flex items-center gap-1'>
-            <p className='font-bold text-[#A0AEC0] dark:text-white text-xs leading-8'>
-             درحال بارگذاری
-            </p>
-            
+           
+            <span className="loading loading-dots text-accent loading-sm"></span>
           </div>
         </div>
       </div>

@@ -64,14 +64,14 @@ function CardAdmin() {
   if (isLoading) return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[15%] shadow-lg md:items-center xl:w-[120%]'>
+        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
               style={{ backgroundImage: `url(${Background.src})` }}
             ></div>
             <div className='relative z-10'>
-              <p className='text-white text-lg mr-5 mb-10 font-normal'>...loading</p>
+            <span className="loading text-accent loading-dots loading-lg"></span>
             </div>
           </div>
           <div className='mt-8 mx-auto pb-3 pt-2 px-8 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
