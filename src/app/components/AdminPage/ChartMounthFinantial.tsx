@@ -6,29 +6,36 @@ import axios from 'axios';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 
-interface ChartDataAPI {
+interface ChartData {
   income: number[];
   outcome: number[];
 }
 
+const fetchChartData = async (): Promise<ChartData> => {
+  const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
 
-const fetchChartData = async (): Promise<ChartDataAPI> => {
-      const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
-    const response = await axios.put(API_URL);
-    return response.data;
-  };
-  
-  function ChartMounthFinantial() {
-    const query = useQuery({
-      queryKey: ['chartData'],
-      queryFn: fetchChartData,
-    });
-  
-    const { data } = query;
-  
-    
-  
-    const chartData = data || {};
+  const authToken = localStorage.getItem('authToken');
+
+  if (!authToken) {
+    throw new Error('No auth token found');
+  }
+
+  const response = await axios.get(API_URL, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  return response.data;
+};
+
+function ChartMounthFinantial() {
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['chartData'],
+    queryFn: fetchChartData,
+  });
+
+  const chartData = data || {};
   
     const chartConfig = {
       labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
@@ -86,6 +93,25 @@ const fetchChartData = async (): Promise<ChartDataAPI> => {
         },
       },
     };
+
+    if(isLoading){
+      return(
+        <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
+        <div className=' w-[880px] h-[390px] bg-inherit   rounded-lg  pr-20 '>
+            <div className='  mb-10'>
+              <p className='font-medium -mt-10 text-sm dark:text-white text-[#000000]'>
+              نمودار موجودی 6ماه اول صندوق
+              </p>
+            </div>
+        <div className='flex justify-center items-center mt-40'>
+  <span className="loading loading-dots text-accent  loading-lg"></span>
+        </div>
+        </div>
+        </div>
+      )
+    }
+
+    
   return (
     <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>
     <div className=' w-[880px] h-[390px] bg-inherit   rounded-lg  pr-20 '>
