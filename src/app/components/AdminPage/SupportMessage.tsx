@@ -103,7 +103,7 @@ interface Ticket {
   type: string;
   response_status: string;
   user_id: string;
-  messages?: Message[];  // ممکن است پیام‌ها وجود نداشته باشند
+  messages?: Message[];  
 }
 
 interface User {
@@ -124,7 +124,7 @@ function SupportMessage() {
   }, []);
 
   const fetchMessages = async (): Promise<Message[]> => {
-    const response = await axios.get<ApiResponse>('http://hosseinshabab.iapp.ir/api/messages/index', {
+    const response = await axios.get<ApiResponse>('https://mohammadelia30.ir/shabab/api/messages/index', {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },

@@ -140,7 +140,7 @@ const fetchUsers = async (): Promise<User[]> => {
   }
 
   const response = await axios.put(
-    "http://hosseinshabab.iapp.ir/api/users/index",
+    "https://mohammadelia30.ir/shabab/api/users/index",
     {},
     {
       headers: {

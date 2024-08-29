@@ -23,7 +23,7 @@ interface PaginatedResponse {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://shabab.v1r.ir/api",
+  baseURL: "https://mohammadelia30.ir/shabab/api",
 });
 
 axiosInstance.interceptors.request.use(
@@ -40,7 +40,7 @@ axiosInstance.interceptors.request.use(
 const fetchUsers = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://hosseinshabab.iapp.ir/api/factors/index"
+      "https://mohammadelia30.ir/shabab/api/factors/index"
     );
     return response.data as PaginatedResponse;
   } catch (error) {

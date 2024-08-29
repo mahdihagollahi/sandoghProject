@@ -169,7 +169,7 @@ const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users }) => {
     }
 
     try {
-      // ارسال پیام به کاربر
+     
       console.log('Sending message:', message);
       handleCloseModal();
     } catch (error) {
