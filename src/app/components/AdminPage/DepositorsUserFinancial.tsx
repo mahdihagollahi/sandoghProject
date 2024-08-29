@@ -84,9 +84,62 @@ const DepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
-  if (isLoading) return <div>Loading...</div>;
-
-  if (isError) return <div>Error: {error.message}</div>;
+  if (isLoading) {
+    return (
+      <div>
+        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2">
+            <p className="font-bold text-lg">مدیریت مالی</p>
+          </div>
+          <div className="flex justify-end mr-2">
+            <Link href="/Rout/showuserdetail">
+              <div className="flex items-center">
+                بازگشت
+                <Image src={backImage} width={38} height={38} alt="arrow" />
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div>
+          <RoutTableFiancial />
+        </div>
+        <div>
+          <UserTableDespositors/>
+          <div className="flex justify-center items-center -mt-20">
+            <span className="loading loading-dots text-accent loading-lg"></span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (isError){
+    return(
+      <div>
+      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="mr-2">
+          <p className="font-bold text-lg">مدیریت مالی</p>
+        </div>
+        <div className="flex justify-end mr-2">
+          <Link href="/Rout/showuserdetail">
+            <div className="flex items-center">
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div>
+        <RoutTableFiancial />
+      </div>
+      <div>
+        <UserTableDespositors/>
+        <div className="flex justify-center items-center -mt-20">
+        <div>Error: {error.message}</div>
+        </div>
+      </div>
+    </div>
+    ) ;
+  } 
 
   return (
     <div>
