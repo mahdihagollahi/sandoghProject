@@ -94,7 +94,7 @@ function NewDepositSlip() {
     );
 
   const data = query.data;
-  const numberLoan = data?.numberLoan || 0;
+  const numberLoan = data?.numberLoan ;
 
   return (
     <div>
