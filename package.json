@@ -15,6 +15,7 @@
     "axios": "^1.7.1",
     "chart.js": "^4.4.3",
     "dayjs": "^1.11.13",
+    "flowbite": "^2.5.1",
     "jalaliday": "^2.3.0",
     "next": "14.2.4",
     "persianjs": "^0.4.0",

@@ -40,13 +40,13 @@ function FishPage() {
     return (
       <div className="bg-white mt-4">
         <div className="flex overflow-y-hidden justify-end mr-20">
-          <a href="/depositreceipt" className="flex items-center">
+          <a href="/Rout/depositreceipt" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>
         </div>
         <div className="flex items-center justify-center">
-          <div>درحال بارگزاری</div>
+        <span className="loading loading-dots text-accent loading-lg"></span>
         </div>
       </div>
     );
@@ -54,7 +54,7 @@ function FishPage() {
     return (
       <div className="bg-white mt-4">
         <div className="flex overflow-y-hidden justify-end mr-20">
-          <a href="/depositreceipt" className="flex items-center">
+          <a href="/Rout/depositreceipt" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>

@@ -1,84 +1,118 @@
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import groupImage from '@/src/app/assent/Img/adminPanel/Iconly copy.svg'
-import axios from 'axios'
+import React from 'react';
+import Image from 'next/image';
+import groupImage from '@/src/app/assent/Img/adminPanel/Iconly copy.svg';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+
 interface UserIdResponse {
   user_id: number;
   [key: string]: any; 
 }
 
+const fetchRequestCount = async (): Promise<UserIdResponse> => {
+  const authToken = localStorage.getItem('authToken');
+  if (!authToken) {
+    throw new Error('Token not found in localStorage');
+  }
+
+  const response = await axios.get<UserIdResponse>('https://mohammadelia30.ir/shabab/api/loans/requestCnt', {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  return response.data;
+};
+
 function LoanApplication() {
-  const [responseData, setResponseData] = useState<UserIdResponse | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['requestCnt'],
+    queryFn: fetchRequestCount,
+  });
 
-  useEffect(() => {
-    const fetchUserId = async () => {
-      try {
-        const authToken = localStorage.getItem('authToken');
-        if (!authToken) {
-          console.error('Token not found in localStorage');
-          setLoading(false);
-          return;
-        }
 
-        console.log("Using token:", authToken);
-
-        const response = await axios.get<UserIdResponse>('http://hosseinshabab.iapp.ir/api/loans/requestCnt', {
-          headers: {
-            Authorization: `Bearer ${authToken}`, 
-          },
-        });
-
-        console.log("Server response:", response.data);
-        setResponseData(response.data); 
-        setLoading(false); 
-      } catch (error) {
-        setLoading(false);
-        if (axios.isAxiosError(error)) {
-          if (error.response?.status === 401) {
-            console.error('Unauthorized: Invalid token or missing credentials');
-          } else {
-            console.error('Error fetching data:', error.message);
-          }
-        }
-      }
-    };
-
-    fetchUserId();
-  }, []);
-
-  return (
-    <div>
-        <div className='w-full flex    '>
-          <div className='bg-[#ffff]  dark:bg-black   rounded-md  px-4 py-5 shadow-lg flex flex-col  gap-12 md:items-center xl:w-72 '>
-            <div className='flex justify-between gap-20'>
-            <p className='text-[#2D3748] dark:text-white  font-bold text-sm leading-5'>
-            درخواست های وام 
-
-                         </p>
-            <Image src={groupImage} width={24} height={24} alt='group'/>
-           
-            </div>
-            <div className='flex justify-between gap-[117px] '>
-               <div>
-                  <p className='font-bold dark:text-white whitespace-normal text-[#A0AEC0] text-xs leading-8'>
-                  تعداد : 
-                  </p>
-               </div>
-               <div className='flex items-center gap-1'>
-              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
-                {loading ? 'در حال بارگذاری...' : responseData ? JSON.stringify(responseData)  : 'اطلاعات موجود نیست'}
-            
+ if (isLoading){
+  return(
+    <div className='w-full flex'>
+        <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center xl:w-72'>
+          <div className='flex justify-between gap-20'>
+            <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
+              درخواست‌های وام
+            </p>
+            <Image src={groupImage} width={24} height={24} alt='group' />
+          </div>
+          <div className='flex justify-between gap-[117px]'>
+            <div>
+              <p className='font-bold dark:text-white whitespace-normal text-[#A0AEC0] text-xs leading-8'>
+                تعداد:
               </p>
-              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
-                نفر در صف
-               </p>
-               </div>
+            </div>
+            <div className='flex items-center gap-1'>
+            <span className="loading loading-dots text-accent loading-sm"></span>
+
+            
             </div>
           </div>
         </div>
-    </div>
+      </div>
   )
+ }
+
+ if(error){
+  return(
+    <div className='w-full flex'>
+        <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center xl:w-72'>
+          <div className='flex justify-between gap-20'>
+            <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
+              درخواست‌های وام
+            </p>
+            <Image src={groupImage} width={24} height={24} alt='group' />
+          </div>
+          <div className='flex justify-between gap-[117px]'>
+            <div>
+              <p className='font-bold dark:text-white whitespace-normal text-[#A0AEC0] text-xs leading-8'>
+                تعداد:
+              </p>
+            </div>
+            <div className='flex items-center gap-1'>
+              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
+               خطا در دریافت اطلاعات
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  )
+ }
+  return (
+    <div>
+      <div className='w-full flex'>
+        <div className='bg-[#ffff] dark:bg-black rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center xl:w-72'>
+          <div className='flex justify-between gap-20'>
+            <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
+              درخواست‌های وام
+            </p>
+            <Image src={groupImage} width={24} height={24} alt='group' />
+          </div>
+          <div className='flex justify-between gap-[117px]'>
+            <div>
+              <p className='font-bold dark:text-white whitespace-normal text-[#A0AEC0] text-xs leading-8'>
+                تعداد:
+              </p>
+            </div>
+            <div className='flex items-center gap-1'>
+              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
+                {JSON.stringify(data)}
+              </p>
+              <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
+                نفر در صف
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default LoanApplication
+export default LoanApplication;
