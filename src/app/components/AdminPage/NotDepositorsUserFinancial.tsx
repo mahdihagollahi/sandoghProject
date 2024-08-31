@@ -54,9 +54,9 @@ const fetchUsers = async (): Promise<User[]> => {
         name: `${user.first_name} ${user.last_name}`,
         joinDate: toPersianDigits(
           dayjs(user.created_at).calendar("jalali").format("YYYY/MM/DD")
-        ), // تبدیل تاریخ به فارسی
-        loans: toPersianDigits(user.debt), // تبدیل وام به فارسی
-        depositAmount: toPersianDigits(user.card_number), // تبدیل شماره کارت به فارسی
+        ), 
+        loans: toPersianDigits(user.debt), 
+        depositAmount: toPersianDigits(user.card_number),
       }));
     } else {
       throw new Error("Data is not in the expected format");
