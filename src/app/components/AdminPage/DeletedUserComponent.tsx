@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import axios from 'axios';
 import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
 import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
-import Image1 from '@/src/app/assent/Img/adminPanel/Avatar.svg';
-import Image2 from '@/src/app/assent/Img/adminPanel/Avatar-2.svg';
-import Image3 from '@/src/app/assent/Img/adminPanel/avatar online copy.svg';
-import Image4 from '@/src/app/assent/Img/adminPanel/avatar online.svg';
+import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import ImageSearch from '@/src/app/assent/Img/adminPanel/Search.svg';
 import RoutTableUser from './RoutTableUser';
 
@@ -15,73 +13,128 @@ interface User {
   name: string;
   joinDate: string;
   loans: string;
+  permission: string;
 }
 
-const users: User[] = [
-  { id: 1, src: Image1, name: 'امیر قنبری', joinDate: '1404/01/16', loans: '1 وام' },
-  { id: 2, src: Image2, name: 'مینا قنبری', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 3, src: Image3, name: 'فاطمه طالبیان', joinDate: '1404/01/16', loans: '2 وام' },
-  { id: 4, src: Image4, name: 'نگین سعیدی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 5, src: Image1, name: 'کنی سپهری', joinDate: '1404/01/16', loans: '2 وام' },
-  { id: 6, src: Image2, name: 'نگین سعیدی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 8, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 9, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 10, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 12, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 13, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 14, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-  { id: 15, src: Image3, name: 'سکینه داوودی', joinDate: '1404/01/16', loans: '0 وام' },
-];
+const fetchUsers = async () => {
+  const authToken = localStorage.getItem('authToken');
+
+  if (!authToken) {
+    throw new Error('No auth token found');
+  }
+
+  const { data } = await axios.put('https://mohammadelia30.ir/shabab/api/users/index', {
+    permission: 'deleted'
+  }, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  console.log('Fetched data:', data); 
+
+  return data;
+};
 
 const EveryUser: React.FC = () => {
+  const queryClient = new QueryClient();
+
+  useEffect(() => {
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      console.log('No auth token found');
+      
+    }
+  }, []);
+
   return (
-    <div >
-         <div className='flex gap-24  items-center mb-2 mt-5 mr-3  '>
-            <div className='mr-2 '>
-                <p className='font-bold text-lg'>
-                مشاهده کاربران           
-                </p>
-            </div>
-            <div className='flex items-center gap-2 '>
-          <label className="input  flex items-center border border-[#E2E8F0] gap-4  ">
-           
-              <Image
-              src={ImageSearch}
-              width={20}
-              height={20}
-              alt='search'
-              />
-           
+    <QueryClientProvider client={queryClient}>
+      <UserList />
+    </QueryClientProvider>
+  );
+};
 
-            <input className='w-[32rem] h-[32rem]' type="search"   placeholder="جستجو نام کاربری یا شماره تلفن"   />
-          </label>
+const UserList: React.FC = () => {
+  const { data, isLoading, error } = useQuery('users', fetchUsers);
 
-         
-        </div>
+  useEffect(() => {
+    if (data) {
+      console.log('Data type:', typeof data);
+      console.log('Data:', data);
+    }
+  }, [data]);
 
+  const users: User[] = Array.isArray(data) ? data : [];
 
-            <div className='flex justify-end mr-2  '>
-              <a href="" className='flex items-center'>
-              بازگشت
-              <Image
-                src={backImage}
-                width={38}
-                height={38}
-                alt='arrow'
+  const filteredUsers = users.filter((user: User) => user.permission === 'deleted');
 
-                />
-              </a>
-              
-            </div>
-        </div>
+  if (isLoading){
+    return(
       <div>
-        <RoutTableUser/>
+      <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+        <div className='mr-2'>
+          <p className='font-bold text-lg'>مشاهده کاربران</p>
+        </div>
+        <div className='flex items-center gap-2'>
+          <label className="input flex items-center border border-[#E2E8F0] gap-4">
+            <Image src={ImageSearch} width={20} height={20} alt='search' />
+            <input
+              className='w-[32rem] h-[32rem]'
+              type="search"
+              placeholder="جستجو نام کاربری یا شماره تلفن"
+            />
+          </label>
+        </div>
+        <div className='flex justify-end mr-2'>
+          <a href="" className='flex items-center'>
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt='arrow' />
+          </a>
+        </div>
       </div>
-      <UserDeleteTable users={users} />
+      <div>
+        <RoutTableUser />
+      </div>
+      <div>
+      <UserDeleteTable users={filteredUsers} />
+        <div className='flex justify-center items-center -mt-5'>
+          <span className="loading loading-dots text-accent loading-lg"></span>
+        </div>
+      </div>
     </div>
-   
+    )
+  };
+  if (error) return <div>Error occurred</div>;
+
+  return (
+    <div>
+      <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+        <div className='mr-2'>
+          <p className='font-bold text-lg'>مشاهده کاربران</p>
+        </div>
+        <div className='flex items-center gap-2'>
+          <label className="input flex items-center border border-[#E2E8F0] gap-4">
+            <Image src={ImageSearch} width={20} height={20} alt='search' />
+            <input
+              className='w-[32rem] h-[32rem]'
+              type="search"
+              placeholder="جستجو نام کاربری یا شماره تلفن"
+            />
+          </label>
+        </div>
+        <div className='flex justify-end mr-2'>
+          <a href="" className='flex items-center'>
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt='arrow' />
+          </a>
+        </div>
+      </div>
+      <div>
+        <RoutTableUser />
+      </div>
+      <UserDeleteTable users={filteredUsers} />
+    </div>
   );
 };
 
 export default EveryUser;
-
