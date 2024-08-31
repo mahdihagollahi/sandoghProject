@@ -1,9 +1,8 @@
 import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
 import UserPageNavbar from '../components/UserPage/UserPageNavbar'
-import RulesUser from '../components/UserPage/RulesUser'
+import RuleAdmin from '../components/UserPage/RuleAdmin'
 
-function RuleUserPage() {
+function RuleAdminPage() {
   return (
     <div>
         <div className='flex '> 
@@ -11,7 +10,7 @@ function RuleUserPage() {
                
             <div >
           <div>
-            <AdminNavbarHeader />
+            <UserPageNavbar />
           </div>
           <div>
             <UserPageNavbar />
@@ -19,11 +18,11 @@ function RuleUserPage() {
         </div>
             </div>
             <div>
-                <RulesUser/>
+                <RuleAdmin/>
             </div>
         </div>
     </div>
   )
 }
 
-export default RuleUserPage
+export default RuleAdminPage

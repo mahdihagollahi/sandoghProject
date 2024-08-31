@@ -41,7 +41,7 @@ export default function Landing() {
             بخواهند میتوانند مبلغ پیشنهادی خود را اعلام کنند و وام دریافت کنند .
           </p>
         </div>
-        <Link href='/loginuser'>
+        <Link href='/Rout/loginuser'>
      
         <button className="bg-[#4FD1C5] w-[300px] h-[56px] text-white rounded-[5px] absolute top-[40%] right-[2.5%]">
           ورود کاربران

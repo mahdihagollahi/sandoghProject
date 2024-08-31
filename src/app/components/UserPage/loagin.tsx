@@ -8,6 +8,8 @@ export default function Loagin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
 
   const handleLogin = async () => {
     try {
@@ -61,7 +63,7 @@ export default function Loagin() {
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1 ">
               <div>
-                <Link href="/Landing">بازگشت</Link>
+                <Link href="/">بازگشت</Link>
               </div>
               <div>
                 <span>
@@ -120,15 +122,61 @@ export default function Loagin() {
               </span>
             </div>
 
-            <div className="flex flex-col ">
+            <div className="flex flex-col relative ">
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 minLength={6}
                 placeholder=" رمز عبور"
-                type="text"
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <div
+                className="absolute top-8 right-96 transform -translate-y-6 cursor-pointer "
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.98 8.223A10.477 10.477 0 0112 5.25c3.037 0 5.789 1.23 7.776 3.223m2.165 2.653a.75.75 0 01.011 1.042C19.888 17.88 16.164 19.5 12 19.5c-3.037 0-5.789-1.23-7.776-3.223a10.448 10.448 0 01-1.799-2.522.75.75 0 01.011-1.042M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 3l18 18"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                  </svg>
+                )}
+              </div>
               <span className="text-[#999999]">رمز عبور خود را وارد کنید</span>
             </div>
           </div>

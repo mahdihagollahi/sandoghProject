@@ -5,7 +5,7 @@ import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import posetiv from "@/src/app/assent/Img/userPanel/posetiv.svg";
 import negetiv from "@/src/app/assent/Img/userPanel/negtiv.svg";
 
-function RuleUser() {
+function RuleAdmin() {
   const [counter,setcounter]=useState(0)
   const[vam,setvam]=useState(0)
   function posetive(){
@@ -113,4 +113,4 @@ function RuleUser() {
   );
 }
 
-export default RuleUser;
+export default RuleAdmin;
