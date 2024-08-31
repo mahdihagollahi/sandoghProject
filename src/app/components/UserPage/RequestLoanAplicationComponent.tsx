@@ -5,6 +5,7 @@ import BoxCondition from './Boxcondition';
 import InputVam from './InputVam';
 import ButtonSended from './ButtonSended';
 import Filter from './Filter';
+import Link from 'next/link';
 function RequestLoanAplicationComponent() {
   return (
     <div>
@@ -18,7 +19,7 @@ function RequestLoanAplicationComponent() {
 
 
             <div className='flex justify-end  '>
-              <a href="" className='flex items-center'>
+              <Link href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -27,7 +28,7 @@ function RequestLoanAplicationComponent() {
                 alt='arrow'
 
                 />
-              </a>
+              </Link>
               
             </div>
         </div>

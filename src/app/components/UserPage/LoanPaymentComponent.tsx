@@ -5,6 +5,7 @@ import Dragfish from './dragfish';
 import Tablesum from './Tablesum';
 import CardUserLoan from './CardUserLoan';
 import ButtonSended from './ButtonSended';
+import Link from 'next/link';
 const LoanPaymentComponent: React.FC = () => {
   return (
     <div >
@@ -18,7 +19,7 @@ const LoanPaymentComponent: React.FC = () => {
 
 
             <div className='flex justify-end  '>
-              <a href="" className='flex items-center'>
+              <Link href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -27,7 +28,7 @@ const LoanPaymentComponent: React.FC = () => {
                 alt='arrow'
 
                 />
-              </a>
+              </Link>
               
             </div>
         </div>

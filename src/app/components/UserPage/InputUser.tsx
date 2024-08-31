@@ -4,6 +4,7 @@ import Image from 'next/image';
 import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import DragPhoto from '@/src/app/components/UserPage/dragphoto';
 import DragCart from '@/src/app/components/UserPage/dragcart';
+import Link from 'next/link';
 export default function inputuser() {
 
 
@@ -17,7 +18,7 @@ export default function inputuser() {
                 </p>
             </div>
             <div className='flex justify-end mr-2  '>
-              <a href="" className='flex items-center'>
+              <Link href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={arrowImage}
@@ -26,7 +27,7 @@ export default function inputuser() {
                 alt='arrow'
 
                 />
-              </a>
+              </Link>
               
             </div>
         </div>

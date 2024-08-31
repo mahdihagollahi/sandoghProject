@@ -18,7 +18,7 @@ export default function RulesUser() {
 
 
             <div className='flex justify-end  '>
-              <a href="/requestloanaplication" className='flex items-center'>
+              <a href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -32,7 +32,7 @@ export default function RulesUser() {
             </div>
         </div>
       <div className="p-[40px] w-[950px] mt-10 h-[2487px]">
-        <div className="flex flex-row justify-between w-[837px]">
+        {/* <div className="flex flex-row justify-between w-[837px]">
           <div className="flex flex-row gap-[100px]">
             <span>تعداد وام های مجاز برای هر کاربر</span>
             <div className="flex flex-row gap-3">
@@ -57,8 +57,8 @@ export default function RulesUser() {
               </button>
             </div>
           </div>
-        </div>
-        <div className="mt-[219px]">
+        </div> */}
+        <div >
           <h3>قوانین و مقررات</h3>
         </div>
         <div className="p-[24px] border-b-[1px] w-[837px] ">

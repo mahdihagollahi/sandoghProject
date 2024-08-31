@@ -3,6 +3,7 @@ import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import BoxCondition from './Boxcondition';
 import AcceptRequest from './AcceptRequst';
+import Link from 'next/link';
 function AcceptRequestComponent() {
   return (
     <div>
@@ -16,7 +17,7 @@ function AcceptRequestComponent() {
 
 
             <div className='flex justify-end  '>
-              <a href="/requestloanaplication" className='flex items-center'>
+              <Link href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}
@@ -25,7 +26,7 @@ function AcceptRequestComponent() {
                 alt='arrow'
 
                 />
-              </a>
+              </Link>
               
             </div>
         </div>
