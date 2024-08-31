@@ -83,10 +83,10 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4">{`${user.first_name} ${user.last_name}`}</td>
                     <td className="w-2/12 py-2 px-4">
-                      {convertToPersianDate(user.created_at)}  {/* تبدیل تاریخ به فرمت فارسی */}
+                      {convertToPersianDate(user.created_at)} 
                     </td>
                     <td className="w-2/12 py-2 px-4">
-                      {convertToPersianNumber(user.debt.toLocaleString())}  {/* تبدیل عدد به فارسی */}
+                      {convertToPersianNumber(user.debt.toLocaleString())}  
                     </td>
                     <td className="w-3/12 py-2 px-4">
                       <Link href={`/Rout/detailuser/${user.id}`} passHref>
