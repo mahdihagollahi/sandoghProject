@@ -16,7 +16,7 @@ function SupportTicket() {
 
 
             <div className='flex justify-end  '>
-              <a href="/dashboarduser" className='flex items-center'>
+              <a href="/Rout/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}

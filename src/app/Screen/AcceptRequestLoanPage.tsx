@@ -20,6 +20,7 @@ function AcceptRequestLoanPage() {
             </div>
             <div>
                 <AcceptRequestComponent/>
+              
             </div>
         </div>
     </div>
