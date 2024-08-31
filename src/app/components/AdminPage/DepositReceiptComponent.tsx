@@ -274,7 +274,7 @@ function DepositReceiptComponent({ userId }: DepositReceiptComponentProps) {
     );
   }
 
-  const user = users[0]; // چون انتظار داریم فقط یک کاربر در آرایه باشد
+  const user = users[0]; 
 
   return (
     <div>

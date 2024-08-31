@@ -16,7 +16,7 @@ interface UserTableFinancialProps {
   users: User[];
 }
 
-const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users }) => {
+const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users = [] }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -27,7 +27,7 @@ const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users }) => {
   };
 
   const offset = currentPage * itemsPerPage;
-  const currentPageData = users.slice(offset, offset + itemsPerPage);
+  const currentPageData = Array.isArray(users) ? users.slice(offset, offset + itemsPerPage) : [];
   const pageCount = Math.ceil(users.length / itemsPerPage);
 
   const handleOpenModal = (user: User) => {
@@ -47,7 +47,6 @@ const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users }) => {
     }
 
     try {
-     
       console.log('Sending message:', message);
       handleCloseModal();
     } catch (error) {
