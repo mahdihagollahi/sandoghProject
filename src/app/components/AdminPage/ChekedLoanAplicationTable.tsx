@@ -27,7 +27,7 @@ const CheckedLoanAplicationTable: React.FC<CheckedLoanAplicationTableProps> = ({
   const pageClick = (data) => {
     setCurrentPage(data.selected);
   };
-
+ console.log(users)
   const offset = currentPage * itemsPerPage;
   const currentPageData = users.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(users.length / itemsPerPage);
