@@ -43,7 +43,13 @@ export default function DragCart() {
 
   const handelDragLeave = () =>{
     setDragOver(false)
+    
   }
+
+
+  const handleRemoveImage = () => {
+    setUplodedImage(null);
+  };
   return (
     <>
     <div className="flex flex-col gap-[28px]">
@@ -56,11 +62,12 @@ export default function DragCart() {
             className="mr-[300px] mb-[8px] "
             style={{ width: "18px", height: "18px" }}
             src={icon}
+            onClick={handleRemoveImage}
             alt=""
           />
           <div className="flex flex-col gap-[20px] justify-center items-center">
             {uploadedImage ? (
-            <img src={uploadedImage} alt="Uploaded" className="w-96 h-40 rounded-md" />
+            <img src={uploadedImage} alt="Uploaded" className="w-96 h-40 p-2 rounded-md" />
             ) : (
               <label className="relative cursor-pointer flex flex-col gap-4 items-center justify-center h-full">
               <input type="file"  className="absolute inset-0 opacity-0 cursor-pointer" onChange={handelFileUploaded} />

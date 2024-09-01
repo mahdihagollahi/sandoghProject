@@ -44,6 +44,9 @@ export default function DragCart() {
   const handelDragLeave = () =>{
     setDragOver(false)
   }
+  const handleRemoveImage = () => {
+    setUplodedImage(null);
+  };
   return (
     <>
     <div className="flex flex-col  gap-7">
@@ -56,6 +59,7 @@ export default function DragCart() {
           <Image
             className="mr-[88%] mb-2 "
             style={{ width: "18px", height: "18px" }}
+            onClick={handleRemoveImage}
             src={icon}
             alt=""
           />
