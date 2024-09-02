@@ -87,12 +87,12 @@ function NewDepositSlip() {
  
 
   return (
-    <div className='ml-8 mr-20 -mt-[15.55%]'>
-      <div className='flex justify-between gap-12 shadow-lg w-[60%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+    <div className='ml-8 mr-20 -mt-[17%]'>
+      <div className='flex justify-between gap-12 shadow-lg w-[66.5%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
         <div className='flex flex-col gap-9'>
           <div>
             <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
-              {data} فیش واریزی جدید
+              {data.factors} فیش واریزی جدید
             </p>
           </div>
           <div>

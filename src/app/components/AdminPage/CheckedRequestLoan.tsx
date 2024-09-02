@@ -109,16 +109,16 @@ interface User {
   description: string;
 }
 
-// ایجاد نمونه‌ای از QueryClient
+
 const queryClient = new QueryClient();
 
 const LoanRequestComponent: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState<boolean>(false);
 
-  // دریافت توکن از localStorage
+
   const authToken = typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
 
-  // تابعی برای دریافت داده‌های کاربران از API
+
   const fetchUsers = async () => {
     if (!authToken) {
       throw new Error('توکن احراز هویت یافت نشد.');
@@ -138,27 +138,95 @@ const LoanRequestComponent: React.FC = () => {
         }
       );
 
-      // لاگ وضعیت و داده‌های پاسخ
+   
       console.log('وضعیت پاسخ:', response.status);
       console.log('داده‌های دریافت‌شده:', response.data);
 
       return response.data;
     } catch (error) {
-      // لاگ خطا
       console.error('خطا در دریافت داده‌ها:', error);
       throw error;
     }
   };
 
-  // استفاده از React Query برای فراخوانی API
   const { data, isLoading, error } = useQuery('users', fetchUsers);
 
-  // لاگ داده‌ها بعد از دریافت
   console.log("داده‌های دریافت‌شده از React Query:", data);
 
-  // هندل کردن حالات مختلف
-  if (isLoading) return <p>در حال بارگذاری...</p>;
-  if (error) return <p>خطایی رخ داده است: {(error as Error).message}</p>;
+  if (isLoading){
+    return(
+      <div>
+      <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
+        <div className='mr-2'>
+          <p className='font-bold text-lg'>
+            درخواست وام
+          </p>
+        </div>
+        <div>
+          <a href="#" className='flex items-center ml-7'>
+            بازگشت
+            <Image
+              src={backImage}
+              width={38}
+              height={38}
+              alt='arrow'
+            />
+          </a>
+        </div>
+      </div>
+      <div className='flex gap-[47%] items-center'>
+        <div>
+          <RoutRequestLoan />
+        </div>
+        <div>
+          <SwichButton setIsUrgent={setIsUrgent} />
+        </div>
+      </div>
+      <div className='mt-4'>
+      <ChekedLoanAplicationTable users={data} />
+      <div className='flex justify-center items-center -mt-5'>
+          <span className="loading loading-dots text-accent loading-lg"></span>
+        </div>
+      </div>
+    </div>
+    )
+  };
+  if (error) {
+    return(
+      <div>
+      <div className='flex justify-between items-center mb-2 mt-10 mr-3'>
+        <div className='mr-2'>
+          <p className='font-bold text-lg'>
+            درخواست وام
+          </p>
+        </div>
+        <div>
+          <a href="#" className='flex items-center ml-7'>
+            بازگشت
+            <Image
+              src={backImage}
+              width={38}
+              height={38}
+              alt='arrow'
+            />
+          </a>
+        </div>
+      </div>
+      <div className='flex gap-[47%] items-center'>
+        <div>
+          <RoutRequestLoan />
+        </div>
+        <div>
+          <SwichButton setIsUrgent={setIsUrgent} />
+        </div>
+      </div>
+      <div className='mt-4'>
+        <ChekedLoanAplicationTable users={data} />
+      </div>
+      <p>خطایی رخ داده است: {(error as Error).message}</p>
+    </div>
+    )
+  } ;
 
   return (
     <div>
