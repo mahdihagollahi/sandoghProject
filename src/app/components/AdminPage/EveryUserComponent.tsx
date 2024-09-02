@@ -10,43 +10,66 @@ import DetailUser from './DetailUserComponnent';
 
 interface User {
   id: number;
-  src: string;
-  name: string;
-  joinDate: string;
-  loans: string;
-  permission: string; 
+  first_name: string;
+  last_name: string;
+  phone_number: string;
+  emergency_number: string;
+  home_number: string;
+  national_code: string;
+  card_number: string;
+  sheba_number: string;
+  address: string;
+  debt: number;
+  created_at: string;
+  updated_at: string;
+}
+
+interface UserResponse {
+  user: {
+    current_page: number;
+    data: User[];
+    first_page_url: string;
+    last_page: number;
+    last_page_url: string;
+    next_page_url: string | null;
+    path: string;
+    per_page: number;
+    prev_page_url: string | null;
+    to: number;
+    total: number;
+  };
 }
 
 const fetchUsers = async (): Promise<User[]> => {
   const token = localStorage.getItem('authToken');
 
   if (!token) {
-    throw new Error("No auth token found");
+    throw new Error('No auth token found');
   }
 
   try {
-    const { data } = await axios.put(
-      "https://mohammadelia30.ir/shabab/api/users/index",
-      { 
-        permission: 'active' 
-      },
+    const { data } = await axios.put<UserResponse>(
+      'https://mohammadelia30.ir/shabab/api/users/index',
+      { permission: 'active' },
       {
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       }
     );
 
-   
+    // Extract the users array from the response
+    const users = data.user.data;
 
-    return data;
+    // Log the users data
+    console.log('Users:', users);
+
+    return users;
   } catch (error) {
-    console.error("Error fetching users:", error);
+    console.error('Error fetching users:', error);
     throw error;
   }
 };
-
-
 
 const EveryUser: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -54,7 +77,7 @@ const EveryUser: React.FC = () => {
   const { data: users = [], error, isLoading } = useQuery<User[], Error>({
     queryKey: ['users'],
     queryFn: fetchUsers,
-    retry: 1, 
+    retry: 1,
   });
 
   if (isLoading) return (
@@ -158,6 +181,3 @@ const EveryUser: React.FC = () => {
 };
 
 export default EveryUser;
-
-
-
