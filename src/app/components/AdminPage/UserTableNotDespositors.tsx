@@ -75,8 +75,8 @@ const UserTableFinancial: React.FC<UserTableFinancialProps> = ({ users = [] }) =
                 {currentPageData.map((user, index) => (
                   <tr key={index}>
                     <td className="w-2/12 py-8 px-4 flex gap-20 whitespace-nowrap">قسط {user.id}</td>
-                    <td className="w-[16%] py-8 px-4">{user.name}</td>
-                    <td className="w-[25%] py-8 px-4 text-[#718096]">
+                    <td className="w-[16%] py-8 px-4 whitespace-nowrap">{user.name}</td>
+                    <td className="w-[25%] py-8 px-4 text-[#718096] whitespace-nowrap">
                       <p>{user.depositAmount} تومان</p>
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>

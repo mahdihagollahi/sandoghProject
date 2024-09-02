@@ -12,7 +12,7 @@ import jalaliday from "jalaliday";
 dayjs.extend(jalaliday);
 
 interface User {
-  id: number;
+  id: string;
   name: string;
   joinDate: string;
   loans: string;
@@ -44,18 +44,18 @@ const toPersianDigits = (num: number | string): string => {
 const fetchUsers = async (): Promise<User[]> => {
   try {
     const response = await axiosInstance.get(
-      "https://mohammadelia30.ir/shabab/api/installments/show/admin"
+      "/installments/show/admin"
     );
     console.log("API response:", response.data);
 
-    if (response.data && Array.isArray(response.data.data)) {
-      return response.data.data.map((user) => ({
+    if (response.data && response.data.users && Array.isArray(response.data.users.data)) {
+      return response.data.users.data.map((user) => ({
         id: toPersianDigits(user.id),
         name: `${user.first_name} ${user.last_name}`,
         joinDate: toPersianDigits(
           dayjs(user.created_at).calendar("jalali").format("YYYY/MM/DD")
-        ), 
-        loans: toPersianDigits(user.debt), 
+        ),
+        loans: toPersianDigits(user.debt),
         depositAmount: toPersianDigits(user.card_number),
       }));
     } else {
@@ -140,6 +140,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
       </div>
     );
   }
+
   if (isError) {
     return (
       <div>
@@ -203,7 +204,6 @@ const NotDepositorsUserFinancial: React.FC = () => {
       </div>
     );
   }
- 
 
   return (
     <div>
@@ -229,3 +229,4 @@ const NotDepositorsUserFinancial: React.FC = () => {
 };
 
 export default NotDepositorsUserFinancial;
+
