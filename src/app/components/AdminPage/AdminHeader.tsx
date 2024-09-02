@@ -16,7 +16,7 @@ const fetchUserData = async (): Promise<User> => {
     throw new Error('No token found, please log in.');
   }
 
-  const response = await axios.post<User>(
+  const response = await axios.post<{ user: { first_name: string; last_name: string; media: [] } }>(
     'https://mohammadelia30.ir/shabab/api/auth/me',
     {},
     {
@@ -27,9 +27,12 @@ const fetchUserData = async (): Promise<User> => {
     }
   );
 
+  const userData = response.data.user;
+  const fullName = `${userData.first_name} ${userData.last_name}` || 'نام کاربر نیست';
+
   return {
-    name: response.data.name || 'نام کاربر نیست',
-    image: response.data.image && response.data.image.trim() !== '' ? response.data.image : IconImage.src,
+    name: fullName,
+    image: userData.media.length > 0 ? userData.media[0] : IconImage.src, 
   };
 };
 
@@ -48,8 +51,8 @@ const AdminHeader: React.FC = () => {
               سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
             </p>
           </div>
-          <div className='flex justify-between  mt-2 dark:text-white gap-4'>
-          <span className="loading loading-dots text-accent loading-sm"></span>
+          <div className='flex justify-between mt-2 dark:text-white gap-4'>
+            <span className="loading loading-dots text-accent loading-sm"></span>
           </div>
         </div>
       </div>
@@ -84,7 +87,7 @@ const AdminHeader: React.FC = () => {
           </p>
         </div>
       
-        <div className='flex justify-between  gap-4'>
+        <div className='flex justify-between gap-4'>
           <div>
             <Image
               className='bg-[#FFFFFF] dark:bg-black rounded-full'
