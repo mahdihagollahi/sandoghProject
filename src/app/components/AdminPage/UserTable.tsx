@@ -25,7 +25,7 @@ interface User {
 }
 
 interface UserTableProps {
-  users: User[];  // اینجا فقط لیست کاربران را نیاز داریم
+  users: User[];  
   onUserSelect: (userId: number | null) => void;
 }
 
@@ -50,7 +50,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
     (userId: number) => axios.get(`https://mohammadelia30.ir/shabab/api/users/delete?id=${userId}`),
     {
       onSuccess: () => {
-        queryClient.invalidateQueries('users'); // برای به‌روزرسانی لیست کاربران پس از حذف
+        queryClient.invalidateQueries('users'); 
       },
       onError: (error) => {
         console.error('Error deleting user:', error);
@@ -135,7 +135,6 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   );
 };
 
-// یک کامپوننت والد برای استفاده از React Query
 const QueryWrapper: React.FC<UserTableProps> = (props) => {
   const queryClient = new QueryClient();
 
