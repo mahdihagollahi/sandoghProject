@@ -1,49 +1,74 @@
 import React, { useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import axios from 'axios';
-import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import ImageSearch from '@/src/app/assent/Img/adminPanel/Search.svg';
-import RoutTableUser from './RoutTableUser';
+import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
 
 interface User {
   id: number;
-  src: string;
-  name: string;
-  joinDate: string;
-  loans: string;
-  permission: string;
+  first_name: string;
+  last_name: string;
+  phone_number: string;
+  emergency_number: string;
+  home_number: string;
+  national_code: string;
+  card_number: string;
+  sheba_number: string;
+  address: string;
+  debt: number;
+  created_at: string;
+  updated_at: string;
 }
 
-const fetchUsers = async () => {
-  const authToken = localStorage.getItem('authToken');
+interface UserResponse {
+  user: {
+    current_page: number;
+    data: User[];
+    first_page_url: string;
+    last_page: number;
+    last_page_url: string;
+    next_page_url: string | null;
+    path: string;
+    per_page: number;
+    prev_page_url: string | null;
+    total: number;
+  };
+}
 
-  if (!authToken) {
+const fetchUsers = async (): Promise<User[]> => {
+  const token = localStorage.getItem('authToken');
+
+  if (!token) {
     throw new Error('No auth token found');
   }
 
-  const { data } = await axios.put('https://mohammadelia30.ir/shabab/api/users/index', {
-    permission: 'deleted'
-  }, {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
-
-  console.log('Fetched data:', data); 
-
-  return data;
+  try {
+    const { data } = await axios.put<UserResponse>(
+      'https://mohammadelia30.ir/shabab/api/users/index',
+      { permission: 'deleted' }, // Corrected permission value
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+       
+    return data.user.data;
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    throw error;
+  }
 };
 
-const EveryUser: React.FC = () => {
+const DeleteUser: React.FC = () => {
   const queryClient = new QueryClient();
 
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
     if (!authToken) {
       console.log('No auth token found');
-      
     }
   }, []);
 
@@ -55,20 +80,45 @@ const EveryUser: React.FC = () => {
 };
 
 const UserList: React.FC = () => {
-  const { data, isLoading, error } = useQuery('users', fetchUsers);
+  const { data: users = [], isLoading, error } = useQuery('users', fetchUsers);
 
-  useEffect(() => {
-    if (data) {
-      console.log('Data type:', typeof data);
-      console.log('Data:', data);
-    }
-  }, [data]);
+  if (isLoading) {
+    return (
+      <div>
+        <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+          <div className='mr-2'>
+            <p className='font-bold text-lg'>مشاهده کاربران</p>
+          </div>
+          <div className='flex items-center gap-2'>
+            <label className="input flex items-center border border-[#E2E8F0] gap-4">
+              <Image src={ImageSearch} width={20} height={20} alt='search' />
+              <input
+                className='w-[32rem] h-[32rem]'
+                type="search"
+                placeholder="جستجو نام کاربری یا شماره تلفن"
+              />
+            </label>
+          </div>
+          <div className='flex justify-end mr-2'>
+            <a href="" className='flex items-center'>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt='arrow' />
+            </a>
+          </div>
+        </div>
+        <div>
+        <div>
+        <UserDeleteTable users={users} />
+        <div className='flex justify-center items-center -mt-5'>
+          <span className="loading loading-dots text-accent loading-lg"></span>
+        </div>
+      </div>
+        </div>
+      </div>
+    );
+  }
 
-  const users: User[] = Array.isArray(data) ? data : [];
-
-  const filteredUsers = users.filter((user: User) => user.permission === 'deleted');
-
-  if (isLoading){
+  if (error) {
     return(
       <div>
       <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
@@ -93,18 +143,16 @@ const UserList: React.FC = () => {
         </div>
       </div>
       <div>
-        <RoutTableUser />
-      </div>
       <div>
-      <UserDeleteTable users={filteredUsers} />
-        <div className='flex justify-center items-center -mt-5'>
-          <span className="loading loading-dots text-accent loading-lg"></span>
-        </div>
+      <UserDeleteTable users={users} />
+      <div className='flex justify-center items-center -mt-5'>
+      خطا در بارگزاری داده
+      </div>
+    </div>
       </div>
     </div>
     )
   };
-  if (error) return <div>Error occurred</div>;
 
   return (
     <div>
@@ -129,12 +177,9 @@ const UserList: React.FC = () => {
           </a>
         </div>
       </div>
-      <div>
-        <RoutTableUser />
-      </div>
-      <UserDeleteTable users={filteredUsers} />
+      <UserDeleteTable users={users} />
     </div>
   );
 };
 
-export default EveryUser;
+export default DeleteUser;
