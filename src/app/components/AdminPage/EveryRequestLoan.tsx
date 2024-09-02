@@ -22,14 +22,16 @@ const fetchLoans = async () => {
   try {
     const token = localStorage.getItem('authToken');
 
-    const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/show/admin', {}, {
+    const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/show/admin', {
+      count: 'all',
+    }, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     });
 
-    console.log('Response data:', response.data); // گزارش داده‌های دریافتی
+    console.log('Response data:', response.data); 
     const { count, loans } = response.data;
 
     return {
@@ -89,7 +91,7 @@ const EveryRequestLoan: React.FC = () => {
       
         </div>
         <div className='mt-4'>
-          در حال بارگزاری
+        <span className="loading loading-dots text-accent loading-sm"></span>
         </div>
       </div>
     );

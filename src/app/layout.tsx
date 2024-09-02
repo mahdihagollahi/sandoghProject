@@ -9,8 +9,8 @@ const queryClient = new QueryClient();
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <html lang="fa" dir="rtl" className='font-custom'>
-        <body>
+      <html lang="fa" dir="rtl" className='font-iransans '>
+        <body className='font-iransansNumber'>
           {children}
           <ReactQueryDevtools initialIsOpen={false} />
         </body>

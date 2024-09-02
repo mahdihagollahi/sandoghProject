@@ -102,7 +102,7 @@ function LoanApplication() {
             </div>
             <div className='flex items-center gap-1'>
               <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
-                {JSON.stringify(data)}
+                {data.loans}
               </p>
               <p className='font-bold text-[#A0AEC0] whitespace-normal dark:text-white text-xs leading-8'>
                 نفر در صف
