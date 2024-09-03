@@ -88,7 +88,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
             <RoutRequestLoan />
           </div>
         </div>
-        <div className='w-[200%] '>
+        <div className='w-[200%] mt-5 '>
           <EveryLoanAplicationTable />
           <div className="flex justify-center items-center ">
             <span className="loading loading-dots text-accent loading-lg"></span>
