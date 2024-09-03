@@ -1,5 +1,6 @@
 import React from 'react'
-import UserPageNavbar from '../components/UserPage/UserPageNavbar'
+import AdminNavbarHeader from '../components/AdminPage/AdminNavbarHeader'
+import AdminPageNavbar from '../components/AdminPage/AdminPageNavbar'
 import RuleAdmin from '../components/UserPage/RuleAdmin'
 
 function RuleAdminPage() {
@@ -10,10 +11,10 @@ function RuleAdminPage() {
                
             <div >
           <div>
-            <UserPageNavbar />
+            <AdminNavbarHeader />
           </div>
           <div>
-            <UserPageNavbar />
+            <AdminPageNavbar />
           </div>
         </div>
             </div>
