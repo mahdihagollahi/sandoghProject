@@ -5,7 +5,7 @@ import DetailUser from '@/src/app/components/AdminPage/DetailUserComponnent'
 
 function DetailUserPage() {
   return (
-    <div className='flex '> 
+    <div className='flex dark:bg-[#283B4D] '> 
             <div>
                
             <div >

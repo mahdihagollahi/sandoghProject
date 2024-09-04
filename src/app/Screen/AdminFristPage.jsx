@@ -41,10 +41,10 @@ function AdminFristPage() {
         </div>
      </div>
      <div className='flex'>
-            <div className='-mt-[51%] mr-[30%]'>
+            <div className='-mt-[52%] mr-[30%]'>
               <ChartAdminDashboard/>
             </div>
-            <div className='-mt-[52.55%] -mr-[5%] '>
+            <div className='-mt-[53.55%] -mr-[5%] '>
               <SupportMassgeDashboard/>
             </div>
         </div>
