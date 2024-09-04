@@ -65,7 +65,7 @@ const Password2: React.FC<Password2Props> = ({ handleCloseModal }) => {
   };
 
   return (
-    <div className="w-[40%] p-8 bg-white shadow-md rounded-md">
+    <div className="w-[40%] p-8 bg-white dark:bg-[#4F5D74] shadow-md rounded-md">
       <div className="flex flex-row justify-between items-center mb-4">
         <div className="flex flex-row gap-4">
           <Image className="w-6" src={logo} alt="Logo" />
