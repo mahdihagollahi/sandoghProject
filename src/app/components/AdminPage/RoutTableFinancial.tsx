@@ -25,7 +25,7 @@ function RoutTableUser() {
   return (
     <div>
       <div>
-        <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 bg-white h-16 rounded-md'>
+        <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 bg-white dark:bg-[#4F5D74] h-16 rounded-md'>
           <div
             className={`flex items-center gap-2 ${selectedTab === 'deposited' || hoveredTab === 'deposited' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
             onMouseEnter={() => setHoveredTab('deposited')}
@@ -38,7 +38,7 @@ function RoutTableUser() {
                 height={25}
                 alt='deposited'
               />
-              <p className='font-bold text-sm text-[#2D3748]'> 
+              <p className='font-bold text-sm text-[#2D3748] dark:text-white'> 
                 واریز کرده ها                
               </p>
             </Link>
@@ -56,7 +56,7 @@ function RoutTableUser() {
                 height={25}
                 alt='not deposited'
               />
-              <p className='font-bold text-sm text-[#2D3748]'> 
+              <p className='font-bold text-sm text-[#2D3748] dark:text-white'> 
                 واریز نکرده ها                 
               </p>
             </Link>

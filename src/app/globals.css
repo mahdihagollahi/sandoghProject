@@ -13,7 +13,7 @@ html, body {
 
 
 .dark html, .dark body {
-  background-color: #000000; 
+  background-color: #2C2C2C; 
 }
 
 @layer base {

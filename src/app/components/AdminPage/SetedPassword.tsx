@@ -39,7 +39,7 @@ const SetedPassword: FC = () => {
       <div>
          <div className="">
         <div className="flex justify-center">
-          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+          <div className="bg-white dark:bg-[#4F5D74] shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
            <div className='flex justify-center items-center'>
            <span className="loading loading-dots text-accent loading-lg"></span>
            </div>
@@ -55,7 +55,7 @@ const SetedPassword: FC = () => {
       <div>
          <div className="">
         <div className="flex justify-center">
-          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+          <div className="bg-white dark:bg-[#4F5D74] shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
            <div>
            <p className="dark:text-white">خطا در دریافت داده‌ها: {(error as Error).message}</p>           </div>
           </div>
@@ -69,7 +69,7 @@ const SetedPassword: FC = () => {
     <div>
       <div className="">
         <div className="flex justify-center">
-          <div className="bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
+          <div className="bg-white dark:bg-[#4F5D74] shadow-lg mt-5 p-6 md:p-10 w-[97.5%] rounded-sm">
             {completions.map((item, index) => (
                 <div
                   key={index}

@@ -6,7 +6,7 @@ import Image from "next/image";
 import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import RoutTableUser from "./RoutTableUser";
-import DetailUser from "./DetailUserComponnent";
+
 
 interface User {
   id: number;
@@ -82,7 +82,7 @@ const EveryUser: React.FC = () => {
 
   if (isLoading)
     return (
-      <div className="dark:bg-black">
+      <div >
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مشاهده کاربران</p>
@@ -118,7 +118,7 @@ const EveryUser: React.FC = () => {
 
   if (error)
     return (
-      <div className="dark:bg-black">
+      <div >
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مشاهده کاربران</p>
@@ -148,7 +148,7 @@ const EveryUser: React.FC = () => {
     );
 
   return (
-    <div className="dark:bg-black">
+    <div >
       <div className="flex gap-24 items-center mb-2 mt-5 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مشاهده کاربران</p>
@@ -173,11 +173,9 @@ const EveryUser: React.FC = () => {
       <div>
         <RoutTableUser />
       </div>
-      {selectedUserId ? (
-        <DetailUser userId={selectedUserId} />
-      ) : (
+  
         <UserTable users={users} onUserSelect={setSelectedUserId} />
-      )}
+   
     </div>
   );
 };

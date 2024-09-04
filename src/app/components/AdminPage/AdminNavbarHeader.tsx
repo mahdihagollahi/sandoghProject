@@ -14,7 +14,7 @@ function AdminNavbarHeader() {
                 <Image src={groupImage} width={48} height={48} alt='group'/>
                 </div>
                 <div className='flex items-center'>
-                  <p className='font-light text-lg  dark:text-white whitespace-nowrap'>
+                  <p className='font-light text-lg  dark:text-[#F5F5F5] whitespace-nowrap'>
                   صندوق قرض الحسنه مهر
                   </p>
                 </div>

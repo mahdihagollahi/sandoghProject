@@ -46,10 +46,10 @@ function SaveInformation() {
       </div>
 
       <div className='mx-auto w-[125vh]'>
-        <div className='bg-white dark:bg-black shadow-lg mt-5 p-6 md:p-10'>
+        <div className='bg-white dark:bg-[#4F5D74] shadow-lg mt-5 p-6 md:p-10'>
           <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap'>
             <div className='relative w-full md:w-auto'>
-              <label className='absolute -top-2 z-10 left-[83%] px-3 dark:bg-black dark:text-white bg-white py-2'>نام</label>
+              <label className='absolute -top-2 z-10 left-[83%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2'>نام</label>
               <input
                 type='text'
                 className='border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3'
@@ -71,7 +71,7 @@ function SaveInformation() {
 
           <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap'>
             <div className='relative w-full md:w-auto'>
-              <label className='absolute -top-2 z-10 left-[67%] px-3 dark:bg-black dark:text-white bg-white py-2'>شماره موبایل</label>
+              <label className='absolute -top-2 z-10 left-[67%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2'>شماره موبایل</label>
               <input
                 type='text'
                 className='border pr-4 md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative m-3'
@@ -81,7 +81,7 @@ function SaveInformation() {
             </div>
 
             <div className='relative w-full md:w-auto'>
-              <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white dark:bg-black dark:text-white py-2 whitespace-nowrap'>کد ملی</label>
+              <label className='absolute -top-2 z-10 left-[76%] px-3 bg-white dark:bg-[#4F5D74] dark:text-white py-2 whitespace-nowrap'>کد ملی</label>
               <input
                 type='text'
                 className='border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3'

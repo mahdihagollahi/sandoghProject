@@ -5,7 +5,7 @@ import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import ImageSearch from '@/src/app/assent/Img/adminPanel/Search.svg';
 import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
-
+import RoutTableUser from "./RoutTableUser";
 interface User {
   id: number;
   first_name: string;
@@ -47,7 +47,7 @@ const fetchUsers = async (): Promise<User[]> => {
   try {
     const { data } = await axios.put<UserResponse>(
       'https://mohammadelia30.ir/shabab/api/users/index',
-      { permission: 'deleted' }, // Corrected permission value
+      { permission: 'deleted' }, 
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -85,7 +85,7 @@ const UserList: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+        <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
           <div className='mr-2'>
             <p className='font-bold text-lg'>مشاهده کاربران</p>
           </div>
@@ -107,6 +107,7 @@ const UserList: React.FC = () => {
           </div>
         </div>
         <div>
+        <RoutTableUser />
         <div>
         <UserDeleteTable users={users} />
         <div className='flex justify-center items-center -mt-5'>
@@ -121,7 +122,7 @@ const UserList: React.FC = () => {
   if (error) {
     return(
       <div>
-      <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+      <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
         <div className='mr-2'>
           <p className='font-bold text-lg'>مشاهده کاربران</p>
         </div>
@@ -143,6 +144,9 @@ const UserList: React.FC = () => {
         </div>
       </div>
       <div>
+    
+        <RoutTableUser />
+       
       <div>
       <UserDeleteTable users={users} />
       <div className='flex justify-center items-center -mt-5'>
@@ -156,7 +160,7 @@ const UserList: React.FC = () => {
 
   return (
     <div>
-      <div className='flex gap-24 items-center mb-2 mt-5 mr-3'>
+      <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
         <div className='mr-2'>
           <p className='font-bold text-lg'>مشاهده کاربران</p>
         </div>
@@ -175,7 +179,10 @@ const UserList: React.FC = () => {
             بازگشت
             <Image src={backImage} width={38} height={38} alt='arrow' />
           </a>
-        </div>
+          </div>
+      </div>
+      <div>
+        <RoutTableUser />
       </div>
       <UserDeleteTable users={users} />
     </div>

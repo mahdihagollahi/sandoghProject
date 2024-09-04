@@ -7,7 +7,7 @@ function DepositorsUser() {
   return (
     <div>
       
-        <div className='flex '> 
+        <div className='flex dark:bg-[#283B4D] '> 
             <div>
                
             <div >

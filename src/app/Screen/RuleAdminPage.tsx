@@ -6,7 +6,7 @@ import RuleAdmin from '../components/UserPage/RuleAdmin'
 function RuleAdminPage() {
   return (
     <div>
-        <div className='flex '> 
+        <div className='flex dark:bg-[#283B4D]'> 
             <div>
                
             <div >

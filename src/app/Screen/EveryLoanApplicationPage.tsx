@@ -5,7 +5,7 @@ import EveryRequestLoan from '../components/AdminPage/EveryRequestLoan'
 
 function EveryLoanApplicationPage() {
   return (
-    <div className='dark:bg-black'>
+    <div className='dark:bg-[#283B4D]'>
         <div className='flex '> 
             <div>
                

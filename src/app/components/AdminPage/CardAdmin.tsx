@@ -62,7 +62,7 @@ function CardAdmin() {
   if (isLoading) return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
+        <div className='bg-white dark:bg-[#4F5D74] rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -75,7 +75,7 @@ function CardAdmin() {
           <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
               onClick={isEditing ? handleSaveClick : handleEditClick}
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-60 whitespace-nowrap font-light'
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
               {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}
@@ -89,7 +89,7 @@ function CardAdmin() {
   if (error) return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[13%] shadow-lg md:items-center xl:w-[116%]'>
+        <div className='bg-white dark:bg-[#4F5D74] rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -104,7 +104,7 @@ function CardAdmin() {
           <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
               onClick={isEditing ? handleSaveClick : handleEditClick}
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-60 whitespace-nowrap font-light'
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
               {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}
@@ -118,7 +118,7 @@ function CardAdmin() {
   return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%] '>
+        <div className='bg-white dark:bg-[#4F5D74] rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -154,7 +154,7 @@ function CardAdmin() {
           <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
               onClick={isEditing ? handleSaveClick : handleEditClick}
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-60 whitespace-nowrap font-light'
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
               {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}

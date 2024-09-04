@@ -6,7 +6,7 @@ import SetUserPassword from '../components/AdminPage/SetedPassword'
 
 function SetUserPasswordPage() {
   return (
-    <div className='dark:bg-black'>
+    <div className='dark:bg-[#283B4D]'>
         <div className='flex '> 
             <div>
                

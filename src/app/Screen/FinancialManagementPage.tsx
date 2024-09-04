@@ -5,7 +5,7 @@ import FinancialManagement from '@/src/app/components/AdminPage/FinancialManagem
 
 function FinancialManagementPage() {
   return (
-    <div className='dark:bg-black'>
+    <div className='dark:bg-[#283B4D]'>
         <div className='flex '> 
             <div>
                

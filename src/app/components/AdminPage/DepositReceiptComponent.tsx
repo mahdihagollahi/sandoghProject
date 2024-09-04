@@ -225,7 +225,7 @@ function DepositReceiptComponent() {
           <p className="font-bold text-lg whitespace-nowrap">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-20">
-          <a href="/deposited" className="flex items-center">
+          <a href="/Rout/deposited" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>

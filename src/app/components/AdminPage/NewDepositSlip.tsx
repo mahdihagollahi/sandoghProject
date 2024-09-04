@@ -30,7 +30,7 @@ function NewDepositSlip() {
 
   if (query.isLoading) return (
     <div className='ml-8 mr-20 -mt-[17%]'>
-      <div className='flex justify-between gap-12 shadow-lg w-[65.9%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+      <div className='flex justify-between gap-12 shadow-lg w-[65.9%] h-[20%] rounded-md p-6 dark:bg-[#4F5D74] bg-[#ffff]'>
         <div className='flex flex-col gap-9'>
           <div className='flex items-center gap-2'>
             <span className="loading loading-dots text-accent loading-sm"></span>
@@ -56,7 +56,7 @@ function NewDepositSlip() {
 
   if (query.error) return (
     <div className='ml-8 mr-20 -mt-[14%]'>
-      <div className='flex justify-between gap-12 shadow-lg w-[61%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+      <div className='flex justify-between gap-12 shadow-lg w-[61%] h-[20%] rounded-md p-6 dark:bg-[#4F5D74] bg-[#ffff]'>
         <div className='flex flex-col gap-9'>
           <div>
             <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
@@ -88,7 +88,7 @@ function NewDepositSlip() {
 
   return (
     <div className='ml-8 mr-20 -mt-[17%]'>
-      <div className='flex justify-between gap-12 shadow-lg w-[66.5%] h-[20%] rounded-md p-6 dark:bg-black bg-[#ffff]'>
+      <div className='flex justify-between gap-12 shadow-lg w-[66.5%] h-[20%] rounded-md p-6 dark:bg-[#4F5D74] bg-[#ffff]'>
         <div className='flex flex-col gap-9'>
           <div>
             <p className='font-bold text-sm leading-8 dark:text-white text-[#2D3748]'>
