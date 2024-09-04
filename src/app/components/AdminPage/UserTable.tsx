@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import FillImage from '@/src/app/assent/Img/adminPanel/Fill 396.svg';
@@ -75,7 +76,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   return (
     <div>
       <div className="p-4 pl-20">
-        <div className="max-w-full bg-white shadow-md overflow-hidden p-10 dark:bg-inherit dark:text-white">
+        <div className="max-w-full bg-white shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
           <table className="w-full table-auto border-collapse">
             <thead>
               <tr>
@@ -113,7 +114,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
                     </td>
                     <td className="w-1/12 py-2 px-4">
                       <button className="w-6 h-6" onClick={(e) => {
-                        e.stopPropagation(); // جلوگیری از انتخاب ردیف در زمان کلیک روی حذف
+                        e.stopPropagation(); 
                         handleDelete(user.id);
                       }}>
                         <Image src={iconDeletImage} width={34} height={34} alt="حذف" />
@@ -146,3 +147,4 @@ const QueryWrapper: React.FC<UserTableProps> = (props) => {
 };
 
 export default QueryWrapper;
+

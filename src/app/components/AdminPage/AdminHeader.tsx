@@ -45,13 +45,13 @@ const AdminHeader: React.FC = () => {
   if (isLoading) {
     return (
       <div className='font-custom'>
-        <div className='flex gap-[10%] w-[98%] flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+        <div className='flex gap-[10%] w-[98%] flex-col md:flex-row justify-between dark:bg-[#4F5D74] bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
           <div className='flex items-center gap-40 mb-4 md:mb-0'>
-            <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-white font-light text-lg'>
+            <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-[#F5F5F5] font-light text-lg'>
               سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
             </p>
           </div>
-          <div className='flex justify-between mt-2 dark:text-white gap-4'>
+          <div className='flex justify-between mt-2 dark:text-[#F5F5F5] gap-4'>
             <span className="loading loading-dots text-accent loading-sm"></span>
           </div>
         </div>
@@ -62,13 +62,13 @@ const AdminHeader: React.FC = () => {
   if (error) {
     return (
       <div className=''>
-        <div className='flex gap-4 w-[90%] flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+        <div className='flex gap-[10%] w-[98%] flex-col md:flex-row justify-between dark:bg-[#4F5D74] bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
           <div className='flex items-center gap-40 mb-4 md:mb-0'>
-            <p className='mt-1 whitespace-nowrap text-[#2D3748] font-light dark:text-white text-lg'>
+            <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-[#F5F5F5] font-light text-lg'>
               سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
             </p>
           </div>
-          <div className='flex justify-between mr-52 mt-2 whitespace-nowrap dark:text-white gap-4'>
+          <div className='flex justify-between mt-2 dark:text-[#F5F5F5] gap-4'>
             خطا: {error.message}
           </div>
         </div>
@@ -80,9 +80,9 @@ const AdminHeader: React.FC = () => {
 
   return (
     <div className=''>
-      <div className='flex gap-10 w-[98%] flex-col md:flex-row justify-between dark:bg-black bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
+        <div className='flex gap-[10%] w-[98%] flex-col md:flex-row justify-between dark:bg-[#4F5D74] bg-[#FFFFFF] mt-8 ml-3 md:mr-20 md:ml-3 lg:ml-3 xl:px-5 rounded-md shadow-md py-3 px-3 h-auto md:h-16'>
         <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-white font-light text-lg'>
+            <p className='mt-1 whitespace-nowrap text-[#2D3748] dark:text-[#F5F5F5] font-light text-lg'>
             سلام، وقت شما بخیر به بخش داشبورد خوش آمدید، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
@@ -90,7 +90,7 @@ const AdminHeader: React.FC = () => {
         <div className='flex justify-between gap-4'>
           <div>
             <Image
-              className='bg-[#FFFFFF] dark:bg-black rounded-full'
+              className='bg-[#FFFFFF] dark:bg-[#4F5D74] rounded-full'
               src={userImage} 
               alt='user'
               width={40}
@@ -98,7 +98,7 @@ const AdminHeader: React.FC = () => {
             />
           </div>
           <div className='hidden lg:inline lg:h-auto md:mb-4'>
-            <p className='text-[#2D3748] mt-2 flex dark:text-white whitespace-nowrap items-center font-medium text-base'>
+            <p className='text-[#2D3748] mt-2 flex dark:text-[#F5F5F5] whitespace-nowrap items-center font-medium text-base'>
               {user?.name}
             </p>
         

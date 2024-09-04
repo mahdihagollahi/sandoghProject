@@ -81,7 +81,7 @@ function AdminPageNavbar() {
   };
 
   return (
-    <div className="bg-[#F8F9FA] dark:bg-black">
+    <div className="bg-[#F8F9FA] dark:bg-[#283B4D]">
       {isMobile ? (
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
           <span>Admin Panel</span>

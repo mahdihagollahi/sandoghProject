@@ -68,7 +68,7 @@ function SupportMessage() {
         <div className='py-2 mt-5'>
           <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
         </div>
-        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+        <div className='bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
           <div className="flex justify-center items-center">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -120,7 +120,7 @@ function SupportMessage() {
         <div className='py-2 mt-5'>
           <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
         </div>
-        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+        <div className='bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
           <p>هیچ پیامی یافت نشد.</p>
         </div>
       </div>
@@ -145,7 +145,7 @@ function SupportMessage() {
         <div className='py-2 mt-5'>
           <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
         </div>
-        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+        <div className='bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
           {data.map((message) => (
             <div
               key={message.id}

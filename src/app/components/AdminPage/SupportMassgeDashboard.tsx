@@ -17,7 +17,7 @@ function SupportMassgeDashboard() {
   return (
     
     <div className='flex justify-center mt-4 items-center    md:justify-center   xl:justify-end  xl:mt-6'>
-        <div className='w-96 max-w-md bg-white  dark:bg-black xl:py-1 shadow-xl rounded-lg px-4 '>
+        <div className='w-96 max-w-md bg-white  dark:bg-[#4F5D74] xl:py-1 shadow-xl rounded-lg px-4 '>
             <div className='py-3 '>
              
                 <p className='font-bold text-sm dark:text-white px-7 text-[#2D3748]'>
