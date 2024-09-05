@@ -96,9 +96,9 @@ function ChartAdminDashboard() {
 
   if(isLoading){
     return(
-      <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14'>
-      <div className='w-[609px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-6 shadow-xl rounded-lg px-6'>
-        <div className='py-4'>
+      <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14 xl:mr-[5px]'>
+      <div className='w-[594px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-[23px]  shadow-xl rounded-lg pl-6 pr-6'>
+      <div className='py-4'>
           <p className='font-medium dark:text-white text-sm text-[#000000]'>
             نمودار موجودی 6 ماه اول صندوق
           </p>
@@ -113,8 +113,8 @@ function ChartAdminDashboard() {
 
   if(isError){
     return(
-      <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14'>
-      <div className='w-[609px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-6 shadow-xl rounded-lg px-6'>
+      <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14 xl:mr-[5px]'>
+      <div className='w-[594px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-[23px]  shadow-xl rounded-lg pl-6 pr-6'>
       <div className='py-4'>
           <p className='font-medium dark:text-white text-sm text-[#000000]'>
             نمودار موجودی 6 ماه اول صندوق
@@ -129,8 +129,8 @@ function ChartAdminDashboard() {
   }
 
   return (
-    <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14'>
-      <div className='w-[609px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-6 shadow-xl rounded-lg px-6'>
+    <div className='flex justify-center items-center md:justify-center xl:justify-center xl:ml-14 xl:mr-[5px]'>
+      <div className='w-[594px] h-[456px] dark:bg-[#4F5D74] bg-white py-10 ml-[23px]  shadow-xl rounded-lg pl-6 pr-6'>
       <div className='py-4'>
           <p className='font-medium dark:text-[#FFFFFF] text-sm text-[#000000]'>
             نمودار موجودی 6 ماه اول صندوق

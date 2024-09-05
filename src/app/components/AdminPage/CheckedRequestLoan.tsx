@@ -72,7 +72,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
       <div>
         <div className="flex justify-between items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
-            <p className="font-bold text-lg">درخواست وام</p>
+            <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
           <div className="mr-[210%]">
             <a href="#" className="flex items-center">
