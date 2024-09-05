@@ -94,7 +94,7 @@ function AdminPageNavbar() {
         {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
             <div
-              className="relative mt-4"
+              className="relative -mt-2"
               onMouseEnter={() => handleMouseEnter(image.id)}
               onMouseLeave={() => handleMouseLeave(image.id)}
               onClick={() => handleClick(image.id)}
@@ -111,7 +111,7 @@ function AdminPageNavbar() {
           </Link>
         ))}
         <Link href="/Rout/exitadmin">
-          <button className="mr-[1%] mt-[7%]">
+          <button className="mr-[1%] mt-[2%]">
             <Image src={ImageExport} width={60} alt="Exit" className="cursor-pointer" />
           </button>
         </Link>

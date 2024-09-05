@@ -24,14 +24,14 @@ function AdminFristPage() {
           <div className=''>
           <AdminHeader/>
           </div>
-          <div className='flex xl: mt-4 xl:mr-20'>
+          <div className='flex xl: mt-4 xl:mr-14'>
            <div >
            <NumberOfMebers/>
            </div>
            <div>
             <LoanApplication/>
            </div>
-           <div>
+           <div >
             <CardAdmin/>
            </div>
            </div>
@@ -40,11 +40,11 @@ function AdminFristPage() {
            </div>
         </div>
      </div>
-     <div className='flex'>
-            <div className='-mt-[52%] mr-[30%]'>
+     <div className='flex gap-1'>
+            <div className='-mt-[34.8%] mr-[28.4%]'>
               <ChartAdminDashboard/>
             </div>
-            <div className='-mt-[53.55%] -mr-[5%] '>
+            <div className='-mt-[36.5%] -mr-[5%] '>
               <SupportMassgeDashboard/>
             </div>
         </div>

@@ -33,9 +33,8 @@ function NumberOfMembers() {
 
   if(isLoading){
     return(
-     
-          <div className='w-full flex'>
-      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72'>
+      <div className='w-full flex'>
+      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-[20.5px] shadow-lg flex flex-col gap-12 md:items-center md:ml-4 xl:w-72'>
         <div className='flex justify-between gap-20'>
           <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
             تعداد اعضای عضو
@@ -61,7 +60,7 @@ function NumberOfMembers() {
   if(error){
     return(
       <div className='w-full flex'>
-      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72'>
+      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-[20.5px] shadow-lg flex flex-col gap-12 md:items-center md:ml-4 xl:w-72'>
         <div className='flex justify-between gap-20'>
           <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
             تعداد اعضای عضو
@@ -88,7 +87,7 @@ function NumberOfMembers() {
 
   return (
     <div className='w-full flex'>
-      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-5 shadow-lg flex flex-col gap-12 md:items-center md:ml-5 xl:w-72'>
+      <div className='bg-[#ffff] dark:bg-[#4F5D74] rounded-md px-4 py-[20.5px] shadow-lg flex flex-col gap-12 md:items-center md:ml-4 xl:w-72'>
         <div className='flex justify-between gap-20'>
           <p className='text-[#2D3748] dark:text-white font-bold text-sm leading-5'>
             تعداد اعضای عضو
