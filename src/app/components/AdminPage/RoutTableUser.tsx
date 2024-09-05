@@ -26,7 +26,7 @@ const RoutTableUser: React.FC = () => {
 
   return (
     <div>
-      <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-5 dark:bg-[#4F5D74] bg-white h-16 rounded-md'>
+      <div className='flex w-[40%] shadow-md justify-between px-10 mt-8 mr-4 dark:bg-[#4F5D74] bg-white h-16 rounded-md'>
         <div
           className={`flex items-center gap-2 ${selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
           onMouseEnter={() => setHoveredTab('everyuser')}
