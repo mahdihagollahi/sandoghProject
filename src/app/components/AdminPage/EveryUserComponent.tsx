@@ -83,11 +83,11 @@ const EveryUser: React.FC = () => {
   if (isLoading)
     return (
       <div >
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-2">
-            <p className="font-bold text-lg">مشاهده کاربران</p>
-          </div>
-          <div className="flex items-center gap-2">
+      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+        <div className="mr-[1%]">
+          <p className="font-bold text-lg">مشاهده کاربران</p>
+        </div>
+        <div className="flex mr-[3%] items-center gap-2">
             <label className="input flex items-center border border-[#E2E8F0] gap-4">
               <Image src={ImageSearch} width={20} height={20} alt="search" />
               <input
@@ -119,11 +119,11 @@ const EveryUser: React.FC = () => {
   if (error)
     return (
       <div >
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-2">
-            <p className="font-bold text-lg">مشاهده کاربران</p>
-          </div>
-          <div className="flex items-center gap-2">
+      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+        <div className="mr-[1%]">
+          <p className="font-bold text-lg">مشاهده کاربران</p>
+        </div>
+        <div className="flex mr-[3%] items-center gap-2">
             <label className="input flex items-center border border-[#E2E8F0] gap-4">
               <Image src={ImageSearch} width={20} height={20} alt="search" />
               <input
@@ -149,11 +149,11 @@ const EveryUser: React.FC = () => {
 
   return (
     <div >
-      <div className="flex gap-24 items-center mb-2 mt-5 mr-3">
-        <div className="mr-2">
+      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+        <div className="mr-[1%]">
           <p className="font-bold text-lg">مشاهده کاربران</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex mr-[3%] items-center gap-2">
           <label className="input flex items-center border border-[#E2E8F0] gap-4">
             <Image src={ImageSearch} width={20} height={20} alt="search" />
             <input
@@ -163,7 +163,7 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-2">
+        <div className="flex justify-end mr-5">
           <a href="" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />

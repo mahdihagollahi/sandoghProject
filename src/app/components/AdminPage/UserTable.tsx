@@ -76,7 +76,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   return (
     <div>
       <div className="p-4 pl-20">
-        <div className="max-w-full bg-white shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
+        <div className="w-[104%] bg-white shadow-md overflow-hidden rounded-md p-10 dark:bg-[#4F5D74] dark:text-white">
           <table className="w-full table-auto border-collapse">
             <thead>
               <tr>
