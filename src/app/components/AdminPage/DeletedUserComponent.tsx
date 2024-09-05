@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
-import axios from 'axios';
-import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
-import ImageSearch from '@/src/app/assent/Img/adminPanel/Search.svg';
-import UserDeleteTable from '@/src/app/components/AdminPage/UserDeleteTable';
+import React, { useEffect } from "react";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import axios from "axios";
+import Image from "next/image";
+import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
+import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
 import RoutTableUser from "./RoutTableUser";
 interface User {
   id: number;
@@ -38,26 +38,26 @@ interface UserResponse {
 }
 
 const fetchUsers = async (): Promise<User[]> => {
-  const token = localStorage.getItem('authToken');
+  const token = localStorage.getItem("authToken");
 
   if (!token) {
-    throw new Error('No auth token found');
+    throw new Error("No auth token found");
   }
 
   try {
     const { data } = await axios.put<UserResponse>(
-      'https://mohammadelia30.ir/shabab/api/users/index',
-      { permission: 'deleted' }, 
+      "https://mohammadelia30.ir/shabab/api/users/index",
+      { permission: "deleted" },
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
-       
+
     return data.user.data;
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error("Error fetching users:", error);
     throw error;
   }
 };
@@ -66,9 +66,9 @@ const DeleteUser: React.FC = () => {
   const queryClient = new QueryClient();
 
   useEffect(() => {
-    const authToken = localStorage.getItem('authToken');
+    const authToken = localStorage.getItem("authToken");
     if (!authToken) {
-      console.log('No auth token found');
+      console.log("No auth token found");
     }
   }, []);
 
@@ -80,106 +80,105 @@ const DeleteUser: React.FC = () => {
 };
 
 const UserList: React.FC = () => {
-  const { data: users = [], isLoading, error } = useQuery('users', fetchUsers);
+  const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);
 
   if (isLoading) {
     return (
       <div>
-        <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
-          <div className='mr-2'>
-            <p className='font-bold text-lg'>مشاهده کاربران</p>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+          <div className="mr-[1%]">
+            <p className="font-bold text-lg">مشاهده کاربران</p>
           </div>
-          <div className='flex items-center gap-2'>
+          <div className="flex mr-[3%] items-center gap-2">
             <label className="input flex items-center border border-[#E2E8F0] gap-4">
-              <Image src={ImageSearch} width={20} height={20} alt='search' />
+              <Image src={ImageSearch} width={20} height={20} alt="search" />
               <input
-                className='w-[32rem] h-[32rem]'
+                className="w-[32rem] h-[32rem]"
                 type="search"
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
           </div>
-          <div className='flex justify-end mr-2'>
-            <a href="" className='flex items-center'>
+          <div className="flex justify-end mr-5">
+            <a href="" className="flex items-center">
               بازگشت
-              <Image src={backImage} width={38} height={38} alt='arrow' />
+              <Image src={backImage} width={38} height={38} alt="arrow" />
             </a>
           </div>
         </div>
         <div>
-        <RoutTableUser />
-        <div>
-        <UserDeleteTable users={users} />
-        <div className='flex justify-center items-center -mt-5'>
-          <span className="loading loading-dots text-accent loading-lg"></span>
-        </div>
-      </div>
+          <RoutTableUser />
+          <div>
+            <UserDeleteTable users={users} />
+            <div className="flex justify-center items-center -mt-5">
+              <span className="loading loading-dots text-accent loading-lg"></span>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
   if (error) {
-    return(
+    return (
       <div>
-      <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
-        <div className='mr-2'>
-          <p className='font-bold text-lg'>مشاهده کاربران</p>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+          <div className="mr-[1%]">
+            <p className="font-bold text-lg">مشاهده کاربران</p>
+          </div>
+          <div className="flex mr-[3%] items-center gap-2">
+            <label className="input flex items-center border border-[#E2E8F0] gap-4">
+              <Image src={ImageSearch} width={20} height={20} alt="search" />
+              <input
+                className="w-[32rem] h-[32rem]"
+                type="search"
+                placeholder="جستجو نام کاربری یا شماره تلفن"
+              />
+            </label>
+          </div>
+          <div className="flex justify-end mr-5">
+            <a href="" className="flex items-center">
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </a>
+          </div>
         </div>
-        <div className='flex items-center gap-2'>
-          <label className="input flex items-center border border-[#E2E8F0] gap-4">
-            <Image src={ImageSearch} width={20} height={20} alt='search' />
-            <input
-              className='w-[32rem] h-[32rem]'
-              type="search"
-              placeholder="جستجو نام کاربری یا شماره تلفن"
-            />
-          </label>
-        </div>
-        <div className='flex justify-end mr-2'>
-          <a href="" className='flex items-center'>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt='arrow' />
-          </a>
+        <div>
+          <RoutTableUser />
+
+          <div>
+            <UserDeleteTable users={users} />
+            <div className="flex justify-center items-center -mt-5">
+              خطا در بارگزاری داده
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-    
-        <RoutTableUser />
-       
-      <div>
-      <UserDeleteTable users={users} />
-      <div className='flex justify-center items-center -mt-5'>
-      خطا در بارگزاری داده
-      </div>
-    </div>
-      </div>
-    </div>
-    )
-  };
+    );
+  }
 
   return (
     <div>
-      <div className='flex gap-24 items-center mb-2 mt-7 mr-3'>
-        <div className='mr-2'>
-          <p className='font-bold text-lg'>مشاهده کاربران</p>
+      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+        <div className="mr-[1%]">
+          <p className="font-bold text-lg">مشاهده کاربران</p>
         </div>
-        <div className='flex items-center gap-2'>
+        <div className="flex mr-[3%] items-center gap-2">
           <label className="input flex items-center border border-[#E2E8F0] gap-4">
-            <Image src={ImageSearch} width={20} height={20} alt='search' />
+            <Image src={ImageSearch} width={20} height={20} alt="search" />
             <input
-              className='w-[32rem] h-[32rem]'
+              className="w-[32rem] h-[32rem]"
               type="search"
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
           </label>
         </div>
-        <div className='flex justify-end mr-2'>
-          <a href="" className='flex items-center'>
+        <div className="flex justify-end mr-5">
+          <a href="" className="flex items-center">
             بازگشت
-            <Image src={backImage} width={38} height={38} alt='arrow' />
+            <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>
-          </div>
+        </div>
       </div>
       <div>
         <RoutTableUser />
