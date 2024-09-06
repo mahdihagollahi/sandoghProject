@@ -117,7 +117,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -146,7 +146,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
   if (isError) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -181,7 +181,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
   if (!Array.isArray(users)) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -207,38 +207,38 @@ const NotDepositorsUserFinancial: React.FC = () => {
     );
   }
 
-  if (!Array.isArray(users) || users.length === 0){
-    return(
+  if (!Array.isArray(users) || users.length === 0) {
+    return (
       <div>
-      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
-        <div className="mr-2">
-          <p className="font-bold text-lg">مدیریت مالی</p>
+        <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
+          <div className="mr-2">
+            <p className="font-bold text-lg">مدیریت مالی</p>
+          </div>
+          <div className="flex justify-end mr-2">
+            <Link href="/Rout/showuserdetail">
+              <div className="flex items-center">
+                بازگشت
+                <Image src={backImage} width={38} height={38} alt="arrow" />
+              </div>
+            </Link>
+          </div>
         </div>
-        <div className="flex justify-end mr-2">
-          <Link href="/Rout/showuserdetail">
-            <div className="flex items-center">
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-            </div>
-          </Link>
+        <div>
+          <RoutTableFiancial />
+        </div>
+        <div>
+          <UserTableFinancial users={users as User[]} />
+          <div className="flex justify-center items-center -mt-10">
+            <p>کاربری یافت نشد </p>
+          </div>
         </div>
       </div>
-      <div>
-        <RoutTableFiancial />
-      </div>
-      <div>
-        <UserTableFinancial users={users as User[]} />
-        <div className="flex justify-center items-center -mt-10">
-        <p>کاربری یافت نشد </p>
-        </div>
-      </div>
-    </div>
-    )
+    );
   }
 
   return (
     <div>
-      <div className="flex gap-[74%] items-center mb-2 mt-12 mr-3">
+      <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
