@@ -43,12 +43,14 @@ const toPersianDigits = (num: number | string): string => {
 
 const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await axiosInstance.get(
-      "/installments/show/admin"
-    );
+    const response = await axiosInstance.get("/installments/show/admin");
     console.log("API response:", response.data);
 
-    if (response.data && response.data.users && Array.isArray(response.data.users.data)) {
+    if (
+      response.data &&
+      response.data.users &&
+      Array.isArray(response.data.users.data)
+    ) {
       return response.data.users.data.map((user) => ({
         id: toPersianDigits(user.id),
         name: `${user.first_name} ${user.last_name}`,
@@ -205,6 +207,35 @@ const NotDepositorsUserFinancial: React.FC = () => {
     );
   }
 
+  if (!Array.isArray(users) || users.length === 0){
+    return(
+      <div>
+      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="mr-2">
+          <p className="font-bold text-lg">مدیریت مالی</p>
+        </div>
+        <div className="flex justify-end mr-2">
+          <Link href="/Rout/showuserdetail">
+            <div className="flex items-center">
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div>
+        <RoutTableFiancial />
+      </div>
+      <div>
+        <UserTableFinancial users={users as User[]} />
+        <div className="flex justify-center items-center -mt-10">
+        <p>کاربری یافت نشد </p>
+        </div>
+      </div>
+    </div>
+    )
+  }
+
   return (
     <div>
       <div className="flex gap-[74%] items-center mb-2 mt-12 mr-3">
@@ -229,4 +260,3 @@ const NotDepositorsUserFinancial: React.FC = () => {
 };
 
 export default NotDepositorsUserFinancial;
-

@@ -72,8 +72,8 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-2 mt-10 mr-3">
-          <div className="mr-2">
+        <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+            <div className="-mr-1">
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
           <div className="mr-[210%]">
@@ -83,12 +83,12 @@ const EveryRequestLoan: React.FC<Loan> = () => {
             </a>
           </div>
         </div>
-        <div className="flex gap-[47%] items-center">
+       <div className="flex gap-[47.5%] items-center">
           <div>
             <RoutRequestLoan />
           </div>
         </div>
-        <div className='w-[200%] mt-5 '>
+        <div className='w-[210%] mt-5 '>
           <EveryLoanAplicationTable />
           <div className="flex justify-center items-center ">
             <span className="loading loading-dots text-accent loading-lg"></span>
@@ -101,33 +101,8 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if (isError) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-2 mt-10 mr-3">
-          <div className="mr-2">
-            <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
-          </div>
-          <div className="mr-[210%]">
-            <a href="" className="flex text-lg dark:text-white items-center">
-              بازگشت
-              <Image src={backImage} width={68} height={68} alt="arrow" />
-            </a>
-          </div>
-        </div>
-        <div className="flex gap-[47%] items-center">
-          <div>
-            <RoutRequestLoan />
-          </div>
-        </div>
-        <div className="mt-4">
-          خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <div className="flex justify-between items-center mb-2 mt-10 mr-3">
-        <div className="mr-2">
+      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+        <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
         <div>
@@ -137,7 +112,68 @@ const EveryRequestLoan: React.FC<Loan> = () => {
           </a>
         </div>
       </div>
-      <div className="flex gap-[47%] items-center">
+      <div className="flex gap-[47.5%] items-center">
+        <div>
+          <RoutRequestLoan />
+        </div>
+        <div>
+        <div className="mt-4">
+          خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
+        </div>
+      </div>
+      </div>
+      </div>
+    );
+  }
+
+  if(users.length === 0){
+    return(
+      <div>
+      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+        <div className="-mr-1">
+          <p className="font-bold text-lg">درخواست وام</p>
+        </div>
+        <div>
+          <a href="" className="flex items-center ml-7">
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt="arrow" />
+          </a>
+        </div>
+      </div>
+      <div className="flex gap-[47.5%] items-center">
+        <div>
+          <RoutRequestLoan />
+        </div>
+        <div>
+          <SwichButton setIsUrgent={setIsUrgent} />
+        </div>
+      </div>
+      <div className="mt-4">
+        <EveryLoanAplicationTable users={users} />
+        <div className="flex justify-center items-center">
+        <div>
+          کاربری یافت نشد
+        </div>
+        </div>
+      </div>
+    </div>
+    )
+  }
+
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+        <div className="-mr-1">
+          <p className="font-bold text-lg">درخواست وام</p>
+        </div>
+        <div>
+          <a href="" className="flex items-center ml-7">
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt="arrow" />
+          </a>
+        </div>
+      </div>
+      <div className="flex gap-[47.5%] items-center">
         <div>
           <RoutRequestLoan />
         </div>
