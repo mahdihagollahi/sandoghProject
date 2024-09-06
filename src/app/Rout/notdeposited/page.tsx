@@ -1,12 +1,12 @@
-"use client"
-import React from 'react'
-import ThoseWhoHaveNotDeposited from '@/src/app/Screen/ThoseWhoHaveNotDeposited'
+"use client";
+import React from "react";
+import ThoseWhoHaveNotDeposited from "@/src/app/Screen/ThoseWhoHaveNotDeposited";
 function page() {
   return (
     <div>
-        <ThoseWhoHaveNotDeposited/>
+      <ThoseWhoHaveNotDeposited />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;
