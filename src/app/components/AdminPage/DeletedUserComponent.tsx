@@ -6,6 +6,7 @@ import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
 import RoutTableUser from "./RoutTableUser";
+
 interface User {
   id: number;
   first_name: string;
