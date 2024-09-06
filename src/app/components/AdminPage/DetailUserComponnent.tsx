@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import Image1 from "@/src/app/assent/Img/adminPanel/Avatar.svg";
+import DefaultAvatar from "@/src/app/assent/Img/adminPanel/defultUser.png";
 import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import cardImage from "@/src/app/assent/Img/adminPanel/carddetail.svg";
 import cardImage2 from "@/src/app/assent/Img/adminPanel/carddetail2.png";
@@ -42,13 +42,13 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
   if (loading) {
     return (
       <div>
-        <div className="flex  items-center mb-2 mt-9">
+        <div className="flex gap-[150%] items-center mb-2 mt-14">
           <div className="mr-2">
-            <p className="font-bold text-lg">حساب مدیریت</p>
+            <p className="font-bold text-lg whitespace-nowrap">
+              مشاهده کاربران
+            </p>
           </div>
-          <div className="flex justify-end mr-2">
-          
-          </div>
+          <div className="flex justify-end mr-2"></div>
         </div>
 
         <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-sm">
@@ -65,9 +65,9 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-2 mt-9">
+      <div className="flex gap-[79.9%] items-center mb-2 mt-14">
         <div className="mr-2">
-          <p className="font-bold text-lg">حساب مدیریت</p>
+          <p className="font-bold text-lg whitespace-nowrap">مشاهده کاربران</p>
         </div>
         <div className="flex justify-end mr-2">
           <a href="/Rout/everyuser" className="flex items-center">
@@ -77,10 +77,10 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-5 px-28 py-20 cursor-pointer rounded-sm">
+      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-14 px-[102px] py-20 cursor-pointer rounded-sm">
         <div className="flex justify-center">
           <Image
-            src={userDetail.avatar || Image1}
+            src={userDetail.avatar || DefaultAvatar}
             width={98}
             height={98}
             alt="user"
@@ -93,14 +93,24 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
             <p className="font-normal mr-6 text-[9px] text-[#2D3748]">
               شماره کارت
             </p>
-            <Image src={cardImage} width={244} height={140} alt="cardNumber" />
+            <Image
+              src={userDetail.card_image || cardImage}
+              width={244}
+              height={140}
+              alt="cardNumber"
+            />
           </div>
 
           <div>
             <p className="font-normal mr-6 text-[9px] text-[#2D3748]">
               کارت ملی
             </p>
-            <Image src={cardImage2} width={244} height={140} alt="cardNumber" />
+            <Image
+              src={userDetail.national_card_image || cardImage2}
+              width={244}
+              height={140}
+              alt="cardNumber"
+            />
           </div>
         </div>
 
@@ -209,7 +219,6 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
   );
 };
 
-
 export async function getServerSideProps(context) {
   const { query } = context;
   const { userId } = query;
@@ -222,10 +231,3 @@ export async function getServerSideProps(context) {
 }
 
 export default DetailUser;
-
-
-
-
-
-
-

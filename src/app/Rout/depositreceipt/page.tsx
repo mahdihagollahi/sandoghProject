@@ -1,14 +1,13 @@
-
-"use client"
-import React from 'react'
-import DepositReceiptPage from '@/src/app/Screen/DepositReceiptPage'
+"use client";
+import React from "react";
+import DepositReceiptPage from "@/src/app/Screen/DepositReceiptPage";
 
 function page() {
   return (
     <div>
-        <DepositReceiptPage/>
+      <DepositReceiptPage />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;

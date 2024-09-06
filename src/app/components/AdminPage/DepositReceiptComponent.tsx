@@ -3,7 +3,7 @@
 // import axios from "axios";
 // import { useQuery } from "@tanstack/react-query";
 // import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
-// import UserTableReceipt from "./UserTableReceipt"; 
+// import UserTableReceipt from "./UserTableReceipt";
 // import FishComponent from "./FishComponent";
 // import TableSumFish from "./TableSumFish";
 
@@ -23,7 +23,6 @@
 //   updated_at: string;
 // }
 
-
 // async function fetchUserById(userId: number): Promise<User[]> {
 //   const authToken = localStorage.getItem("authToken");
 //   if (!authToken) {
@@ -38,7 +37,6 @@
 //       },
 //     }
 //   );
-
 
 //   console.log("API Response:", response.data);
 
@@ -144,7 +142,7 @@
 //     );
 //   }
 
-//   const user = users[0]; 
+//   const user = users[0];
 
 //   return (
 //     <div>
@@ -174,7 +172,6 @@
 // }
 
 // export default DepositReceiptComponent;
-
 
 import React from "react";
 import Image from "next/image";
@@ -245,6 +242,3 @@ function DepositReceiptComponent() {
 }
 
 export default DepositReceiptComponent;
-
-
-

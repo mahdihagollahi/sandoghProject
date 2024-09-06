@@ -1,13 +1,13 @@
-"use client"
-import React from 'react'
-import DetailUserPage from '@/src/app/Screen/DetailUserPage'
+"use client";
+import React from "react";
+import DetailUserPage from "@/src/app/Screen/DetailUserPage";
 
 function page() {
   return (
     <div>
-        <DetailUserPage/>
+      <DetailUserPage />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;

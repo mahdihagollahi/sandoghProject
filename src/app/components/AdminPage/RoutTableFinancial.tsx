@@ -25,7 +25,7 @@ function RoutTableUser() {
   return (
     <div>
       <div>
-        <div className='flex w-[400px] shadow-md justify-between px-10 mt-8 mr-[18px] bg-white dark:bg-[#4F5D74] h-16 rounded-md'>
+        <div className='flex w-[400px] shadow-md justify-between px-10 mt-14 mr-[18px] bg-white dark:bg-[#4F5D74] h-16 rounded-md'>
           <div
             className={`flex items-center gap-2 ${selectedTab === 'deposited' || hoveredTab === 'deposited' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
             onMouseEnter={() => setHoveredTab('deposited')}
