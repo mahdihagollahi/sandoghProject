@@ -39,6 +39,10 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
     fetchUserData();
   }, [userId]);
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   if (loading) {
     return (
       <div>
@@ -69,11 +73,9 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
         <div className="mr-2">
           <p className="font-bold text-lg whitespace-nowrap">مشاهده کاربران</p>
         </div>
-        <div className="flex justify-end mr-2">
-          <a href="/Rout/everyuser" className="flex items-center">
+        <div className="flex justify-end mr-2 items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
 

@@ -59,6 +59,10 @@ const InputPassword: React.FC = () => {
     }
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   return (
     <div className='p-4 dark:text-white'>
       <div className='flex justify-between items-center mb-2 mt-7'>
@@ -67,8 +71,7 @@ const InputPassword: React.FC = () => {
             تعیین رمز کاربران
           </p>
         </div>
-        <div className='flex justify-end mr-2'>
-          <a href="#" className='flex dark:text-white items-center'>
+        <div className='flex justify-end mr-2 dark:text-white items-center cursor-pointer' onClick={handleBack}>
             بازگشت
             <Image
               src={arrowImage}
@@ -76,7 +79,6 @@ const InputPassword: React.FC = () => {
               height={38}
               alt='arrow'
             />
-          </a>
         </div>
       </div>
 

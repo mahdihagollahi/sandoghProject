@@ -52,6 +52,10 @@ function SupportMessage() {
     staleTime: 1000 * 60 * 5,
   });
 
+  const handleBack = () => {
+    window.history.back();
+  };
+
   if (isLoading) {
     return (
       <div>
@@ -59,11 +63,12 @@ function SupportMessage() {
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
-          <div className="absolute flex mr-[60.5%]">
-            <Link href="/" className="flex dark:text-white items-center">
-              بازگشت
-              <Image src={arrowImage} width={38} height={38} alt="arrow" />
-            </Link>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -88,11 +93,12 @@ function SupportMessage() {
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
-          <div className="absolute flex mr-[60.5%]">
-            <Link href="/" className="flex dark:text-white items-center">
-              بازگشت
-              <Image src={arrowImage} width={38} height={38} alt="arrow" />
-            </Link>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -118,11 +124,12 @@ function SupportMessage() {
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
-          <div className="absolute flex mr-[60.5%]">
-            <Link href="/" className="flex dark:text-white items-center">
-              بازگشت
-              <Image src={arrowImage} width={38} height={38} alt="arrow" />
-            </Link>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -144,11 +151,12 @@ function SupportMessage() {
         <div className="mr-4">
           <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
         </div>
-        <div className="absolute flex mr-[60.5%]">
-          <Link href="/" className="flex dark:text-white items-center">
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </Link>
+        <div
+          className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+          onClick={handleBack}
+        >
+          بازگشت
+          <Image src={arrowImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
 

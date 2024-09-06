@@ -58,6 +58,7 @@ const fetchLoans = async (isUrgent: boolean) => {
     throw error;
   }
 };
+
 const queryClient = new QueryClient();
 
 const LoanRequestComponent: React.FC<Loan> = () => {
@@ -67,6 +68,10 @@ const LoanRequestComponent: React.FC<Loan> = () => {
 
   const users = data || [];
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   if (isLoading) {
     return (
       <div>
@@ -74,11 +79,9 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <div className="mr-2">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
-          <div className="mr-[210%]">
-            <a href="#" className="flex items-center">
+          <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={68} height={68} alt="arrow" />
-            </a>
           </div>
         </div>
         <div className="flex gap-[91.5%] items-center">
@@ -104,11 +107,9 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <div className="mr-2">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
-          <div className="mr-[210%]">
-            <a href="#" className="flex items-center">
+          <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={68} height={68} alt="arrow" />
-            </a>
           </div>
         </div>
         <div className="flex gap-[47%] items-center">
@@ -133,11 +134,9 @@ const LoanRequestComponent: React.FC<Loan> = () => {
         <div className="mr-2">
           <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
         </div>
-        <div className="mr-[210%]">
-          <a href="#" className="flex items-center">
+        <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={68} height={68} alt="arrow" />
-          </a>
         </div>
       </div>
       <div className="flex gap-[91.5%] items-center">
@@ -164,11 +163,9 @@ const LoanRequestComponent: React.FC<Loan> = () => {
         <div className="mr-2">
           <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
         </div>
-        <div>
-          <a href="#" className="flex items-center ml-7">
+        <div className="ml-7 flex items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div className="flex gap-[91.5%] items-center">

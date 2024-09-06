@@ -215,17 +215,18 @@ const sampleUser: User = {
 function DepositReceiptComponent() {
   const user = sampleUser;
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
   return (
     <div>
       <div className="flex gap-[82%] items-center mb-2 mt-12 mr-4">
         <div className="mr-4">
           <p className="font-bold text-lg whitespace-nowrap">مدیریت مالی</p>
         </div>
-        <div className="flex justify-end mr-20">
-          <a href="/Rout/deposited" className="flex items-center">
+        <div className="flex justify-end mr-20 items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <UserTableReceipt user={user} />
