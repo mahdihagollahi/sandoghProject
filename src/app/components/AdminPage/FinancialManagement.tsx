@@ -77,17 +77,19 @@ export default function FinancialManagement() {
     setFilteredData(data[year]);
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   return (
     <div className="">
       <div className="flex mt-11 gap-[78%] items-center mb-2   ">
         <div className="mr-1 ">
           <p className="font-bold dark:text-white text-lg">مدیریت مالی</p>
         </div>
-        <div className="  ">
-          <a href="" className="flex dark:text-white items-center">
+        <div className=" flex dark:text-white items-center cursor-pointer " onClick={handleBack}>   
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
 

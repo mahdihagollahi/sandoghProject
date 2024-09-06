@@ -34,6 +34,10 @@ function SaveInformation() {
     });
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   return (
     <div className="p-4">
       <div className="flex gap-[81.5%] items-center mb-2 mt-[3%]">
@@ -42,11 +46,9 @@ function SaveInformation() {
             حساب مدیریت
           </p>
         </div>
-        <div className="flex ">
-          <a href="" className="flex dark:text-white items-center">
+        <div className="flex dark:text-white items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
 

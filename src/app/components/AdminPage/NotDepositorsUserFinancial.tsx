@@ -114,6 +114,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   if (isLoading) {
     return (
       <div>
@@ -122,12 +126,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
-            </Link>
           </div>
         </div>
         <div>
@@ -151,12 +153,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
-            </Link>
           </div>
         </div>
         <div>
@@ -186,12 +186,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
-            </Link>
           </div>
         </div>
         <div>
@@ -215,12 +213,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
-            </Link>
           </div>
         </div>
         <div>
@@ -243,12 +239,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-          <Link href="/showuserdetail">
-            <div className="flex items-center">
+        <div className="flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
-          </Link>
         </div>
       </div>
       <div>

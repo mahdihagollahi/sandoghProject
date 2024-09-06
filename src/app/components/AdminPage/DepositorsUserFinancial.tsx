@@ -3,7 +3,6 @@ import UserTableDespositors from "@/src/app/components/AdminPage/UserTableDespos
 import Image from "next/image";
 import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import RoutTableFiancial from "./RoutTableFinancial";
-import Link from "next/link";
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -85,6 +84,11 @@ const DepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+  
+
   if (isLoading) {
     return (
       <div>
@@ -93,12 +97,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
-                بازگشت
-                <Image src={backImage} width={38} height={38} alt="arrow" />
-              </div>
-            </Link>
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
           </div>
         </div>
         <div>
@@ -122,12 +124,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
-                بازگشت
-                <Image src={backImage} width={38} height={38} alt="arrow" />
-              </div>
-            </Link>
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
           </div>
         </div>
         <div>
@@ -142,6 +142,7 @@ const DepositorsUserFinancial: React.FC = () => {
       </div>
     );
   }
+
   if (!data || data.data.length === 0) {
     return (
       <div>
@@ -150,12 +151,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
-                بازگشت
-                <Image src={backImage} width={38} height={38} alt="arrow" />
-              </div>
-            </Link>
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
           </div>
         </div>
         <div>
@@ -178,12 +177,10 @@ const DepositorsUserFinancial: React.FC = () => {
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-          <Link href="/Rout/showuserdetail">
-            <div className="flex items-center">
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-            </div>
-          </Link>
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt="arrow" />
+          </div>
         </div>
       </div>
       <div>

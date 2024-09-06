@@ -58,6 +58,9 @@ const fetchLoans = async (isUrgent: boolean) => {
     throw error;
   }
 };
+const handleBack = () => {
+  window.history.back(); 
+};
 
 const EveryRequestLoan: React.FC<Loan> = () => {
   const [isUrgent, setIsUrgent] = useState(false);
@@ -76,11 +79,9 @@ const EveryRequestLoan: React.FC<Loan> = () => {
             <div className="-mr-1">
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
-          <div className="mr-[210%]">
-            <a href="" className="flex text-lg dark:text-white items-center">
+          <div className="mr-[168%] flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={68} height={68} alt="arrow" />
-            </a>
           </div>
         </div>
        <div className="flex gap-[47.5%] items-center">
@@ -105,11 +106,9 @@ const EveryRequestLoan: React.FC<Loan> = () => {
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
-        <div>
-          <a href="" className="flex items-center ml-7">
+        <div className="flex items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div className="flex gap-[47.5%] items-center">
@@ -133,11 +132,9 @@ const EveryRequestLoan: React.FC<Loan> = () => {
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
-        <div>
-          <a href="" className="flex items-center ml-7">
+        <div className="flex items-center cursor-pointer " onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div className="flex gap-[47.5%] items-center">
@@ -166,11 +163,9 @@ const EveryRequestLoan: React.FC<Loan> = () => {
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
-        <div>
-          <a href="" className="flex items-center ml-7">
+        <div className="flex items-center cursor-pointer ml-10" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div className="flex gap-[47.5%] items-center">

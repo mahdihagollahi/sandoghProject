@@ -67,6 +67,10 @@ const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
+const handleBack = () => {
+  window.history.back(); 
+};
+
 const EveryUser: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
 
@@ -97,11 +101,9 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-5">
-          <a href="" className="flex items-center">
+        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
         </div>
         <div>
@@ -133,11 +135,9 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-5">
-          <a href="" className="flex items-center">
+        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
         </div>
         <div>
@@ -164,11 +164,9 @@ const EveryUser: React.FC = () => {
               />
             </label>
           </div>
-          <div className="flex justify-end mr-5">
-            <a href="" className="flex items-center">
+          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
-            </a>
           </div>
         </div>
         <div>
@@ -200,11 +198,9 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-5">
-          <a href="" className="flex items-center">
+        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div>

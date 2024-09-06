@@ -80,6 +80,10 @@ const DeleteUser: React.FC = () => {
   );
 };
 
+const handleBack = () => {
+  window.history.back(); 
+};
+
 const UserList: React.FC = () => {
   const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);
 
@@ -100,11 +104,9 @@ const UserList: React.FC = () => {
               />
             </label>
           </div>
-          <div className="flex justify-end mr-5">
-            <a href="" className="flex items-center">
+          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
-            </a>
           </div>
         </div>
         <div>
@@ -137,11 +139,9 @@ const UserList: React.FC = () => {
               />
             </label>
           </div>
-          <div className="flex justify-end mr-5">
-            <a href="" className="flex items-center">
+          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
-            </a>
           </div>
         </div>
         <div>
@@ -175,11 +175,9 @@ const UserList: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-5">
-          <a href="" className="flex items-center">
+        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div>
@@ -211,11 +209,9 @@ const UserList: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end mr-5">
-          <a href="" className="flex items-center">
+        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div>
