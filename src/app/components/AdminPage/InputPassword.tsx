@@ -81,7 +81,7 @@ const InputPassword: React.FC = () => {
       </div>
 
       <div className='mx-auto w-[125vh] '>
-        <div className='bg-white dark:bg-[#4F5D74] shadow-lg mt-5 p-6 md:p-10 rounded-sm'>
+        <div className='bg-white dark:bg-[#4F5D74] shadow-lg mt-10 p-6 md:p-10 rounded-sm'>
           <form onSubmit={handleSubmit}>
             <div className='flex flex-wrap justify-center items-center gap-4 md:flex-wrap'>
               <div className='relative w-full md:w-auto'>

@@ -33,11 +33,11 @@ function SaveInformation() {
 
   return (
     <div className='p-4'>
-      <div className='flex justify-between items-center mb-2 mt-7'>
-        <div className='mr-2'>
-          <p className='font-bold dark:text-white text-lg'>حساب مدیریت</p>
+      <div className='flex gap-[81.5%] items-center mb-2 mt-[3%]'>
+        <div className='mr-1'>
+          <p className='font-bold dark:text-white text-lg whitespace-nowrap'>حساب مدیریت</p>
         </div>
-        <div className='flex justify-end mr-2'>
+        <div className='flex '>
           <a href='' className='flex dark:text-white items-center'>
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt='arrow' />

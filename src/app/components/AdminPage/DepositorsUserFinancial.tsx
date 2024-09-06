@@ -91,7 +91,7 @@ const DepositorsUserFinancial: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[74.5%] items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -120,7 +120,7 @@ const DepositorsUserFinancial: React.FC = () => {
   if (isError) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[74.5%] items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -145,10 +145,38 @@ const DepositorsUserFinancial: React.FC = () => {
       </div>
     );
   }
+if(!data || data.data.length===0){
+  return(
+    <div>
+        <div className="flex gap-[74.5%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2">
+            <p className="font-bold text-lg">مدیریت مالی</p>
+          </div>
+          <div className="flex justify-end mr-2">
+            <Link href="/Rout/showuserdetail">
+              <div className="flex items-center">
+                بازگشت
+                <Image src={backImage} width={38} height={38} alt="arrow" />
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div>
+          <RoutTableFiancial />
+        </div>
+        <div>
+          <UserTableDespositors />
+          <div className="flex justify-center items-center -mt-14">
+           کاربری یافت نشد
+          </div>
+        </div>
+      </div>
+  )
+}
 
   return (
     <div>
-      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+      <div className="flex gap-[74.5%] items-center mb-2 mt-10 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
