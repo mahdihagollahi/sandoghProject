@@ -69,6 +69,9 @@ interface ModaloutProps {
 }
 
 const Modalout: React.FC<ModaloutProps> = ({ handleCloseModal }) => {
+  const handleBack = () => {
+    window.history.back(); 
+  };
   return (
     <div className="flex flex-col justify-center items-center gap-3 w-96 dark:bg-[#4F5D74] bg-white shadow-md p-8 rounded-md">
       <h4 className="font-bold dark:text-white">خروج</h4>
@@ -79,14 +82,14 @@ const Modalout: React.FC<ModaloutProps> = ({ handleCloseModal }) => {
             خروج
           </button>
         </Link>
-        <Link href='/Rout/dashboard'>
+     <div onClick={handleBack}>
         <button
           className="text-[#1D91CC] py-2 px-10 hover:bg-blue-100 hover:rounded-md"
           onClick={handleCloseModal}
         >
           بازگشت
         </button>
-        </Link>
+        </div>
       </div>
     </div>
   );

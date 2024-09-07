@@ -95,7 +95,7 @@ export default function FinancialManagement() {
 
       <div className="mt-10 ">
         <div className="flex   items-center   md:justify-center  xl:justify-center   xl:mt-2">
-          <div className="  bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-xl rounded-lg w-[94.5%] ">
+          <div className="  bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-md rounded-md w-[94.5%] ">
             <div className="flex gap-52 pt-8 ">
               <div className=" mr-[50%]">
                 <DateDropDown onSelectYear={handleSelectYear} />
@@ -110,7 +110,7 @@ export default function FinancialManagement() {
 
       <div className="flex  mt-2 gap-4  items-center">
         <div className="flex   items-center  md:justify-center  xl:justify-center  ">
-          <div className="  bg-white  dark:bg-[#4F5D74] w-[580px]  pr-8 py-[10px] mt-2 shadow-lg rounded-lg ">
+          <div className="  bg-white  dark:bg-[#4F5D74] w-[580px]  pr-8 py-[10px] mt-2 shadow-md rounded-md ">
             <div className="flex  pt-8 ">
               <div className=" mr-[24%]">
                 <DateDropDown onSelectYear={handleSelectYear} />

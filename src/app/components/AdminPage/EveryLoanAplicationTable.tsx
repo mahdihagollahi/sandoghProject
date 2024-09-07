@@ -30,7 +30,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
 
   const mutation = useMutation({
     mutationFn: async ({ loanId, action }: { loanId: number, action: 'accepted' | 'faild' }) => {
-      const authToken = localStorage.getItem('authToken'); // دریافت توکن از localStorage
+      const authToken = localStorage.getItem('authToken'); 
 
       try {
         const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/accept/admin', {
@@ -69,7 +69,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
   return (
     <div className="overflow-x-auto">
       <div className="pl-10">
-        <div className="max-w-full bg-white shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
+        <div className="max-w-full bg-white rounded-md shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
           <table className="min-w-full">
             <thead>
               <tr className="w-full">

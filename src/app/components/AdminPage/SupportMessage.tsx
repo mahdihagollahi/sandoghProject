@@ -59,7 +59,7 @@ function SupportMessage() {
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -77,7 +77,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <div className="flex justify-center items-center">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -89,7 +89,7 @@ function SupportMessage() {
   if (error) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -107,7 +107,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-black w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <p>
             خطا در دریافت داده‌ها:{" "}
             {error instanceof Error ? error.message : "نامشخص"}
@@ -120,7 +120,7 @@ function SupportMessage() {
   if (!data || data.length === 0) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -138,7 +138,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <p>هیچ پیامی یافت نشد.</p>
         </div>
       </div>
@@ -147,7 +147,7 @@ function SupportMessage() {
 
   return (
     <div>
-      <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+      <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
         <div className="mr-4">
           <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
         </div>
@@ -166,7 +166,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
           {data.map((message) => (
             <div
               key={message.id}

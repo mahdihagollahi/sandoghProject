@@ -53,7 +53,7 @@ function SaveInformation() {
       </div>
 
       <div className="mx-auto w-[125vh]">
-        <div className="bg-white dark:bg-[#4F5D74] shadow-lg mt-12 p-6 md:p-10 ">
+        <div className="bg-white dark:bg-[#4F5D74] shadow-md rounded-md mt-12 p-6 md:p-10 ">
           <div className="flex flex-wrap justify-center items-center gap-4 md:flex-wrap">
             <div className="relative w-full md:w-auto">
               <label className="absolute -top-2 z-10 left-[83%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2">
