@@ -60,7 +60,7 @@ function SupportChatComponent() {
           <p className="font-bold">پیام های در انتظار پاسخگویی</p>
         </div>
 
-        <div className="bg-white w-[1057px] h-[771px] shadow-lg mt-5 px-14 py-2 pb-4  rounded-sm">
+        <div className="bg-white w-[1057px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4  rounded-md">
           {message.map((user, index) => (
             <div
               key={index}

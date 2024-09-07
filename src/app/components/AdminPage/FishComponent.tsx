@@ -6,7 +6,7 @@ import Link from "next/link";
 function FishComponent() {
   return (
     <div>
-      <div className="bg-white w-[100%] py-8 px-16 shadow-md mr-4 ">
+      <div className="bg-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4 ">
         <div className="flex justify-center  ">
           <Image src={FishImg} width={198} height={299} alt="fish" />
         </div>

@@ -14,7 +14,7 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
   users,
 }) => {
   return (
-    <div className="w-full mx-auto  flex flex-col gap-3 pb-3 p-10 rounded-lg shadow-md">
+    <div className="w-full mx-auto  flex flex-col gap-3 pb-3 p-10 rounded-md shadow-md">
       <div className="flex justify-end mr-2  ">
         <div className="flex items-center" onClick={onClose}>
           بازگشت
