@@ -10,8 +10,10 @@ import Supportbox from "@/src/app/components/UserPage/Supportbox";
 
 function UserFirstPage() {
   return (
+    
     <div className="bg-[#F8F9FA]">
       <div className="w-full flex flex-col ">
+        
         <div>
           <div>
             <UserNavbarHeader/>

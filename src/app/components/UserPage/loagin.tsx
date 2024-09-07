@@ -11,12 +11,45 @@ export default function Loagin() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
 
+  // const handleLogin = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //      " https://mohammadelia30.ir/shabab/api/auth/login",
+  //       {
+  //         user_name: username,
+  //         password: password,
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Accept: "application/json",
+  //         },
+  //       }
+  //     );
+  //     console.log(response);
+
+  //     if (response.status === 200 && response.data.token) {
+  //       localStorage.setItem("authToken", response.data.token);
+
+  //       window.location.href = "/Rout/dashboarduser";
+  //     }
+     
+  //   } catch (err: any) {
+  //     if (err.response && err.response.data) {
+  //       setError(
+  //         err.response.data.message || "نام کاربری یا رمز عبور اشتباه است."
+  //       );
+  //     } else {
+  //       setError("مشکلی در ارتباط با سرور پیش آمد.");
+  //     }
+  //   }
+  // };
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "https://hosseinshabab.iapp.ir/api/auth/login",
+        "https://mohammadelia30.ir/shabab/api/auth/login",
         {
-          username: username,
+          user_name: username,  // تغییر نام کلید به user_name
           password: password,
         },
         {
@@ -27,13 +60,12 @@ export default function Loagin() {
         }
       );
       console.log(response);
-
+  
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("authToken", response.data.token);
-
+  
         window.location.href = "/Rout/dashboarduser";
       }
-     
     } catch (err: any) {
       if (err.response && err.response.data) {
         setError(
@@ -111,8 +143,7 @@ export default function Loagin() {
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
                 type="text"
-                maxLength={10}
-                minLength={10}
+                
                 placeholder="نام کاربری"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -125,7 +156,7 @@ export default function Loagin() {
             <div className="flex flex-col relative ">
               <input
                 className="w-[420px] h-[42px] rounded-md p-3 border-[1px] border-[#E2E8F0]"
-                minLength={6}
+                
                 placeholder=" رمز عبور"
                 type={showPassword ? "text" : "password"}
                 value={password}

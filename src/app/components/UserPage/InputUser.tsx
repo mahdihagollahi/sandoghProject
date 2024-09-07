@@ -10,6 +10,7 @@ export default function inputuser() {
 
 
   return (
+    
     <div className='p-4  '>
         <div className='flex  justify-between items-center mb-2 mt-5  '>
             <div className='mr-2 '>

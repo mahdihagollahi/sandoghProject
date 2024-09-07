@@ -59,8 +59,8 @@ const LoginAdmin: React.FC = () => {
           alt=""
         />
       </div>
-      <div className="bg-white dark:bg-black flex justify-center absolute top-[20%] left-[30%] rounded-[30px] min-h-screen shadow-md">
-        <div className=" rounded-[30px] max-w-md w-full p-[40px] shadow-md">
+      <div className="bg-white dark:bg-black flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
+        <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md">
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1">
               <div>
