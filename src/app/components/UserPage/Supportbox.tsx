@@ -14,7 +14,7 @@ export default function Supportbox() {
             </p>
             <div className="flex flex-row gap-3 mt-8">
                 <div className="flex flex-col items-center mt-10 gap-3">
-                    <Link href='/Rout/supportticket'>
+                    <Link href='/supportticket'>
                    
                     <button className="w-72 h-12 px-4 flex items-center justify-center border text-[#394860] border-[#394860] rounded-lg">
                         پیام به مدیر صندوق
