@@ -32,7 +32,7 @@ const RoutTableUser: React.FC = () => {
           onMouseEnter={() => setHoveredTab('everyuser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/Rout/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
+          <Link href='/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
             <Image
               src={selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? IconlyHoverImage : IconlyImage}
               width={25}
@@ -50,7 +50,7 @@ const RoutTableUser: React.FC = () => {
           onMouseEnter={() => setHoveredTab('deleteduser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/Rout/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
+          <Link href='/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
             <Image
               src={selectedTab === 'deleteduser' || hoveredTab === 'deleteduser' ? DeletedHoverImage : DeletedImage}
               width={25}

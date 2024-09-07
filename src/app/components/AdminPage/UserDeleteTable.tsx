@@ -57,7 +57,7 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
                     <td className="w-2/12 py-2 px-4">{user.loans}</td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href='/Rout/detailuser' passHref>
+                      <Link href='/detailuser' passHref>
                         <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                           <Image src={FillImage} width={24} height={24} alt="" />
                           <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>

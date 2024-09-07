@@ -106,7 +106,7 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href="/Rout/deposit">
+                      <Link href="/deposit">
                         <a
                           className="bg-blue-600 text-white py-1 px-3 rounded"
                           onClick={handleOpenModal}
