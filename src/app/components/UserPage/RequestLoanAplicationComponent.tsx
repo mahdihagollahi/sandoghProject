@@ -19,7 +19,7 @@ function RequestLoanAplicationComponent() {
 
 
             <div className='flex justify-end  '>
-              <Link href="/Rout/dashboarduser" className='flex items-center'>
+              <Link href="/dashboarduser" className='flex items-center'>
               بازگشت
               <Image
                 src={backImage}

@@ -110,7 +110,7 @@ function AdminPageNavbar() {
             </div>
           </Link>
         ))}
-        <Link href="/Rout/exitadmin">
+        <Link href="/exitadmin">
           <button className="mr-[1%] mt-[2%]">
             <Image src={ImageExport} width={60} alt="Exit" className="cursor-pointer" />
           </button>

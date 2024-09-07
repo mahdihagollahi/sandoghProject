@@ -1,7 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import Modal from '../components/AdminPage/Modal';
-import ModaloutAdmin from '../components/UserPage/ModaloutAdmin';
+import React, { useState, useEffect } from "react";
+import Modal from "../components/AdminPage/Modal";
+import ModaloutAdmin from "../components/UserPage/ModaloutAdmin";
 
 function ExitPageAdmin() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -11,7 +10,7 @@ function ExitPageAdmin() {
   };
 
   useEffect(() => {
-    handleOpenModal(); 
+    handleOpenModal();
   }, []);
 
   const handleCloseModal = () => {
@@ -19,8 +18,7 @@ function ExitPageAdmin() {
   };
 
   return (
-    <div className='dark:bg-[#283B4D]'>
-     
+    <div className="dark:bg-[#283B4D]">
       <Modal isVisible={isModalVisible}>
         <ModaloutAdmin handleCloseModal={handleCloseModal} />
       </Modal>

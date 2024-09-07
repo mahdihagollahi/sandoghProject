@@ -25,7 +25,7 @@ function BoxCondition() {
     <>
       <div className="flex flex-row w-[1026px] h-[85px] bg-white justify-around shadow-md rounded-md items-center ">
         <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'currentloanaplication' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
-        <Link href='/Rout/currentloanaplication' onClick={() => handleTabClick('currentloanaplication')}>
+        <Link href='/currentloanaplication' onClick={() => handleTabClick('currentloanaplication')}>
           <button className="flex flex-row items-center gap-3 mt-[25px] ">
            
             <Image className="w-[24px] h-[24px] mr-[60px]" 
@@ -38,7 +38,7 @@ function BoxCondition() {
         </div>
         <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'requestrejectionloan' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
 
-        <Link href='/Rout/requestrejectionloan' onClick={() => handleTabClick('requestrejectionloan')}>
+        <Link href='/requestrejectionloan' onClick={() => handleTabClick('requestrejectionloan')}>
           <button className="flex flex-row gap-3 mt-[25px]">
             <Image className="w-[24px] h-[24px] mr-[60px]" 
                  src={selectedTab === 'requestrejectionloan' ? ImageCrossActive : radshodeh}
@@ -51,7 +51,7 @@ function BoxCondition() {
         {/* <div className="w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5]  "> */}
         <div className={`w-[200px] h-[80px] hover:border-b-2 hover:border-[#4FD1C5] ${selectedTab === 'acceptrequest' ? 'border-b-2 border-[#4FD1C5]' : ''}`}>
 
-        <Link href='/Rout/acceptrequest' onClick={() => handleTabClick('acceptrequest')}>
+        <Link href='/acceptrequest' onClick={() => handleTabClick('acceptrequest')}>
           <button className="flex flex-row gap-3 mt-[25px]">
             <Image className="w-[24px] h-[24px] mr-[60px]" 
                  src={selectedTab === 'acceptrequest' ? TikImage :taied }
