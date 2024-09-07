@@ -106,7 +106,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
                       {convertToPersianNumber(user.debt.toLocaleString())}  
                     </td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href={`/Rout/detailuser/${user.id}`} passHref>
+                      <Link href={`/detailuser/${user.id}`} passHref>
                         <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                           <Image src={FillImage} width={24} height={24} alt="" />
                           <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>

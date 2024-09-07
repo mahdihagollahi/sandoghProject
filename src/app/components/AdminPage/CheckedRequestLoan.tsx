@@ -79,10 +79,10 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <div className="mr-2">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
-          <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
+          {/* <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={68} height={68} alt="arrow" />
-          </div>
+          </div> */}
         </div>
         <div className="flex gap-[91.5%] items-center">
           <div>
@@ -107,10 +107,10 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <div className="mr-2">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
-          <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
+          {/* <div className="mr-[165%] flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={68} height={68} alt="arrow" />
-          </div>
+          </div> */}
         </div>
         <div className="flex gap-[47%] items-center">
           <div>
