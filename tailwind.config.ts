@@ -17,9 +17,21 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily:{
-        'custom':['IRANSans','sans-serif'],
+        'iransans':['IRANSans','sans-serif'],
+        'iransansNumber':['iransansNumber']
       }
     },
+    fontWeight:{
+      thin:"100",
+      ultraLight:"200",
+      light:"300",
+      regular:"400",
+      medium:"500",
+      demiBold:"600",
+      bold:"700",
+      Extrabold:"800",
+      black:"900"
+    }
   },
   plugins: [require('daisyui'),],
 };

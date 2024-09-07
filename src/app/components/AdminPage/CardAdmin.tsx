@@ -17,19 +17,18 @@ const fetchUserData = async (): Promise<UserData> => {
     throw new Error('No auth token found');
   }
 
-  const response = await axios.get<UserData>('https://mohammadelia30.ir/shabab/api/settings/index', {
+  const response = await axios.get<{ setting: UserData }>('https://mohammadelia30.ir/shabab/api/settings/index', {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
   });
 
-  const cardNumberString = response.data.card_number.toString();
-
+  const cardNumberString = response.data.setting.card_number.toString();
 
   return {
-    fund_name: response.data.fund_name,
+    fund_name: response.data.setting.fund_name,
     card_number: cardNumberString,
-    created_at: response.data.created_at,
+    created_at: response.data.setting.created_at,
   };
 };
 
@@ -62,9 +61,9 @@ function CardAdmin() {
 
   if (isLoading) return (
     <div className='flex flex-col items-center mr-3'>
-      <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%]'>
-          <div className='relative flex justify-center items-center h-48'>
+    <div className=''>
+      <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
+        <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
               style={{ backgroundImage: `url(${Background.src})` }}
@@ -73,12 +72,13 @@ function CardAdmin() {
             <span className="loading text-accent loading-dots loading-lg"></span>
             </div>
           </div>
-          <div className='mt-8 mx-auto pb-3 pt-2 px-8 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
+          <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-full'
+              onClick={isEditing ? handleSaveClick : handleEditClick}
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
-              آیا شماره کارت صندوق را تغییرمیدهید؟
+              {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}
             </button>
           </div>
         </div>
@@ -89,7 +89,7 @@ function CardAdmin() {
   if (error) return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[13%] shadow-lg md:items-center xl:w-[116%]'>
+        <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -101,13 +101,13 @@ function CardAdmin() {
               </p>
             </div>
           </div>
-          <div className='mt-8 mx-auto pb-3 pt-2 px-8 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
+          <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
               onClick={isEditing ? handleSaveClick : handleEditClick}
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-full'
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
-              آیا شماره کارت صندوق را تغییرمیدهید؟
+              {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}
             </button>
           </div>
         </div>
@@ -118,7 +118,7 @@ function CardAdmin() {
   return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-black rounded-md py-[10%] shadow-lg md:items-center xl:w-[120%] '>
+        <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -141,7 +141,7 @@ function CardAdmin() {
                   <p className='flex text-white mr-3 mb-2 font-light text-base'>{data.card_number}</p>
                 )}
               </div>
-              <div className='text-white mr-60'>
+              <div className='text-white mr-56'>
                 <p className='flex text-white font-light text-base'>
                   انقضا
                 </p>
@@ -151,10 +151,10 @@ function CardAdmin() {
               </div>
             </div>
           </div>
-          <div className='mt-8 mx-auto pb-3 pt-2 px-8 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
+          <div className='mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer'>
             <button
               onClick={isEditing ? handleSaveClick : handleEditClick}
-              className='flex justify-between items-center dark:bg-black dark:text-white bg-white w-full'
+              className='flex justify-between items-center dark:bg-[#4F5D74] dark:text-[#F5F5F5] bg-white w-60 whitespace-nowrap font-light'
             >
               <Image src={EditIcon} width={20} height={20} alt='edit' />
               {isEditing ? 'تایید' : 'آیا شماره کارت صندوق را تغییر میدهید؟'}
@@ -167,3 +167,4 @@ function CardAdmin() {
 }
 
 export default CardAdmin;
+

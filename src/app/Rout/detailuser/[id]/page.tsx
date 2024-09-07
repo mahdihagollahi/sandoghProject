@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import ThoseWhoHaveNotDeposited from "@/src/app/Screen/ThoseWhoHaveNotDeposited";
+import DetailUserPage from "@/src/app/Screen/DetailUserPage";
+
 function page() {
   return (
     <div>
-      <ThoseWhoHaveNotDeposited />
+      <DetailUserPage />
     </div>
   );
 }

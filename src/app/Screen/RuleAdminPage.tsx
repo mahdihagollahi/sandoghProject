@@ -1,28 +1,28 @@
-import React from 'react'
-import UserPageNavbar from '../components/UserPage/UserPageNavbar'
-import RuleAdmin from '../components/UserPage/RuleAdmin'
+import React from "react";
+import AdminNavbarHeader from "../components/AdminPage/AdminNavbarHeader";
+import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
+import RuleAdmin from "../components/UserPage/RuleAdmin";
 
 function RuleAdminPage() {
   return (
     <div>
-        <div className='flex '> 
+      <div className="flex dark:bg-[#283B4D]">
+        <div>
+          <div>
             <div>
-               
-            <div >
-          <div>
-            <UserPageNavbar />
-          </div>
-          <div>
-            <UserPageNavbar />
-          </div>
-        </div>
+              <AdminNavbarHeader />
             </div>
             <div>
-                <RuleAdmin/>
+              <AdminPageNavbar />
             </div>
+          </div>
         </div>
+        <div>
+          <RuleAdmin />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default RuleAdminPage
+export default RuleAdminPage;

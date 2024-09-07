@@ -20,22 +20,24 @@ function SentedMassege() {
     },
   ];
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+
   return (
-    <div className="dark:bg-black">
-      <div className="flex justify-between className='dark:bg-black'  items-center mb-2 mt-10">
-        <div className="mr-2 className='dark:bg-black'">
+    <div >
+      <div className="flex justify-between   items-center mb-2 mt-10">
+        <div className="mr-2">
           <p className="font-bold dark:text-white text-lg">پیام ها</p>
         </div>
-        <div className="flex className='dark:bg-black' justify-end ml-10">
-          <a href="" className="flex dark:text-white items-center">
+        <div className="flex  justify-end ml-10 dark:text-white items-center cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </a>
         </div>
       </div>
       <div>{massege.length > 0 ? <BankGuarantor /> : <NotGuarantor />}</div>
 
-      <div className="flex className='dark:bg-black' flex-col gap-[5px] mt-1">
+      <div className="flex  flex-col gap-[5px] mt-1">
         {massege.map((msg, index) => (
           <div
             key={index}

@@ -1,95 +1,9 @@
-// import React from 'react'
-// import Image from 'next/image'
-// import Image1 from '@/src/app/assent/Img/adminPanel/Avatar.svg';
-// import Image2 from '@/src/app/assent/Img/adminPanel/Avatar-2.svg';
-// import Image3 from '@/src/app/assent/Img/adminPanel/avatar online copy.svg';
-// import Image4 from '@/src/app/assent/Img/adminPanel/avatar online.svg';
-// import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg'
-// import Link from 'next/link';
-
-// const message = [
-//     {id:1 ,src:Image1, name:'امیر قنبری' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-//     {id:2 ,src:Image2, name:'جمال رستمی' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-//     {id:3 ,src:Image3, name:'مریم زنگنه' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-//     {id:4 ,src:Image4, name:'امین حیایی ' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-//     {id:5 ,src:Image4, name:'زهرا غلامی' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-//     {id:6 ,src:Image4, name:'امیر قنبری' , message:'سلام من هرکاری میکنم نمیتونم رسید پرداختمو بارگداری کنم و خطا میده باید چیکار کنم ؟؟؟'},
-// ]
-
-// function SupportMessage() {
-//   return (
-//     <div>
-
-// <div className='flex gap-[500px] justify-between items-center mb-2 mt-10  '>
-//             <div className='mr-4  '>
-//                 <p className='font-bold dark:text-white text-lg'>
-//                 پشتیبانی
-//                 </p>
-//             </div>
-//             <div className=' absolute flex mr-[60.5%]   '>
-//               <a href=""className='flex  dark:text-white items-center'>
-//               بازگشت
-//               <Image
-//                 src={arrowImage}
-//                 width={38}
-//                 height={38}
-//                 alt='arrow'
-
-//                 />
-//               </a>
-              
-//             </div>
-//         </div>
-
-
-//         <div>
-        
-//             <div className='py-2 mt-5' >
-//                 <p className='font-bold  dark:text-white'>
-//                 پیام های در انتظار پاسخگویی
-//                 </p>
-//             </div>
-//             <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
-//                 <Link href='/Rout/supportchat'>
-//                 {message.map((user,index )=>(
-//                   <div key={index} className={`flex w-[100%] mt-10 py-4 gap-4  items-start rounded-md ${
-//                     index %2 === 0 ? 'bg-[#4FD1C50D] border-r-4 border-[#00A991]'  : 'bg-[#2D37480D] border-r-4 border-[#2D3748]'
-                    
-//                      }`}>
-                 
-//                      <Image src={user.src} width={40} height={40} alt='user' className='rounded-full'/>
-//                      <div className='text-right'>
-//                        <p className='font-bold dark:text-white text-[#003B33]'>
-//                         {user.name}
-//                        </p>
-//                        <p className='text-[#003B33] dark:text-white font-normal'>
-//                         {user.message}
-//                        </p>
-//                      </div>
-                     
-//                   </div>
-                 
-
-
-//                 ))}
-//                </Link>
-//             </div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default SupportMessage
-
-
-
-
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import axios from 'axios';
-import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import arrowImage from '@/src/app/assent/Img/adminPanel/back.svg';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import axios from "axios";
+import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
 
 interface Message {
   id: number;
@@ -99,190 +13,181 @@ interface Message {
 }
 
 interface Ticket {
-  id: number;
-  type: string;
-  response_status: string;
-  user_id: string;
-  messages?: Message[];  
-}
-
-interface User {
-  id: number;
-  tickets: Ticket[];
+  current_page: number;
+  data: Message[];
+  last_page: number;
+  per_page: number;
+  total: number;
 }
 
 interface ApiResponse {
-  data: User[];
+  ticket: Ticket;
 }
 
 function SupportMessage() {
   const [authToken, setAuthToken] = useState<string | null>(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem("authToken");
     setAuthToken(token);
   }, []);
 
   const fetchMessages = async (): Promise<Message[]> => {
-    const response = await axios.get<ApiResponse>('https://mohammadelia30.ir/shabab/api/messages/index', {
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+    const response = await axios.get<ApiResponse>(
+      "https://mohammadelia30.ir/shabab/api/messages/index",
+      {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      }
+    );
 
-    const messages: Message[] = [];
-
-    response.data.data.forEach(user => {
-      user.tickets.forEach(ticket => {
-        if (ticket.response_status === 'pending' && ticket.type === 'unsystematic' && Array.isArray(ticket.messages)) {
-          messages.push(...ticket.messages);
-        }
-      });
-    });
-
-    return messages;
+    return response.data.ticket.data;
   };
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['messages'],
+    queryKey: ["messages"],
     queryFn: fetchMessages,
     enabled: !!authToken,
     staleTime: 1000 * 60 * 5,
   });
 
-
-  
-
-  // if (!authToken) {
-  //   return (
-  //     <div>
-  //       <p>لطفا وارد شوید.</p>
-  //       <Link href="/login">به صفحه ورود بروید</Link>
-  //     </div>
-  //   );
-  // }
+  const handleBack = () => {
+    window.history.back();
+  };
 
   if (isLoading) {
-    return(
+    return (
       <div>
-      <div>
-    <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
-      <div className='mr-4'>
-        <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
-      </div>
-      <div className='absolute flex mr-[60.5%]'>
-        <Link href="/" className='flex dark:text-white items-center'>
-          بازگشت
-          <Image src={arrowImage} width={38} height={38} alt='arrow' />
-        </Link>
-      </div>
-    </div>
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+          <div className="mr-4">
+            <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
+          </div>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
+          </div>
+        </div>
 
-    <div>
-      <div className='py-2 mt-5'>
-        <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
-      </div>
-      <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
-      <div>
-          <div className="flex justify-center items-center ">
+        <div className="py-2 mt-14">
+          <p className="font-bold dark:text-white">
+            پیام‌های در انتظار پاسخگویی
+          </p>
+        </div>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+          <div className="flex justify-center items-center">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
-        </div>      </div>
-    </div>
-  </div>
-    </div>
-    )
+        </div>
+      </div>
+    );
   }
 
   if (error) {
     return (
       <div>
-      <div>
-    <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
-      <div className='mr-4'>
-        <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
-      </div>
-      <div className='absolute flex mr-[60.5%]'>
-        <Link href="/" className='flex dark:text-white items-center'>
-          بازگشت
-          <Image src={arrowImage} width={38} height={38} alt='arrow' />
-        </Link>
-      </div>
-    </div>
-
-    <div>
-      <div className='py-2 mt-5'>
-        <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
-      </div>
-      <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
-      <p>خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'نامشخص'}</p>;
-      </div>
-    </div>
-  </div>
-    </div>
-    )
-  }
-  if (!data || data.length === 0) {
-    return (
-      <div>
-        <div>
-      <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
-        <div className='mr-4'>
-          <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
-        </div>
-        <div className='absolute flex mr-[60.5%]'>
-          <Link href="/" className='flex dark:text-white items-center'>
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+          <div className="mr-4">
+            <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
+          </div>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
             بازگشت
-            <Image src={arrowImage} width={38} height={38} alt='arrow' />
-          </Link>
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
+          </div>
         </div>
-      </div>
 
-      <div>
-        <div className='py-2 mt-5'>
-          <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
+        <div className="py-2 mt-14">
+          <p className="font-bold dark:text-white">
+            پیام‌های در انتظار پاسخگویی
+          </p>
         </div>
-        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
-        <p>هیچ پیامی یافت نشد.</p>
+        <div className="bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+          <p>
+            خطا در دریافت داده‌ها:{" "}
+            {error instanceof Error ? error.message : "نامشخص"}
+          </p>
         </div>
-      </div>
-    </div>
       </div>
     );
   }
- 
+
+  if (!data || data.length === 0) {
+    return (
+      <div>
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+          <div className="mr-4">
+            <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
+          </div>
+          <div
+            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+            onClick={handleBack}
+          >
+            بازگشت
+            <Image src={arrowImage} width={38} height={38} alt="arrow" />
+          </div>
+        </div>
+
+        <div className="py-2 mt-14">
+          <p className="font-bold dark:text-white">
+            پیام‌های در انتظار پاسخگویی
+          </p>
+        </div>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+          <p>هیچ پیامی یافت نشد.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <div className='flex gap-[500px] justify-between items-center mb-2 mt-10'>
-        <div className='mr-4'>
-          <p className='font-bold dark:text-white text-lg'>پشتیبانی</p>
+      <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="mr-4">
+          <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
         </div>
-        <div className='absolute flex mr-[60.5%]'>
-          <Link href="/" className='flex dark:text-white items-center'>
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt='arrow' />
-          </Link>
+        <div
+          className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
+          onClick={handleBack}
+        >
+          بازگشت
+          <Image src={arrowImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
 
       <div>
-        <div className='py-2 mt-5'>
-          <p className='font-bold dark:text-white'>پیام‌های در انتظار پاسخگویی</p>
+        <div className="py-2 mt-14">
+          <p className="font-bold dark:text-white">
+            پیام‌های در انتظار پاسخگویی
+          </p>
         </div>
-        <div className='bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm'>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
           {data.map((message) => (
             <div
               key={message.id}
               className={`flex w-[100%] mt-10 py-4 gap-4 items-start rounded-md ${
                 message.id % 2 === 0
-                  ? 'bg-[#4FD1C50D] border-r-4 border-[#00A991]'
-                  : 'bg-[#2D37480D] border-r-4 border-[#2D3748]'
+                  ? "bg-[#4FD1C50D] border-r-4 border-[#00A991]"
+                  : "bg-[#2D37480D] border-r-4 border-[#2D3748]"
               }`}
             >
-              <Image src='/path/to/default-avatar.png' width={40} height={40} alt='user' className='rounded-full' />
-              <div className='text-right'>
-                <p className='font-bold dark:text-white text-[#003B33]'>{`پیام ${message.id}`}</p>
-                <p className='text-[#003B33] dark:text-white font-normal'>{message.description}</p>
+              <Image
+                src="/path/to/default-avatar.png"
+                width={40}
+                height={40}
+                alt="user"
+                className="rounded-full"
+              />
+              <div className="text-right">
+                <p className="font-bold dark:text-white text-[#003B33]">{`پیام ${message.id}`}</p>
+                <p className="text-[#003B33] dark:text-white font-normal">
+                  {message.description}
+                </p>
               </div>
             </div>
           ))}

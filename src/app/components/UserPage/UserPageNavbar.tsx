@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -34,7 +35,7 @@ const Navbar = [
     hoverSrc: mangmentUserHover,
     link: "/Rout/useraccount",
   },
-  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: "" },
+  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: "/Rout/showloans" },
   {
     id: 4,
     src: payInstallments,

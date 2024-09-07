@@ -1,13 +1,13 @@
-'use client'
-import React from 'react'
-import ManagementAccount from '@/src/app/Screen/ManagementAccount'
+"use client";
+import React from "react";
+import ManagementAccount from "@/src/app/Screen/ManagementAccount";
 
 function page() {
   return (
     <div>
-        <ManagementAccount/>
+      <ManagementAccount />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;

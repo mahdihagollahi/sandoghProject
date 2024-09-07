@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -39,7 +40,7 @@ const Navbar: NavbarItem[] = [
   { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/Rout/allloanaplication' },
   { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/Rout/userpass' },
   { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/Rout/showuserdetail' },
-  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/Rout/ruleAdmin' },
+  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/Rout/ruleadmin' },
   { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/Rout/support' },
   { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/Rout/sentmessageadmin' },
   { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/Rout/management' },
@@ -80,7 +81,7 @@ function AdminPageNavbar() {
   };
 
   return (
-    <div className="bg-[#F8F9FA] dark:bg-black">
+    <div className="bg-[#F8F9FA] dark:bg-[#283B4D]">
       {isMobile ? (
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
           <span>Admin Panel</span>
@@ -93,7 +94,7 @@ function AdminPageNavbar() {
         {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
             <div
-              className="relative mt-4"
+              className="relative -mt-2"
               onMouseEnter={() => handleMouseEnter(image.id)}
               onMouseLeave={() => handleMouseLeave(image.id)}
               onClick={() => handleClick(image.id)}
@@ -110,7 +111,7 @@ function AdminPageNavbar() {
           </Link>
         ))}
         <Link href="/Rout/exitadmin">
-          <button className="mr-[1%] mt-[7%]">
+          <button className="mr-[1%] mt-[2%]">
             <Image src={ImageExport} width={60} alt="Exit" className="cursor-pointer" />
           </button>
         </Link>

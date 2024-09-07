@@ -6,7 +6,7 @@ function ViewDeposit() {
   return (
     <div>
       <div className="flex items-center justify-center ">
-        <div className="w-[442px] h-[402px] dark:bg-black   bg-white shadow-md rounded-md p-6 relative">
+        <div className="w-[442px] h-[402px] dark:bg-[#4F5D74] mt-2 bg-white shadow-lg rounded-md p-6 relative">
           <div>
             <p className="font-medium text-base dark:text-white text-[#394860] mb-6 items-start">
               مشاهده واریزی های این ماه

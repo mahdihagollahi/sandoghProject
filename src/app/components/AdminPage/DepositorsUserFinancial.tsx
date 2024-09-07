@@ -3,7 +3,6 @@ import UserTableDespositors from "@/src/app/components/AdminPage/UserTableDespos
 import Image from "next/image";
 import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import RoutTableFiancial from "./RoutTableFinancial";
-import Link from "next/link";
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -37,12 +36,13 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-const fetchUsers = async () => {
+const fetchUsers = async (): Promise<PaginatedResponse> => {
   try {
-    const response = await axiosInstance.get(
-      "https://mohammadelia30.ir/shabab/api/factors/index"
-    );
-    return response.data as PaginatedResponse;
+    const response = await axiosInstance.get("/factors/index");
+
+    console.log("API Response Data:", response.data);
+
+    return response.data.factors as PaginatedResponse;
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;
@@ -84,27 +84,30 @@ const DepositorsUserFinancial: React.FC = () => {
     mutation.mutate(user);
   };
 
+  const handleBack = () => {
+    window.history.back(); 
+  };
+  
+
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <Link href="/Rout/showuserdetail">
-              <div className="flex items-center">
-                بازگشت
-                <Image src={backImage} width={38} height={38} alt="arrow" />
-              </div>
-            </Link>
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
           </div>
         </div>
         <div>
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableDespositors/>
+          <UserTableDespositors />
           <div className="flex justify-center items-center -mt-20">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -112,48 +115,72 @@ const DepositorsUserFinancial: React.FC = () => {
       </div>
     );
   }
-  if (isError){
-    return(
+
+  if (isError) {
+    return (
       <div>
-      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
-        <div className="mr-2">
-          <p className="font-bold text-lg">مدیریت مالی</p>
-        </div>
-        <div className="flex justify-end mr-2">
-          <Link href="/Rout/showuserdetail">
-            <div className="flex items-center">
+        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2">
+            <p className="font-bold text-lg">مدیریت مالی</p>
+          </div>
+          <div className="flex justify-end mr-2">
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
-          </Link>
+          </div>
+        </div>
+        <div>
+          <RoutTableFiancial />
+        </div>
+        <div>
+          <UserTableDespositors />
+          <div className="flex justify-center items-center -mt-20">
+            <div>Error: {error.message}</div>
+          </div>
         </div>
       </div>
+    );
+  }
+
+  if (!data || data.data.length === 0) {
+    return (
       <div>
-        <RoutTableFiancial />
-      </div>
-      <div>
-        <UserTableDespositors/>
-        <div className="flex justify-center items-center -mt-20">
-        <div>Error: {error.message}</div>
+        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2">
+            <p className="font-bold text-lg">مدیریت مالی</p>
+          </div>
+          <div className="flex justify-end mr-2">
+            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              بازگشت
+              <Image src={backImage} width={38} height={38} alt="arrow" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <RoutTableFiancial />
+        </div>
+        <div>
+          <UserTableDespositors />
+          <div className="flex justify-center items-center -mt-14">
+            کاربری یافت نشد
+          </div>
         </div>
       </div>
-    </div>
-    ) ;
-  } 
+    );
+  }
 
   return (
     <div>
-      <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+      <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-          <Link href="/Rout/showuserdetail">
-            <div className="flex items-center">
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-            </div>
-          </Link>
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt="arrow" />
+          </div>
         </div>
       </div>
       <div>

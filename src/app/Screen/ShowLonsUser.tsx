@@ -1,16 +1,13 @@
-
-
-
-
+"use client"
 import React from 'react'
 import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import CheckedRequestLoan from '../components/AdminPage/CheckedRequestLoan'
+import UserPageNavbar from '../components/UserPage/UserPageNavbar'
+import Tableeshterak from '../components/UserPage/Tableeshterak'
 
-function CheckedLoanApplicationPage() {
+function ShowLonsUser() {
   return (
     <div>
-        <div className='flex dark:bg-[#283B4D]'> 
+        <div className='flex '> 
             <div>
                
             <div >
@@ -18,17 +15,17 @@ function CheckedLoanApplicationPage() {
             <AdminNavbarHeader />
           </div>
           <div>
-            <AdminPageNavbar />
+            <UserPageNavbar />
           </div>
         </div>
             </div>
             <div>
-          <CheckedRequestLoan/>
+               <Tableeshterak/>
             </div>
         </div>
     </div>
   )
 }
 
-export default CheckedLoanApplicationPage
+export default ShowLonsUser
 
