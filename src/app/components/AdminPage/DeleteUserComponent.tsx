@@ -38,22 +38,13 @@ function DeleteUserComponent() {
     },
   ];
 
- 
-  const handleBack = () => {
-    window.history.back(); 
-  };
   return (
     <div>
       <div className="flex gap-[74%]  items-center mb-2 mt-10 mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg whitespace-nowrap">انصراف ها</p>
         </div>
-        <div className="flex justify-end mr-72">
-            <div className="flex items-center cursor-pointer" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-            </div>
-        </div>
+        <div className="flex justify-end mr-72"></div>
       </div>
       <div>
         <table className="w-[130%] dark:bg-[#4F5D74] mt-8 p-10 shadow-md rounded-md">

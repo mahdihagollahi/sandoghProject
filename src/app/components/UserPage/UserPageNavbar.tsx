@@ -115,7 +115,7 @@ function UserPageNavbar() {
         {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
             <div
-              className="relative mt-4"
+              className="relative -mt-2"
               onMouseEnter={() => handleMouseEnter(image.id)}
               onMouseLeave={() => handleMouseLeave(image.id)}
               onClick={() => handleClick(image.id)}

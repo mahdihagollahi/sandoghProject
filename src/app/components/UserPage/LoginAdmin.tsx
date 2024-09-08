@@ -28,7 +28,7 @@ const LoginAdmin: React.FC = () => {
 
       if (response.status === 200 && response.data.token) {
         localStorage.setItem('authToken', response.data.token);
-        window.location.href = "/Rout/dashboard";
+        window.location.href = "/dashboard";
       } else {
         setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است');
       }
@@ -64,9 +64,6 @@ const LoginAdmin: React.FC = () => {
         <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md">
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1 ">
-              <div>
-                <span>بازگشت</span>
-              </div>
               <div>
                 <span>
                   <svg

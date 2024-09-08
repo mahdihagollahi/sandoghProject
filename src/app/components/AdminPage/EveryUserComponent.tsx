@@ -67,9 +67,6 @@ const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
-const handleBack = () => {
-  window.history.back(); 
-};
 
 const EveryUser: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -101,10 +98,6 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
         </div>
         <div>
           <RoutTableUser />
@@ -135,10 +128,6 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
         </div>
         <div>
           <RoutTableUser />
@@ -163,10 +152,6 @@ const EveryUser: React.FC = () => {
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
-          </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
         <div>
@@ -197,10 +182,6 @@ const EveryUser: React.FC = () => {
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
           </label>
-        </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div>

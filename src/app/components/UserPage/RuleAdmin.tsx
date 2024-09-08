@@ -26,20 +26,13 @@ function RuleAdmin() {
     }
   }
 
-  const handleBack = () => {
-    window.history.back(); 
-  };
+  
   return (
     <>
       <div className="flex gap-[70%] items-center mb-2 mt-12   ">
         <div className="mr-2 ">
           <p className="font-bold text-lg">قوانین ومقررات</p>
-        </div>
-
-        <div className="flex justify-end  items-center cursor-pointer" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
+        </div>   
       </div>
       <div className="flex flex-col gap-7 p-10 mt-10 w-[90%] shadow-md rounded-md">
         <div className=" p-5 border-[1px] border-slate-500 flex flex-col gap-8 w-[90%]">

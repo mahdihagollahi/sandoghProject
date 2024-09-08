@@ -4,9 +4,7 @@ import UserFirstPage from "@/src/app/Screen/UserFirstPage";
 function page() {
   return (
     <div>
-      
-        <UserFirstPage />
-      
+      <UserFirstPage />
     </div>
   );
 }
