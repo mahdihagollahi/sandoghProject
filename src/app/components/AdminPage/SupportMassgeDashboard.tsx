@@ -1,46 +1,126 @@
 import React from "react";
 import Image from "next/image";
-import Image1 from "@/src/app/assent/Img/adminPanel/Avatar.svg";
-import Image2 from "@/src/app/assent/Img/adminPanel/Avatar-2.svg";
-import Image3 from "@/src/app/assent/Img/adminPanel/avatar online copy.svg";
-import Image4 from "@/src/app/assent/Img/adminPanel/avatar online.svg";
+import IconImage from "@/src/app/assent/Img/adminPanel/defultUser.png";
 import Link from "next/link";
+import axios from "axios";
+import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 
-const User = [
-  {
-    id: 1,
-    src: Image1,
-    name: "الهه علی نیا",
-    massage: "سلام چرا وام من واریز نمیشه؟",
-    time: "7:00",
-  },
-  {
-    id: 1,
-    src: Image2,
-    name: "کتی کتایونی",
-    massage: "سلام نمیتونم درخواست واممو ثبت کنم",
-    time: "7:00",
-  },
-  {
-    id: 1,
-    src: Image3,
-    name: "سهیلا آمری",
-    massage: "سلام چرا پیام های یادآوری برای من نمیاد؟",
-    time: "7:00",
-  },
-  {
-    id: 1,
-    src: Image4,
-    name: "ابراهیم علی نیا",
-    massage: "سلام چرا فیش رسیدمو آپلود میکنم ثبت نمیشه؟",
-    time: "7:00",
-  },
-];
+
+const queryClient = new QueryClient();
+
+
+const fetchMessages = async () => {
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    throw new Error("No token found");
+  }
+
+  const { data } = await axios.get(
+    "https://mohammadelia30.ir/shabab/api/messages/index",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return data.ticket;
+};
+
+
 function SupportMassgeDashboard() {
+  const { data, error, isLoading } = useQuery("messages", fetchMessages);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center mt-4 items-center md:justify-center xl:justify-end xl:mt-6">
+        <div className="w-[388px] h-[457px] max-w-md bg-white dark:bg-[#4F5D74] xl:py-[0.67%] shadow-md rounded-md px-2">
+          <div className="py-3">
+            <p className="font-bold text-sm dark:text-white px-7 text-[#2D3748]">
+              پیام های پشتیبانی
+            </p>
+          </div>
+          <div>
+            <div className="flex justify-center items-center mt-40">
+              <span className="loading loading-dots text-accent  loading-lg"></span>
+            </div>
+            <div className="flex justify-center py-8">
+              <Link href="/support" passHref>
+                <button className="bg-[#4FD1C5] text-white py-2 px-24  mt-[120px] rounded-lg">
+                  دیدن همه
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center mt-4 items-center md:justify-center xl:justify-end xl:mt-6">
+      <div className="w-[388px] h-[457px] max-w-md bg-white dark:bg-[#4F5D74] xl:py-[0.67%] shadow-md rounded-md px-2">
+        <div className="py-3">
+          <p className="font-bold text-sm dark:text-white px-7 text-[#2D3748]">
+            پیام های پشتیبانی
+          </p>
+        </div>
+        <div>
+          <div className="flex justify-center items-center mt-40">
+          <p>Error loading messages</p>
+          </div>
+          <div className="flex justify-center py-8">
+            <Link href="/support" passHref>
+              <button className="bg-[#4FD1C5] text-white py-2 px-24  mt-32 rounded-lg">
+                دیدن همه
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+    );
+  }
+
+  if (!data || data.total === 0) {
+    return (
+      <div className="flex justify-center mt-4 items-center md:justify-center xl:justify-end xl:mt-6">
+      <div className="w-[388px] h-[457px] max-w-md bg-white dark:bg-[#4F5D74] xl:py-[0.67%] shadow-md rounded-md px-2">
+        <div className="py-3">
+          <p className="font-bold text-sm dark:text-white px-7 mt-2 text-[#2D3748]">
+            پیام های پشتیبانی
+          </p>
+        </div>
+        <div>
+          <div className="flex justify-center items-center mt-40">
+          <p>پیامی وجود ندارد</p>
+          </div>
+          <div className="flex justify-center py-8">
+            <Link href="/support" passHref>
+              <button className="bg-[#4FD1C5] text-white py-2 px-24 mt-32 rounded-lg">
+                دیدن همه
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+    );
+  }
+
+  const User = data.data.map((item) => ({
+    id: item.id,
+    src: item.image_url || IconImage,
+    name: item.name,
+    massage: item.message,
+    time: item.created_at,
+  }));
+
   return (
-    <div className="flex justify-center mt-4 items-center    md:justify-center   xl:justify-end  xl:mt-6">
-      <div className="w-96 max-w-md bg-white  dark:bg-[#4F5D74] xl:py-[0.67%] shadow-md rounded-md px-2 ">
-        <div className="py-3 ">
+    <div className="flex justify-center mt-4 items-center md:justify-center xl:justify-end xl:mt-6">
+      <div className="w-96 max-w-md bg-white dark:bg-[#4F5D74] xl:py-[0.67%] shadow-md rounded-md px-2">
+        <div className="py-3">
           <p className="font-bold text-sm dark:text-white px-7 text-[#2D3748]">
             پیام های پشتیبانی
           </p>
@@ -48,7 +128,7 @@ function SupportMassgeDashboard() {
         <div>
           <div className="px-4">
             {User.map((items) => (
-              <div key={items.id} className="flex items-center py-4 gap-3  ">
+              <div key={items.id} className="flex items-center py-4 gap-3">
                 <div className="flex-shrink-0">
                   <Image
                     src={items.src}
@@ -64,7 +144,7 @@ function SupportMassgeDashboard() {
                     {items.name}
                   </p>
 
-                  <p className="font-normal text-xs dark:text-white  text-[#A0AEC0]">
+                  <p className="font-normal text-xs dark:text-white text-[#A0AEC0]">
                     {items.massage}
                   </p>
                 </div>
@@ -89,91 +169,13 @@ function SupportMassgeDashboard() {
   );
 }
 
-export default SupportMassgeDashboard;
 
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import Link from 'next/link';
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SupportMassgeDashboard />
+    </QueryClientProvider>
+  );
+}
 
-// interface MessageDetail {
-//   id: number;
-//   title: string | null;
-//   description: string;
-//   status: string;
-//   ticket_id: number;
-// }
-
-// interface Message {
-//   id: number;
-//   name: string;
-//   type: string;
-//   response_status: string;
-//   created_at: string;
-//   updated_at: string;
-//   user_id: number;
-//   messages: MessageDetail[];
-// }
-
-// const getToken = (): string | null => {
-//   return localStorage.getItem('authToken');
-// };
-
-// const fetchMessages = async (): Promise<Message[]> => {
-//   const authToken = getToken();
-//   if (!authToken) {
-//     throw new Error('No token found');
-//   }
-
-//   try {
-//     const response = await axios.get<Message[]>('https://shabab.v1r.ir/api/messages/index', {
-//       headers: {
-//         Authorization: `Bearer ${authToken}`,
-//       },
-//     });
-//     console.log("API Response:", response.data);
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error fetching messages:", error);
-//     throw error;
-//   }
-// };
-
-// const SupportMessageDashboard: React.FC = () => {
-//   const [messages, setMessages] = useState<Message[]>([]);
-//   const [isLoading, setIsLoading] = useState<boolean>(true);
-//   const [error, setError] = useState<string | null>(null);
-
-//   useEffect(() => {
-//     const getData = async () => {
-//       try {
-//         const data = await fetchMessages();
-//         setMessages(data);
-//       } catch (err) {
-//         setError(err instanceof Error ? err.message : 'Unknown error');
-//       } finally {
-//         setIsLoading(false);
-//       }
-//     };
-
-//     getData();
-//   }, []);
-
-//   return (
-//     <div>
-//       {messages.map((item) => (
-//         <div key={item.id}>
-//           <h3>{item.name || 'بدون نام'}</h3>
-//           {item.messages.map((msg) => (
-//             <p key={msg.id}>{msg.description}</p>
-//           ))}
-//           <span>{new Date(item.created_at).toLocaleString()}</span>
-//         </div>
-//       ))}
-//       <Link href='/support' passHref>
-//         <button>دیدن همه</button>
-//       </Link>
-//     </div>
-//   );
-// };
-
-// export default SupportMessageDashboard;
+export default App;
