@@ -104,10 +104,6 @@ const UserList: React.FC = () => {
               />
             </label>
           </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-          </div>
         </div>
         <div>
           <RoutTableUser />
@@ -138,10 +134,6 @@ const UserList: React.FC = () => {
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
-          </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
         <div>
@@ -175,10 +167,6 @@ const UserList: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
       </div>
       <div>
         <RoutTableUser />
@@ -208,10 +196,6 @@ const UserList: React.FC = () => {
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
           </label>
-        </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div>

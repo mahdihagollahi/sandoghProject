@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import UserOutlineImage from '@/src/app/assent/Img/adminPanel/3UserOutline.svg';
@@ -7,19 +7,11 @@ import crossOutline from '@/src/app/assent/Img/adminPanel/crossOutline.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 
 function RoutTableUser() {
-  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [selectedTab, setSelectedTab] = useState<string>('deposited');
   const [hoveredTab, setHoveredTab] = useState<string>('');
 
-  useEffect(() => {
-    const storedTab = localStorage.getItem('selectedTab');
-    if (storedTab) {
-      setSelectedTab(storedTab);
-    }
-  }, []);
-
-  const handleTabClick = (tab : string) => {
+  const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
-    localStorage.setItem('selectedTab', tab);
   };
 
   return (
@@ -68,3 +60,4 @@ function RoutTableUser() {
 }
 
 export default RoutTableUser;
+

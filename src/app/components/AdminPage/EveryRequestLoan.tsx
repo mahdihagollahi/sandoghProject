@@ -58,9 +58,6 @@ const fetchLoans = async (isUrgent: boolean) => {
     throw error;
   }
 };
-const handleBack = () => {
-  window.history.back(); 
-};
 
 const EveryRequestLoan: React.FC<Loan> = () => {
   const [isUrgent, setIsUrgent] = useState(false);
@@ -78,10 +75,6 @@ const EveryRequestLoan: React.FC<Loan> = () => {
         <div className="flex justify-between items-center mb-2 mt-12 mr-3">
             <div className="-mr-1">
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
-          </div>
-          <div className="mr-[168%] flex items-center cursor-pointer" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={68} height={68} alt="arrow" />
           </div>
         </div>
        <div className="flex gap-[47.5%] items-center">
@@ -106,10 +99,6 @@ const EveryRequestLoan: React.FC<Loan> = () => {
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
-        <div className="flex items-center cursor-pointer" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
       </div>
       <div className="flex gap-[47.5%] items-center">
         <div>
@@ -131,10 +120,6 @@ const EveryRequestLoan: React.FC<Loan> = () => {
       <div className="flex justify-between items-center mb-2 mt-12 mr-3">
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
-        </div>
-        <div className="flex items-center cursor-pointer " onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div className="flex gap-[47.5%] items-center">
@@ -162,10 +147,6 @@ const EveryRequestLoan: React.FC<Loan> = () => {
       <div className="flex justify-between items-center mb-2 mt-12 mr-3">
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
-        </div>
-        <div className="flex items-center cursor-pointer ml-10" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div className="flex gap-[47.5%] items-center">

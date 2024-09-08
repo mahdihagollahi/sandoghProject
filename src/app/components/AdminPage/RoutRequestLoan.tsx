@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import UserOutlineImage from '@/src/app/assent/Img/adminPanel/Wallet.svg';
@@ -7,25 +7,18 @@ import crossOutline from '@/src/app/assent/Img/adminPanel/checked.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/checkedHover.png';
 
 const RoutRequestLoan: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>('');
-  const [hoveredTab, setHoveredTab] = useState<string>('');
 
-  useEffect(() => {
-    const storedTab = localStorage.getItem('selectedTab');
-    if (storedTab) {
-      setSelectedTab(storedTab);
-    }
-  }, []);
+  const [selectedTab, setSelectedTab] = useState<string>('allloanaplication');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
-    localStorage.setItem('selectedTab', tab);
   };
 
   return (
     <div>
       <div>
-        <div className='flex w-[400px]  justify-between px-10 mt-9  dark:text-white dark:bg-[#4F5D74] bg-white h-16 rounded-md shadow-md'>
+        <div className='flex w-[400px] justify-between px-10 mt-9 dark:text-white dark:bg-[#4F5D74] bg-white h-16 rounded-md shadow-md'>
           <div
             className={`flex items-center gap-2 ${selectedTab === 'allloanaplication' || hoveredTab === 'allloanaplication' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
             onMouseEnter={() => setHoveredTab('allloanaplication')}

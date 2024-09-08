@@ -1,13 +1,13 @@
-"use client"
-import React from 'react'
-import UserAccount from '@/src/app/Screen/UserAccount'
+"use client";
+import React from "react";
+import UserAccount from "@/src/app/Screen/UserAccount";
 
 function page() {
   return (
     <div>
-        <UserAccount/>
+      <UserAccount />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;

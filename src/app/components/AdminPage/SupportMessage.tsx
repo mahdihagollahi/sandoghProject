@@ -52,9 +52,6 @@ function SupportMessage() {
     staleTime: 1000 * 60 * 5,
   });
 
-  const handleBack = () => {
-    window.history.back();
-  };
 
   if (isLoading) {
     return (
@@ -62,13 +59,6 @@ function SupportMessage() {
         <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-          </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -92,13 +82,6 @@ function SupportMessage() {
         <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-          </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -124,13 +107,6 @@ function SupportMessage() {
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
-          </div>
         </div>
 
         <div className="py-2 mt-14">
@@ -150,13 +126,6 @@ function SupportMessage() {
       <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
         <div className="mr-4">
           <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-        </div>
-        <div
-          className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-          onClick={handleBack}
-        >
-          بازگشت
-          <Image src={arrowImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
 

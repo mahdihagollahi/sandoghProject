@@ -20,7 +20,7 @@ function UserFirstPage() {
           </div>
         </div>
 
-        <div className="block xl:-mt-[68%]  md:-mt-[46%]">
+        <div className="block xl:-mt-[55%]  md:-mt-[46%]">
           <div className="flex  w-full   ">
             <UserHeader />
           </div>
