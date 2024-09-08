@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import DateDropDown from "@/src/app/components/AdminPage/DateDropDown";
 import ChartMounthFinantial from "@/src/app/components/AdminPage/ChartMounthFinantial";
 import ChartFinancial from "@/src/app/components/AdminPage/ChartFinancial";
@@ -77,19 +75,12 @@ export default function FinancialManagement() {
     setFilteredData(data[year]);
   };
 
-  const handleBack = () => {
-    window.history.back(); 
-  };
-
+ 
   return (
     <div className="">
       <div className="flex mt-11 gap-[78%] items-center mb-2   ">
         <div className="mr-1 ">
           <p className="font-bold dark:text-white text-lg">مدیریت مالی</p>
-        </div>
-        <div className=" flex dark:text-white items-center cursor-pointer " onClick={handleBack}>   
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
 
