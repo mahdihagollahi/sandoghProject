@@ -32,7 +32,7 @@ const RoutRequestLoan: React.FC = () => {
                 alt='all loan applications'
               />
               <p className='font-bold text-sm dark:text-white text-[#2D3748]'> 
-                همه                 
+            درحال انتظار          
               </p>
             </Link>
           </div>
@@ -50,7 +50,7 @@ const RoutRequestLoan: React.FC = () => {
                 alt='checked requests'
               />
               <p className='font-bold text-sm dark:text-white text-[#2D3748]'> 
-                چک شده ها
+                تعیین وضعیت
               </p>
             </Link>
           </div>

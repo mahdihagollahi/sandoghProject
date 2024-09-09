@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import UserTable from "@/src/app/components/AdminPage/UserTable";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import RoutTableUser from "./RoutTableUser";
 

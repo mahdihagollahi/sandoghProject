@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import axios from 'axios';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import RejectIcon from '@/src/app/assent/Img/adminPanel/RejectCross.svg';
-import AcceptIcon from '@/src/app/assent/Img/adminPanel/AcceptTik.svg';
-import Paginate from './Paginate';
+import React, { useState } from "react";
+import Image from "next/image";
+import RejectIcon from "@/src/app/assent/Img/adminPanel/RejectCross.svg";
+import AcceptIcon from "@/src/app/assent/Img/adminPanel/AcceptTik.svg";
+import Paginate from "./Paginate";
+import ModalAcceptLoans from "./ModalAcceptLoans";
+import ModalRejectLoans from "./ModalRejectLoans";
 
 interface User {
-  id: number; 
+  id: number;
   name: string;
   requestNumber: number;
   amount: number;
@@ -15,8 +15,8 @@ interface User {
   description: string;
   guarantors: string[];
   type: string;
-  installment_count: number; 
-  loan_price: number; 
+  installment_count: number;
+  loan_price: number;
 }
 
 interface UserTableProps {
@@ -25,38 +25,20 @@ interface UserTableProps {
 
 const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isRejectModalOpen, setIsRejectModalOpen] = useState<boolean>(false);
+  const [selectedLoan, setSelectedLoan] = useState<User | null>(null);
   const itemsPerPage = 7;
-  const queryClient = useQueryClient();
 
-  const mutation = useMutation({
-    mutationFn: async ({ loanId, action }: { loanId: number, action: 'accepted' | 'faild' }) => {
-      const authToken = localStorage.getItem('authToken'); 
+  const handleAcceptClick = (loan: User) => {
+    setSelectedLoan(loan);
+    setIsModalOpen(true);
+  };
 
-      try {
-        const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/accept/admin', {
-          loan_id: loanId,
-          admin_accept: action,
-          installment_count: users.find(user => user.id === loanId)?.installment_count,
-          loan_price: users.find(user => user.id === loanId)?.loan_price,
-        }, {
-          headers: {
-            'Authorization': `Bearer ${authToken}`, 
-          }
-        });
-        return response.data;
-      } catch (error) {
-        throw new Error('Error submitting the request');
-      }
-    },
-    onSuccess: () => {
-    
-      queryClient.invalidateQueries(['loans']);
-    },
-    onError: (error) => {
-      console.error('Error:', error);
-  
-    }
-  });
+  const handleRejectClick = (loan: User) => {
+    setSelectedLoan(loan);
+    setIsRejectModalOpen(true);
+  };
 
   const pageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
@@ -103,9 +85,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                     <td className="py-2 px-10 xl:whitespace-nowrap">
                       {row.amount}
                     </td>
-                    <td className="py-2 px-10">
-                      {row.date}
-                    </td>
+                    <td className="py-2 px-10">{row.date}</td>
                     <td className="py-2 px-10 xl:whitespace-break-spaces">
                       {row.description}
                     </td>
@@ -120,8 +100,8 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                           <span className="font-bold">ضامن‌ها:</span>
                           <span className="border border-opacity-90 mr-2 border-[#4FD1C5] px-2 py-2 rounded-md">
                             {row.guarantors.length > 0
-                              ? row.guarantors.join(', ')
-                              : 'بدون ضامن'}
+                              ? row.guarantors.join(", ")
+                              : null}
                           </span>
                         </div>
                         <div>
@@ -132,7 +112,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                         <div className="flex items-center gap-3">
                           <button
                             className="flex gap-3 items-center border-2 border-opacity-80 border-[#000000] text-black font-bold rounded-md px-5 py-2"
-                            onClick={() => mutation.mutate({ loanId: row.id, action: 'faild' })}
+                            onClick={() => handleRejectClick(row)} // Open the reject modal
                           >
                             <Image
                               src={RejectIcon}
@@ -144,7 +124,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
                           </button>
                           <button
                             className="flex gap-3 items-center border-2 border-opacity-80 border-[#4FD1C5] text-[#4FD1C5] rounded-md px-3 py-2"
-                            onClick={() => mutation.mutate({ loanId: row.id, action: 'accepted' })}
+                            onClick={() => handleAcceptClick(row)}
                           >
                             <Image
                               src={AcceptIcon}
@@ -169,9 +149,27 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
         pageCount={pageCount}
         pageClick={pageClick}
       />
+      {isModalOpen && (
+        <ModalAcceptLoans
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          selectedLoan={selectedLoan}
+          userId={selectedLoan?.id.toString() || ""} // Pass userId here
+        />
+      )}
+      {isRejectModalOpen && (
+        <ModalRejectLoans
+          userId={selectedLoan?.id.toString() || ""}
+          onClose={() => setIsRejectModalOpen(false)}
+          onSend={(message) => {
+            console.log(
+              `Rejected Loan ID: ${selectedLoan?.id}, Message: ${message}`
+            );
+          }}
+        />
+      )}
     </div>
   );
 };
 
 export default UserTable;
-

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import EveryLoanAplicationTable from '@/src/app/components/AdminPage/EveryLoanAplicationTable';
 import RoutRequestLoan from './RoutRequestLoan';
 import SwichButton from './SwichButton';

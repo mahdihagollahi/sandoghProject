@@ -7,7 +7,6 @@ import DeletedHoverImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 import Link from 'next/link';
 
 const RoutTableUser: React.FC = () => {
-  // مقدار پیش‌فرض برای selectedTab به 'everyuser' تنظیم شده است
   const [selectedTab, setSelectedTab] = useState<string>('everyuser');
   const [hoveredTab, setHoveredTab] = useState<string>('');
 
@@ -31,7 +30,7 @@ const RoutTableUser: React.FC = () => {
               alt='every user'
             />
             <p className='font-bold text-sm dark:text-white text-[#2D3748]'>
-              همه کاربران
+              کاربران فعال
             </p>
           </Link>
         </div>
@@ -49,7 +48,7 @@ const RoutTableUser: React.FC = () => {
               alt='deleted user'
             />
             <p className='font-bold text-sm dark:text-white text-[#2D3748]'>
-              حذف شده ها
+              مسدود شده ها
             </p>
           </Link>
         </div>
