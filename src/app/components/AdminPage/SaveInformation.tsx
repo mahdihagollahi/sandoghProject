@@ -36,10 +36,10 @@ function SaveInformation() {
 
   return (
     <div className="p-4">
-      <div className="flex gap-[81.5%] items-center mb-2 mt-[3%]">
+      <div className="flex gap-[81.5%] items-center mb-2 mt-[3.5%]">
         <div className="mr-1">
           <p className="font-bold dark:text-white text-lg whitespace-nowrap">
-            حساب مدیریت
+            پروفایل مدیریت
           </p>
         </div>
       </div>
