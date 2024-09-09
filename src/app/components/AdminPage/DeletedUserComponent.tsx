@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
 import RoutTableUser from "./RoutTableUser";
@@ -80,9 +79,6 @@ const DeleteUser: React.FC = () => {
   );
 };
 
-const handleBack = () => {
-  window.history.back(); 
-};
 
 const UserList: React.FC = () => {
   const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);

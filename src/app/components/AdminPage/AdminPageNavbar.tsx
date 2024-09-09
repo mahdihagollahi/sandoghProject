@@ -12,8 +12,8 @@ import ImageUser from '@/src/app/assent/Img/adminPanel/User.svg';
 import ImageUserHover from '@/src/app/assent/Img/adminPanel/UserHover.svg';
 import ImageVam from '@/src/app/assent/Img/adminPanel/Vam.svg';
 import ImageVamHover from '@/src/app/assent/Img/adminPanel/VamHover.svg';
-import ImagePassword from '@/src/app/assent/Img/adminPanel/Password.svg';
-import ImagePasswordHover from '@/src/app/assent/Img/adminPanel/PasswordHover.svg';
+import ImagePassword from '@/src/app/assent/Img/adminPanel/createUser.svg';
+import ImagePasswordHover from '@/src/app/assent/Img/adminPanel/createUserOn.svg';
 import ImageEconomi from '@/src/app/assent/Img/adminPanel/Economi.svg';
 import ImageEconomiHover from '@/src/app/assent/Img/adminPanel/EconomiHover.svg';
 import ImagePoshtibani from '@/src/app/assent/Img/adminPanel/Poshtibani.svg';
@@ -36,15 +36,15 @@ interface NavbarItem {
 
 const Navbar: NavbarItem[] = [
   { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/dashboard' },
-  { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
-  { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
-  { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
-  { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
-  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/ruleadmin' },
-  { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
-  { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
-  { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
-  { id: 11, src: deleteUser, hoverSrc: deleteUserHover, link: '/userdeleteadmin' },
+  { id: 2, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
+  { id: 3, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
+  { id: 4, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
+  { id: 5, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
+  { id: 6, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/ruleadmin' },
+  { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
+  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
+  { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+  { id: 10, src: deleteUser, hoverSrc: deleteUserHover, link: '/userdeleteadmin' },
 ];
 
 function AdminPageNavbar() {
