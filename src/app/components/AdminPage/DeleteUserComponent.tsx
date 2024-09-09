@@ -55,7 +55,6 @@ function DeleteUserComponent() {
               <th>کد ملی</th>
               <th>شماره موبایل</th>
               <th>تاریخ درخواست</th>
-              <th>مشاهده کاربر</th>
               <th className="pl-5">عملیات</th>
             </tr>
           </thead>
@@ -70,10 +69,8 @@ function DeleteUserComponent() {
                 <td className="-mr-8">{item.code}</td>
                 <td className="-mr-9">{item.phone}</td>
                 <td className="-mr-1">{item.date}</td>
-                <td className="w-5 h-5 ">
-                  <Image src={eyes} alt="مشاهده" />
-                </td>
                 <td className="flex flex-row gap-8 ">
+                  <Image  className="w-5 h-5" src={eyes} alt="مشاهده" />
                   <Image className="w-5 h-5" src={accept} alt="قبول" />
                   <Image className="w-5 h-5" src={reject} alt="رد" />
                 </td>

@@ -89,7 +89,11 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
             className="rounded-sm"
           />
         </div>
-
+        <div className="flex justify-center">
+         <button>
+          مسدود 
+         </button>
+        </div>
         <div className="flex justify-center mt-5">
           <div>
             <p className="font-normal mr-6 text-[9px] text-[#2D3748]">
