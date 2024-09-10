@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import axios from "axios";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ChekedLoanAplicationTable from "@/src/app/components/AdminPage/ChekedLoanAplicationTable";
 import RoutRequestLoan from "./RoutRequestLoan";
 import SwichButton from "./SwichButton";
@@ -147,7 +145,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
         </div>
       </div>
-      <div className="flex gap-[91.5%] items-center">
+      <div className="flex gap-[47.9%] items-center">
         <div>
           <RoutRequestLoan />
         </div>
@@ -155,7 +153,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
           <SwichButton setIsUrgent={setIsUrgent} />
         </div>
       </div>
-      <div className="w-[200%] mt-4">
+      <div className=" mt-4">
         <ChekedLoanAplicationTable users={users} />
       </div>
     </div>

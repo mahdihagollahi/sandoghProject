@@ -38,30 +38,30 @@ const CheckedLoanAplicationTable: React.FC<UserTableProps> = ({ users = [] }) =>
 
   return (
     <div className="overflow-x-auto">
-      <div className="pl-10">
-        <div className="max-w-full bg-white rounded-md shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
-          <table className="min-w-full">
-            <thead>
-              <tr className="w-full">
-                <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
-                  نام کاربر
-                </th>
-                <th className="py-2 pb-4 pt-2 border-b xl:whitespace-nowrap border-opacity-80 border-[#0000001A]">
-                  شماره درخواست
-                </th>
-                <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
-                  مبلغ وام
-                </th>
-                <th className="py-2 pb-4 pt-2 border-b xl:whitespace-nowrap border-opacity-80 border-[#0000001A]">
-                  تاریخ درخواست
-                </th>
-                <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
-                  توضیحات
-                </th>
-              </tr>
-            </thead>
+    <div className="">
+      <div className="w-[96.5%] bg-white rounded-md shadow-md overflow-hidden p-10 dark:bg-[#4F5D74] dark:text-white">
+        <table className="min-w-full">
+          <thead>
+            <tr className="w-full">
+              <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
+                نام کاربر
+              </th>
+              <th className="py-2 pb-4 pt-2 border-b xl:whitespace-nowrap border-opacity-80 border-[#0000001A]">
+                شماره درخواست
+              </th>
+              <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
+                مبلغ وام
+              </th>
+              <th className="py-2 pb-4 pt-2 border-b xl:whitespace-nowrap border-opacity-80 border-[#0000001A]">
+                تاریخ درخواست
+              </th>
+              <th className="py-2 pb-4 pt-2 border-b border-opacity-80 border-[#0000001A]">
+                توضیحات
+              </th>
+            </tr>
+          </thead>
             <tbody>
-              {currentPageData.map((row, index) => (
+            {currentPageData.map((row, index) => (
                 <React.Fragment key={index}>
                   <tr className="text-center">
                     <td className="py-2 px-10 xl:whitespace-nowrap">
@@ -73,9 +73,7 @@ const CheckedLoanAplicationTable: React.FC<UserTableProps> = ({ users = [] }) =>
                     <td className="py-2 px-10 xl:whitespace-nowrap">
                       {row.amount}
                     </td>
-                    <td className="py-2 px-10">
-                      {row.date}
-                    </td>
+                    <td className="py-2 px-10">{row.date}</td>
                     <td className="py-2 px-10 xl:whitespace-break-spaces">
                       {row.description}
                     </td>
@@ -90,8 +88,8 @@ const CheckedLoanAplicationTable: React.FC<UserTableProps> = ({ users = [] }) =>
                           <span className="font-bold">ضامن‌ها:</span>
                           <span className="border border-opacity-90 mr-2 border-[#4FD1C5] px-2 py-2 rounded-md">
                             {row.guarantors.length > 0
-                              ? row.guarantors.join(', ')
-                              : 'بدون ضامن'}
+                              ? row.guarantors.join(", ")
+                              : null}
                           </span>
                         </div>
                         <div>
@@ -138,3 +136,7 @@ const CheckedLoanAplicationTable: React.FC<UserTableProps> = ({ users = [] }) =>
 };
 
 export default CheckedLoanAplicationTable;
+
+
+
+
