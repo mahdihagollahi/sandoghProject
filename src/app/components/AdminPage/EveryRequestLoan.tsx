@@ -70,7 +70,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+        <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
             <div className="-mr-1">
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
@@ -93,7 +93,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if (isError) {
     return (
       <div>
-      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+      <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
@@ -115,7 +115,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if(users.length === 0){
     return(
       <div>
-      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+      <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
@@ -142,7 +142,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-2 mt-12 mr-3">
+      <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
         <div className="-mr-1">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>

@@ -71,8 +71,8 @@ const LoanRequestComponent: React.FC<Loan> = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-2 mt-12 mr-3">
-          <div className="mr-2">
+          <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
+          <div className="-mr-3">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -94,8 +94,8 @@ const LoanRequestComponent: React.FC<Loan> = () => {
   if (error) {
     return (
       <div>
-        <div className="flex justify-between gap-[30%] items-center mb-2 mt-102mr-3">
-          <div className="mr-2">
+          <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
+          <div className="-mr-3">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -118,8 +118,8 @@ const LoanRequestComponent: React.FC<Loan> = () => {
   if (users.length === 0) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-2 mt-12 mr-3">
-          <div className="mr-2">
+          <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
+          <div className="-mr-3">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -140,8 +140,8 @@ const LoanRequestComponent: React.FC<Loan> = () => {
 
   return (
     <div>
-      <div className="flex  gap-[160%] items-center mb-2 mt-12 mr-3">
-        <div className="mr-2">
+      <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
+        <div className="-mr-3">
           <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
         </div>
       </div>

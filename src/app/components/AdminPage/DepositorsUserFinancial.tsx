@@ -92,7 +92,7 @@ const DepositorsUserFinancial: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -119,7 +119,7 @@ const DepositorsUserFinancial: React.FC = () => {
   if (isError) {
     return (
       <div>
-        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -146,7 +146,7 @@ const DepositorsUserFinancial: React.FC = () => {
   if (!data || data.data.length === 0) {
     return (
       <div>
-        <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+        <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
           <div className="mr-2">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
@@ -172,7 +172,7 @@ const DepositorsUserFinancial: React.FC = () => {
 
   return (
     <div>
-      <div className="flex gap-[77%] items-center mb-2 mt-10 mr-3">
+      <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
         <div className="mr-2">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
