@@ -1,9 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import tik from "@/src/app/assent/Img/userPanel/tik.svg";
+import { useDispatch } from "react-redux";
+import { selectPayment } from "@/src/app/peymentSlice"; 
+
 function Tableeshterak() {
+
+  const dispatch = useDispatch();
+
   const listghest = [
     {
       id: 1,
@@ -77,43 +83,15 @@ function Tableeshterak() {
       Condition: "پرداخت شده",
       massge: "بدون توضیح",
     },
-    // {
-    //   id: 9,
-    //   text: "قسط 9",
-    //   pyment: "500,000تومان",
-    //   data: "1403/01/03",
-    //   img: "",
-    //   Condition: "پرداخت شده",
-    //   massge: "بدون توضیح",
-    // },
-    // {
-    //   id: 10,
-    //   text: "قسط 10",
-    //   pyment: "500,000تومان",
-    //   data: "1403/04/12",
-    //   img: "",
-    //   Condition: "پرداخت شده",
-    //   massge: "بدون توضیح",
-    // },
-    // {
-    //   id: 11,
-    //   text: "قسط 11",
-    //   pyment: "500,000تومان",
-    //   data: "1403/06/29",
-    //   img: "",
-    //   Condition: "پرداخت شده",
-    //   massge: "بدون توضیح",
-    // },
-    // {
-    //   id: 12,
-    //   text: "قسط 12",
-    //   pyment: "500,000تومان",
-    //   data: "1403/09/06",
-    //   img: "",
-    //   Condition: "پرداخت شده",
-    //   massge: "بدون توضیح",
-    // },
+  
   ];
+
+  const handleCheckboxClick = (item) => {
+    console.log(item);
+    dispatch(selectPayment({ id: item.id, payment: item.pyment, text: item.text }));
+  };
+
+
   return (
     <>
     <div className='flex gap-[77%] items-center mb-2 mt-12   '>
@@ -148,11 +126,10 @@ function Tableeshterak() {
           <th className="whitespace-nowrap">تایید مدیر</th>
           <th className="w-[200px] -mr-16 whitespace-nowrap" >پیام مدیر</th>
         </tr>
-
         {listghest.map((item) => (
           <div>
             <tr className="flex flex-row py-5  mr-2 justify-around gap-20">
-              <td><input type="checkbox" checked="checked" className="checkbox checkbox-md" /></td>
+              <td><input type="checkbox" onClick={() => handleCheckboxClick(item)} className="checkbox checkbox-md" /></td>
               <td className="whitespace-nowrap">{item.text}</td>
               <td className="whitespace-nowrap">{item.pyment}</td>
               <td className="whitespace-nowrap">{item.data}</td>
@@ -162,6 +139,8 @@ function Tableeshterak() {
               </td>
               <td className="w-[200px]" >{item.massge}</td>
             </tr>
+         
+            
           </div>
         ))}
       </table>
@@ -170,3 +149,13 @@ function Tableeshterak() {
 }
 
 export default Tableeshterak;
+
+
+
+
+
+
+
+
+
+ 

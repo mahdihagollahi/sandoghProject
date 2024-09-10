@@ -1,73 +1,88 @@
-"use client";
+
+
+// "use client";
+// import React from "react";
+// import { useSelector } from "react-redux";
+// import {payment} from '@/src/app/peymentSlice'
+// import { selectPayment } from "@/src/app/peymentSlice"; 
+
+
+// function Tablesum() {
+//   const selectedPayments = useSelector((state) => state.payment.selectPayment);
+
+//   return (
+//     <>
+//       <div className="w-11/12 px-3 py-7 shadow-md rounded-md bg-white">
+//         <div>
+//           <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
+//         </div>
+//         <div className="flex flex-row justify-around w-[500px] mt-10 ">
+//           <div>
+//             <span className="font-bold">شماره</span>
+//             {selectedPayments.map((item, index) => (
+//               <div key={index}>
+//                 <div className="mt-3">
+//                   <span>{item.text}</span>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//           <div>
+//             <span className="font-bold mr-1">مبلغ</span>
+//             {selectedPayments.map((item, index) => (
+//               <div key={index} className="bg-white">
+//                 <div className="mt-3">
+//                   <input type="text" value={item.payment} />
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Tablesum;
+
+
+
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectPayment } from "@/src/app/peymentSlice"; 
 
 function Tablesum() {
-  const list = [
-    { id: 1, name: "قسط 1", payment: "500,000", date: "1402/11/12" },
-    { id: 2, name: "قسط 2", payment: "500,000", date: "1402/01/22" },
-    { id: 3, name: "قسط 3", payment: "500,000", date: "1402/07/23" },
-    // { id: 4, name: "قسط 4", payment: "500,000", date: "1402/12/10" },
-    // { id: 5, name: "قسط 5", payment: "500,000", date: "1402/02/12" },
-    // { id: 6, name: "قسط 6", payment: "500,000", date: "1402/03/30" },
-  ];
-  const sum = [{ id: 1, sum: "3,000,000" }];
+  const selectedPayments = useSelector(selectPayment);
 
   return (
-    <>
-      <div className="w-11/12 px-3 py-7 shadow-md rounded-md bg-white">
+    <div className="w-11/12 px-3 py-7 shadow-md rounded-md bg-white">
+      <div>
+        <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
+      </div>
+      <div className="flex flex-row justify-around w-[500px] mt-10 ">
         <div>
-          <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
+          <span className="font-bold">شماره</span>
+          {selectedPayments.map((item, index) => (
+            <div key={index}>
+              <div className="mt-3">
+                <span>{item.payment}</span>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-row justify-around w-[500px] mt-10 ">
-          <div>
-            <span className="font-bold">شماره</span>
-            {list.map((item, index) => (
-              <div key={index}>
-                <div className="mt-3">
-                  <span>{item.name}</span>
-                </div>
+        <div>
+          <span className="font-bold mr-1">مبلغ</span>
+          {selectedPayments.map((item, index) => (
+            <div key={index} className="bg-white">
+              <div className="mt-3">
+                <input type="text" value={item.payment} readOnly />
               </div>
-            ))}
-          </div>
-          <div>
-            <span className="font-bold mr-1">مبلغ</span>
-            {list.map((item, index) => (
-              <div key={index} className="bg-white">
-                <div className="mt-3">
-                  <span>{item.payment}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div>
-            <span className="font-bold mr-1">تاریخ</span>
-            {list.map((item, index) => (
-              <div key={index}>
-                <div className="mt-3">
-                  <span>{item.date}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-row gap-28 mt-5">
-          <span className="font-bold mr-10">مجموع مبلغ واریزی : </span>
-          {sum.map((task) => (
-            <div key={task} className="flex items-center gap-1" >
-              <p className="text-[#4FD1C5]">
-              {task.sum}
-              </p>
-              <p>
-                میلیون تومان
-              </p>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default Tablesum;
-
-
