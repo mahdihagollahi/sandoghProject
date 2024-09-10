@@ -55,7 +55,7 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
           <div className="flex justify-end mr-2"></div>
         </div>
 
-        <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-md ">
           <div className="flex justify-center items-center">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -79,7 +79,7 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-14 px-[102px] py-20 cursor-pointer rounded-sm">
+      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-14 px-[102px] py-20 cursor-pointer rounded-md">
         <div className="flex justify-center">
           <Image
             src={userDetail.avatar || DefaultAvatar}
@@ -89,7 +89,11 @@ const DetailUser: React.FC<{ userId: string }> = ({ userId }) => {
             className="rounded-sm"
           />
         </div>
-
+        <div className="flex justify-center">
+         <button>
+          مسدود 
+         </button>
+        </div>
         <div className="flex justify-center mt-5">
           <div>
             <p className="font-normal mr-6 text-[9px] text-[#2D3748]">

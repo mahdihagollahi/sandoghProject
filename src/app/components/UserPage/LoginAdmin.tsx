@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import axios, { AxiosResponse } from "axios";
-import Password2 from "@/src/app/components/UserPage/Password2"; 
+import { useMutation, QueryClient, QueryClientProvider } from "react-query";
+import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
+import Password2 from "@/src/app/components/UserPage/Password2";
 
 interface LoginResponse {
   token?: string;
   message?: string;
 }
 
-const LoginAdmin: React.FC = () => {
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+const loginAdmin = async (loginData: { user_name: string; password: string }) => {
+  const response: AxiosResponse<LoginResponse> = await axios.post(
+    "https://mohammadelia30.ir/shabab/api/auth/login/admin",
+    loginData
+  );
+  return response.data;
+};
+
+const queryClient = new QueryClient();
+
+const LoginAdminContent: React.FC = () => {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false); 
+  const [showModal, setShowModal] = useState<boolean>(false);
 
-  const handleLogin = async () => {
-    try {
-      const response: AxiosResponse<LoginResponse> = await axios.post(
-        "https://mohammadelia30.ir/shabab/api/auth/login/admin",
-        {
-          user_name: username,
-          password: password,
-        }
-      );
-
-      if (response.status === 200 && response.data.token) {
-        localStorage.setItem('authToken', response.data.token);
-        window.location.href = "/Rout/dashboard";
+  const { mutate: handleLogin, isLoading } = useMutation(loginAdmin, {
+    onSuccess: (data) => {
+      if (data.token) {
+        localStorage.setItem("authToken", data.token);
+        window.location.href = "/dashboard";
       } else {
-        setErrorMessage(response.data.message || 'نام کاربری و رمز عبور اشتباه است');
+        setErrorMessage(data.message || "نام کاربری و رمز عبور اشتباه است");
       }
-    } catch (error: any) {
+    },
+    onError: (error: any) => {
       if (error.response) {
         setErrorMessage(error.response.data.message || "ورود ناموفق بود.");
       } else if (error.request) {
@@ -40,11 +44,15 @@ const LoginAdmin: React.FC = () => {
       } else {
         setErrorMessage("مشکلی در ارسال درخواست به وجود آمد.");
       }
-    }
-  };
+    },
+  });
 
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
+
+  const handleSubmit = () => {
+    handleLogin({ user_name: username, password: password });
+  };
 
   return (
     <div className="relative h-[450px]">
@@ -59,43 +67,12 @@ const LoginAdmin: React.FC = () => {
           alt=""
         />
       </div>
-<<<<<<< HEAD
-      <div className="bg-white dark:bg-black flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
-=======
+
       <div className="bg-white dark:bg-[#4F5D74] flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
->>>>>>> 2988c251d5d14f00165e20f48e6fa5f430b30a01
-        <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md">
+        <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md relative">
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1 ">
-              <div>
-                <span>بازگشت</span>
-              </div>
-              <div>
-                <span>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.25 11.7256L19.25 11.7256"
-                      stroke="black"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M10.2988 5.701L4.24883 11.725L10.2988 17.75"
-                      stroke="black"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
+             
             </div>
             <div>
               <span className="text-[#4FD1C5] text-lg text-right">
@@ -133,7 +110,7 @@ const LoginAdmin: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-             
+
               <div
                 className="absolute top-14 right-96 transform -translate-y-6 cursor-pointer "
                 onClick={() => setShowPassword(!showPassword)}
@@ -183,25 +160,48 @@ const LoginAdmin: React.FC = () => {
               <div>
                 <p
                   className="text-[#394860] text-sm mt-1 cursor-pointer"
-                  onClick={handleOpenModal} // Open modal when clicking the link
+                  onClick={handleOpenModal}
                 >
                   فراموشی رمز؟
                 </p>
               </div>
             </div>
           </div>
+
           {errorMessage && (
-            <div className="bg-[#FFF2F2] text-[#C30000] text-base font-normal text-center mt-4">
-              رمزعبور را اشتباه وارد کردید
+            <div className="bg-[#FFF2F2] text-[#C30000] flex justify-center items-center w-60 mx-auto py-3 rounded-md text-base font-normal text-center absolute top-[380px] left-1/2 transform -translate-x-1/2 m ">
+              <button
+                className="text-[#6B7280] mb-6"
+                onClick={() => setErrorMessage("")}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+              </button>
+              <span>{errorMessage}</span>
             </div>
           )}
 
-          <button
-            className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px] mr-[55px] mt-[65px]"
-            onClick={handleLogin}
-          >
-            ورود
-          </button>
+          <div className="absolute bottom-[20px] left-1/2 transform -translate-x-1/2">
+            <button
+              className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px]"
+              onClick={handleSubmit}
+              disabled={isLoading}
+            >
+              {isLoading ? "در حال ورود..." : "ورود"}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -212,6 +212,17 @@ const LoginAdmin: React.FC = () => {
       )}
     </div>
   );
-}
+};
+
+const LoginAdmin: React.FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <LoginAdminContent />
+    </QueryClientProvider>
+  );
+};
 
 export default LoginAdmin;
+
+
+

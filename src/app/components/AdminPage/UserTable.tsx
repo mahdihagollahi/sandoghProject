@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import FillImage from '@/src/app/assent/Img/adminPanel/Fill 396.svg';
-import iconDeletImage from '@/src/app/assent/Img/adminPanel/Delete.svg';
+import iconDeletImage from '@/src/app/assent/Img/adminPanel/deactiveIcon.svg';
 import Paginate from './Paginate';
 import Link from 'next/link';
 import moment from 'moment-jalaali';
@@ -81,10 +81,10 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
           <table className="w-full table-auto border-collapse">
             <thead>
               <tr>
-                <th className="w-[1%] px-5 py-2"></th>
-                <th className="w-[20%] px-4 py-2">نام کاربران</th>
+                <th className="w-[1%] px-3 py-2">ردیف</th>
+                <th className="w-[19.7%] px-2 py-2">نام کاربران</th>
                 <th className="w-[16%] px-4 py-2">تاریخ عضویت</th>
-                <th className="w-[20%] px-4 py-2">وام‌های دریافتی</th>
+                <th className="w-[20%] px-4 py-2">شماره تماس</th>
                 <th className="w-[25%] px-[15%] py-2">جزئیات</th>
                 <th className="w-[13%] px-4 py-2">حذف کردن</th>
               </tr>
@@ -96,17 +96,22 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
                 {currentPageData.map((user) => (
                   <tr key={user.id} onClick={() => onUserSelect(user.id)}>
                     <td className="w-1/12 py-4 px-4">
-                      <Image   src={user.src || IconImage} width={40} height={40} alt={user.first_name} />
+                     {user.id}
                     </td>
-                    <td className="w-2/12 py-2 px-4">{`${user.first_name} ${user.last_name}`}</td>
+                    <td className="w-2/12 py-2 px-4 ">
+                      <div className='flex items-center '>
+                      <Image   src={user.src || IconImage} width={40} height={40} alt={user.first_name} />
+                      {`${user.first_name} ${user.last_name}`}
+                      </div>
+                    </td>
                     <td className="w-2/12 py-2 px-4">
                       {convertToPersianDate(user.created_at)} 
                     </td>
                     <td className="w-2/12 py-2 px-4">
-                      {convertToPersianNumber(user.debt.toLocaleString())}  
+                      {convertToPersianNumber(user.phone_number.toLocaleString())}  
                     </td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href={`/Rout/detailuser/${user.id}`} passHref>
+                      <Link href={`/detailuser/${user.id}`} passHref>
                         <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                           <Image src={FillImage} width={24} height={24} alt="" />
                           <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>

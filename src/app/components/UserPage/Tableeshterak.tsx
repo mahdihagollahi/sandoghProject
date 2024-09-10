@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
 import tik from "@/src/app/assent/Img/userPanel/tik.svg";
 import { useDispatch } from "react-redux";
 import { selectPayment } from "@/src/app/peymentSlice"; 
@@ -103,19 +102,7 @@ function Tableeshterak() {
           
 
 
-            <div className='flex justify-end  '>
-              <a href="/requestloanaplication" className='flex items-center'>
-              بازگشت
-              <Image
-                src={backImage}
-                width={38}
-                height={38}
-                alt='arrow'
-
-                />
-              </a>
-              
-            </div>
+            
         </div>
       <table className="w-[70%] p-10 mt-5 shadow-md rounded-md" >
         <tr className="border-b-2 mr-24 py-10 flex flex-row justify-around gap-20">

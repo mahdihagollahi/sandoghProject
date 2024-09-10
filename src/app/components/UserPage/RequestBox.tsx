@@ -11,7 +11,7 @@ export default function Requestbox() {
           اگه به وام نیاز داری همین حالا درخواست بده{" "}
         </h2>
         <Image className="w-[90%] mt-[1%] mr-3" src={vam} alt="" />
-        <Link href='/Rout/requestloanaplication'>
+        <Link href='/requestloanaplication'>
           <button className="mr-4 w-80 h-12 border text-[#394860]	border-[#394860] rounded-lg	">
             درخواست وام
           </button>

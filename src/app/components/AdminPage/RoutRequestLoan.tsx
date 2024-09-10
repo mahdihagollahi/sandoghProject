@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import UserOutlineImage from '@/src/app/assent/Img/adminPanel/Wallet.svg';
@@ -7,31 +7,24 @@ import crossOutline from '@/src/app/assent/Img/adminPanel/checked.svg';
 import crossActiveImage from '@/src/app/assent/Img/adminPanel/checkedHover.png';
 
 const RoutRequestLoan: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>('');
-  const [hoveredTab, setHoveredTab] = useState<string>('');
 
-  useEffect(() => {
-    const storedTab = localStorage.getItem('selectedTab');
-    if (storedTab) {
-      setSelectedTab(storedTab);
-    }
-  }, []);
+  const [selectedTab, setSelectedTab] = useState<string>('allloanaplication');
+  const [hoveredTab, setHoveredTab] = useState<string>('');
 
   const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
-    localStorage.setItem('selectedTab', tab);
   };
 
   return (
     <div>
       <div>
-        <div className='flex w-[400px] shadow-md justify-between px-10 mt-9  dark:text-white dark:bg-[#4F5D74] bg-white h-16 rounded-md'>
+        <div className='flex w-[400px] justify-between px-10 mt-9 dark:text-white dark:bg-[#4F5D74] bg-white h-16 rounded-md shadow-md'>
           <div
             className={`flex items-center gap-2 ${selectedTab === 'allloanaplication' || hoveredTab === 'allloanaplication' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
             onMouseEnter={() => setHoveredTab('allloanaplication')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/Rout/allloanaplication' className='flex items-center gap-2' onClick={() => handleTabClick('allloanaplication')}>
+            <Link href='/allloanaplication' className='flex items-center gap-2' onClick={() => handleTabClick('allloanaplication')}>
               <Image
                 src={selectedTab === 'allloanaplication' || hoveredTab === 'allloanaplication' ? UserHoverImage : UserOutlineImage}
                 width={25}
@@ -39,7 +32,7 @@ const RoutRequestLoan: React.FC = () => {
                 alt='all loan applications'
               />
               <p className='font-bold text-sm dark:text-white text-[#2D3748]'> 
-                همه                 
+            درحال انتظار          
               </p>
             </Link>
           </div>
@@ -49,7 +42,7 @@ const RoutRequestLoan: React.FC = () => {
             onMouseEnter={() => setHoveredTab('checkedrequestloan')}
             onMouseLeave={() => setHoveredTab('')}
           >
-            <Link href='/Rout/checkedrequestloan' className='flex items-center gap-2' onClick={() => handleTabClick('checkedrequestloan')}>
+            <Link href='/checkedrequestloan' className='flex items-center gap-2' onClick={() => handleTabClick('checkedrequestloan')}>
               <Image
                 src={selectedTab === 'checkedrequestloan' || hoveredTab === 'checkedrequestloan' ? crossActiveImage : crossOutline}
                 width={25}
@@ -57,7 +50,7 @@ const RoutRequestLoan: React.FC = () => {
                 alt='checked requests'
               />
               <p className='font-bold text-sm dark:text-white text-[#2D3748]'> 
-                چک شده ها
+                تعیین وضعیت
               </p>
             </Link>
           </div>

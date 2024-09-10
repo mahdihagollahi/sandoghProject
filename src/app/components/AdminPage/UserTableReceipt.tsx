@@ -20,7 +20,7 @@ const UserTableReceipt: React.FC<UserDetailsProps> = ({ user }) => {
   return (
     <div>
       <div className="p-4 pl-20">
-        <div className="bg-white w-[120%] shadow-md overflow-hidden py-5 px-5 dark:bg-[#4F5D74] dark:text-white">
+        <div className="bg-white w-[120%] rounded-md shadow-md overflow-hidden py-5 px-5 dark:bg-[#4F5D74] dark:text-white">
           <table className="w-full table-auto">
             <thead className="border-b-2 border-gray-300 mb-2"> 
               <tr>

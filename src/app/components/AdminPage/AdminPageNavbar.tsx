@@ -6,14 +6,14 @@ import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import ImageDashboard from '@/src/app/assent/Img/adminPanel/dasboard.svg';
 import ImageDashboardHover from '@/src/app/assent/Img/adminPanel/dashboardHover.svg';
-import ImageMangment from '@/src/app/assent/Img/adminPanel/mangment.svg';
-import ImageMangmentHover from '@/src/app/assent/Img/adminPanel/mangmentHover.svg';
+import ImageMangment from '@/src/app/assent/Img/adminPanel/ProfileManger.svg';
+import ImageMangmentHover from '@/src/app/assent/Img/adminPanel/profileMangerOn.svg';
 import ImageUser from '@/src/app/assent/Img/adminPanel/User.svg';
 import ImageUserHover from '@/src/app/assent/Img/adminPanel/UserHover.svg';
 import ImageVam from '@/src/app/assent/Img/adminPanel/Vam.svg';
 import ImageVamHover from '@/src/app/assent/Img/adminPanel/VamHover.svg';
-import ImagePassword from '@/src/app/assent/Img/adminPanel/Password.svg';
-import ImagePasswordHover from '@/src/app/assent/Img/adminPanel/PasswordHover.svg';
+import ImagePassword from '@/src/app/assent/Img/adminPanel/createUser.svg';
+import ImagePasswordHover from '@/src/app/assent/Img/adminPanel/createUserOn.svg';
 import ImageEconomi from '@/src/app/assent/Img/adminPanel/Economi.svg';
 import ImageEconomiHover from '@/src/app/assent/Img/adminPanel/EconomiHover.svg';
 import ImagePoshtibani from '@/src/app/assent/Img/adminPanel/Poshtibani.svg';
@@ -35,16 +35,16 @@ interface NavbarItem {
 }
 
 const Navbar: NavbarItem[] = [
-  { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/Rout/dashboard' },
-  { id: 3, src: ImageUser, hoverSrc: ImageUserHover, link: '/Rout/everyuser' },
-  { id: 4, src: ImageVam, hoverSrc: ImageVamHover, link: '/Rout/allloanaplication' },
-  { id: 5, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/Rout/userpass' },
-  { id: 6, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/Rout/showuserdetail' },
-  { id: 7, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/Rout/ruleadmin' },
-  { id: 8, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/Rout/support' },
-  { id: 9, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/Rout/sentmessageadmin' },
-  { id: 10, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/Rout/management' },
-  { id: 11, src: deleteUser, hoverSrc: deleteUserHover, link: '/Rout/userdeleteadmin' },
+  { id: 1, src: ImageDashboard, hoverSrc: ImageDashboardHover, link: '/dashboard' },
+  { id: 2, src: ImageUser, hoverSrc: ImageUserHover, link: '/everyuser' },
+  { id: 3, src: ImageVam, hoverSrc: ImageVamHover, link: '/allloanaplication' },
+  { id: 4, src: ImagePassword, hoverSrc: ImagePasswordHover, link: '/userpass' },
+  { id: 5, src: ImageEconomi, hoverSrc: ImageEconomiHover, link: '/showuserdetail' },
+  { id: 6, src: ImageSetting, hoverSrc: ImageSettingHover, link: '/ruleadmin' },
+  { id: 7, src: ImagePoshtibani, hoverSrc: ImagePoshtibaniHover, link: '/support' },
+  { id: 8, src: ImageMassege, hoverSrc: ImageMassegeHover, link: '/sentmessageadmin' },
+  { id: 9, src: ImageMangment, hoverSrc: ImageMangmentHover, link: '/management' },
+  { id: 10, src: deleteUser, hoverSrc: deleteUserHover, link: '/userdeleteadmin' },
 ];
 
 function AdminPageNavbar() {
@@ -110,7 +110,7 @@ function AdminPageNavbar() {
             </div>
           </Link>
         ))}
-        <Link href="/Rout/exitadmin">
+        <Link href="/exitadmin">
           <button className="mr-[1%] mt-[2%]">
             <Image src={ImageExport} width={60} alt="Exit" className="cursor-pointer" />
           </button>

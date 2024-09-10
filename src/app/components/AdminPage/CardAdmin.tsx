@@ -62,7 +62,7 @@ function CardAdmin() {
   if (isLoading) return (
     <div className='flex flex-col items-center mr-3'>
     <div className=''>
-      <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
+      <div className='bg-white dark:bg-[#4F5D74]  py-[9.9%] rounded-md shadow-md md:items-center xl:w-[120%]'>
         <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -89,7 +89,7 @@ function CardAdmin() {
   if (error) return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
+        <div className='bg-white dark:bg-[#4F5D74]  py-[9.9%] rounded-md shadow-md md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -118,7 +118,7 @@ function CardAdmin() {
   return (
     <div className='flex flex-col items-center mr-3'>
       <div className=''>
-        <div className='bg-white dark:bg-[#4F5D74] rounded-lg py-[9.9%] shadow-lg md:items-center xl:w-[120%]'>
+        <div className='bg-white dark:bg-[#4F5D74]  py-[9.9%] rounded-md shadow-md md:items-center xl:w-[120%]'>
           <div className='relative flex justify-center items-center h-48'>
             <div
               className='absolute inset-0 w-80 h-40 mr-8 rounded-3xl'
@@ -167,4 +167,7 @@ function CardAdmin() {
 }
 
 export default CardAdmin;
+
+
+
 

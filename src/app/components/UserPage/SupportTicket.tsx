@@ -1,35 +1,15 @@
 import React from "react";
-import Image from 'next/image';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg'
+import Image from "next/image";
 import exper from "@/src/app/assent/Img/userPanel/Exclamation.svg";
 
 function SupportTicket() {
   return (
     <>
-     <div className='flex justify-between items-center mb-2 mt-12   '>
-            <div className='mr-16 '>
-                <p className='font-bold text-lg'>
-                  پشتیبانی
-                </p>
-            </div>
-          
-
-
-            <div className='flex justify-end  '>
-              <a href="/Rout/dashboarduser" className='flex items-center'>
-              بازگشت
-              <Image
-                src={backImage}
-                width={38}
-                height={38}
-                alt='arrow'
-
-                />
-              </a>
-              
-            </div>
+      <div className="flex justify-between items-center mb-2 mt-12   ">
+        <div className="mr-16 ">
+          <p className="font-bold text-lg">پشتیبانی</p>
         </div>
-
+      </div>
 
       <div className="flex flex-col gap-10 px-16 mt-10">
         <div>نیاز به پشتیبانی دارید ؟</div>
@@ -69,7 +49,7 @@ function SupportTicket() {
         </div>
         <div className="relative">
           <div>
-            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4 bg-inherit py-10 px-5" ></textarea>
+            <textarea className="w-[900px] h-56 border-[#070707] border-2 rounded-md mt-4 bg-inherit py-10 px-5"></textarea>
           </div>
           <div className="absolute top-0 right-4 p-1 bg-[#F8F9FA]">
             سوال خود را در این قسمت تایپ کنید

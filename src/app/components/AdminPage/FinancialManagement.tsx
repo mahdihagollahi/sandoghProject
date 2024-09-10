@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import DateDropDown from "@/src/app/components/AdminPage/DateDropDown";
 import ChartMounthFinantial from "@/src/app/components/AdminPage/ChartMounthFinantial";
 import ChartFinancial from "@/src/app/components/AdminPage/ChartFinancial";
@@ -77,25 +75,18 @@ export default function FinancialManagement() {
     setFilteredData(data[year]);
   };
 
-  const handleBack = () => {
-    window.history.back(); 
-  };
-
+ 
   return (
     <div className="">
       <div className="flex mt-11 gap-[78%] items-center mb-2   ">
         <div className="mr-1 ">
           <p className="font-bold dark:text-white text-lg">مدیریت مالی</p>
         </div>
-        <div className=" flex dark:text-white items-center cursor-pointer " onClick={handleBack}>   
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
-        </div>
       </div>
 
       <div className="mt-10 ">
         <div className="flex   items-center   md:justify-center  xl:justify-center   xl:mt-2">
-          <div className="  bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-xl rounded-lg w-[94.5%] ">
+          <div className="  bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-md rounded-md w-[94.5%] ">
             <div className="flex gap-52 pt-8 ">
               <div className=" mr-[50%]">
                 <DateDropDown onSelectYear={handleSelectYear} />
@@ -110,7 +101,7 @@ export default function FinancialManagement() {
 
       <div className="flex  mt-2 gap-4  items-center">
         <div className="flex   items-center  md:justify-center  xl:justify-center  ">
-          <div className="  bg-white  dark:bg-[#4F5D74] w-[580px]  pr-8 py-[10px] mt-2 shadow-lg rounded-lg ">
+          <div className="  bg-white  dark:bg-[#4F5D74] w-[580px]  pr-8 py-[10px] mt-2 shadow-md rounded-md ">
             <div className="flex  pt-8 ">
               <div className=" mr-[24%]">
                 <DateDropDown onSelectYear={handleSelectYear} />

@@ -27,41 +27,41 @@ const Navbar = [
     id: 1,
     src: dashboardUser,
     hoverSrc: ImageDashboardHover,
-    link: "/Rout/dashboarduser",
+    link: "/dashboarduser",
   },
   {
     id: 2,
     src: mangmentUser,
     hoverSrc: mangmentUserHover,
-    link: "/Rout/useraccount",
+    link: "/useraccount",
   },
-  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: "/Rout/showloans" },
+  { id: 3, src: ShowInstallments, hoverSrc: ShowInstallmentsHover, link: "/showloans" },
   {
     id: 4,
     src: payInstallments,
     hoverSrc: payInstallmentsHover,
-    link: "/Rout/loanpayment",
+    link: "/loanpayment",
   },
   {
     id: 5,
     src: RequestInstallments,
     hoverSrc: RequestnstallmentsHover,
-    link: "/Rout/requestloanaplication",
+    link: "/requestloanaplication",
   },
   {
     id: 6,
     src: ImageMessage,
     hoverSrc: ImageMessageHover,
-    link: "/Rout/sentedmassageuser",
+    link: "/sentedmassageuser",
   },
   {
     id: 7,
     src: SupportUser,
     hoverSrc: SupportUserHover,
-    link: "/Rout/supportticket",
+    link: "/supportticket",
   },
 
-  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: "/Rout/ruleuser" },
+  { id: 8, src: ImageRule, hoverSrc: ImageRuleHover, link: "/ruleuser" },
 ];
 
 function UserPageNavbar() {
@@ -115,7 +115,7 @@ function UserPageNavbar() {
         {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
             <div
-              className="relative mt-4"
+              className="relative -mt-2"
               onMouseEnter={() => handleMouseEnter(image.id)}
               onMouseLeave={() => handleMouseLeave(image.id)}
               onClick={() => handleClick(image.id)}

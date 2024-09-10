@@ -6,7 +6,7 @@ function ViewDeposit() {
   return (
     <div>
       <div className="flex items-center justify-center ">
-        <div className="w-[442px] h-[402px] dark:bg-[#4F5D74] mt-2 bg-white shadow-lg rounded-md p-6 relative">
+        <div className="w-[442px] h-[402px] dark:bg-[#4F5D74] mt-2 bg-white shadow-md rounded-md p-6 relative">
           <div>
             <p className="font-medium text-base dark:text-white text-[#394860] mb-6 items-start">
               مشاهده واریزی های این ماه
@@ -19,7 +19,7 @@ function ViewDeposit() {
                 <p>کاربرانی که واریز کرده اند</p>
               </div>
               <div>
-                <Link href="/Rout/deposited" passHref>
+                <Link href="/deposited" passHref>
                   <button className="bg-[#4FD1C5] dark:text-white rounded-md py-2 px-4 text-white">
                     مشاهده
                   </button>
@@ -32,7 +32,7 @@ function ViewDeposit() {
                 <p>کاربرانی که هنوز واریز نکرده اند</p>
               </div>
               <div>
-                <Link href="/Rout/notdeposited" passHref>
+                <Link href="/notdeposited" passHref>
                   <button className="bg-[#4FD1C5] dark:text-white rounded-md py-2 px-4 text-white">
                     مشاهده
                   </button>

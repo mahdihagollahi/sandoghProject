@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
-import Landing from "./components/UserPage/landing";
+// import Landing from "./components/UserPage/landing";
+import ModalRejectLoans from "./components/AdminPage/ModalRejectLoans";
 
 function page() {
  
 
   return (
     <>
-  
-     <Landing/>
+  <ModalRejectLoans/>
+     {/* <Landing/> */}
     </>
   );
 }

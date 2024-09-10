@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import IconlyImage from '@/src/app/assent/Img/adminPanel/3UserOutline.svg';
 import IconlyHoverImage from '@/src/app/assent/Img/adminPanel/Iconly.svg';
@@ -8,21 +7,12 @@ import DeletedHoverImage from '@/src/app/assent/Img/adminPanel/crossActive.svg';
 import Link from 'next/link';
 
 const RoutTableUser: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>('');
+  const [selectedTab, setSelectedTab] = useState<string>('everyuser');
   const [hoveredTab, setHoveredTab] = useState<string>('');
-
-  useEffect(() => {
-    const storedTab = localStorage.getItem('selectedTab');
-    if (storedTab) {
-      setSelectedTab(storedTab);
-    }
-  }, []);
 
   const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
-    localStorage.setItem('selectedTab', tab);
   };
-
 
   return (
     <div>
@@ -32,7 +22,7 @@ const RoutTableUser: React.FC = () => {
           onMouseEnter={() => setHoveredTab('everyuser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/Rout/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
+          <Link href='/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
             <Image
               src={selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? IconlyHoverImage : IconlyImage}
               width={25}
@@ -40,7 +30,7 @@ const RoutTableUser: React.FC = () => {
               alt='every user'
             />
             <p className='font-bold text-sm dark:text-white text-[#2D3748]'>
-              همه کاربران
+              کاربران فعال
             </p>
           </Link>
         </div>
@@ -50,15 +40,15 @@ const RoutTableUser: React.FC = () => {
           onMouseEnter={() => setHoveredTab('deleteduser')}
           onMouseLeave={() => setHoveredTab('')}
         >
-          <Link href='/Rout/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
+          <Link href='/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
             <Image
               src={selectedTab === 'deleteduser' || hoveredTab === 'deleteduser' ? DeletedHoverImage : DeletedImage}
               width={25}
               height={25}
               alt='deleted user'
             />
-            <p className='font-bold text-sm  dark:text-white text-[#2D3748]'>
-              حذف شده ها
+            <p className='font-bold text-sm dark:text-white text-[#2D3748]'>
+              مسدود شده ها
             </p>
           </Link>
         </div>
@@ -68,4 +58,3 @@ const RoutTableUser: React.FC = () => {
 }
 
 export default RoutTableUser;
-

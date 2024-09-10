@@ -52,23 +52,13 @@ function SupportMessage() {
     staleTime: 1000 * 60 * 5,
   });
 
-  const handleBack = () => {
-    window.history.back();
-  };
 
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-          </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -77,7 +67,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <div className="flex justify-center items-center">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -89,16 +79,9 @@ function SupportMessage() {
   if (error) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-          </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -107,7 +90,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-black w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-black w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <p>
             خطا در دریافت داده‌ها:{" "}
             {error instanceof Error ? error.message : "نامشخص"}
@@ -120,16 +103,9 @@ function SupportMessage() {
   if (!data || data.length === 0) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-          </div>
-          <div
-            className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-            onClick={handleBack}
-          >
-            بازگشت
-            <Image src={arrowImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
 
@@ -138,7 +114,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
           <p>هیچ پیامی یافت نشد.</p>
         </div>
       </div>
@@ -147,16 +123,9 @@ function SupportMessage() {
 
   return (
     <div>
-      <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+      <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
         <div className="mr-4">
           <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-        </div>
-        <div
-          className="absolute flex mr-[60.5%] dark:text-white items-center cursor-pointer"
-          onClick={handleBack}
-        >
-          بازگشت
-          <Image src={arrowImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
 
@@ -166,7 +135,7 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-lg mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
           {data.map((message) => (
             <div
               key={message.id}

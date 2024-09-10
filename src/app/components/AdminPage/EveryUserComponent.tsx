@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import UserTable from "@/src/app/components/AdminPage/UserTable";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import RoutTableUser from "./RoutTableUser";
 
@@ -67,9 +66,6 @@ const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
-const handleBack = () => {
-  window.history.back(); 
-};
 
 const EveryUser: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -101,10 +97,6 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
         </div>
         <div>
           <RoutTableUser />
@@ -135,10 +127,6 @@ const EveryUser: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
         </div>
         <div>
           <RoutTableUser />
@@ -163,10 +151,6 @@ const EveryUser: React.FC = () => {
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
-          </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
         <div>
@@ -197,10 +181,6 @@ const EveryUser: React.FC = () => {
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
           </label>
-        </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div>

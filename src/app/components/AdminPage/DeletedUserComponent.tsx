@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
 import RoutTableUser from "./RoutTableUser";
@@ -80,9 +79,6 @@ const DeleteUser: React.FC = () => {
   );
 };
 
-const handleBack = () => {
-  window.history.back(); 
-};
 
 const UserList: React.FC = () => {
   const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);
@@ -103,10 +99,6 @@ const UserList: React.FC = () => {
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
-          </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
         <div>
@@ -138,10 +130,6 @@ const UserList: React.FC = () => {
                 placeholder="جستجو نام کاربری یا شماره تلفن"
               />
             </label>
-          </div>
-          <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>
         </div>
         <div>
@@ -175,10 +163,6 @@ const UserList: React.FC = () => {
             />
           </label>
         </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
-        </div>
       </div>
       <div>
         <RoutTableUser />
@@ -208,10 +192,6 @@ const UserList: React.FC = () => {
               placeholder="جستجو نام کاربری یا شماره تلفن"
             />
           </label>
-        </div>
-        <div className="flex justify-end items-center cursor-pointer mr-5" onClick={handleBack}>
-            بازگشت
-            <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
       <div>

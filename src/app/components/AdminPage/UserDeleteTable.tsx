@@ -38,8 +38,7 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
               <tr>
                 <th className="w-[1%] px-5 py-2"></th>
                 <th className="w-[20%] px-4 py-2">نام کاربران</th>
-                <th className="w-[16%] px-4 py-2">تاریخ عضویت</th>
-                <th className="w-[20%] px-4 py-2">وام های دریافتی</th>
+                <th className="w-[16%] px-4 py-2">تاریخ خروج</th>
                 <th className="w-[25%] px-[15%] py-2">جزئیات</th>
                 <th className="w-[13%] px-4 py-2">برگرداندن</th>
               </tr>
@@ -55,9 +54,8 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.name}</td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
-                    <td className="w-2/12 py-2 px-4">{user.loans}</td>
                     <td className="w-3/12 py-2 px-4">
-                      <Link href='/Rout/detailuser' passHref>
+                      <Link href='/detailuser' passHref>
                         <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                           <Image src={FillImage} width={24} height={24} alt="" />
                           <p className="font-normal text-sm text-teal-400">اطلاعات بیشتر</p>

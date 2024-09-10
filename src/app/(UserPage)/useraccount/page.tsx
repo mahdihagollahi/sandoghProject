@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import UserFirstPage from "@/src/app/Screen/UserFirstPage";
+import UserAccount from "@/src/app/Screen/UserAccount";
+
 function page() {
   return (
     <div>
-      
-        <UserFirstPage />
-      
+      <UserAccount />
     </div>
   );
 }

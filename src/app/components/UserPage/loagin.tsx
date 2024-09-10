@@ -11,45 +11,13 @@ export default function Loagin() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
 
-  // const handleLogin = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //      " https://mohammadelia30.ir/shabab/api/auth/login",
-  //       {
-  //         user_name: username,
-  //         password: password,
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Accept: "application/json",
-  //         },
-  //       }
-  //     );
-  //     console.log(response);
-
-  //     if (response.status === 200 && response.data.token) {
-  //       localStorage.setItem("authToken", response.data.token);
-
-  //       window.location.href = "/Rout/dashboarduser";
-  //     }
-     
-  //   } catch (err: any) {
-  //     if (err.response && err.response.data) {
-  //       setError(
-  //         err.response.data.message || "نام کاربری یا رمز عبور اشتباه است."
-  //       );
-  //     } else {
-  //       setError("مشکلی در ارتباط با سرور پیش آمد.");
-  //     }
-  //   }
-  // };
+ 
   const handleLogin = async () => {
     try {
       const response = await axios.post(
         "https://mohammadelia30.ir/shabab/api/auth/login",
         {
-          user_name: username,  // تغییر نام کلید به user_name
+          user_name: username,  
           password: password,
         },
         {
@@ -64,7 +32,7 @@ export default function Loagin() {
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("authToken", response.data.token);
   
-        window.location.href = "/Rout/dashboarduser";
+        window.location.href = "/dashboarduser";
       }
     } catch (err: any) {
       if (err.response && err.response.data) {
