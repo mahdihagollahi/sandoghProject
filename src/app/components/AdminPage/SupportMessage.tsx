@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
+
 
 interface Message {
   id: number;
@@ -56,7 +55,7 @@ function SupportMessage() {
   if (isLoading) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -79,7 +78,7 @@ function SupportMessage() {
   if (error) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -103,7 +102,7 @@ function SupportMessage() {
   if (!data || data.length === 0) {
     return (
       <div>
-        <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
+        <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
           <div className="mr-4">
             <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
           </div>
@@ -123,7 +122,7 @@ function SupportMessage() {
 
   return (
     <div>
-      <div className="flex gap-[500px] justify-between items-center mb-2 mt-12">
+      <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
         <div className="mr-4">
           <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
         </div>

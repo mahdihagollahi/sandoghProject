@@ -78,7 +78,7 @@ export default function FinancialManagement() {
  
   return (
     <div className="">
-      <div className="flex mt-11 gap-[78%] items-center mb-2   ">
+      <div className="flex mt-[51px] gap-[78%] items-center mb-2   ">
         <div className="mr-1 ">
           <p className="font-bold dark:text-white text-lg">مدیریت مالی</p>
         </div>
