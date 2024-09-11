@@ -6,7 +6,7 @@ import SupportMessage from "../components/AdminPage/SupportMessage";
 function Support() {
   return (
     <div className="dark:bg-[#283B4D] ">
-      <div className="flex ">
+      <div className="flex bg-[#F8F9FA]">
         <div>
           <div>
             <div>
@@ -17,7 +17,7 @@ function Support() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <SupportMessage />
         </div>
       </div>

@@ -3,7 +3,7 @@ import FishPage from '@/src/app/Screen/FishPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <FishPage/>
     </div>
   )

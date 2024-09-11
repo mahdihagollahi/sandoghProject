@@ -6,7 +6,7 @@ import EveryUserComponent from "@/src/app/components/AdminPage/EveryUserComponen
 
 function EveryUser() {
   return (
-    <div className="dark:bg-[#283B4D] font-custom">
+    <div className="dark:bg-[#283B4D] h-full ">
       <div className="flex ">
         <div>
           <div>
@@ -18,7 +18,7 @@ function EveryUser() {
             </div>
           </div>
         </div>
-        <div className="w-full ">
+        <div className="w-[100%] bg-[#F8F9FA]  ">
           <EveryUserComponent />
         </div>
       </div>

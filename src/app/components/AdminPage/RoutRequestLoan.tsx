@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import UserOutlineImage from '@/src/app/assent/Img/adminPanel/Wallet.svg';
-import UserHoverImage from '@/src/app/assent/Img/adminPanel/WaletHover.png';
+import UserHoverImage from '@/src/app/assent/Img/adminPanel/WaletHover.svg';
 import crossOutline from '@/src/app/assent/Img/adminPanel/checked.svg';
-import crossActiveImage from '@/src/app/assent/Img/adminPanel/checkedHover.png';
+import crossActiveImage from '@/src/app/assent/Img/adminPanel/checkedHover.svg';
 
 const RoutRequestLoan: React.FC = () => {
 

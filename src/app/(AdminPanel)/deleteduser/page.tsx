@@ -1,9 +1,9 @@
 "use client"
-import React from 'react'
+import React, { Fragment } from 'react'
 import DeletedUser from '@/src/app/Screen/DeletedUser'
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <DeletedUser/>
     </div>
   )

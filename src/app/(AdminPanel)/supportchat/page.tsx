@@ -4,7 +4,7 @@ import SupportChatPage from '@/src/app/Screen/SupportChatPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <SupportChatPage/>
     </div>
   )

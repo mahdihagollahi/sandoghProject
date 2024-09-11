@@ -3,7 +3,7 @@ import React from "react";
 import ThoseWhoHaveNotDeposited from "@/src/app/Screen/ThoseWhoHaveNotDeposited";
 function page() {
   return (
-    <div>
+    <div className="h-full">
       <ThoseWhoHaveNotDeposited />
     </div>
   );
