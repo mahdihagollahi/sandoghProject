@@ -4,7 +4,7 @@ import DepositReceiptPage from "@/src/app/Screen/DepositReceiptPage";
 
 function page() {
   return (
-    <div>
+    <div className="h-full">
       <DepositReceiptPage />
     </div>
   );

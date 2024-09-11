@@ -6,9 +6,9 @@ import AdminPageNavbar from "../components/AdminPage/AdminPageNavbar";
 function UserDeletePage() {
   return (
     <div>
-      <div className="flex dark:bg-[#283B4D]">
-        <div>
-          <div>
+      <div className="flex dark:bg-[#283B4D] bg-[#F8F9FA] ">
+        <div >
+          <div className="bg-[#F8F9FA]">
             <div>
               <AdminNavbarHeader />
             </div>
@@ -17,7 +17,7 @@ function UserDeletePage() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <DeleteUserComponent />
         </div>
       </div>

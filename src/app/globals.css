@@ -6,8 +6,8 @@
 html, body {
   background-color: #F8F9FA;
  
- 
-  
+ height: 100%;
+
 }
   
 
@@ -148,7 +148,6 @@ html, body {
 
 .container {
   width: 1024px; 
-  height: 768px;  
   overflow: auto; 
   box-sizing: border-box;
   padding-bottom: 0;

@@ -1,11 +1,11 @@
 'use client'
-import React from 'react'
+import React, { Fragment } from 'react'
 import EveryUser from '@/src/app/Screen/EveryUser'
 function page() {
   return (
-    <div>
+    <Fragment >
         <EveryUser/>
-    </div>
+    </Fragment>
   )
 }
 

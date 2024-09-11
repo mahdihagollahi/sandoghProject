@@ -4,7 +4,7 @@ import DepositorsUser from '@/src/app/Screen/DepositorsUser'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <DepositorsUser/>
     </div>
   )

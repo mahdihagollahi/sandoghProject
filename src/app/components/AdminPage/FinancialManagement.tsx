@@ -99,7 +99,7 @@ export default function FinancialManagement() {
         </div>
    
 
-      <div className="flex  mt-2 gap-4  items-center">
+      <div className="flex  mt-2 gap-4  items-center ">
         <div className="flex   items-center  md:justify-center  xl:justify-center  ">
           <div className="  bg-white  dark:bg-[#4F5D74] w-[580px]  pr-8 py-[10px] mt-2 shadow-md rounded-md ">
             <div className="flex  pt-8 ">

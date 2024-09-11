@@ -5,7 +5,7 @@ import DetailUser from "@/src/app/components/AdminPage/DetailUserComponnent";
 
 function DetailUserPage() {
   return (
-    <div className="flex dark:bg-[#283B4D] ">
+    <div className="flex dark:bg-[#283B4D] bg-[#F8F9FA]">
       <div>
         <div>
           <div>
@@ -16,7 +16,7 @@ function DetailUserPage() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center bg-[#F8F9FA]">
         <DetailUser />
       </div>
     </div>

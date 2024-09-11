@@ -7,7 +7,7 @@ function RuleAdminPage() {
   return (
     <div>
       <div className="flex dark:bg-[#283B4D]">
-        <div>
+        <div className="bg-[#F8F9FA]">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -17,7 +17,7 @@ function RuleAdminPage() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <RuleAdmin />
         </div>
       </div>

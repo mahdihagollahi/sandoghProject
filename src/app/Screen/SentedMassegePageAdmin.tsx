@@ -8,7 +8,7 @@ function ManagementAccount() {
   return (
     <div>
       <div className="flex dark:bg-[#283B4D]">
-        <div>
+        <div className="bg-[#F8F9FA]">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -18,7 +18,7 @@ function ManagementAccount() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <SentedMassege />
         </div>
       </div>

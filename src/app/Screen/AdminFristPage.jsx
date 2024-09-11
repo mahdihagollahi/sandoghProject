@@ -11,6 +11,7 @@ import ChartAdminDashboard from "../components/AdminPage/ChartAdminDashboard";
 
 function AdminFristPage() {
   return (
+    
     <div className="overflow-y-hidden dark:bg-[#283B4D] bg-[#F8F9FA]  pb-[2%] font-custom">
       <div className="flex ml-40">
         <div>

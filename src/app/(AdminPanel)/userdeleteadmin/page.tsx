@@ -4,7 +4,7 @@ import UserDeletePage from '../../Screen/UserDeleteAdminPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <UserDeletePage/>
     </div>
   )

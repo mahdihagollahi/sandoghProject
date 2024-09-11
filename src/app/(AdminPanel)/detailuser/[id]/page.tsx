@@ -4,7 +4,7 @@ import DetailUserPage from "@/src/app/Screen/DetailUserPage";
 
 function page() {
   return (
-    <div>
+    <div className="h-full">
       <DetailUserPage />
     </div>
   );
