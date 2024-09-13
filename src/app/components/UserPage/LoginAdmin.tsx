@@ -10,7 +10,10 @@ interface LoginResponse {
   message?: string;
 }
 
-const loginAdmin = async (loginData: { user_name: string; password: string }) => {
+const loginAdmin = async (loginData: {
+  user_name: string;
+  password: string;
+}) => {
   const response: AxiosResponse<LoginResponse> = await axios.post(
     "https://mohammadelia30.ir/shabab/api/auth/login/admin",
     loginData
@@ -54,6 +57,10 @@ const LoginAdminContent: React.FC = () => {
     handleLogin({ user_name: username, password: password });
   };
 
+  const handleFocus = () => {
+    document.documentElement.lang = "en";
+  };
+
   return (
     <div className="relative h-[450px]">
       <div>
@@ -71,9 +78,7 @@ const LoginAdminContent: React.FC = () => {
       <div className="bg-white dark:bg-[#4F5D74] flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
         <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md relative">
           <div className="flex flex-row-reverse justify-between">
-            <div className="flex flex-row gap-1 ">
-             
-            </div>
+            <div className="flex flex-row gap-1 "></div>
             <div>
               <span className="text-[#4FD1C5] text-lg text-right">
                 وارد کردن نام کاربری و رمز عبور
@@ -98,6 +103,7 @@ const LoginAdminContent: React.FC = () => {
                 placeholder="نام کاربری"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                onFocus={handleFocus}
               />
             </div>
 
@@ -109,6 +115,7 @@ const LoginAdminContent: React.FC = () => {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                onFocus={handleFocus}
               />
 
               <div
@@ -223,6 +230,5 @@ const LoginAdmin: React.FC = () => {
 };
 
 export default LoginAdmin;
-
 
 
