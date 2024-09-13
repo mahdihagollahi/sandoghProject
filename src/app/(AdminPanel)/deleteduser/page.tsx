@@ -1,5 +1,5 @@
 "use client"
-import React, { Fragment } from 'react'
+import React from 'react'
 import DeletedUser from '@/src/app/Screen/DeletedUser'
 function page() {
   return (
