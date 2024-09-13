@@ -20,7 +20,7 @@ const fetchChartData = async (): Promise<ChartData> => {
     throw new Error('No auth token found');
   }
 
-  const response = await axios.get(API_URL, {
+  const response = await axios.put(API_URL, {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
