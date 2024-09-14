@@ -87,7 +87,6 @@ const SupportChatComponent: React.FC = () => {
 
   const mutation = useMutation(sendMessage, {
     onSuccess: (newMessage) => {
-      // Add the new message to the chat
       setMessages([
         ...messages,
         {
@@ -96,7 +95,7 @@ const SupportChatComponent: React.FC = () => {
           status: newMessage.status,
         },
       ]);
-      setNewMessage(""); // Clear the input field
+      setNewMessage(""); 
     },
     onError: (error) => {
       console.error("Error sending message:", error);
@@ -122,12 +121,12 @@ const SupportChatComponent: React.FC = () => {
 
   if (isLoading) return (
     <div>
-    <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+    <div className="flex gap-[490px] justify-between items-center mb-2 mt-[5%]">
       <div className="mr-4">
         <p className="font-bold text-lg">پشتیبانی</p>
       </div>
       <div
-        className="absolute flex mr-[67%] items-center cursor-pointer"
+        className="absolute flex mr-[66%] items-center cursor-pointer"
         onClick={handleBack}
       >
         بازگشت
@@ -140,7 +139,7 @@ const SupportChatComponent: React.FC = () => {
         <p className="font-bold">پیام های در انتظار پاسخگویی</p>
       </div>
 
-      <div className="bg-white w-[1057px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
+      <div className="bg-white w-[1030px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
         
           <div className="text-right">
             
@@ -160,12 +159,12 @@ const SupportChatComponent: React.FC = () => {
   );
   if (error) return(
     <div>
-    <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+    <div className="flex gap-[500px] justify-between items-center mb-2 mt-[5%]">
       <div className="mr-4">
         <p className="font-bold text-lg">پشتیبانی</p>
       </div>
       <div
-        className="absolute flex mr-[67%] items-center cursor-pointer"
+       className="absolute flex mr-[66%] items-center cursor-pointer"
         onClick={handleBack}
       >
         بازگشت
@@ -178,7 +177,7 @@ const SupportChatComponent: React.FC = () => {
         <p className="font-bold">پیام های در انتظار پاسخگویی</p>
       </div>
 
-      <div className="bg-white w-[1057px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
+      <div className="bg-white w-[1030px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
         
           <div className="text-right">
             
@@ -201,12 +200,12 @@ const SupportChatComponent: React.FC = () => {
 
   return (
     <div>
-      <div className="flex gap-[500px] justify-between items-center mb-2 mt-10">
+      <div className="flex gap-[460px] justify-between items-center mb-2 mt-[5%]">
         <div className="mr-4">
           <p className="font-bold text-lg">پشتیبانی</p>
         </div>
         <div
-          className="absolute flex mr-[67%] items-center cursor-pointer"
+          className="absolute flex mr-[66%] items-center cursor-pointer"
           onClick={handleBack}
         >
           بازگشت
@@ -219,7 +218,7 @@ const SupportChatComponent: React.FC = () => {
           <p className="font-bold">پیام های در انتظار پاسخگویی</p>
         </div>
 
-        <div className="bg-white w-[1057px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
+        <div className="bg-white w-[1030px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
           <div className="flex w-[100%] mt-5 py-2 gap-4 items-start rounded-md bg-[#4FD1C50D] border-r-4 border-[#00A991]">
             <Image
               src={Image1}

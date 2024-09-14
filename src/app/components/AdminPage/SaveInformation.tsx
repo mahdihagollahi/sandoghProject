@@ -101,20 +101,21 @@ function SaveInformation() {
           <div className="flex justify-center mt-20">
             <button
               onClick={handleSubmit}
-              className="w-[30vw] md:w-2/3 lg:w-3/4 flex items-center justify-center h-14 rounded-md bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap"
+              className="w-[30vw] md:w-2/3 xl:mb-10 lg:w-3/4 flex items-center justify-center h-14 rounded-md bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap"
             >
               ذخیره اطلاعات
             </button>
           </div>
-        </div>
-        <div className="flex justify-center mt-4 ">
+          <div className="flex justify-center mt-2 ">
         <Image
           src={MangmentPicture}
           width={520}
           height={467}
           alt=""
           />
+        </div> 
         </div>
+        
        
       </div>
     </div>

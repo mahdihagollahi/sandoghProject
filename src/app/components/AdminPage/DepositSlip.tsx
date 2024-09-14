@@ -21,7 +21,7 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
           <Image src={backImage} width={38} height={38} alt="arrow" />
         </div>
       </div>
-      <Image src={users.src} width={500} height={500} alt="deposit slip" />
+      {/* <Image src={users.src} width={500} height={500} alt="deposit slip" /> */}
     </div>
   );
 };
