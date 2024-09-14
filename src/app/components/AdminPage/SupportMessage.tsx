@@ -70,9 +70,8 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
-          <div className="flex justify-center items-center">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[340px] py-80 pb-4 cursor-pointer rounded-md">          <div className="flex justify-center items-center">
+            <span className="loading loading-dots text-accent loading-lg -mt-60"></span>
           </div>
         </div>
       </div>
@@ -117,8 +116,8 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
-          <p>هیچ پیامی یافت نشد.</p>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[210px] py-80 pb-4 cursor-pointer rounded-md">
+          <p className="flex -mt-40 mr-40">هیچ پیامی یافت نشد.</p>
         </div>
       </div>
     );
