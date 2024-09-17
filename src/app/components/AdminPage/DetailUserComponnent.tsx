@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
@@ -53,7 +54,7 @@ const DetailUser: React.FC = () => {
   if (loading) {
     return (
       <div>
-        <div className="flex gap-[150%] items-center mb-2 mt-14">
+        <div className="flex gap-[150%] items-center mb-2 mt-12">
           <div className="mr-2">
             <p className="font-bold text-lg whitespace-nowrap">
               مشاهده کاربران
@@ -62,9 +63,9 @@ const DetailUser: React.FC = () => {
           <div className="flex justify-end mr-2"></div>
         </div>
 
-        <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-md ">
-          <div className="flex justify-center items-center">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+        <div className="bg-white dark:bg-[#4F5D74] w-[795%] h-[80%] shadow-md mt-5  cursor-pointer rounded-md ">
+          <div className="flex ">
+            <span className="loading loading-dots text-accent loading-lg mt-96 mr-[50%]"></span>
           </div>
         </div>
       </div>
@@ -83,7 +84,7 @@ const DetailUser: React.FC = () => {
           <div className="flex justify-end mr-2"></div>
         </div>
 
-        <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-md ">
+        <div className="bg-white dark:bg-[#4F5D74] w-[795%] h-[80%] shadow-md mt-5  cursor-pointer rounded-md ">
           <div className="flex justify-center items-center">
             <p>Error: {error}</p>
           </div>
@@ -103,7 +104,7 @@ const DetailUser: React.FC = () => {
           <div className="flex justify-end mr-2"></div>
         </div>
 
-        <div className="bg-white dark:bg-[#4F5D74] w-full h-20 shadow-md mt-5  cursor-pointer rounded-md ">
+        <div className="bg-white dark:bg-[#4F5D74] w-[795%] h-[80%] shadow-md mt-5  cursor-pointer rounded-md ">
           <div className="flex justify-center items-center">
             <p>دیتا دریافت نشد</p>
           </div>
@@ -126,7 +127,7 @@ const DetailUser: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-14 px-[102px] py-20 cursor-pointer rounded-md">
+      <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-14 px-[102px] py-10 cursor-pointer rounded-md">
         <div className="flex justify-center">
           <Image
             src={userDetail.avatar || DefaultAvatar}

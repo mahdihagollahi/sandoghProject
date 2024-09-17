@@ -12,7 +12,7 @@ interface ChartData {
 }
 
 const fetchChartData = async (): Promise<ChartData> => {
-  const API_URL = 'https://mohammadelia30.ir/shabab/api/factors/index/1';
+  const API_URL = 'https://mohammadelia30.ir/shabab/api/inventory/index';
 
   const authToken = localStorage.getItem('authToken');
 
@@ -20,7 +20,7 @@ const fetchChartData = async (): Promise<ChartData> => {
     throw new Error('No auth token found');
   }
 
-  const response = await axios.put(API_URL, {
+  const response = await axios.get(API_URL, {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
