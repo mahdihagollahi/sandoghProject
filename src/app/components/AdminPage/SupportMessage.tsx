@@ -138,7 +138,7 @@ function SupportMessage() {
           پیام‌های در انتظار پاسخگویی
         </p>
       </div>
-      <div className="bg-white dark:bg-[#4F5D74] w-[455%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+      <div className="bg-white dark:bg-[#4F5D74] w-[563%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
         {data.map((message) => (
           <Link 
             href={`/supportchat/${message.ticket_id}`}
