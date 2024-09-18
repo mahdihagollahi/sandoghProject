@@ -24,10 +24,11 @@ interface UserTableProps {
 const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [statusUpdateError, setStatusUpdateError] = useState<string | null>(null);
+  const [statusUpdateError, setStatusUpdateError] = useState<string | null>(
+    null
+  );
   const itemsPerPage = 7;
 
- 
   const axiosInstance = axios.create({
     baseURL: "https://mohammadelia30.ir/shabab/api",
   });
@@ -61,7 +62,7 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
 
   if (!Array.isArray(users)) {
     console.error("Invalid prop: users should be an array.");
-    return null; 
+    return null;
   }
 
   const offset = currentPage * itemsPerPage;
@@ -105,26 +106,23 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
                       <p>{user.depositAmount} تومان</p>
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>
-                    <td className="w-3/12 py-2 px-4">
-                      <Link href="/deposit">
-                        <a
-                          className="bg-blue-600 text-white py-1 px-3 rounded"
-                          onClick={handleOpenModal}
-                        >
+                    <td className="w-3/12 py-2 ">
+                      <Link href={`/depositreceipt/${user.id}`} passHref>
+                       
+
+                        <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
                           <Image
                             src={EyeIconImage}
-                            width={20}
-                            height={20}
-                            alt="eye"
+                            width={24}
+                            height={24}
+                            alt=""
                           />
-                        </a>
+                          <p className="font-normal text-sm text-teal-400">
+                            فیش واریزی
+                          </p>
+                        </button>
                       </Link>
-                      <Modal
-                        isVisible={isModalVisible}
-                        onClose={handleCloseModal}
-                      >
-                        <DepositSlip />
-                      </Modal>
+                  
                     </td>
                     <td className="py-8">
                       <div className="flex justify-center gap-2">

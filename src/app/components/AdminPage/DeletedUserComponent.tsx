@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
 import Image from "next/image";
@@ -63,6 +63,7 @@ const fetchUsers = async (): Promise<User[]> => {
 };
 
 const DeleteUser: React.FC = () => {
+ 
   const queryClient = new QueryClient();
 
   useEffect(() => {
@@ -81,6 +82,7 @@ const DeleteUser: React.FC = () => {
 
 
 const UserList: React.FC = () => {
+  const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
   const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);
 
   if (isLoading) {
@@ -104,7 +106,7 @@ const UserList: React.FC = () => {
         <div>
           <RoutTableUser />
           <div>
-            <UserDeleteTable users={users} />
+            <UserDeleteTable users={users} onUserSelect={setSelectedUserId}/>
             <div className="flex justify-center items-center -mt-5">
               <span className="loading loading-dots text-accent loading-lg"></span>
             </div>
@@ -136,7 +138,7 @@ const UserList: React.FC = () => {
           <RoutTableUser />
 
           <div>
-            <UserDeleteTable users={users} />
+            <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
             <div className="flex justify-center items-center -mt-5">
               خطا در بارگزاری داده
             </div>
@@ -167,7 +169,7 @@ const UserList: React.FC = () => {
       <div>
         <RoutTableUser />
         <div>
-          <UserDeleteTable users={users} />
+          <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
           <div className="flex justify-center items-center -mt-5">
             کاربری یافت نشد
           </div>
@@ -197,7 +199,7 @@ const UserList: React.FC = () => {
       <div>
         <RoutTableUser />
       </div>
-      <UserDeleteTable users={users} />
+      <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
     </div>
   );
 };

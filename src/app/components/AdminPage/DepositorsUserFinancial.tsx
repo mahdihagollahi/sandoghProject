@@ -38,10 +38,8 @@ axiosInstance.interceptors.request.use(
 
 const fetchUsers = async (): Promise<PaginatedResponse> => {
   try {
-    const response = await axiosInstance.get("/factors/index");
-
+    const response = await axiosInstance.put("/factors/index");
     console.log("API Response Data:", response.data);
-
     return response.data.factors as PaginatedResponse;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -85,9 +83,8 @@ const DepositorsUserFinancial: React.FC = () => {
   };
 
   const handleBack = () => {
-    window.history.back(); 
+    window.history.back();
   };
-  
 
   if (isLoading) {
     return (
@@ -97,7 +94,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={handleBack}
+            >
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
@@ -107,7 +107,7 @@ const DepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableDespositors />
+          <UserTableDespositors users={[]} />
           <div className="flex justify-center items-center -mt-20">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -124,7 +124,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={handleBack}
+            >
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
@@ -134,16 +137,21 @@ const DepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableDespositors />
+          <UserTableDespositors users={[]} />
           <div className="flex justify-center items-center -mt-20">
-            <div>Error: {error.message}</div>
+            <div>
+              Error:{" "}
+              {error instanceof Error
+                ? error.message
+                : "An unknown error occurred"}
+            </div>
           </div>
         </div>
       </div>
     );
   }
 
-  if (!data || data.data.length === 0) {
+  if (!data || !data.data || data.data.length === 0) {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
@@ -151,7 +159,10 @@ const DepositorsUserFinancial: React.FC = () => {
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-            <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={handleBack}
+            >
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
             </div>
@@ -161,7 +172,7 @@ const DepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableDespositors />
+          <UserTableDespositors users={[]} />
           <div className="flex justify-center items-center -mt-14">
             کاربری یافت نشد
           </div>
@@ -177,7 +188,10 @@ const DepositorsUserFinancial: React.FC = () => {
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={handleBack}
+          >
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>

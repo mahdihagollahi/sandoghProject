@@ -90,7 +90,7 @@ function AdminPageNavbar() {
           </button>
         </div>
       ) : null}
-      <div className={`flex w-80 flex-col mt-5 mr-10 gap-9 ${isMobile && !isMenuOpen ? 'hidden' : ''}`}>
+      <div className={`flex w-80 flex-col mt-5 mr-10 bg-[#F8F9FA] gap-9 ${isMobile && !isMenuOpen ? 'hidden' : ''}`}>
         {Navbar.map((image) => (
           <Link key={image.id} href={image.link} passHref>
             <div
@@ -104,14 +104,14 @@ function AdminPageNavbar() {
                 alt={`Image ${image.id}`}
                 width={200}
                 height={200}
-                className="transition-opacity duration-300 cursor-pointer ease-in-out"
+                className="transition-opacity duration-300 cursor-pointer ease-in-out "
                 style={{ position: 'relative' }}
               />
             </div>
           </Link>
         ))}
         <Link href="/exitadmin">
-          <button className="mr-[1%] mt-[2%]">
+          <button className="mr-[1%] mt-[2%] ">
             <Image src={ImageExport} width={60} alt="Exit" className="cursor-pointer" />
           </button>
         </Link>

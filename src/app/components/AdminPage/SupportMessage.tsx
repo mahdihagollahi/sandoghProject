@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-
+import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png';
+import Link from 'next/link';
 
 interface Message {
   id: number;
   description: string;
   priority: string;
   created_at: string;
+  first_name: string | null;
+  last_name: string | null;
+  avatar: string | null;
+  ticket_id: number;
 }
 
 interface Ticket {
@@ -41,7 +46,7 @@ function SupportMessage() {
       }
     );
 
-    return response.data.ticket.data;
+    return response.data.ticket.data.flatMap(ticket => ticket.messages);
   };
 
   const { data, isLoading, error } = useQuery({
@@ -50,7 +55,6 @@ function SupportMessage() {
     enabled: !!authToken,
     staleTime: 1000 * 60 * 5,
   });
-
 
   if (isLoading) {
     return (
@@ -66,9 +70,8 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
-          <div className="flex justify-center items-center">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[340px] py-80 pb-4 cursor-pointer rounded-md">          <div className="flex justify-center items-center">
+            <span className="loading loading-dots text-accent loading-lg -mt-60"></span>
           </div>
         </div>
       </div>
@@ -113,31 +116,35 @@ function SupportMessage() {
             پیام‌های در انتظار پاسخگویی
           </p>
         </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-md">
-          <p>هیچ پیامی یافت نشد.</p>
+        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[210px] py-80 pb-4 cursor-pointer rounded-md">
+          <p className="flex -mt-40 mr-40">هیچ پیامی یافت نشد.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div>
-      <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
-        <div className="mr-4">
-          <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
-        </div>
-      </div>
 
-      <div>
-        <div className="py-2 mt-14">
-          <p className="font-bold dark:text-white">
-            پیام‌های در انتظار پاسخگویی
-          </p>
-        </div>
-        <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
-          {data.map((message) => (
+    <div>
+    <div className="flex gap-[500px] justify-between items-center mb-2 mt-[50px]">
+      <div className="mr-4">
+        <p className="font-bold dark:text-white text-lg">پشتیبانی</p>
+      </div>
+    </div>
+
+    <div>
+      <div className="py-2 mt-14">
+        <p className="font-bold dark:text-white">
+          پیام‌های در انتظار پاسخگویی
+        </p>
+      </div>
+      <div className="bg-white dark:bg-[#4F5D74] w-[563%] h-[100%] shadow-md mt-5 px-2 py-2 pb-4 cursor-pointer rounded-sm">
+        {data.map((message) => (
+          <Link 
+            href={`/supportchat/${message.ticket_id}`}
+            key={message.id}
+          >
             <div
-              key={message.id}
               className={`flex w-[100%] mt-10 py-4 gap-4 items-start rounded-md ${
                 message.id % 2 === 0
                   ? "bg-[#4FD1C50D] border-r-4 border-[#00A991]"
@@ -145,24 +152,28 @@ function SupportMessage() {
               }`}
             >
               <Image
-                src="/path/to/default-avatar.png"
+                src={message.avatar ? message.avatar : IconImage}
                 width={40}
                 height={40}
                 alt="user"
                 className="rounded-full"
               />
               <div className="text-right">
-                <p className="font-bold dark:text-white text-[#003B33]">{`پیام ${message.id}`}</p>
+                <p className="font-bold dark:text-white text-[#003B33]">
+                  {message.first_name ? `${message.first_name} ${message.last_name}` : "بدون نام"}
+                </p>
                 <p className="text-[#003B33] dark:text-white font-normal">
                   {message.description}
                 </p>
               </div>
             </div>
-          ))}
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
-  );
-}
-
+  </div>
+);
+} 
 export default SupportMessage;
+
+

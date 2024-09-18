@@ -7,7 +7,7 @@ function DepositorsUser() {
   return (
     <div>
       <div className="flex dark:bg-[#283B4D] ">
-        <div>
+        <div className="bg-[#F8F9FA]">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -17,7 +17,7 @@ function DepositorsUser() {
             </div>
           </div>
         </div>
-        <div className="w-full ">
+        <div className="w-full bg-[#F8F9FA]">
           <DepositorsUserFinancial />
         </div>
       </div>

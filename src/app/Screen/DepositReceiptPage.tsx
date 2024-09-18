@@ -6,7 +6,7 @@ function DepositReceiptPage() {
   return (
     <div>
       <div className="flex ">
-        <div>
+        <div className="bg-[#F8F9FA]">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -16,7 +16,7 @@ function DepositReceiptPage() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <DepositReceiptComponent />
         </div>
       </div>

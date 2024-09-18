@@ -7,7 +7,7 @@ import SaveInformation from "@/src/app/components/AdminPage/SaveInformation";
 function ManagementAccount() {
   return (
     <div className="dark:bg-[#283B4D]">
-      <div className="flex ">
+      <div className="flex bg-[#F8F9FA] ">
         <div>
           <div>
             <div>
@@ -18,7 +18,7 @@ function ManagementAccount() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <SaveInformation />
         </div>
       </div>

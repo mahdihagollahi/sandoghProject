@@ -3,7 +3,6 @@ import UserTableFinancial from "@/src/app/components/AdminPage/UserTableNotDespo
 import Image from "next/image";
 import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import RoutTableFiancial from "./RoutTableFinancial";
-import Link from "next/link";
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import dayjs from "dayjs";
@@ -136,7 +135,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={users as User[]} />
+          <UserTableFinancial users={[]} /> {/* Empty array while loading */}
           <div className="flex justify-center items-center -mt-10">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -163,7 +162,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={users as User[]} />
+          <UserTableFinancial users={[]} /> {/* Empty array while error */}
           <div className="flex justify-center items-center -mt-20">
             <p>
               Error:{" "}
@@ -171,34 +170,6 @@ const NotDepositorsUserFinancial: React.FC = () => {
                 ? error.message
                 : "An unknown error occurred"}
             </p>
-            ;
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!Array.isArray(users)) {
-    return (
-      <div>
-        <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
-          <div className="mr-2">
-            <p className="font-bold text-lg">مدیریت مالی</p>
-          </div>
-          <div className="flex justify-end mr-2">
-          <div className="flex items-center cursor-pointer" onClick={handleBack}>
-                بازگشت
-                <Image src={backImage} width={38} height={38} alt="arrow" />
-              </div>
-          </div>
-        </div>
-        <div>
-          <RoutTableFiancial />
-        </div>
-        <div>
-          <UserTableFinancial users={users as User[]} />
-          <div className="flex justify-center items-center -mt-20">
-            <p>Error: Data format is incorrect</p>{" "}
           </div>
         </div>
       </div>
@@ -223,7 +194,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={users as User[]} />
+          <UserTableFinancial users={[]} /> {/* Empty array while no users */}
           <div className="flex justify-center items-center -mt-10">
             <p>کاربری یافت نشد </p>
           </div>
@@ -239,10 +210,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-        <div className="flex items-center cursor-pointer" onClick={handleBack}>
-              بازگشت
-              <Image src={backImage} width={38} height={38} alt="arrow" />
-            </div>
+          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+            بازگشت
+            <Image src={backImage} width={38} height={38} alt="arrow" />
+          </div>
         </div>
       </div>
       <div>
@@ -254,3 +225,4 @@ const NotDepositorsUserFinancial: React.FC = () => {
 };
 
 export default NotDepositorsUserFinancial;
+

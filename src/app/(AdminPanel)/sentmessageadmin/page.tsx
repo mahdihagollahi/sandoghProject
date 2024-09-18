@@ -3,7 +3,7 @@ import SentedMassegePage from '@/src/app/Screen/SentedMassegePageAdmin'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <SentedMassegePage/>
     </div>
   )

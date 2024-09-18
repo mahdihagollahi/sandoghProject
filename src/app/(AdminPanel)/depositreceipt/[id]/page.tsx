@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import Support from "@/src/app/Screen/Support";
+import DepositReceiptPage from "@/src/app/Screen/DepositReceiptPage";
+
 function page() {
   return (
     <div className="h-full">
-      <Support />
+      <DepositReceiptPage />
     </div>
   );
 }

@@ -1,31 +1,28 @@
-import React from 'react'
-import AdminNavbarHeader from '@/src/app/components/AdminPage/AdminNavbarHeader'
-import AdminPageNavbar from '@/src/app/components/AdminPage/AdminPageNavbar'
-import SupportChatComponent from '../components/AdminPage/SupportChatComponent'
-
+import React from "react";
+import AdminNavbarHeader from "@/src/app/components/AdminPage/AdminNavbarHeader";
+import AdminPageNavbar from "@/src/app/components/AdminPage/AdminPageNavbar";
+import SupportChatComponent from "../components/AdminPage/SupportChatComponent";
 
 function SupportChatPage() {
   return (
     <div>
-        <div className='flex '> 
+      <div className="flex ">
+        <div className="bg-[#F8F9FA]">
+          <div>
             <div>
-               
-            <div >
-          <div>
-            <AdminNavbarHeader />
-          </div>
-          <div>
-            <AdminPageNavbar />
-          </div>
-        </div>
+              <AdminNavbarHeader />
             </div>
             <div>
-             <SupportChatComponent/>
+              <AdminPageNavbar />
             </div>
+          </div>
         </div>
+        <div className="bg-[#F8F9FA]">
+          <SupportChatComponent />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default SupportChatPage
-
+export default SupportChatPage;

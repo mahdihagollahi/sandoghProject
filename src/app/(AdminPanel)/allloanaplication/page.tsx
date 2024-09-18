@@ -4,7 +4,7 @@ import LoanApplicationPage from '@/src/app/Screen/EveryLoanApplicationPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <LoanApplicationPage/>
     </div>
   )

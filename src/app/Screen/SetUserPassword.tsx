@@ -18,7 +18,7 @@ function SetUserPasswordPage() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-[#F8F9FA]">
           <InputPassword />
           <SetUserPassword />
         </div>

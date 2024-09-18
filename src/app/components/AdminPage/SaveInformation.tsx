@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import MangmentPicture from '@/src/app/assent/Img/adminPanel/profilemangment.svg'
 
 interface UserData {
   first_name: string;
@@ -101,12 +101,22 @@ function SaveInformation() {
           <div className="flex justify-center mt-20">
             <button
               onClick={handleSubmit}
-              className="w-[30vw] md:w-2/3 lg:w-3/4 flex items-center justify-center h-14 rounded-md bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap"
+              className="w-[30vw] md:w-2/3 xl:mb-10 lg:w-3/4 flex items-center justify-center h-14 rounded-md bg-[#4FD1C5] text-white font-bold text-base whitespace-nowrap"
             >
               ذخیره اطلاعات
             </button>
           </div>
+          <div className="flex justify-center mt-2 ">
+        <Image
+          src={MangmentPicture}
+          width={520}
+          height={467}
+          alt=""
+          />
+        </div> 
         </div>
+        
+       
       </div>
     </div>
   );

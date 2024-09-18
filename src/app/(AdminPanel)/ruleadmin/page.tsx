@@ -3,7 +3,7 @@ import RuleUserPage from '../../Screen/RuleAdminPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <RuleUserPage/>
     </div>
   )

@@ -6,8 +6,8 @@
 html, body {
   background-color: #F8F9FA;
  
- 
-  
+ height: 100%;
+
 }
   
 
@@ -141,6 +141,8 @@ html, body {
     font-weight: 900;
     src: url('/assent/font/IRANSansXFaNum-Black.woff2') format('woff2'),
   }
+
+ 
 }
 
 
@@ -148,7 +150,6 @@ html, body {
 
 .container {
   width: 1024px; 
-  height: 768px;  
   overflow: auto; 
   box-sizing: border-box;
   padding-bottom: 0;

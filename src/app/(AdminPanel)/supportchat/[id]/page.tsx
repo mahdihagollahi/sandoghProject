@@ -1,11 +1,11 @@
 "use client"
 import React from 'react'
-import DepositorsUser from '@/src/app/Screen/DepositorsUser'
+import SupportChatPage from '@/src/app/Screen/SupportChatPage'
 
 function page() {
   return (
     <div className='h-full'>
-        <DepositorsUser/>
+        <SupportChatPage/>
     </div>
   )
 }

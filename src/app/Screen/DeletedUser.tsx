@@ -17,7 +17,7 @@ function DeletedUser() {
             </div>
           </div>
         </div>
-        <div className="w-full ">
+        <div className="w-[100%] bg-[#F8F9FA]">
           <DeletedUserComponent />
         </div>
       </div>

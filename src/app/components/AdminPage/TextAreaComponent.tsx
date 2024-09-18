@@ -24,6 +24,7 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
         "https://mohammadelia30.ir/shabab/api/messages/create/admin",
         {
           user_id: userId,
+          title : "loan",
           message: message,
           type: "unsystematic",
           description: "Your description here",

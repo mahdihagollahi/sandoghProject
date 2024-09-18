@@ -4,7 +4,7 @@ import FinancialManagementPage from '@/src/app/Screen/FinancialManagementPage'
 
 function page() {
   return (
-    <div>
+    <div className='h-full'>
         <FinancialManagementPage/>
     </div>
   )
