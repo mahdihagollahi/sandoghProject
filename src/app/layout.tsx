@@ -17,7 +17,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
 
        <Provider store={store}>
-      <html lang="fa" dir="rtl" className='font-iransans h-full'>
+      <html lang="fa" dir="rtl" className='font-iransans h-full'
+         style={{ backgroundColor: '#f8f8f8' , }}
+      >
         <body className='font-iransansNumber h-full'>
           {children}
           <ReactQueryDevtools initialIsOpen={false} />
