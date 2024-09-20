@@ -12,8 +12,21 @@ html, body {
   
 
 
-.dark html, .dark body {
-  background-color: #2C2C2C; 
+[data-theme="light"] {
+  --background-color: #f8f8f8;
+  --background: #f8f8f8;
+
+ 
+}
+
+
+[data-theme="dark"] {
+  --background-color: black;
+  
+--background: black;
+
+  
+ 
 }
 
 @layer base {

@@ -269,9 +269,9 @@ function DepositReceiptComponent() {
       <div>
         <div className="flex gap-[82%] items-center mb-2 mt-12 mr-4">
           <div className="mr-4">
-            <p className="font-bold text-lg whitespace-nowrap">مدیریت مالی</p>
+            <p className="font-bold text-lg whitespace-nowrap dark:text-white">مدیریت مالی</p>
           </div>
-          <div className="flex justify-end mr-20">
+          <div className="flex justify-end dark:text-white mr-20">
             <a href="/deposited" className="flex items-center">
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
@@ -301,9 +301,9 @@ function DepositReceiptComponent() {
       <div>
         <div className="flex gap-[82%] items-center mb-2 mt-12 mr-4">
           <div className="mr-4">
-            <p className="font-bold text-lg whitespace-nowrap">مدیریت مالی</p>
+            <p className="font-bold text-lg dark:text-white whitespace-nowrap">مدیریت مالی</p>
           </div>
-          <div className="flex justify-end mr-20">
+          <div className="flex justify-end dark:text-white mr-20">
             <a href="/deposited" className="flex items-center">
               بازگشت
               <Image src={backImage} width={38} height={38} alt="arrow" />
@@ -312,7 +312,7 @@ function DepositReceiptComponent() {
         </div>
         <div>
           <UserTableReceipt />
-          <p>خطا: {error.message}</p>
+          <p className="dark:text-white">خطا: {error.message}</p>
         </div>
         <div className="flex gap-12">
           <div>
@@ -332,9 +332,9 @@ function DepositReceiptComponent() {
     <div>
       <div className="flex gap-[82%] items-center mb-2 mt-12 mr-4">
         <div className="mr-4">
-          <p className="font-bold text-lg whitespace-nowrap">مدیریت مالی</p>
+          <p className="font-bold text-lg dark:text-white whitespace-nowrap">مدیریت مالی</p>
         </div>
-        <div className="flex justify-end mr-20">
+        <div className="flex dark:text-white justify-end mr-20">
           <a href="/deposited" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />

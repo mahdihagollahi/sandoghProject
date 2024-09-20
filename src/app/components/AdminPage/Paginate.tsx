@@ -40,11 +40,11 @@ const Paginate: React.FC<PaginateProps> = ({ pageClick, currentPageData, pageCou
                     pageClassName={'mx-1 mt-7 rounded-xl'}
                     previousLinkClassName={'px-8 py-1 !border-none !outline-none hover:border-none focus:!border-none'}
                     nextClassName={'mx-2'}
-                    nextLinkClassName={'px-3 py-1 !border-none !outline-none hover:!border-none focus:!border-none rounded'}
+                    nextLinkClassName={'px-3 py-1 !border-none !outline-none hover:!border-none focus:!border-none rounded '}
                     breakClassName={'mx-2'}
                     breakLinkClassName={'px-3 py-1 !border-none !outline-none hover:!border-none focus:!border-none rounded'}
-                    activeClassName={'text-black font-bold'}
-                    pageLinkClassName={'px-[12px] py-[4px] border border-[#E2E8F0] rounded-lg cursor-pointer hover:bg-gray-200'}
+                    activeClassName={'text-black dark:text-white font-bold'}
+                    pageLinkClassName={'px-[12px] py-[4px] border border-[#E2E8F0] dark:border dark:border-[#4F5D74]  rounded-lg cursor-pointer hover:bg-[#4F5D74]'}
                     renderOnZeroPageCount={null}
                     pageLabelBuilder={(page) => reverseString(PersianDigit(page))}
                 />
@@ -54,3 +54,5 @@ const Paginate: React.FC<PaginateProps> = ({ pageClick, currentPageData, pageCou
 }
 
 export default Paginate;
+
+

@@ -44,7 +44,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
 
   if (isLoading) return (
     <div>
-    <div className="bg-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
+    <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
       <div className="flex justify-center">
       <span className="loading loading-dots text-accent loading-lg"></span>
       </div>
@@ -61,7 +61,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
   );
   if (error) return (
     <div>
-    <div className="bg-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
+    <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
       <div className="flex justify-center">
       Error loading image: {error}
       </div>
@@ -79,7 +79,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
 
   return (
     <div>
-      <div className="bg-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
+      <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
         <div className="flex justify-center">
           {imageUrl ? (
             <Image src={imageUrl} width={198} height={299} alt="fish" />

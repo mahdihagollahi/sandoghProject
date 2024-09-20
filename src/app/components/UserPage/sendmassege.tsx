@@ -42,13 +42,13 @@ function SentedMassege() {
             }`}
           >
             <div className="flex flex-row justify-between w-[961px] h-[27px]">
-              <h4 className="text-sm text-[#5B5B5B] font-bold">
+              <h4 className="text-sm text-[#5B5B5B] dark:text-white font-bold">
                 {msg.subject}
               </h4>
-              <span className="text-sm text-[#5B5B5B]">{msg.date}</span>
+              <span className="text-sm dark:text-white text-[#5B5B5B]">{msg.date}</span>
             </div>
             <div className="mt-[10px]">
-              <p className="text-xs text-[#5B5B5B]">{msg.text}</p>
+              <p className="text-xs dark:text-white text-[#5B5B5B]">{msg.text}</p>
             </div>
           </div>
         ))}

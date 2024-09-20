@@ -100,7 +100,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
                     </td>
                     <td className="w-2/12 py-2 px-4 ">
                       <div className='flex items-center '>
-                      <Image   src={user.src || IconImage} width={40} height={40} alt={user.first_name} />
+                      <Image    src={user.src || IconImage} width={40} height={40} alt={user.first_name} />
                       {`${user.first_name} ${user.last_name}`}
                       </div>
                     </td>

@@ -117,7 +117,7 @@ function SupportMessage() {
           </p>
         </div>
         <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[210px] py-80 pb-4 cursor-pointer rounded-md">
-          <p className="flex -mt-40 mr-40">هیچ پیامی یافت نشد.</p>
+          <p className="flex -mt-40 dark:text-white mr-40">هیچ پیامی یافت نشد.</p>
         </div>
       </div>
     );

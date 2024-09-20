@@ -72,7 +72,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
     return (
       <div>
           <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
-          <div className="-mr-3">
+          <div className="-mr-3 dark:text-white">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -95,7 +95,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
     return (
       <div>
           <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
-          <div className="-mr-3">
+          <div className="-mr-3 dark:text-white">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -107,7 +107,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
             <SwichButton setIsUrgent={setIsUrgent} />
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 dark:text-white">
           خطا در دریافت داده‌ها:{" "}
           {error instanceof Error ? error.message : "مشخص نشده"}
         </div>
@@ -119,7 +119,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
     return (
       <div>
           <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
-          <div className="-mr-3">
+          <div className="-mr-3 dark:text-white">
             <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
         </div>
         <div className="w-[210%] mt-5">
           <ChekedLoanAplicationTable users={users} />
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center dark:text-white items-center">
             <div>کاربری یافت نشد</div>
           </div>
         </div>
@@ -141,7 +141,7 @@ const LoanRequestComponent: React.FC<Loan> = () => {
   return (
     <div>
       <div className="flex  gap-[160%] items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-3">
+        <div className="-mr-3 dark:text-white">
           <p className="font-bold text-lg whitespace-nowrap">درخواست وام</p>
         </div>
       </div>
