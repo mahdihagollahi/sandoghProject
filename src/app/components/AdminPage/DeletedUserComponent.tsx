@@ -1,10 +1,9 @@
 import React, { useEffect , useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
-import Image from "next/image";
-import ImageSearch from "@/src/app/assent/Img/adminPanel/Search.svg";
 import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
 import RoutTableUser from "./RoutTableUser";
+import InputSearchUser from "./InputSearchUser";
 
 interface User {
   id: number;
@@ -88,20 +87,12 @@ const UserList: React.FC = () => {
   if (isLoading) {
     return (
       <div>
+        <div className="mr-[1%] absolute z-10 mt-2">
+          <p className="font-bold text-lg ">مشاهده کاربران</p>
+        </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-[1%]">
-            <p className="font-bold text-lg">مشاهده کاربران</p>
-          </div>
-          <div className="flex mr-[3%] items-center gap-2">
-            <label className="input flex items-center border border-[#E2E8F0] gap-4">
-              <Image src={ImageSearch} width={20} height={20} alt="search" />
-              <input
-                className="w-[32rem] h-[32rem]"
-                type="search"
-                placeholder="جستجو نام کاربری یا شماره تلفن"
-              />
-            </label>
-          </div>
+        
+          <InputSearchUser />
         </div>
         <div>
           <RoutTableUser />
@@ -119,20 +110,12 @@ const UserList: React.FC = () => {
   if (error) {
     return (
       <div>
+        <div className="mr-[1%] absolute z-10 mt-2">
+          <p className="font-bold text-lg ">مشاهده کاربران</p>
+        </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-[1%]">
-            <p className="font-bold text-lg">مشاهده کاربران</p>
-          </div>
-          <div className="flex mr-[3%] items-center gap-2">
-            <label className="input flex items-center border border-[#E2E8F0] gap-4">
-              <Image src={ImageSearch} width={20} height={20} alt="search" />
-              <input
-                className="w-[32rem] h-[32rem]"
-                type="search"
-                placeholder="جستجو نام کاربری یا شماره تلفن"
-              />
-            </label>
-          </div>
+       
+          <InputSearchUser />
         </div>
         <div>
           <RoutTableUser />
@@ -151,20 +134,13 @@ const UserList: React.FC = () => {
   if(users.length === 0){
     return(
       <div>
+          <div className="mr-[1%] absolute z-10 mt-2">
+            <p className="font-bold text-lg ">مشاهده کاربران</p>
+          </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-        <div className="mr-[1%]">
-          <p className="font-bold text-lg">مشاهده کاربران</p>
-        </div>
-        <div className="flex mr-[3%] items-center gap-2">
-          <label className="input flex items-center border border-[#E2E8F0] gap-4">
-            <Image src={ImageSearch} width={20} height={20} alt="search" />
-            <input
-              className="w-[32rem] h-[32rem]"
-              type="search"
-              placeholder="جستجو نام کاربری یا شماره تلفن"
-            />
-          </label>
-        </div>
+    
+
+        <InputSearchUser />
       </div>
       <div>
         <RoutTableUser />
@@ -181,20 +157,12 @@ const UserList: React.FC = () => {
 
   return (
     <div>
+      <div className="mr-[1%] absolute z-10 mt-2">
+          <p className="font-bold text-lg ">مشاهده کاربران</p>
+        </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-        <div className="mr-[1%]">
-          <p className="font-bold text-lg">مشاهده کاربران</p>
-        </div>
-        <div className="flex mr-[3%] items-center gap-2">
-          <label className="input flex items-center border border-[#E2E8F0] gap-4">
-            <Image src={ImageSearch} width={20} height={20} alt="search" />
-            <input
-              className="w-[32rem] h-[32rem]"
-              type="search"
-              placeholder="جستجو نام کاربری یا شماره تلفن"
-            />
-          </label>
-        </div>
+      
+        <InputSearchUser />
       </div>
       <div>
         <RoutTableUser />
