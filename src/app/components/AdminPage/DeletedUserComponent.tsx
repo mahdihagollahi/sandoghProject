@@ -87,7 +87,7 @@ const UserList: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <div className="mr-[1%] absolute z-10 mt-2">
+        <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
@@ -110,7 +110,7 @@ const UserList: React.FC = () => {
   if (error) {
     return (
       <div>
-        <div className="mr-[1%] absolute z-10 mt-2">
+        <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
@@ -122,7 +122,7 @@ const UserList: React.FC = () => {
 
           <div>
             <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
-            <div className="flex justify-center items-center -mt-5">
+            <div className="flex justify-center dark:text-white items-center -mt-5">
               خطا در بارگزاری داده
             </div>
           </div>
@@ -134,7 +134,7 @@ const UserList: React.FC = () => {
   if(users.length === 0){
     return(
       <div>
-          <div className="mr-[1%] absolute z-10 mt-2">
+          <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
             <p className="font-bold text-lg ">مشاهده کاربران</p>
           </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
@@ -146,7 +146,7 @@ const UserList: React.FC = () => {
         <RoutTableUser />
         <div>
           <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
-          <div className="flex justify-center items-center -mt-5">
+          <div className="flex justify-center dark:text-white items-center -mt-5">
             کاربری یافت نشد
           </div>
         </div>
@@ -157,7 +157,7 @@ const UserList: React.FC = () => {
 
   return (
     <div>
-      <div className="mr-[1%] absolute z-10 mt-2">
+      <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">

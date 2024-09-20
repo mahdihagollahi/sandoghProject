@@ -121,11 +121,11 @@ const NotDepositorsUserFinancial: React.FC = () => {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
-          <div className="mr-2">
+          <div className="mr-2 dark:text-white ">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-              <div className="flex items-center cursor-pointer" onClick={handleBack}>
+              <div className="flex items-center dark:text-white cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
@@ -148,11 +148,11 @@ const NotDepositorsUserFinancial: React.FC = () => {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
-          <div className="mr-2">
+          <div className="mr-2 dark:text-white">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+          <div className="flex items-center dark:text-white cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
@@ -181,10 +181,10 @@ const NotDepositorsUserFinancial: React.FC = () => {
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
           <div className="mr-2">
-            <p className="font-bold text-lg">مدیریت مالی</p>
+            <p className="font-bold dark:text-white text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
-          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+          <div className="flex items-center dark:text-white cursor-pointer" onClick={handleBack}>
                 بازگشت
                 <Image src={backImage} width={38} height={38} alt="arrow" />
               </div>
@@ -194,8 +194,8 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={[]} /> {/* Empty array while no users */}
-          <div className="flex justify-center items-center -mt-10">
+          <UserTableFinancial users={[]} /> 
+          <div className="flex justify-center dark:text-white items-center -mt-10">
             <p>کاربری یافت نشد </p>
           </div>
         </div>
@@ -206,11 +206,11 @@ const NotDepositorsUserFinancial: React.FC = () => {
   return (
     <div>
       <div className="flex gap-[77%] items-center mb-2 mt-12 mr-3">
-        <div className="mr-2">
+        <div className="mr-2 dark:text-white">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
-          <div className="flex items-center cursor-pointer" onClick={handleBack}>
+          <div className="flex items-center dark:text-white cursor-pointer" onClick={handleBack}>
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </div>

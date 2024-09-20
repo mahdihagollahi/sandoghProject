@@ -72,26 +72,26 @@ const InputPassword: React.FC = () => {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-wrap justify-center items-center gap-4 md:flex-wrap">
               <div className="relative w-full md:w-auto">
-                <label className="absolute -top-2 z-10 left-[73%] px-3 dark:bg-black dark:text-white bg-white py-2">
+                <label className="absolute -top-2 z-10 left-[73%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2">
                   نام کاربری
                 </label>
                 <input
                   type="text"
                   value={nationalCode}
                   onChange={(e) => setNationalCode(e.target.value)}
-                  className="border w-96 md:w-96 h-14 border-[#CACACA] px-5 rounded-md relative m-3"
+                  className="border w-96 md:w-96 h-14 border-[#CACACA] dark:bg-[#4F5D74] px-5 rounded-md relative m-3"
                 />
               </div>
 
               <div className="relative w-full md:w-auto">
-                <label className="absolute -top-2 z-10 left-[68%] px-3 dark:bg-[#030303] dark:text-white bg-white py-2">
+                <label className="absolute -top-2 z-10 left-[68%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2">
                   شماره موبایل
                 </label>
                 <input
                   type="text"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="border w-96 md:w-96 h-14 border-[#CACACA]  px-5 rounded-md relative m-3"
+                  className="border w-96 md:w-96 h-14 border-[#CACACA] dark:bg-[#4F5D74]  px-5 rounded-md relative m-3"
                 />
               </div>
             </div>

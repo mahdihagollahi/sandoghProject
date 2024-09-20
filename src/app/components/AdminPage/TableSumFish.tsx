@@ -14,13 +14,13 @@ function TableSumFish() {
 
   return (
     <div className="">
-      <div className="w-[120%] py-7 shadow-md rounded-md bg-white">
+      <div className="w-[120%] py-7 shadow-md rounded-md bg-white dark:bg-[#4F5D74] dark:text-white">
         <div>
           <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
         </div>
         <div className="flex flex-row justify-between mr-5 w-[500px] mt-10 ">
           <div>
-            <span className="font-bold">شماره</span>
+            <span className="font-bold dark:text-white">شماره</span>
             {list.map((item, index) => (
               <div key={index}>
                 <div className="mt-3">
@@ -30,9 +30,9 @@ function TableSumFish() {
             ))}
           </div>
           <div>
-            <span className="font-bold mr-1">مبلغ</span>
+            <span className="font-bold mr-1 dark:text-white">مبلغ</span>
             {list.map((item, index) => (
-              <div key={index} className="bg-white">
+              <div key={index} className="bg-white dark:bg-[#4F5D74]">
                 <div className="mt-3">
                   <span>{item.payment}</span>
                 </div>

@@ -80,8 +80,8 @@ const EveryUser: React.FC = () => {
   if (isLoading)
     return (
       <div>
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-[1%]">
+        <div className="flex gap-24 items-center  mb-2 mt-10 mr-3">
+          <div className=" dark:text-white absolute z-10 ">
             <p className="font-bold text-lg">مشاهده کاربران</p>
           </div>
 
@@ -103,7 +103,7 @@ const EveryUser: React.FC = () => {
     return (
       <div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-[1%]">
+          <div className="mr-[1%] dark:text-white  absolute z-10 mt-2">
             <p className="font-bold text-lg">مشاهده کاربران</p>
           </div>
 
@@ -120,7 +120,7 @@ const EveryUser: React.FC = () => {
     return (
       <div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <div className="mr-[1%] absolute z-10 mt-2">
+          <div className="mr-[1%] dark:text-white  absolute z-10 mt-2">
             <p className="font-bold text-lg ">مشاهده کاربران</p>
           </div>
 
@@ -131,8 +131,8 @@ const EveryUser: React.FC = () => {
         </div>
         <div>
           <UserTable users={[]} onUserSelect={setSelectedUserId} />
-          <div className="flex justify-center items-center -mt-5">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+          <div className="flex justify-center dark:text-white items-center -mt-5">
+            کاربری یافت نشد
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ const EveryUser: React.FC = () => {
 
   return (
     <div>
-      <div className="mr-[1%] absolute z-10 mt-2">
+      <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
         <p className="font-bold text-lg ">مشاهده کاربران</p>
       </div>
       <div className="flex gap-24 items-center mb-2 mt-10 ">

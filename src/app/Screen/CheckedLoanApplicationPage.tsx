@@ -17,7 +17,7 @@ function CheckedLoanApplicationPage() {
             </div>
           </div>
         </div>
-        <div className="bg-[#F8F9FA]">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
           <CheckedRequestLoan />
         </div>
       </div>

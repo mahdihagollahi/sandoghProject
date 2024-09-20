@@ -90,12 +90,12 @@ const DepositorsUserFinancial: React.FC = () => {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
-          <div className="mr-2">
+          <div className="mr-2 dark:text-white">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
             <div
-              className="flex items-center cursor-pointer"
+              className="flex items-center dark:text-white cursor-pointer"
               onClick={handleBack}
             >
               بازگشت
@@ -120,12 +120,12 @@ const DepositorsUserFinancial: React.FC = () => {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
-          <div className="mr-2">
+          <div className="mr-2 dark:text-white">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
             <div
-              className="flex items-center cursor-pointer"
+              className="flex items-center dark:text-white cursor-pointer"
               onClick={handleBack}
             >
               بازگشت
@@ -138,7 +138,7 @@ const DepositorsUserFinancial: React.FC = () => {
         </div>
         <div>
           <UserTableDespositors users={[]} />
-          <div className="flex justify-center items-center -mt-20">
+          <div className="flex justify-center dark:text-white items-center -mt-20">
             <div>
               Error:{" "}
               {error instanceof Error
@@ -155,12 +155,12 @@ const DepositorsUserFinancial: React.FC = () => {
     return (
       <div>
         <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
-          <div className="mr-2">
+          <div className="mr-2 dark:text-white">
             <p className="font-bold text-lg">مدیریت مالی</p>
           </div>
           <div className="flex justify-end mr-2">
             <div
-              className="flex items-center cursor-pointer"
+              className="flex items-center dark:text-white cursor-pointer"
               onClick={handleBack}
             >
               بازگشت
@@ -173,7 +173,7 @@ const DepositorsUserFinancial: React.FC = () => {
         </div>
         <div>
           <UserTableDespositors users={[]} />
-          <div className="flex justify-center items-center -mt-14">
+          <div className="flex justify-center items-center dark:text-white -mt-14">
             کاربری یافت نشد
           </div>
         </div>
@@ -184,12 +184,12 @@ const DepositorsUserFinancial: React.FC = () => {
   return (
     <div>
       <div className="flex gap-[77%] items-center mb-2 mt-[46px] mr-3">
-        <div className="mr-2">
+        <div className="mr-2 dark:text-white">
           <p className="font-bold text-lg">مدیریت مالی</p>
         </div>
         <div className="flex justify-end mr-2">
           <div
-            className="flex items-center cursor-pointer"
+            className="flex items-center dark:text-white cursor-pointer"
             onClick={handleBack}
           >
             بازگشت

@@ -18,7 +18,7 @@ function EveryUser() {
             </div>
           </div>
         </div>
-        <div className="w-[100%] bg-[#F8F9FA]  ">
+        <div className="w-[100%] bg-[#F8F9FA] dark:bg-[#283B4D]  ">
           <EveryUserComponent />
         </div>
       </div>

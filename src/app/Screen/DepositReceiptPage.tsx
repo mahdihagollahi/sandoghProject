@@ -5,8 +5,8 @@ import DepositReceiptComponent from "../components/AdminPage/DepositReceiptCompo
 function DepositReceiptPage() {
   return (
     <div>
-      <div className="flex ">
-        <div className="bg-[#F8F9FA]">
+      <div className="flex dark:bg-[#283B4D] ">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -16,7 +16,7 @@ function DepositReceiptPage() {
             </div>
           </div>
         </div>
-        <div className="bg-[#F8F9FA]">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
           <DepositReceiptComponent />
         </div>
       </div>

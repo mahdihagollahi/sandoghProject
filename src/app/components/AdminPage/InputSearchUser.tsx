@@ -67,7 +67,7 @@ const InputSearchUser: React.FC = () => {
   return (
     <div>
       <div className="flex mr-[39%] items-center gap-2">
-        <label className="input flex items-center border border-[#E2E8F0] gap-4">
+        <label className="input flex items-center border border-[#E2E8F0] dark:bg-[#4F5D74] gap-4">
           <Image src={ImageSearch} width={20} height={20} alt="search" />
           <input
             className="w-[32rem] h-[32rem]"
@@ -87,7 +87,7 @@ const InputSearchUser: React.FC = () => {
 
       
       {results.length > 0 && (
-        <div className='bg-white mt-4 rounded-lg mr-[39%] w-[97.5%] p-3'>
+        <div className='bg-white dark:bg-[#4F5D74] mt-4 rounded-lg mr-[39%] w-[97.5%] p-3'>
           <h3>نتایج:</h3>
           <ul>
             {results.map(user => (

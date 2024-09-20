@@ -7,7 +7,7 @@ function EveryLoanApplicationPage() {
   return (
     <div className="dark:bg-[#283B4D]">
       <div className="flex ">
-        <div className="bg-[#F8F9FA]">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
           <div>
             <div>
               <AdminNavbarHeader />
@@ -17,7 +17,7 @@ function EveryLoanApplicationPage() {
             </div>
           </div>
         </div>
-        <div className="bg-[#F8F9FA]">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
           <EveryRequestLoan />
         </div>
       </div>
