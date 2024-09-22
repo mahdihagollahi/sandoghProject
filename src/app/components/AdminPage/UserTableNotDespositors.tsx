@@ -86,7 +86,7 @@ const UserTableFinancial: React.FC<UserTableFinancialProps> = ({
                     <td className="w-[16%] py-8 px-4 whitespace-nowrap">
                       {user.name}
                     </td>
-                    <td className="w-[25%] py-8 px-4 text-[#718096] whitespace-nowrap">
+                    <td className="w-[25%] py-8 px-4 text-[#718096] dark:text-white whitespace-nowrap">
                       <p>{user.depositAmount} تومان</p>
                     </td>
                     <td className="w-2/12 py-2 px-4">{user.joinDate}</td>

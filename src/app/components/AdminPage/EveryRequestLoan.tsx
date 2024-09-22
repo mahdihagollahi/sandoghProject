@@ -94,7 +94,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
     return (
       <div>
       <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-1">
+        <div className="-mr-1 dark:text-white">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
       </div>
@@ -103,7 +103,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
           <RoutRequestLoan />
         </div>
         <div>
-        <div className="mt-4">
+        <div className="mt-4 dark:text-white">
           خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
         </div>
       </div>
@@ -116,7 +116,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
     return(
       <div>
       <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-1">
+        <div className="-mr-1 dark:text-white">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
       </div>
@@ -130,7 +130,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
       </div>
       <div className="mt-4">
         <EveryLoanAplicationTable users={users} />
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center dark:text-white items-center">
         <div>
           کاربری یافت نشد
         </div>
@@ -143,7 +143,7 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-1">
+        <div className="-mr-1 dark:text-white">
           <p className="font-bold text-lg">درخواست وام</p>
         </div>
       </div>

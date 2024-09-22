@@ -41,13 +41,13 @@ function DeleteUserComponent() {
   return (
     <div>
       <div className="flex gap-[74%]  items-center mb-2 mt-10 mr-3">
-        <div className="mr-2">
-          <p className="font-bold text-lg whitespace-nowrap">انصراف ها</p>
+        <div className="mr-2 mt-[15px]">
+          <p className="font-bold text-lg whitespace-nowrap dark:text-white">انصراف ها</p>
         </div>
         <div className="flex justify-end mr-72"></div>
       </div>
       <div>
-        <table className="w-[130%] dark:bg-[#4F5D74] mt-8 p-10 shadow-md rounded-md">
+        <table className="w-[130%] dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
           <thead>
             <tr className="border-b-2 flex flex-row justify-around  p-8 gap-10">
               <th>ردیف</th>

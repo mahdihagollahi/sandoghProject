@@ -64,7 +64,7 @@ function SupportMassgeDashboard() {
             </p>
           </div>
           <div>
-            <div className="flex justify-center items-center mt-40">
+            <div className="flex text-white justify-center items-center mt-40">
               <p>Error loading messages</p>
             </div>
             <div className="flex justify-center py-8">
@@ -90,7 +90,7 @@ function SupportMassgeDashboard() {
             </p>
           </div>
           <div>
-            <div className="flex justify-center items-center mt-40">
+            <div className="flex  text-white justify-center items-center mt-40">
               <p>پیامی وجود ندارد</p>
             </div>
             <div className="flex justify-center py-8">
@@ -154,7 +154,7 @@ function SupportMassgeDashboard() {
           </div>
 
           <div className="flex  justify-center mt-60 py-8">
-            <Link href="/Rout/support" passHref>
+            <Link href="/support" passHref>
               <button className="bg-[#4FD1C5] text-white py-2 px-24 rounded-lg">
                 دیدن همه
               </button>

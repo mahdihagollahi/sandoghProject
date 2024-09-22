@@ -8,7 +8,7 @@ function UserDeletePage() {
     <div>
       <div className="flex dark:bg-[#283B4D] bg-[#F8F9FA] ">
         <div >
-          <div className="bg-[#F8F9FA]">
+          <div className="bg-[#F8F9FA] dark:bg-[#283B4D]">
             <div>
               <AdminNavbarHeader />
             </div>
@@ -17,7 +17,7 @@ function UserDeletePage() {
             </div>
           </div>
         </div>
-        <div className="bg-[#F8F9FA]">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D]">
           <DeleteUserComponent />
         </div>
       </div>

@@ -53,19 +53,19 @@ function SaveInformation() {
               </label>
               <input
                 type="text"
-                className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3"
+                className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] dark:bg-[#4F5D74] rounded-md relative m-3"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
 
             <div className="relative w-full md:w-auto">
-              <label className="absolute -top-2 z-10 left-[68%] px-3 dark:bg-black dark:text-white bg-white py-2">
+              <label className="absolute -top-2 z-10 left-[68%] px-3 dark:bg-[#4F5D74] dark:text-white bg-white py-2">
                 نام خانوادگی
               </label>
               <input
                 type="text"
-                className="border w-96 pr-4 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3"
+                className="border w-96 pr-4 md:w-96 h-14 border-[#CACACA dark:bg-[#4F5D74] rounded-md relative m-3"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
               />
@@ -79,7 +79,7 @@ function SaveInformation() {
               </label>
               <input
                 type="text"
-                className="border pr-4 md:w-96 w-96 h-14 border-[#CACACA] rounded-md relative m-3"
+                className="border pr-4 md:w-96 w-96 h-14 border-[#CACACA] dark:bg-[#4F5D74] rounded-md relative m-3"
                 value={phonenumber}
                 onChange={(e) => setPhonenumber(e.target.value)}
               />
@@ -91,7 +91,7 @@ function SaveInformation() {
               </label>
               <input
                 type="text"
-                className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] rounded-md relative m-3"
+                className="border pr-4 w-96 md:w-96 h-14 border-[#CACACA] dark:bg-[#4F5D74] rounded-md relative m-3"
                 value={national}
                 onChange={(e) => setNational(e.target.value)}
               />
