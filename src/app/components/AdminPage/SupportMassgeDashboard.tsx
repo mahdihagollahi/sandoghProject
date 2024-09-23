@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 const fetchMessages = async () => {
   const token = localStorage.getItem("authToken");
   if (!token) {
-    throw new Error("No token found");
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   const { data } = await axios.get(

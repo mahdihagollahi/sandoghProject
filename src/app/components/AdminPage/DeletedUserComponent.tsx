@@ -68,7 +68,7 @@ const DeleteUser: React.FC = () => {
   useEffect(() => {
     const authToken = localStorage.getItem("authToken");
     if (!authToken) {
-      console.log("No auth token found");
+      console.log('لطفا دوباره لاگین کنید');
     }
   }, []);
 

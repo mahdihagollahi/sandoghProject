@@ -8,7 +8,7 @@ const fetchDepositSlip = async () => {
   const token = localStorage.getItem('authToken');
 
   if (!token) {
-    throw new Error('No auth token found');
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   const response = await axios.get('https://mohammadelia30.ir/shabab/api/factors/factorCnt', {

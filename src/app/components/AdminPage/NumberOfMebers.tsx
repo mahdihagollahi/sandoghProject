@@ -13,7 +13,7 @@ interface UserIdResponse {
 const fetchUserId = async (): Promise<UserIdResponse> => {
   const authToken = localStorage.getItem('authToken');
   if (!authToken) {
-    throw new Error('Token not found in localStorage');
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   const response = await axios.get<UserIdResponse>('https://mohammadelia30.ir/shabab/api/users/memberCnt', {

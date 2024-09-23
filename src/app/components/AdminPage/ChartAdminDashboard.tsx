@@ -17,7 +17,7 @@ const fetchChartData = async (): Promise<ChartData> => {
   const authToken = localStorage.getItem('authToken');
 
   if (!authToken) {
-    throw new Error('No auth token found');
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   const response = await axios.get(API_URL, {

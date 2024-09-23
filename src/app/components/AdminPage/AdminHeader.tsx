@@ -18,7 +18,7 @@ const fetchUserData = async (): Promise<User> => {
   const authToken = localStorage.getItem("authToken");
 
   if (!authToken) {
-    throw new Error("No token found, please log in.");
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   const response = await axios.post<{

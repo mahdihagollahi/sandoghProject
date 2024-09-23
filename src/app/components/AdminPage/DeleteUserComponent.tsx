@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import eyes from "@/src/app/assent/Img/userPanel/eyes.svg";
 import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
 import reject from "@/src/app/assent/Img/userPanel/reject.svg";
