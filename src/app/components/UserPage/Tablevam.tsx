@@ -90,7 +90,7 @@ function Tablevam() {
           <th className="w-[200px] -mr-16" >پیام مدیر</th>
         </tr>
 
-        {listghest.map((item) => (
+        {/* {listghest.map((item) => (
           <div key={item.id}>
             <tr className="flex flex-row py-5  mr-2 justify-around gap-20">
               <td><input type="checkbox"/></td>
@@ -104,7 +104,7 @@ function Tablevam() {
               <td className="w-[200px]" >{item.massge}</td>
             </tr>
           </div>
-        ))}
+        ))} */}
       </table>
     </>
   );
