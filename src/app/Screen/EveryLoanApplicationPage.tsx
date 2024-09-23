@@ -3,7 +3,7 @@ import AdminNavbarHeader from "@/src/app/components/AdminPage/AdminNavbarHeader"
 import AdminPageNavbar from "@/src/app/components/AdminPage/AdminPageNavbar";
 import EveryRequestLoan from "../components/AdminPage/EveryRequestLoan";
 
-function EveryLoanApplicationPage() {
+const EveryLoanApplicationPage :React.FC =() => {
   return (
     <div className="dark:bg-[#283B4D]">
       <div className="flex ">
@@ -18,7 +18,7 @@ function EveryLoanApplicationPage() {
           </div>
         </div>
         <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
-          <EveryRequestLoan />
+          <EveryRequestLoan  />
         </div>
       </div>
     </div>

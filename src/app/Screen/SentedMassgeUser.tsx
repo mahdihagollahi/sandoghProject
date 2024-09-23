@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import AdminNavbarHeader from "@/src/app/components/AdminPage/AdminNavbarHeader";
-import SentedMassege from "../components/UserPage/SendMassege";
+import SentedMassege from "@/src/app/components/UserPage/SendMassege";
 import UserPageNavbar from "../components/UserPage/UserPageNavbar";
 
 function ManagementAccount() {

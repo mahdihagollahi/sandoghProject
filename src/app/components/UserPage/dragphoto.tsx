@@ -3,6 +3,7 @@ import Image from "next/image";
 import icon from "@/src/app/assent/Img/userPanel/Iconly (1).svg";
 import dragcard from "@/src/app/assent/Img/userPanel/drapcart.svg"
 
+
 export default function DragCart() {
   const [uploadedImage , setUplodedImage]=useState(null)
   const [dragOver , setDragOver]=useState<boolean>(false)
@@ -65,7 +66,7 @@ export default function DragCart() {
           />
           <div className="flex flex-col gap-5 justify-center items-center">
             {uploadedImage ? (
-               <img src={uploadedImage} alt="Uploaded" className="w-56 h-32 rounded-md" />
+               <Image src={uploadedImage} width={224} height={128} alt="Uploaded" className=" rounded-md" />
             ):(
               <label className="relative cursor-pointer flex flex-col gap-4 items-center justify-center h-full">
               <input type="file"  className="absolute inset-0 opacity-0 cursor-pointer" onChange={handelFileUploaded} />

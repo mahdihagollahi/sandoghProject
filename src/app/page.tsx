@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import Landing from "./components/UserPage/landing";
+
+import LoginAdmin from "./components/UserPage/LoginAdmin";
 
 
 function page() {
@@ -9,7 +10,7 @@ function page() {
   return (
     <>
 
-     <Landing/>
+     <LoginAdmin/>
     </>
   );
 }
