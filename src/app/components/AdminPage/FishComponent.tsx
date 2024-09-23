@@ -40,7 +40,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
     };
 
     fetchFishImage();
-  }, []);
+  }, [userId]);
 
   if (isLoading) return (
     <div>

@@ -4,6 +4,7 @@ import axios, { AxiosResponse } from "axios";
 import { useMutation, QueryClient, QueryClientProvider } from "react-query";
 import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
 import Password2 from "@/src/app/components/UserPage/Password2";
+import Link from "next/link";
 
 interface LoginResponse {
   token?: string;
@@ -75,7 +76,7 @@ const LoginAdminContent: React.FC = () => {
         />
       </div>
 
-      <div className="bg-white dark:bg-[#4F5D74] flex justify-center absolute top-[20%] left-[30%] rounded-[30px] shadow-md">
+      <div className="bg-white dark:bg-[#4F5D74] flex justify-center absolute top-[30%] left-[28.5%] rounded-[30px] shadow-md">
         <div className="w-[626px] h-[528px] rounded-[30px] p-[40px] shadow-md relative">
           <div className="flex flex-row-reverse justify-between">
             <div className="flex flex-row gap-1 "></div>
@@ -200,14 +201,16 @@ const LoginAdminContent: React.FC = () => {
             </div>
           )}
 
-          <div className="absolute bottom-[20px] left-1/2 transform -translate-x-1/2">
-            <button
-              className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px]"
-              onClick={handleSubmit}
-              disabled={isLoading}
-            >
-              {isLoading ? "در حال ورود..." : "ورود"}
-            </button>
+          <div className="absolute bottom-9 left-1/2 transform -translate-x-1/2">
+            {/* <Link href="/dashboard"> */}
+              <button
+                className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px]"
+                onClick={handleSubmit}
+                disabled={isLoading}
+              >
+                {isLoading ? "در حال ورود..." : "ورود"}
+              </button>
+            {/* </Link> */}
           </div>
         </div>
       </div>
@@ -230,5 +233,3 @@ const LoginAdmin: React.FC = () => {
 };
 
 export default LoginAdmin;
-
-

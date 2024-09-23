@@ -67,7 +67,7 @@ export default function DragCart() {
           />
           <div className="flex flex-col gap-[20px] justify-center items-center">
             {uploadedImage ? (
-            <img src={uploadedImage} alt="Uploaded" className="w-96 h-40 p-2 rounded-md" />
+            <Image src={uploadedImage} width={384} height={160} alt="Uploaded" className=" p-2 rounded-md" />
             ) : (
               <label className="relative cursor-pointer flex flex-col gap-4 items-center justify-center h-full">
               <input type="file"  className="absolute inset-0 opacity-0 cursor-pointer" onChange={handelFileUploaded} />
