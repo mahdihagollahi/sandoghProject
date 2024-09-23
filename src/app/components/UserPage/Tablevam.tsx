@@ -89,9 +89,8 @@ function Tablevam() {
           <th>تایید مدیر</th>
           <th className="w-[200px] -mr-16" >پیام مدیر</th>
         </tr>
-
         {listghest.map((item) => (
-          <div>
+          <div key={item.id}>
             <tr className="flex flex-row py-5  mr-2 justify-around gap-20">
               <td><input type="checkbox"/></td>
               <td>{item.text}</td>

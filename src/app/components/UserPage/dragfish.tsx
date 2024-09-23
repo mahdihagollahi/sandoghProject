@@ -136,9 +136,11 @@ const Dragfish: React.FC = () => {
         >
           <input {...getInputProps()} />
           {imageSrc ? (
-            <img
-              className="w-[400px] h-[210px] mt-2 p-2 rounded-md object-cover"
+            <Image
+              className=" mt-2 p-2 rounded-md object-cover"
               src={imageSrc}
+              width={400}
+              height={210}
               alt="Uploaded"
             />
           ) : (

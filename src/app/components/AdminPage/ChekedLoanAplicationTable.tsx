@@ -122,7 +122,7 @@ interface User {
   type: string;
   installment_count: number; 
   loan_price: number;
-  admin_accept: "faild" | "accepted"; // Keeping the actual value coming from API
+  admin_accept: "faild" | "accepted"; 
 }
 
 interface UserTableProps {
