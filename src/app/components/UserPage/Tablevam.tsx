@@ -175,7 +175,7 @@ function Tablevam() {
   return (
     <>
       <table className="w-[70%] p-10 shadow-md rounded-md">
-        <thead>
+        {/* <thead>
           <tr className="border-b-2 mr-24 py-10 flex flex-row justify-around gap-20">
             <th>شماره قسط</th>
             <th>مبلغ واریز</th>
@@ -199,7 +199,7 @@ function Tablevam() {
               <td className="w-[200px]">{item.massge}</td>
             </tr>
           ))}
-        </tbody>
+        </tbody> */}
       </table>
     </>
   );
