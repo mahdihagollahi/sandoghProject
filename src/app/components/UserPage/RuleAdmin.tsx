@@ -1,5 +1,7 @@
+
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 import Image from "next/image";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import styles
@@ -31,6 +33,29 @@ function RuleAdmin() {
     }
   }
 
+  const handleSubmit = async () => {
+    const authToken = localStorage.getItem("authToken");
+    const data = {
+      description: editorContent,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://mohammadelia30.ir/shabab/api/settings/edit",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+      console.log("Response:", response.data);
+      alert("اطلاعات با موفقیت ارسال شد!");
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       <div className="flex gap-[70%] items-center dark:text-white mb-2 mt-[50px]">
@@ -39,7 +64,7 @@ function RuleAdmin() {
         </div>
       </div>
 
-      <div className=" px-5 py-10 mt-10 bg-white dark:bg-[#4F5D74] dark:text-white w-[113%] shadow-md rounded-md">
+      <div className=" px-5 py-10 mt-10 bg-white dark:bg-[#4F5D74] dark:text-white w-[123%] shadow-md rounded-md">
         <div className="flex  gap-40">
           <div>
             <div className="flex flex-row gap-9">
@@ -73,8 +98,8 @@ function RuleAdmin() {
           </div>
 
           <div>
-            <ChangePasswordAdmin/>
-            <div className="mt-8">
+            <ChangePasswordAdmin />
+            {/* <div className="mt-8">
               <textarea
                 name=""
                 id=""
@@ -84,7 +109,7 @@ function RuleAdmin() {
             </div>
             <button className="bg-[#4FD1C5] mt-2 mb-3 text-white w-14 py-2 px-3 rounded-md">
               ارسال
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -109,7 +134,11 @@ function RuleAdmin() {
           </div>
         </div>
       </div>
-      <button className="bg-[#4FD1C5] text-white rounded-md p-4 w-[60%] mt-10 whitespace-nowrap">
+
+      <button
+        className="bg-[#4FD1C5] text-white rounded-md p-4 w-[60%] mt-9 whitespace-nowrap"
+        onClick={handleSubmit}
+      >
         ثبت اطلاعات
       </button>
     </>

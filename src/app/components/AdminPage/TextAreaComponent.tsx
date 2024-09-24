@@ -4,7 +4,7 @@ import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import Image from "next/image";
 
 interface TextAreaComponentProps {
-  userId: string;
+  userId: any;
   onClose?: () => void;
   onSend: (message: string) => void;
 }

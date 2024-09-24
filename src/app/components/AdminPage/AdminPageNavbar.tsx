@@ -304,12 +304,20 @@ import darkImageMangmentHover from "@/src/app/assent/Img/adminPanel/darkImageMan
 import darkdeleteUser from "@/src/app/assent/Img/adminPanel/darkdeleteUser.svg";
 import darkdeleteUserHover from "@/src/app/assent/Img/adminPanel/darkdeleteUserHover.svg";
 
+// interface NavbarItem {
+//   id: number;
+//   src: StaticImageData;
+//   hoverSrc: StaticImageData;
+//   darkSrc: StaticImageData;
+//   darkhoverSrc: StaticImageData;
+//   link: string;
+// }
 interface NavbarItem {
   id: number;
-  src: StaticImageData;
-  hoverSrc: StaticImageData;
-  darkSrc: StaticImageData;
-  darkhoverSrc: StaticImageData;
+  src: string;
+  hoverSrc: string;
+  darkSrc: string;
+  darkhoverSrc: string;
   link: string;
 }
 
@@ -396,7 +404,8 @@ const Navbar: NavbarItem[] = [
   },
 ];
 
-function AdminPageNavbar({ isDarkMode, toggleTheme }: AdminPageNavbarProps) {
+// function AdminPageNavbar({ isDarkMode, toggleTheme }: AdminPageNavbarProps) {
+function AdminPageNavbar() {
   const [hoverImage, setHoverImage] = useState<{ [key: number]: boolean }>({});
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [clickedImage, setClickedImage] = useState<number | null>(null);
@@ -436,11 +445,11 @@ function AdminPageNavbar({ isDarkMode, toggleTheme }: AdminPageNavbarProps) {
             >
               <Image
                 src={
-                  isDarkMode
-                    ? hoverImage[image.id] || clickedImage === image.id
-                      ? image.darkhoverSrc
-                      : image.darkSrc
-                    : hoverImage[image.id] || clickedImage === image.id
+                  // isDarkMode
+                  //   ? hoverImage[image.id] || clickedImage === image.id
+                  //     ? image.darkhoverSrc
+                  //     : image.darkSrc
+                    hoverImage[image.id] || clickedImage === image.id
                     ? image.hoverSrc
                     : image.src
                 }

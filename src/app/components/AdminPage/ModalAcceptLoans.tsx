@@ -1,9 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation , UseMutationResult } from '@tanstack/react-query';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import Image from 'next/image';
 
+interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  phone_number: string;
+  emergency_number: string;
+  home_number: string;
+  national_code: string;
+  card_number: string;
+  sheba_number: string;
+  address: string;
+  debt: number;
+  created_at: string;
+  updated_at: string;
+}
 interface ModalAcceptLoansProps {
   isOpen: boolean;
   onClose: () => void;
@@ -11,7 +26,14 @@ interface ModalAcceptLoansProps {
   userId: string; 
 }
 
-const acceptLoan = async (data: { loan_id: number; admin_accept: string; installment_count: number; loan_price: number }) => {
+interface AcceptLoanData {
+  loan_id: number;
+  admin_accept: string;
+  installment_count: number;
+  loan_price: number;
+}
+
+const acceptLoan = async (data:AcceptLoanData) => {
   const token = localStorage.getItem('authToken'); 
   
   if (!token) {
@@ -33,12 +55,12 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
     amount: "",
   });
 
-  const mutation = useMutation({
+  const mutation : UseMutationResult<any, unknown, AcceptLoanData, unknown> = useMutation({
     mutationFn: acceptLoan,
     onSuccess: () => {
       onClose();
     },
-    onError: (error) => {
+    onError: (error :unknown) => {
       console.error("Error accepting loan:", error);
     },
   });

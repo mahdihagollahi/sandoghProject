@@ -116,7 +116,7 @@ function SupportMassgeDashboard() {
         </div>
         <div>
           <div className="px-4">
-            {data.data.map((items) => (
+            {data.data.map((items:any) => (
               <div
                 key={items.id}
                 className="flex items-center py-4 gap-3 overflow-y-scroll"

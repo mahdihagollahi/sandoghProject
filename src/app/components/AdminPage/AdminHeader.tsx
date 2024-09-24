@@ -22,7 +22,7 @@ const fetchUserData = async (): Promise<User> => {
   }
 
   const response = await axios.post<{
-    user: { first_name: string; last_name: string; media: [] };
+    user: { first_name: string; last_name: string; media: Array<{ url: string }> };
   }>(
     "https://mohammadelia30.ir/shabab/api/auth/me",
     {},
@@ -38,13 +38,16 @@ const fetchUserData = async (): Promise<User> => {
   const fullName =
     `${userData.first_name} ${userData.last_name}` || "نام کاربر نیست";
 
+  const imageUrl = userData.media.length > 0 && userData.media[0]?.url ? userData.media[0].url : IconImage.src;
+
   return {
     name: fullName,
-    image: userData.media.length > 0 ? userData.media[0] : IconImage.src,
+    image: imageUrl,
   };
 };
 
-const AdminHeader: React.FC = ({toggleTheme}) => {
+// const AdminHeader: React.FC = ({toggleTheme}) => {
+const AdminHeader: React.FC = () => {
   const {
     data: user,
     error,

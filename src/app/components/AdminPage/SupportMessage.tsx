@@ -14,6 +14,7 @@ interface Message {
   last_name: string | null;
   avatar: string | null;
   ticket_id: number;
+  messages:any
 }
 
 interface Ticket {

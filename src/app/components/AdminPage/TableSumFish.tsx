@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 
-function TableSumFish() {
+interface TableSumFishProps {
+  userId: number;
+}
+
+const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
+  console.log(userId);
   const list = [
     { id: 1, name: "قسط 1", payment: "500,000", date: "1402/11/12" },
     { id: 2, name: "قسط 2", payment: "500,000", date: "1402/01/22" },

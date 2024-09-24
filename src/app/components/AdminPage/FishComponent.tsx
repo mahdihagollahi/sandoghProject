@@ -21,19 +21,26 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
           throw new Error("Authentication token not found");
         }
 
-        const response = await axios.get(`https://mohammadelia30.ir/shabab/api/installments/show/admin/${userId}`, {
-          headers: {
-            Authorization: `Bearer ${authToken}`,
-          },
-        });
+        const response = await axios.get(
+          `https://mohammadelia30.ir/shabab/api/installments/show/admin/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
         if (response.status !== 200) {
           throw new Error("Error fetching image");
         }
 
-        setImageUrl(response.data.imageUrl || null); 
+        setImageUrl(response.data.imageUrl || null);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -42,40 +49,42 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
     fetchFishImage();
   }, [userId]);
 
-  if (isLoading) return (
-    <div>
-    <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
-      <div className="flex justify-center">
-      <span className="loading loading-dots text-accent loading-lg"></span>
+  if (isLoading)
+    return (
+      <div>
+        <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
+          <div className="flex justify-center">
+            <span className="loading loading-dots text-accent loading-lg"></span>
+          </div>
+          <div className="flex justify-center mt-10">
+            <Link href="/fish">
+              <button className="bg-[#4FD1C5] border border-[#4FD1C5] rounded-md px-20 py-2 flex gap-2 items-center">
+                <Image src={EyeImage} width={20} height={20} alt="eye" />
+                <span className="text-[#FFFFFF] font-normal">بزرگنمایی</span>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="flex justify-center mt-10">
-        <Link href="/fish">
-          <button className="bg-[#4FD1C5] border border-[#4FD1C5] rounded-md px-20 py-2 flex gap-2 items-center">
-            <Image src={EyeImage} width={20} height={20} alt="eye" />
-            <span className="text-[#FFFFFF] font-normal">بزرگنمایی</span>
-          </button>
-        </Link>
+    );
+  if (error)
+    return (
+      <div>
+        <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
+          <div className="flex justify-center">
+            Error loading image: {error}
+          </div>
+          <div className="flex justify-center mt-10">
+            <Link href="/fish">
+              <button className="bg-[#4FD1C5] border border-[#4FD1C5] rounded-md px-20 py-2 flex gap-2 items-center">
+                <Image src={EyeImage} width={20} height={20} alt="eye" />
+                <span className="text-[#FFFFFF] font-normal">بزرگنمایی</span>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  );
-  if (error) return (
-    <div>
-    <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
-      <div className="flex justify-center">
-      Error loading image: {error}
-      </div>
-      <div className="flex justify-center mt-10">
-        <Link href="/fish">
-          <button className="bg-[#4FD1C5] border border-[#4FD1C5] rounded-md px-20 py-2 flex gap-2 items-center">
-            <Image src={EyeImage} width={20} height={20} alt="eye" />
-            <span className="text-[#FFFFFF] font-normal">بزرگنمایی</span>
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-  );
+    );
 
   return (
     <div>
@@ -84,7 +93,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
           {imageUrl ? (
             <Image src={imageUrl} width={198} height={299} alt="fish" />
           ) : (
-            <div>عکسی موجود نیست</div> 
+            <div>عکسی موجود نیست</div>
           )}
         </div>
         <div className="flex justify-center mt-10">

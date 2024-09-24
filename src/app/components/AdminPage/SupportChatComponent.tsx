@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery, useMutation, QueryClient, QueryClientProvider } from "react-query";
 import axios from "axios";
-import Image from "next/image";
+import Image,{ StaticImageData} from "next/image";
 import { usePathname } from "next/navigation";
 import defultUser from "@/src/app/assent/Img/adminPanel/defultUser.png";
 import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
@@ -43,7 +43,9 @@ const SupportChatComponent: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState<string>("");
   const [userId, setUserId] = useState<number | null>(null);
-  const [userImage, setUserImage] = useState<string | null>(null);
+  // const [userImage, setUserImage] = useState<string | null>(null);
+  const [userImage, setUserImage] = useState<string | StaticImageData | null>(null);
+
   const [userName, setUserName] = useState<string>("کاربر ناشناس");
 
   const authToken = typeof window !== "undefined" ? localStorage.getItem("authToken") : null;
@@ -66,7 +68,9 @@ const SupportChatComponent: React.FC = () => {
     const user = response.data.user;
 
     setUserId(user.id);
-    setUserImage(user.media.length > 0 ? user.media[0] : defultUser);
+    // setUserImage(user.media.length > 0 ? user.media[0] : defultUser);
+    setUserImage(user.media.length > 0 && user.media[0] ? user.media[0] : defultUser);
+
     setUserName(user.full_name || user.first_name && user.last_name ? `${user.first_name} ${user.last_name}` : "کاربر ناشناس");
 
     return [{ id: ticket.id, description: ticket.description, status: ticket.status }];
