@@ -5,6 +5,19 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+interface DataSet {
+  label: string;
+  data: number[];
+  borderColor: string;
+  backgroundColor: string;
+  fill: boolean;
+  tension: number;
+}
+
+interface ChartDataInterface {
+  labels: string[];
+  datasets: DataSet[];
+}
 
 interface ChartData {
   income: number[];
@@ -29,13 +42,14 @@ const fetchChartData = async (): Promise<ChartData> => {
   return response.data;
 };
 
-function ChartMounthFinantial() {
+const ChartMounthFinantial =() =>{
   const { data, isLoading, isError } = useQuery({
     queryKey: ['chartData'],
     queryFn: fetchChartData,
   });
 
-  const chartData = data || {};
+
+  const chartData:Partial<ChartData> = data || {};
   
     const chartConfig = {
       labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
@@ -79,15 +93,15 @@ function ChartMounthFinantial() {
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function (value) {
+            callback: function (value:number) {
               return value + ' م';
             },
           },
         },
         x: {
           ticks: {
-            callback: function (value, index, values) {
-              return this.getLabelForValue(value);
+            callback: function (value: number, index: number, values: number[]): string {
+              return (this as any).getLabelForValue(value);
             },
           },
         },

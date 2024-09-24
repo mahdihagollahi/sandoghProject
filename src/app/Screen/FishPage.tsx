@@ -40,7 +40,7 @@ function FishPage() {
     return (
       <div className="bg-[#F8F9FA] dark:bg-[#2C2C2C] mt-4">
         <div className="flex overflow-y-hidden justify-end mr-20">
-          <a href="/Rout/depositreceipt" className="flex items-center">
+          <a href="/depositreceipt" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>
@@ -54,7 +54,7 @@ function FishPage() {
     return (
       <div className="bg-[#F8F9FA] dark:bg-[#2C2C2C] mt-4">
         <div className="flex overflow-y-hidden justify-end mr-20">
-          <a href="/Rout/depositreceipt" className="flex items-center">
+          <a href="/depositreceipt" className="flex items-center">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </a>

@@ -154,7 +154,7 @@ const UserTable: React.FC<UserTableProps> = ({ users = [] }) => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           selectedLoan={selectedLoan}
-          userId={selectedLoan?.id.toString() || ""} // Pass userId here
+          userId={selectedLoan?.id.toString() || ""} 
         />
       )}
       {isRejectModalOpen && (

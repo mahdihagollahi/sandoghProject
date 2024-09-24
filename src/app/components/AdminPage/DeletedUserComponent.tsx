@@ -9,6 +9,7 @@ interface User {
   id: number;
   first_name: string;
   last_name: string;
+  src: string;
   phone_number: string;
   emergency_number: string;
   home_number: string;

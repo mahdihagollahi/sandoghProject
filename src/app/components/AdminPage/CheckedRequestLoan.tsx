@@ -59,7 +59,7 @@ const fetchLoans = async (isUrgent: boolean) => {
 
 const queryClient = new QueryClient();
 
-const LoanRequestComponent: React.FC<Loan> = () => {
+const LoanRequestComponent: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState<boolean>(false);
 
   const { data, isLoading, error } = useQuery(["loans", isUrgent], () =>

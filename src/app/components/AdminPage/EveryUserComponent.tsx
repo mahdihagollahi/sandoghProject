@@ -7,6 +7,7 @@ import InputSearchUser from "./InputSearchUser";
 
 interface User {
   id: number;
+  src: string;
   first_name: string;
   last_name: string;
   phone_number: string;

@@ -10,7 +10,17 @@ import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
 import reject from "@/src/app/assent/Img/userPanel/reject.svg";
 import Link from "next/link";
 
-const fetchUsers = async () => {
+interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  national_code: string;
+  phone_number: string;
+  created_at: string;
+}
+
+
+const fetchUsers = async (): Promise<User[]> => {
   const authToken = localStorage.getItem("authToken");
   if (!authToken) {
     throw new Error("توکن یافت نشد.");
@@ -118,7 +128,7 @@ function DeleteUserComponent() {
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
               <tr
                 key={item.id}
                 className="flex flex-row p-8 border-b-2 justify-around my-5"

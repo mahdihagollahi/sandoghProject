@@ -93,7 +93,9 @@ export default function FinancialManagement() {
               </div>
             </div>
             <div className="pb-10">
-              <ChartMounthFinantial data={filteredData} />
+              <ChartMounthFinantial 
+              // filteredData={filteredData} 
+              />
             </div>
           </div>
         </div>
@@ -108,7 +110,9 @@ export default function FinancialManagement() {
               </div>
             </div>
 
-            <ChartFinancial data={filteredData} />
+            <ChartFinancial 
+            // data={filteredData}
+             />
           </div>
         </div>
 

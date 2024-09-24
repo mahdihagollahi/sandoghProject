@@ -17,13 +17,26 @@ function SaveInformation() {
   const [national, setNational] = useState<string>("");
   const [phonenumber, setPhonenumber] = useState<string>("");
 
-  const mutation = useMutation(async (userData: UserData) => {
+  const mutation = useMutation<any, Error, UserData>(async (userData: UserData) => {
     const response = await axios.post(
       "https://mohammadelia30.ir/shabab/api/users/edit",
       userData
     );
     return response.data;
-  });
+  },
+  {
+    onSuccess: (data:any) => {
+     
+      console.log("Data saved successfully:", data);
+    },
+    onError: (error:any) => {
+     
+      console.error("Error saving data:", error);
+    }
+  }
+
+
+);
 
   const handleSubmit = () => {
     mutation.mutate({
@@ -123,3 +136,6 @@ function SaveInformation() {
 }
 
 export default SaveInformation;
+
+
+

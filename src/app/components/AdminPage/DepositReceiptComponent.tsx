@@ -279,7 +279,7 @@ function DepositReceiptComponent() {
           </div>
         </div>
         <div>
-          <UserTableReceipt />
+          <UserTableReceipt user={null}/>
           <div className="flex justify-center items-center -mt-10">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -311,7 +311,7 @@ function DepositReceiptComponent() {
           </div>
         </div>
         <div>
-          <UserTableReceipt />
+          <UserTableReceipt user={null}/>
           <p className="dark:text-white">خطا: {error.message}</p>
         </div>
         <div className="flex gap-12">

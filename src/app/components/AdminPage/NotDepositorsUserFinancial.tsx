@@ -11,10 +11,9 @@ import jalaliday from "jalaliday";
 dayjs.extend(jalaliday);
 
 interface User {
-  id: string;
+  id: number;
   name: string;
   joinDate: string;
-  loans: string;
   depositAmount: string;
 }
 
@@ -135,7 +134,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={[]} /> {/* Empty array while loading */}
+          <UserTableFinancial users={[]} /> 
           <div className="flex justify-center items-center -mt-10">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -162,7 +161,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={[]} /> {/* Empty array while error */}
+          <UserTableFinancial users={[]} /> 
           <div className="flex justify-center items-center -mt-20">
             <p>
               Error:{" "}

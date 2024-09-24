@@ -163,10 +163,13 @@ const UserTableDespositors: React.FC<UserTableProps> = ({ users = [] }) => {
               </tbody>
             </table>
             <Paginate
+              // pageCount={pageCount}
+              pageClick={pageClick}
+              currentPageData={currentPageData} 
               pageCount={pageCount}
-              onPageChange={pageClick}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
+              // onPageChange={pageClick}
+              // marginPagesDisplayed={2}
+              // pageRangeDisplayed={5}
             />
           </div>
         </div>

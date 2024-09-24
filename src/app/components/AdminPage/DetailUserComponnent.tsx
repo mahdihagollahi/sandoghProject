@@ -254,7 +254,7 @@ const DetailUser: React.FC = () => {
               />
             </div>
             <div className="relative w-full md:w-auto">
-              <label className="absolute -top-2 z-10 left-[72%] px-3 bg-white dark:bg-[#4F5D74] dark:bg-[#4F5D74] dark:text-white py-2">
+              <label className="absolute -top-2 z-10 left-[72%] px-3 bg-white  dark:bg-[#4F5D74] dark:text-white py-2">
                 شماره شبا
               </label>
               <input
