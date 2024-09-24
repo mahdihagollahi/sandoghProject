@@ -38,7 +38,7 @@ const fetchUserData = async (): Promise<UserData> => {
 const updateCardNumber = async (newCardNumber: string) => {
   const authToken = localStorage.getItem("authToken");
   if (!authToken) {
-    throw new Error("No auth token found");
+    throw new Error('لطفا دوباره لاگین کنید');
   }
 
   await axios.post(
