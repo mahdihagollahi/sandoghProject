@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
-<<<<<<< HEAD
-=======
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
->>>>>>> 9470a8663c7bc44927cdee06e0c4d9da0bed8be3
 import eyes from "@/src/app/assent/Img/userPanel/eyes.svg";
 import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
 import reject from "@/src/app/assent/Img/userPanel/reject.svg";
