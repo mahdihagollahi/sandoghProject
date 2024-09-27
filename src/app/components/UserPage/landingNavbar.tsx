@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Link } from "react-router-dom"
+import Link  from "next/link"
 
 function landingNavbar() {
   return (
@@ -19,7 +19,7 @@ function landingNavbar() {
             <Link rel="stylesheet" href="#"  className='w-16 font-normal text-2xl hover:border-b-2 hover:border-[#4475F2] hover:text-[#4475F2] active:border-b-2 active:border-[#4475F2]  active:text-[#4475F2] '>خانه</Link>
         </li>
         <li >
-            <Link rel="stylesheet" to='/service' className='w-16 font-normal text-2xl hover:border-b-2 hover:border-[#4475F2] hover:text-[#4475F2] active:border-b-2 active:border-[#4475F2]  active:text-[#4475F2] ' >خدمات</Link>
+            <Link rel="stylesheet" href='/service' className='w-16 font-normal text-2xl hover:border-b-2 hover:border-[#4475F2] hover:text-[#4475F2] active:border-b-2 active:border-[#4475F2]  active:text-[#4475F2] ' >خدمات</Link>
         </li>
         <li >
             <Link rel="stylesheet" href="#" className='w-16 font-normal text-2xl hover:border-b-2 hover:border-[#4475F2] hover:text-[#4475F2] active:border-b-2 active:border-[#4475F2]  active:text-[#4475F2] ' >درباره ما</Link>

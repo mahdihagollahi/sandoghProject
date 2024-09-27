@@ -86,7 +86,7 @@ function ChartFinancial() {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom",
+        position: 'bottom' as const,
       },
       title: {
         display: false,
@@ -96,15 +96,15 @@ function ChartFinancial() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value:number) {
-            return value + " م";
+          callback: function (tickValue: string | number) {
+            return `${tickValue} ;م`
           },
         },
       },
       x: {
         ticks: {
-          callback: function (value: number, index: number, values: number[]): string  {
-            return (this as any).getLabelForValue(value);
+          callback: function (tickValue: string | number, index: number, ticks: any[]) {
+            return tickValue.toString()
           },
         },
       },

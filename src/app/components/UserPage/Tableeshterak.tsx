@@ -161,7 +161,7 @@ function Tableeshterak() {
     { id: 8, text: "قسط 8", pyment: "500,000تومان", data: "1403/09/30", Condition: "پرداخت شده", massge: "بدون توضیح" },
   ];
 
-  const handleCheckboxClick = (item) => {
+  const handleCheckboxClick = (item:any) => {
     dispatch(selectPayment({ id: item.id, payment: item.pyment, text: item.text }));
   };
 

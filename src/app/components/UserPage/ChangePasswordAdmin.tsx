@@ -40,7 +40,7 @@ const ChangePasswordAdmin = () => {
     document.documentElement.lang = "en";
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e:any) => {
     // جلوگیری از تایپ در زبان فارسی
     if (document.documentElement.lang === "fa") {
       e.preventDefault();

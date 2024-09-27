@@ -83,7 +83,7 @@ const ChartMounthFinantial =() =>{
       responsive: true,
       plugins: {
         legend: {
-          position: 'bottom',
+          position: 'bottom' as const,
         },
         title: {
           display: false,
@@ -93,21 +93,20 @@ const ChartMounthFinantial =() =>{
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function (value:number) {
-              return value + ' م';
+            callback: function (tickValue: string | number) {
+              return `${tickValue} ;م`
             },
           },
         },
         x: {
           ticks: {
-            callback: function (value: number, index: number, values: number[]): string {
-              return (this as any).getLabelForValue(value);
+            callback: function (tickValue: string | number, index: number, ticks: any[]) {
+              return tickValue.toString()
             },
           },
         },
       },
     };
-
     if(isLoading){
       return(
         <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>

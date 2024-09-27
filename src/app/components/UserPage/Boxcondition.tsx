@@ -17,7 +17,7 @@ function BoxCondition() {
     }
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab:any) => {
     setSelectedTab(tab);
     localStorage.setItem('selectedTab', tab);
   };

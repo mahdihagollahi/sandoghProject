@@ -1,10 +1,10 @@
 import React from 'react'
-import RuleUserPage from '../../Screen/RuleAdminPage'
+import RuleAdminPage from '@/src/app/Screen/RuleAdminPage'
 
 function page() {
   return (
     <div className='h-full'>
-        <RuleUserPage/>
+        <RuleAdminPage/>
     </div>
   )
 }

@@ -5,19 +5,9 @@ import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import Image from 'next/image';
 
 interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-  phone_number: string;
-  emergency_number: string;
-  home_number: string;
-  national_code: string;
-  card_number: string;
-  sheba_number: string;
-  address: string;
-  debt: number;
-  created_at: string;
-  updated_at: string;
+  id:number
+ 
+  
 }
 interface ModalAcceptLoansProps {
   isOpen: boolean;
@@ -55,7 +45,7 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
     amount: "",
   });
 
-  const mutation : UseMutationResult<any, unknown, AcceptLoanData, unknown> = useMutation({
+  const mutation : UseMutationResult<any, unknown, AcceptLoanData, unknown > = useMutation({
     mutationFn: acceptLoan,
     onSuccess: () => {
       onClose();
@@ -133,9 +123,9 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
         <button
           className="py-2 mt-2 ml-[85%] px-6 bg-teal-400 text-white rounded-md text-lg hover:bg-teal-500"
           onClick={handleSubmit}
-          disabled={mutation.isLoading} 
+          // disabled={mutation.isLoading} 
         >
-          {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'}
+          {/* {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'} */}
         </button>
         <button
           className="absolute top-2 right-2 text-gray-500"
@@ -149,3 +139,6 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
 };
 
 export default ModalAcceptLoans;
+
+
+

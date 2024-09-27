@@ -49,7 +49,7 @@ const fetchUsers = async (): Promise<User[]> => {
       response.data.users &&
       Array.isArray(response.data.users.data)
     ) {
-      return response.data.users.data.map((user) => ({
+      return response.data.users.data.map((user:any) => ({
         id: toPersianDigits(user.id),
         name: `${user.first_name} ${user.last_name}`,
         joinDate: toPersianDigits(
@@ -101,7 +101,8 @@ const NotDepositorsUserFinancial: React.FC = () => {
   const mutation = useMutation({
     mutationFn: updateUser,
     onSuccess: () => {
-      queryClient.invalidateQueries(["users"]);
+
+      queryClient.invalidateQueries({ queryKey: ["users"] });
     },
     onError: (error) => {
       console.error("Error updating user:", error);

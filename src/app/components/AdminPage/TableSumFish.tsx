@@ -57,8 +57,8 @@ const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
         </div>
         <div className="flex flex-row gap-28 mt-5">
           <span className="font-bold mr-10">مجموع مبلغ واریزی : </span>
-          {sum.map((task) => (
-            <div key={task} className="flex items-center gap-1" >
+          {sum.map((task , index) => (
+            <div key={index} className="flex items-center gap-1" >
               <p className="text-[#4FD1C5]">
               {task.sum}
               </p>
