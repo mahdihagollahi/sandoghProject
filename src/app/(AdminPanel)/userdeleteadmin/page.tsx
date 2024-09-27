@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import UserDeletePage from '../../Screen/UserDeleteAdminPage'
+import UserDeletePage from '@/src/app/Screen/UserDeleteAdminPage'
 
 function page() {
   return (
