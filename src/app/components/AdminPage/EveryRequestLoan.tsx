@@ -57,7 +57,7 @@ const fetchLoans = async (isUrgent: boolean) => {
   }
 };
 
-const EveryRequestLoan: React.FC<Loan> = () => {
+const EveryRequestLoan: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState(false);
 
   const { data, isLoading, isError, error } = useQuery({
@@ -66,16 +66,16 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   });
 
   const users = data || [];
- 
+
   if (isLoading) {
     return (
       <div>
         <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-            <div className="-mr-1">
+          <div className="-mr-1">
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
         </div>
-       <div className="flex gap-[47.5%] items-center">
+        <div className="flex gap-[47.5%] items-center">
           <div>
             <RoutRequestLoan />
           </div>
@@ -93,51 +93,49 @@ const EveryRequestLoan: React.FC<Loan> = () => {
   if (isError) {
     return (
       <div>
-      <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-1 dark:text-white">
-          <p className="font-bold text-lg">درخواست وام</p>
+        <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
+          <div className="-mr-1 dark:text-white">
+            <p className="font-bold text-lg">درخواست وام</p>
+          </div>
         </div>
-      </div>
-      <div className="flex gap-[47.5%] items-center">
-        <div>
-          <RoutRequestLoan />
+        <div className="flex gap-[47.5%] items-center">
+          <div>
+            <RoutRequestLoan />
+          </div>
+          <div>
+            <div className="mt-4 dark:text-white">
+              خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
+            </div>
+          </div>
         </div>
-        <div>
-        <div className="mt-4 dark:text-white">
-          خطا در دریافت داده‌ها: {error instanceof Error ? error.message : 'مشخص نشده'}
-        </div>
-      </div>
-      </div>
       </div>
     );
   }
 
-  if(users.length === 0){
-    return(
+  if (users.length === 0) {
+    return (
       <div>
-      <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
-        <div className="-mr-1 dark:text-white">
-          <p className="font-bold text-lg">درخواست وام</p>
+        <div className="flex justify-between items-center mb-2 mt-[50px] mr-3">
+          <div className="-mr-1 dark:text-white">
+            <p className="font-bold text-lg">درخواست وام</p>
+          </div>
+        </div>
+        <div className="flex gap-[47.5%] items-center">
+          <div>
+            <RoutRequestLoan />
+          </div>
+          <div>
+            <SwichButton setIsUrgent={setIsUrgent} />
+          </div>
+        </div>
+        <div className="mt-4">
+          <EveryLoanAplicationTable users={users} />
+          <div className="flex justify-center dark:text-white items-center">
+            <div>کاربری یافت نشد</div>
+          </div>
         </div>
       </div>
-      <div className="flex gap-[47.5%] items-center">
-        <div>
-          <RoutRequestLoan />
-        </div>
-        <div>
-          <SwichButton setIsUrgent={setIsUrgent} />
-        </div>
-      </div>
-      <div className="mt-4">
-        <EveryLoanAplicationTable users={users} />
-        <div className="flex justify-center dark:text-white items-center">
-        <div>
-          کاربری یافت نشد
-        </div>
-        </div>
-      </div>
-    </div>
-    )
+    );
   }
 
   return (
@@ -161,5 +159,4 @@ const EveryRequestLoan: React.FC<Loan> = () => {
     </div>
   );
 };
-
 export default EveryRequestLoan;

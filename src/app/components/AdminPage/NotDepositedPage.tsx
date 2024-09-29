@@ -9,6 +9,7 @@ interface User {
   name: string;
   joinDate: string;
   loans: string;
+  
 }
 
 const users: User[] = [
@@ -50,7 +51,7 @@ const EveryUser: React.FC = () => {
       <div>
         <RoutTableFiancial />
       </div>
-      <UserTableFinancial users={users} />
+      {/* <UserTableFinancial users={users} /> */}
     </div>
   );
 };

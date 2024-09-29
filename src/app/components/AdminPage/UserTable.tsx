@@ -10,6 +10,7 @@ import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png';
 import axios from 'axios';
 import { useMutation, useQueryClient, QueryClient, QueryClientProvider } from 'react-query';
 
+declare module 'moment-jalaali';
 interface User {
   id: number;
   src: string;

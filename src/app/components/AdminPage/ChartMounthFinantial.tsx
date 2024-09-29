@@ -5,6 +5,19 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+interface DataSet {
+  label: string;
+  data: number[];
+  borderColor: string;
+  backgroundColor: string;
+  fill: boolean;
+  tension: number;
+}
+
+interface ChartDataInterface {
+  labels: string[];
+  datasets: DataSet[];
+}
 
 interface ChartData {
   income: number[];
@@ -29,13 +42,14 @@ const fetchChartData = async (): Promise<ChartData> => {
   return response.data;
 };
 
-function ChartMounthFinantial() {
+const ChartMounthFinantial =() =>{
   const { data, isLoading, isError } = useQuery({
     queryKey: ['chartData'],
     queryFn: fetchChartData,
   });
 
-  const chartData = data || {};
+
+  const chartData:Partial<ChartData> = data || {};
   
     const chartConfig = {
       labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
@@ -69,7 +83,7 @@ function ChartMounthFinantial() {
       responsive: true,
       plugins: {
         legend: {
-          position: 'bottom',
+          position: 'bottom' as const,
         },
         title: {
           display: false,
@@ -79,21 +93,20 @@ function ChartMounthFinantial() {
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function (value) {
-              return value + ' م';
+            callback: function (tickValue: string | number) {
+              return `${tickValue} ;م`
             },
           },
         },
         x: {
           ticks: {
-            callback: function (value, index, values) {
-              return this.getLabelForValue(value);
+            callback: function (tickValue: string | number, index: number, ticks: any[]) {
+              return tickValue.toString()
             },
           },
         },
       },
     };
-
     if(isLoading){
       return(
         <div className='flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2'>

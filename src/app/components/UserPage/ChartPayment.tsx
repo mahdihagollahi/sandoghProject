@@ -133,7 +133,7 @@ const options = {
     },
     tooltip: {
       callbacks: {
-        label: (tooltipItem) => `${tooltipItem.dataset.label} ${tooltipItem.raw} تومان`,
+        label: (tooltipItem:any) => `${tooltipItem.dataset.label} ${tooltipItem.raw} تومان`,
       },
     },
   },
@@ -141,7 +141,7 @@ const options = {
     y: {
       beginAtZero: true,
       ticks: {
-        callback: function(value) {
+        callback: function(value:any) {
           return [1000, 750, 500, 250, 0].includes(value) ? value : null;
         },
         stepSize: 250,

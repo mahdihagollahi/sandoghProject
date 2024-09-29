@@ -52,7 +52,7 @@ function ChartFinancial() {
     queryFn: fetchChartData,
   });
 
-  const chartData = data || {};
+  const chartData :Partial<ChartData> = data || {};
 
   const chartConfig = {
     labels: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور"],
@@ -86,7 +86,7 @@ function ChartFinancial() {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom",
+        position: 'bottom' as const,
       },
       title: {
         display: false,
@@ -96,15 +96,15 @@ function ChartFinancial() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value) {
-            return value + " م";
+          callback: function (tickValue: string | number) {
+            return `${tickValue} ;م`
           },
         },
       },
       x: {
         ticks: {
-          callback: function (value, index, values) {
-            return this.getLabelForValue(value);
+          callback: function (tickValue: string | number, index: number, ticks: any[]) {
+            return tickValue.toString()
           },
         },
       },

@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation , UseMutationResult } from '@tanstack/react-query';
 import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
 import Image from 'next/image';
 
+interface User {
+  id:number
+ 
+  
+}
 interface ModalAcceptLoansProps {
   isOpen: boolean;
   onClose: () => void;
@@ -11,7 +16,14 @@ interface ModalAcceptLoansProps {
   userId: string; 
 }
 
-const acceptLoan = async (data: { loan_id: number; admin_accept: string; installment_count: number; loan_price: number }) => {
+interface AcceptLoanData {
+  loan_id: number;
+  admin_accept: string;
+  installment_count: number;
+  loan_price: number;
+}
+
+const acceptLoan = async (data:AcceptLoanData) => {
   const token = localStorage.getItem('authToken'); 
   
   if (!token) {
@@ -33,12 +45,12 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
     amount: "",
   });
 
-  const mutation = useMutation({
+  const mutation : UseMutationResult<any, unknown, AcceptLoanData, unknown > = useMutation({
     mutationFn: acceptLoan,
     onSuccess: () => {
       onClose();
     },
-    onError: (error) => {
+    onError: (error :unknown) => {
       console.error("Error accepting loan:", error);
     },
   });
@@ -111,9 +123,9 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
         <button
           className="py-2 mt-2 ml-[85%] px-6 bg-teal-400 text-white rounded-md text-lg hover:bg-teal-500"
           onClick={handleSubmit}
-          disabled={mutation.isLoading} 
+          // disabled={mutation.isLoading} 
         >
-          {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'}
+          {/* {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'} */}
         </button>
         <button
           className="absolute top-2 right-2 text-gray-500"
@@ -127,3 +139,6 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
 };
 
 export default ModalAcceptLoans;
+
+
+

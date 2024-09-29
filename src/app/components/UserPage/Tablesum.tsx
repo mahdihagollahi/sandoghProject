@@ -37,16 +37,21 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
+
+interface Payment {
+  id: number;
+  payment: number; 
+}
+
 function Tablesum() {
-  const selectedPayments = useSelector((state) => state.payment.selectPayment);
-  const [data, setData] = useState([]);
-  const [total, setTotal] = useState(0);
-  
+  const selectedPayments: Payment[] = useSelector((state: any) => state.payment.selectPayment);
+  const [data, setData] = useState<Payment[]>([]);
+  const [total, setTotal] = useState<number>(0);
+
   useEffect(() => {
     const fetchPayments = async () => {
       try {
         const response = await axios.post("https://mohammadelia30.ir/shabab/api/installments/show", {
-          
           payments: selectedPayments 
         }, {
           headers: {
@@ -54,11 +59,10 @@ function Tablesum() {
           }
         });
 
-        const fetchedData = response.data; 
+        const fetchedData: Payment[] = response.data; 
         setData(fetchedData);
 
-        
-        const totalAmount = fetchedData.reduce((acc, item) => acc + item.pyment, 0);
+        const totalAmount = fetchedData.reduce((acc, item) => acc + item.payment, 0); // Ensure 'item.payment' matches your payment structure
         setTotal(totalAmount);
       } catch (error) {
         console.error("Error fetching payments:", error);

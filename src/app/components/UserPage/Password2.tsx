@@ -106,9 +106,9 @@ const Password2: React.FC<Password2Props> = ({ handleCloseModal }) => {
         <button
           className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px] mt-10"
           onClick={handleSubmit}
-          disabled={mutation.isLoading}
+          // disabled={mutation.isLoading}
         >
-          {mutation.isLoading ? "در حال ارسال..." : "ارسال"}
+          {/* {mutation.isLoading ? "در حال ارسال..." : "ارسال"} */}
         </button>
       </div>
     </div>

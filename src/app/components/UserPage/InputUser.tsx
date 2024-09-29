@@ -432,7 +432,7 @@ export default function InputUser() {
     cart: null,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,

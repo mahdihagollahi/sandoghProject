@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 
-function TableSumFish() {
+interface TableSumFishProps {
+  userId: number;
+}
+
+const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
+  console.log(userId);
   const list = [
     { id: 1, name: "قسط 1", payment: "500,000", date: "1402/11/12" },
     { id: 2, name: "قسط 2", payment: "500,000", date: "1402/01/22" },
@@ -52,8 +57,8 @@ function TableSumFish() {
         </div>
         <div className="flex flex-row gap-28 mt-5">
           <span className="font-bold mr-10">مجموع مبلغ واریزی : </span>
-          {sum.map((task) => (
-            <div key={task} className="flex items-center gap-1" >
+          {sum.map((task , index) => (
+            <div key={index} className="flex items-center gap-1" >
               <p className="text-[#4FD1C5]">
               {task.sum}
               </p>

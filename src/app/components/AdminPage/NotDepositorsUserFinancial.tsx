@@ -11,10 +11,9 @@ import jalaliday from "jalaliday";
 dayjs.extend(jalaliday);
 
 interface User {
-  id: string;
+  id: number;
   name: string;
   joinDate: string;
-  loans: string;
   depositAmount: string;
 }
 
@@ -50,7 +49,7 @@ const fetchUsers = async (): Promise<User[]> => {
       response.data.users &&
       Array.isArray(response.data.users.data)
     ) {
-      return response.data.users.data.map((user) => ({
+      return response.data.users.data.map((user:any) => ({
         id: toPersianDigits(user.id),
         name: `${user.first_name} ${user.last_name}`,
         joinDate: toPersianDigits(
@@ -102,7 +101,8 @@ const NotDepositorsUserFinancial: React.FC = () => {
   const mutation = useMutation({
     mutationFn: updateUser,
     onSuccess: () => {
-      queryClient.invalidateQueries(["users"]);
+
+      queryClient.invalidateQueries({ queryKey: ["users"] });
     },
     onError: (error) => {
       console.error("Error updating user:", error);
@@ -135,7 +135,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={[]} /> {/* Empty array while loading */}
+          <UserTableFinancial users={[]} /> 
           <div className="flex justify-center items-center -mt-10">
             <span className="loading loading-dots text-accent loading-lg"></span>
           </div>
@@ -162,7 +162,7 @@ const NotDepositorsUserFinancial: React.FC = () => {
           <RoutTableFiancial />
         </div>
         <div>
-          <UserTableFinancial users={[]} /> {/* Empty array while error */}
+          <UserTableFinancial users={[]} /> 
           <div className="flex justify-center items-center -mt-20">
             <p>
               Error:{" "}

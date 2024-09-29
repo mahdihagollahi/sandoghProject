@@ -1,4 +1,4 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
 import UserDeleteTable from "@/src/app/components/AdminPage/UserDeleteTable";
@@ -9,6 +9,7 @@ interface User {
   id: number;
   first_name: string;
   last_name: string;
+  src: string;
   phone_number: string;
   emergency_number: string;
   home_number: string;
@@ -62,13 +63,12 @@ const fetchUsers = async (): Promise<User[]> => {
 };
 
 const DeleteUser: React.FC = () => {
- 
   const queryClient = new QueryClient();
 
   useEffect(() => {
     const authToken = localStorage.getItem("authToken");
     if (!authToken) {
-      console.log('لطفا دوباره لاگین کنید');
+      console.log("لطفا دوباره لاگین کنید");
     }
   }, []);
 
@@ -78,7 +78,6 @@ const DeleteUser: React.FC = () => {
     </QueryClientProvider>
   );
 };
-
 
 const UserList: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -91,13 +90,12 @@ const UserList: React.FC = () => {
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-        
           <InputSearchUser />
         </div>
         <div>
           <RoutTableUser />
           <div>
-            <UserDeleteTable users={users} onUserSelect={setSelectedUserId}/>
+            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
             <div className="flex justify-center items-center -mt-5">
               <span className="loading loading-dots text-accent loading-lg"></span>
             </div>
@@ -114,14 +112,13 @@ const UserList: React.FC = () => {
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
         <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-       
           <InputSearchUser />
         </div>
         <div>
           <RoutTableUser />
 
           <div>
-            <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
+            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
             <div className="flex justify-center dark:text-white items-center -mt-5">
               خطا در بارگزاری داده
             </div>
@@ -131,43 +128,40 @@ const UserList: React.FC = () => {
     );
   }
 
-  if(users.length === 0){
-    return(
+  if (users.length === 0) {
+    return (
       <div>
-          <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
-            <p className="font-bold text-lg ">مشاهده کاربران</p>
-          </div>
-      <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-    
-
-        <InputSearchUser />
-      </div>
-      <div>
-        <RoutTableUser />
+        <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
+          <p className="font-bold text-lg ">مشاهده کاربران</p>
+        </div>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
+          <InputSearchUser />
+        </div>
         <div>
-          <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
-          <div className="flex justify-center dark:text-white items-center -mt-5">
-            کاربری یافت نشد
+          <RoutTableUser />
+          <div>
+            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
+            <div className="flex justify-center dark:text-white items-center -mt-5">
+              کاربری یافت نشد
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    )
+    );
   }
 
   return (
     <div>
       <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
-          <p className="font-bold text-lg ">مشاهده کاربران</p>
-        </div>
+        <p className="font-bold text-lg ">مشاهده کاربران</p>
+      </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-      
         <InputSearchUser />
       </div>
       <div>
         <RoutTableUser />
       </div>
-      <UserDeleteTable users={users}  onUserSelect={setSelectedUserId}/>
+      <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
     </div>
   );
 };

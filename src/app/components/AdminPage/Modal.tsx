@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {  ReactNode } from 'react';
 
-const Modal = ({ isVisible, children }) => {
+interface ModalProps {
+  isVisible: boolean;
+  children: ReactNode;
+}
+
+
+const Modal: React.FC<ModalProps> = ({ isVisible, children }) => {
   if (!isVisible) return null;
 
   return (

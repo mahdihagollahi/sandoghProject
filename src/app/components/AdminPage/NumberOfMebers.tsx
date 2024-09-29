@@ -102,7 +102,7 @@ function NumberOfMembers() {
           </div>
           <div className='flex items-center gap-1'>
             <p className='font-bold text-[#A0AEC0] dark:text-white text-xs leading-8'>
-              {data.users}
+              {data?.users}
             </p>
             <p className='font-bold dark:text-white text-[#A0AEC0] text-xs leading-8'>
               نفر عضو

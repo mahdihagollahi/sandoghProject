@@ -1,6 +1,4 @@
 import React, { useState, FormEvent } from "react";
-import Image from "next/image";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
 import axios from "axios";
 
 const api = axios.create({

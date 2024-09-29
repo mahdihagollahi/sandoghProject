@@ -30,12 +30,12 @@ const fetchChartData = async (): Promise<ChartData> => {
 };
 
 function ChartAdminDashboard() {
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError , error } = useQuery({
     queryKey: ['chartData'],
     queryFn: fetchChartData,
   });
 
-  const chartData = data || {};
+  const chartData :Partial<ChartData> = data || {};
 
   const chartConfig = {
     labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
@@ -69,7 +69,7 @@ function ChartAdminDashboard() {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'bottom' as const,
       },
       title: {
         display: false,
@@ -79,15 +79,15 @@ function ChartAdminDashboard() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value) {
-            return value + ' م';
+          callback: function (tickValue: string | number) {
+            return `${tickValue} ;م`
           },
         },
       },
       x: {
         ticks: {
-          callback: function (value, index, values) {
-            return this.getLabelForValue(value);
+          callback: function (tickValue: string | number, index: number, ticks: any[]) {
+            return tickValue.toString()
           },
         },
       },
@@ -121,7 +121,7 @@ function ChartAdminDashboard() {
           </p>
         </div>
       <div className='flex justify-center items-center mt-40'>
-<p>{(isError).message}</p>
+<p>{(error as Error).message}</p>
       </div>
       </div>
       </div>
@@ -145,4 +145,5 @@ function ChartAdminDashboard() {
 }
 
 export default ChartAdminDashboard;
+
 
