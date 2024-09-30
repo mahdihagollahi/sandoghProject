@@ -6,6 +6,9 @@ import Paginate from './Paginate';
 import Link from 'next/link';
 import IconImage from '@/app/assent/Img/adminPanel/defultUser.png';
 import moment from 'moment-jalaali';
+import axios from 'axios';
+import { useMutation } from 'react-query';
+
 interface User {
   id: number;
   src: string;
@@ -38,19 +41,43 @@ const convertToPersianDate = (date: string): string => {
   return convertToPersianNumber(jalaaliDate);
 };
 
-const UserTable: React.FC<UserTableProps> = ({ users ,  onUserSelect }) => {
+const UserDeleteTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 7;
-  console.log(users)
+
   const pageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
 
-  
-
   const offset = currentPage * itemsPerPage;
   const currentPageData = users.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(users.length / itemsPerPage);
+
+  // تابع برای حذف کاربر
+  const deleteUser = async (userId: number) => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      throw new Error('No auth token found');
+    }
+
+    const response = await axios.delete(`/api/users/delete/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  };
+
+  const { mutate: deleteUserMutation } = useMutation(deleteUser, {
+    onSuccess: () => {
+      // عمل موفقیت‌آمیز (مثلاً بازخوانی اطلاعات)
+      console.log('User deleted successfully');
+    },
+    onError: (error) => {
+      // مدیریت خطا
+      console.error('Error deleting user:', error);
+    },
+  });
 
   return (
     <div>
@@ -70,13 +97,13 @@ const UserTable: React.FC<UserTableProps> = ({ users ,  onUserSelect }) => {
           <div>
             <table className="w-full mt-[3%] table-auto border-collapse">
               <tbody className='divide-y divide-gray-200 space-y-4'>
-                {currentPageData.map((user, index) => (
-                  <tr key={index} onClick={() => onUserSelect(user.id)}>
+                {currentPageData.map((user) => (
+                  <tr key={user.id} onClick={() => onUserSelect(user.id)}>
                     <td className="w-1/12 py-4 px-4">
                       <Image src={user.src || IconImage} width={40} height={40} alt="" />
                     </td>
-                    <td className="w-2/12 py-2 px-4">   {`${user.first_name} ${user.last_name}`}</td>
-                    <td className="w-2/12 py-2 px-4">  {convertToPersianDate(user.created_at)} </td>
+                    <td className="w-2/12 py-2 px-4">{`${user.first_name} ${user.last_name}`}</td>
+                    <td className="w-2/12 py-2 px-4">{convertToPersianDate(user.created_at)}</td>
                     <td className="w-3/12 py-2 px-4">
                       <Link href={`/detailuser/${user.id}`} passHref>
                         <button className="py-[2%] px-8 border flex items-center gap-2 border-teal-400 p-1 rounded-md">
@@ -86,7 +113,7 @@ const UserTable: React.FC<UserTableProps> = ({ users ,  onUserSelect }) => {
                       </Link>
                     </td>
                     <td className="w-1/12 py-2 px-4">
-                      <button className="w-6 h-6">
+                      <button className="w-6 h-6" onClick={() => deleteUserMutation(user.id)}>
                         <Image src={iconBackImage} width={34} height={34} alt="حذف" />
                       </button>
                     </td>
@@ -106,6 +133,7 @@ const UserTable: React.FC<UserTableProps> = ({ users ,  onUserSelect }) => {
   );
 };
 
-export default UserTable;
+export default UserDeleteTable;
+
 
 
