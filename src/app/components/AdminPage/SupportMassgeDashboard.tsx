@@ -90,7 +90,7 @@ function SupportMassgeDashboard() {
             </p>
           </div>
           <div>
-            <div className="flex  text-white justify-center items-center mt-40">
+            <div className="flex  dark:text-white justify-center items-center mt-40">
               <p>پیامی وجود ندارد</p>
             </div>
             <div className="flex justify-center py-8">
