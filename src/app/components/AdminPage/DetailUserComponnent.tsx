@@ -65,7 +65,7 @@ const DetailUser: React.FC = () => {
 
         <div className="bg-white dark:bg-[#4F5D74] w-[795%] h-[80%] shadow-md mt-5  cursor-pointer rounded-md ">
           <div className="flex ">
-            <span className="loading loading-dots text-accent loading-lg mt-96 mr-[50%]"></span>
+            <span className="loading loading-dots text-[#4FD1C5] loading-lg mt-96 mr-[50%]"></span>
           </div>
         </div>
       </div>

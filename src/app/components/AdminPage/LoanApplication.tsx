@@ -50,7 +50,7 @@ function LoanApplication() {
               </p>
             </div>
             <div className="flex items-center gap-1">
-              <span className="loading loading-dots text-accent loading-sm"></span>
+              <span className="loading loading-dots text-[#4FD1C5]  loading-sm"></span>
             </div>
           </div>
         </div>

@@ -101,7 +101,7 @@ function CardAdmin() {
                 style={{ backgroundImage: `url(${Background.src})` }}
               ></div>
               <div className="relative z-10">
-                <span className="loading text-accent loading-dots loading-lg"></span>
+                <span className="loading text-[#4FD1C5]  loading-dots loading-lg"></span>
               </div>
             </div>
             <div className="mt-8 mx-auto pb-3 pt-2 px-7 w-full md:w-80 h-10 border border-[#4FD1C5] cursor-pointer">

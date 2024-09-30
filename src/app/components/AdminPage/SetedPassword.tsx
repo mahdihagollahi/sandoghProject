@@ -41,7 +41,7 @@ const SetedPassword: FC = () => {
         <div className="flex justify-center">
         <div className="bg-white dark:bg-[#4F5D74] shadow-md mt-5 p-6  md:p-10  w-[97%] rounded-md">
         <div className='flex justify-center items-center'>
-           <span className="loading loading-dots text-accent loading-lg"></span>
+           <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
            </div>
           </div>
         </div>

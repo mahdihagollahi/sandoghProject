@@ -80,7 +80,7 @@ const InputSearchUser: React.FC = () => {
       </div>
 
   
-      {loading &&    <span className="loading loading-dots mr-[80%] mt-2 text-accent loading-lg"></span>}
+      {loading &&    <span className="loading loading-dots mr-[80%] mt-2 text-[#4FD1C5] loading-lg"></span>}
 
       
       {error && <p>{error}</p>}

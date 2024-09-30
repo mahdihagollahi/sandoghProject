@@ -121,7 +121,7 @@ function ChartFinancial() {
             </p>
           </div>
           <div className="flex justify-center items-center mt-40">
-            <span className="loading loading-dots text-accent  loading-lg"></span>
+            <span className="loading loading-dots text-[#4FD1C5]  loading-lg"></span>
           </div>
         </div>
       </div>
