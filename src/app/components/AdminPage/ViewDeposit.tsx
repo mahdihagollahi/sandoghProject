@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Money from "@/src/app/assent/Img/adminPanel/3D money card.svg";
+import Money from "@/app/assent/Img/adminPanel/3D money card.svg";
 import Link from "next/link";
 function ViewDeposit() {
   return (

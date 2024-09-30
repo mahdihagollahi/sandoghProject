@@ -136,8 +136,8 @@
 
 import React, { useState } from 'react';
 import { useMutation, QueryClient, QueryClientProvider } from 'react-query';
-import axios, { AxiosError } from 'axios'; // Import AxiosError
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
+import axios, { AxiosError } from 'axios';
+import backImage from '@/app/assent/Img/adminPanel/back.svg';
 import Image from 'next/image';
 
 const queryClient = new QueryClient();

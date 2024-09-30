@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import backImage from "@/app/assent/Img/adminPanel/back.svg";
 
 const queryClient = new QueryClient();
 

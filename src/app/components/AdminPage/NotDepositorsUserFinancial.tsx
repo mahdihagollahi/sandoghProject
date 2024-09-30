@@ -1,7 +1,7 @@
 import React from "react";
 import UserTableFinancial from "@/app/components/AdminPage/UserTableNotDespositors";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import backImage from "@/app/assent/Img/adminPanel/back.svg";
 import RoutTableFiancial from "./RoutTableFinancial";
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";

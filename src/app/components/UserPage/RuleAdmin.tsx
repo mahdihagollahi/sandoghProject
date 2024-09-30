@@ -5,9 +5,9 @@ import axios from "axios";
 import Image from "next/image";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import styles
-import posetiv from "@/src/app/assent/Img/userPanel/posetiv.svg";
-import negetiv from "@/src/app/assent/Img/userPanel/negtiv.svg";
-import EditIcon from "@/src/app/assent/Img/adminPanel/EditIconn.svg";
+import posetiv from "@/app/assent/Img/userPanel/posetiv.svg";
+import negetiv from "@/app/assent/Img/userPanel/negtiv.svg";
+import EditIcon from "@/app/assent/Img/adminPanel/EditIconn.svg";
 import ChangePasswordAdmin from "./ChangePasswordAdmin";
 
 function RuleAdmin() {

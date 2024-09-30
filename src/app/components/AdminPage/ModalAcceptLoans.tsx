@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useMutation , UseMutationResult } from '@tanstack/react-query';
-import backImage from '@/src/app/assent/Img/adminPanel/back.svg';
+import backImage from '@/app/assent/Img/adminPanel/back.svg';
 import Image from 'next/image';
 
 interface User {

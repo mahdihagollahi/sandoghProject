@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import SendIconImage from "@/src/app/assent/Img/adminPanel/SendIcon.svg";
+import SendIconImage from "@/app/assent/Img/adminPanel/SendIcon.svg";
 import Modal from "./Modal";
-import TextAreaComponent from "@/src/app/components/AdminPage/TextAreaComponent";
+import TextAreaComponent from "@/app/components/AdminPage/TextAreaComponent";
 import Paginate from "./Paginate";
 
 interface User {
