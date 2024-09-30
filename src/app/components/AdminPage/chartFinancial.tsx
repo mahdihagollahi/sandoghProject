@@ -1,5 +1,4 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,9 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+} from 'chart.js';
+
 
 ChartJS.register(
   CategoryScale,
@@ -23,123 +21,61 @@ ChartJS.register(
   Legend
 );
 
-interface ChartData {
-  income: number[];
-  outcome: number[];
+interface ChartProps {
+  chartData: any; 
 }
 
-const fetchChartData = async (): Promise<ChartData> => {
-  const API_URL = "https://mohammadelia30.ir/shabab/api/inventory/index";
-
-  const authToken = localStorage.getItem("authToken");
-
-  if (!authToken) {
-    throw new Error("No auth token found");
-  }
-
-  const response = await axios.get(API_URL, {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
-
-  return response.data;
-};
-
-function ChartFinancial() {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["chartData"],
-    queryFn: fetchChartData,
-  });
-
-  const chartData :Partial<ChartData> = data || {};
-
-  const chartConfig = {
-    labels: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور"],
-    datasets: [
-      {
-        label: "درامد",
-        data: chartData.income,
-        borderColor: "rgba(54, 162, 235, 1)",
-        backgroundColor: "rgba(54, 162, 235, 0.2)",
-        fill: false,
-        tension: 0.1,
-        pointStyle: "circle",
-        pointRadius: 5,
-        pointBackgroundColor: "rgba(54, 162, 235, 1)",
-      },
-      {
-        label: "خروجی",
-        data: chartData.outcome,
-        borderColor: "rgba(255, 99, 132, 1)",
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        fill: false,
-        tension: 0.1,
-        pointStyle: "circle",
-        pointRadius: 5,
-        pointBackgroundColor: "rgba(255, 99, 132, 1)",
-      },
-    ],
-  };
-
+const ChartMounthFinantial: React.FC<ChartProps> = ({ chartData }) => {
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom' as const,
+        position: 'top' as const,
       },
       title: {
-        display: false,
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          callback: function (tickValue: string | number) {
-            return `${tickValue} ;م`
-          },
-        },
-      },
-      x: {
-        ticks: {
-          callback: function (tickValue: string | number, index: number, ticks: any[]) {
-            return tickValue.toString()
-          },
-        },
+        display: true,
+     
       },
     },
   };
 
-  if (isLoading) {
-    return (
-      <div className="flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2">
-        <div className="w-[510px] h-[302px]  ">
-          <div className=" mr-8 mb-10">
-            <p className="font-medium -mt-10 text-sm dark:text-white text-[#000000]">
-              نمودار صندوق
-            </p>
-          </div>
-          <div className="flex justify-center items-center mt-40">
-            <span className="loading loading-dots text-[#4FD1C5]  loading-lg"></span>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const incomeData = chartData?.datasets?.[0]?.data || [];
+  const outcomeData = chartData?.datasets?.[1]?.data || [];
+
+  const chartConfig = {
+    labels: chartData?.labels || [],
+    datasets: [
+      {
+        label: 'ورودی',
+        data: incomeData,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+        tension: 0.1,
+      },
+      {
+        label: 'خروجی',
+        data: outcomeData,
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        fill: true,
+        tension: 0.1,
+      },
+    ],
+  };
 
   return (
     <div className="flex   items-center   md:justify-center  xl:justify-center xl:ml-14  xl:mt-2">
-      <div className="w-[600px] h-[302px] ">
-        <div className=" mr-8 mb-10">
-          <p className="font-medium -mt-10 text-sm dark:text-white text-[#000000]">
-            نمودار صندوق
-          </p>
-        </div>
-        <Line data={chartConfig} options={options} />
+    <div className="w-[600px] h-[302px] ">
+      <div className=" mr-8 mb-10">
+        <p className="font-medium -mt-10 text-sm dark:text-white text-[#000000]">
+          نمودار صندوق
+        </p>
       </div>
+    <Line options={options} data={chartConfig} className='dark:text-white' />
+    </div>
     </div>
   );
-}
+};
 
-export default ChartFinancial;
+export default ChartMounthFinantial;
