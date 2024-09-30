@@ -1,0 +1,28 @@
+import React from "react";
+import AdminNavbarHeader from "@/app/components/AdminPage/AdminNavbarHeader";
+import AdminPageNavbar from "@/app/components/AdminPage/AdminPageNavbar";
+import EveryRequestLoan from "../components/AdminPage/EveryRequestLoan";
+
+const EveryLoanApplicationPage :React.FC =() => {
+  return (
+    <div className="dark:bg-[#283B4D]">
+      <div className="flex ">
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
+          <div>
+            <div>
+              <AdminNavbarHeader />
+            </div>
+            <div>
+              <AdminPageNavbar />
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#F8F9FA] dark:bg-[#283B4D] ">
+          <EveryRequestLoan  />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default EveryLoanApplicationPage;

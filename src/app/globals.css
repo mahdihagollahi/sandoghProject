@@ -2,26 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+
+  height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+[data-theme="light"] {
+  --background-color: #f8f8f8;
+  --background: #f8f8f8;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+
+  --background: black;
+}
+
+@layer base {
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: thin;
+    font-weight: 100;
+    src: url("/assent/font/IRANSansX-Thin.woff");
   }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: ultraLight;
+    font-weight: 200;
+    src: url("/assent/font/IRANSansX-UltraLight.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: light;
+    font-weight: 300;
+    src: url("/assent/font/IRANSansX-Light.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: regular;
+    font-weight: 400;
+    src: url("/assent/font/IRANSansX-Regular.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: medium;
+    font-weight: 500;
+    src: url("/assent/font/IRANSansX-Medium.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: demiBold;
+    font-weight: 600;
+    src: url("/assent/font/IRANSansX-DemiBold.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: bold;
+    font-weight: 700;
+    src: url("/assent/font/IRANSansX-Bold.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: extraBold;
+    font-weight: 800;
+    src: url("/assent/font/IRANSansX-ExtraBold.woff");
+  }
+  @font-face {
+    font-family: "IRaNSans";
+    font-style: black;
+    font-weight: 900;
+    src: url("/assent/font/IRANSansX-Black.woff");
+  }
+}
+
+:root {
+  direction: rtl;
+}
+
+@layer base {
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: thin;
+    font-weight: 100;
+    src: url("/assent/font/IRANSansXFaNum-Thin.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: ultraLight;
+    font-weight: 200;
+    src: url("/assent/font/IRANSansXFaNum-UltraLight.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: light;
+    font-weight: 300;
+    src: url("/assent/font/IRANSansXFaNum-Light.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: regular;
+    font-weight: 400;
+    src: url("/assent/font/IRANSansXFaNum-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: medium;
+    font-weight: 500;
+    src: url("/assent/font/IRANSansXFaNum-Medium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: demiBold;
+    font-weight: 600;
+    src: url("/assent/font/IRANSansXFaNum-DemiBold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: Bold;
+    font-weight: 700;
+    src: url("/assent/font/IRANSansXFaNum-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: extreBold;
+    font-weight: 800;
+    src: url("/assent/font/IRANSansXFaNum-ExtraBold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iransansNumber";
+    font-style: Black;
+    font-weight: 900;
+    src: url("/assent/font/IRANSansXFaNum-Black.woff2") format("woff2");
+  }
+}
+
+.container {
+  width: 1024px;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 0;
+  background-color: #f8f9fa;
 }
