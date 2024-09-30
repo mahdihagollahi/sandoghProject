@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import backImage from "@/app/assent/Img/adminPanel/back.svg";
 import Image from "next/image";
 
 interface TextAreaComponentProps {

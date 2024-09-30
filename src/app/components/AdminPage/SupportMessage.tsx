@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png';
+import IconImage from '@/app/assent/Img/adminPanel/defultUser.png';
 import Link from 'next/link';
 
 interface Message {

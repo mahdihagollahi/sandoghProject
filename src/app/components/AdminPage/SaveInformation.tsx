@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import MangmentPicture from '@/src/app/assent/Img/adminPanel/profilemangment.svg'
+import MangmentPicture from '@/app/assent/Img/adminPanel/profilemangment.svg'
 
 interface UserData {
   first_name: string;

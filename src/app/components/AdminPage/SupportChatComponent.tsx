@@ -3,8 +3,8 @@ import { useQuery, useMutation, QueryClient, QueryClientProvider } from "react-q
 import axios from "axios";
 import Image,{ StaticImageData} from "next/image";
 import { usePathname } from "next/navigation";
-import defultUser from "@/src/app/assent/Img/adminPanel/defultUser.png";
-import arrowImage from "@/src/app/assent/Img/adminPanel/back.svg";
+import defultUser from "@/app/assent/Img/adminPanel/defultUser.png";
+import arrowImage from "@/app/assent/Img/adminPanel/back.svg";
 
 interface Message {
   id: number;

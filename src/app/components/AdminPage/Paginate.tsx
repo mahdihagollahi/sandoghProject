@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import Image from 'next/image';
-import chevronRightImage from '@/src/app/assent/Img/adminPanel/chevronRightImage.svg';
-import chevronLeftImage from '@/src/app/assent/Img/adminPanel/arrow.svg';
+import chevronRightImage from '@/app/assent/Img/adminPanel/chevronRightImage.svg';
+import chevronLeftImage from '@/app/assent/Img/adminPanel/arrow.svg';
 
 interface PaginateProps {
   pageClick: (selectedItem: { selected: number }) => void;

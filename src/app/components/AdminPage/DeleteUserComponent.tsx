@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-import eyes from "@/src/app/assent/Img/userPanel/eyes.svg";
-import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
-import reject from "@/src/app/assent/Img/userPanel/reject.svg";
+import eyes from "@/app/assent/Img/userPanel/eyes.svg";
+import accept from "@/app/assent/Img/userPanel/acsept.svg";
+import reject from "@/app/assent/Img/userPanel/reject.svg";
 import Link from "next/link";
 
 interface User {
