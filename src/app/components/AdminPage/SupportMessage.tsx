@@ -72,7 +72,7 @@ function SupportMessage() {
           </p>
         </div>
         <div className="bg-white dark:bg-[#4F5D74] w-[145%] h-[100%] shadow-md mt-5 px-[340px] py-80 pb-4 cursor-pointer rounded-md">          <div className="flex justify-center items-center">
-            <span className="loading loading-dots text-accent loading-lg -mt-60"></span>
+            <span className="loading loading-dots text-[#4FD1C5] loading-lg -mt-60"></span>
           </div>
         </div>
       </div>

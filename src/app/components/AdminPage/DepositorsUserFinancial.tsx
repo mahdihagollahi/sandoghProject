@@ -109,7 +109,7 @@ const DepositorsUserFinancial: React.FC = () => {
         <div>
           <UserTableDespositors users={[]} />
           <div className="flex justify-center items-center -mt-20">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+            <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
           </div>
         </div>
       </div>

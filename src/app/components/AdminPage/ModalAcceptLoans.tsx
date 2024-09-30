@@ -123,9 +123,9 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
         <button
           className="py-2 mt-2 ml-[85%] px-6 bg-teal-400 text-white rounded-md text-lg hover:bg-teal-500"
           onClick={handleSubmit}
-          // disabled={mutation.isLoading} 
+          disabled={mutation.isLoading} 
         >
-          {/* {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'} */}
+          {mutation.isLoading ? 'در حال ارسال...' : 'ارسال'}
         </button>
         <button
           className="absolute top-2 right-2 text-gray-500"

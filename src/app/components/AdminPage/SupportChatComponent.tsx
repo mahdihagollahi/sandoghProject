@@ -160,7 +160,7 @@ const SupportChatComponent: React.FC = () => {
           </div>
           <div className="bg-white w-[1030px] h-[771px] shadow-md mt-5 px-14 py-2 pb-4 rounded-md">
             <div className="flex justify-center items-center mt-96">
-              <span className="loading loading-dots text-accent loading-lg"></span>
+              <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
             </div>
           </div>
         </div>

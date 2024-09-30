@@ -54,7 +54,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
       <div>
         <div className="bg-white dark:bg-[#4F5D74] dark:text-white w-[100%] py-8 px-16 rounded-md shadow-md mr-4">
           <div className="flex justify-center">
-            <span className="loading loading-dots text-accent loading-lg"></span>
+            <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
           </div>
           <div className="flex justify-center mt-10">
             <Link href="/fish">

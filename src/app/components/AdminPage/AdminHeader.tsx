@@ -127,7 +127,7 @@ const AdminHeader: React.FC = () => {
             </p>
           </div>
           <div className="flex justify-between mt-2 dark:text-[#F5F5F5] gap-4">
-            <span className="loading loading-dots text-accent loading-sm"></span>
+            <span className="loading loading-dots text-[#4FD1C5] loading-sm"></span>
           </div>
         </div>
       </div>
