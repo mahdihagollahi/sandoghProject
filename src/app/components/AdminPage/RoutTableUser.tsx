@@ -5,26 +5,21 @@ import IconlyHoverImage from '@/app/assent/Img/adminPanel/Iconly.svg';
 import DeletedImage from '@/app/assent/Img/adminPanel/deleted.svg';
 import DeletedHoverImage from '@/app/assent/Img/adminPanel/crossActive.svg';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const RoutTableUser: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>('everyuser');
-  const [hoveredTab, setHoveredTab] = useState<string>('');
-
-  const handleTabClick = (tab: string) => {
-    setSelectedTab(tab);
-  };
+ const pathName = usePathname()
 
   return (
     <div>
       <div className='flex w-[40%] shadow-md justify-between px-10 mt-8 mr-4 dark:bg-[#4F5D74] bg-white h-16 rounded-md'>
         <div
-          className={`flex items-center gap-2 ${selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
-          onMouseEnter={() => setHoveredTab('everyuser')}
-          onMouseLeave={() => setHoveredTab('')}
+          className={`flex items-center hover:border-b-2 hover:border-[#4FD1C5] gap-2 ${ pathName == '/everyuser'? 'border-b-2 border-[#4FD1C5]' : ''}`}
+          
         >
-          <Link href='/everyuser' className='flex items-center gap-2' onClick={() => handleTabClick('everyuser')}>
+          <Link href='/everyuser' className='flex items-center gap-2' >
             <Image
-              src={selectedTab === 'everyuser' || hoveredTab === 'everyuser' ? IconlyHoverImage : IconlyImage}
+              src={pathName === '/everyuser' ? IconlyHoverImage : IconlyImage}
               width={25}
               height={25}
               alt='every user'
@@ -36,13 +31,12 @@ const RoutTableUser: React.FC = () => {
         </div>
 
         <div
-          className={`flex items-center gap-2 ${selectedTab === 'deleteduser' || hoveredTab === 'deleteduser' ? 'border-b-2 border-[#4FD1C5]' : ''}`}
-          onMouseEnter={() => setHoveredTab('deleteduser')}
-          onMouseLeave={() => setHoveredTab('')}
+          className={`flex items-center hover:border-b-2 hover:border-[#4FD1C5] gap-2 ${ pathName == '/deleteduser'? 'border-b-2 border-[#4FD1C5]' : ''}`}
+          
         >
-          <Link href='/deleteduser' className='flex items-center gap-2' onClick={() => handleTabClick('deleteduser')}>
+          <Link href='/deleteduser' className='flex items-center gap-2'>
             <Image
-              src={selectedTab === 'deleteduser' || hoveredTab === 'deleteduser' ? DeletedHoverImage : DeletedImage}
+              src={pathName === '/deleteduser' ? IconlyHoverImage : IconlyImage}
               width={25}
               height={25}
               alt='deleted user'

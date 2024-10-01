@@ -56,7 +56,7 @@ function NavbarData() {
         hoverSrc: ImageUserHover,
         darkSrc: DarkImageUse,
         darkhoverSrc: DarkImageUseHover,
-        link: "/everyuser",
+        link: "/everyuser" ,
       },
       {
         id: 3,

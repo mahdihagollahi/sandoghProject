@@ -10,7 +10,7 @@ function AdminNavbarHeader() {
     <div>
       <div className='flex items-center mt-10 mr-10'>
         <Link href='/dashboard'>
-          <div className='flex gap-6 border-b-2 dark:border-[#0000001A] pb-9 w-[260px]'>
+          <div className='flex cursor-pointer gap-6 border-b-2 dark:border-[#0000001A] pb-9 w-[260px]'>
             <div className=''>
               <Image src={groupImage} width={48} height={48} alt='group' />
             </div>
