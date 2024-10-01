@@ -22,7 +22,6 @@ const DeleteUserComponent: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // تابع برای fetch کردن کاربران
   const fetchUsers = async () => {
     const authToken = localStorage.getItem("authToken");
     if (!authToken) {
@@ -41,7 +40,6 @@ const DeleteUserComponent: React.FC = () => {
     setLoading(false);
   };
 
-  // تابع برای عملیات پذیرش یا رد
   const postOperation = async (user_id: number, operation: string) => {
     const authToken = localStorage.getItem("authToken");
     if (!authToken) {
@@ -58,7 +56,6 @@ const DeleteUserComponent: React.FC = () => {
       }
     );
 
-    // پس از موفقیت، مجدداً کاربران را fetch کنید
     fetchUsers();
   };
 
@@ -80,7 +77,7 @@ const DeleteUserComponent: React.FC = () => {
           </div>
         </div>
         <div>
-          <table className="w-[156%] dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
+          <table className="w-[156%] bg-white dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
             <thead>
               <tr className="border-b-2 flex flex-row justify-around p-8 gap-10">
                 <th>ردیف</th>
@@ -94,7 +91,7 @@ const DeleteUserComponent: React.FC = () => {
             <tbody>
               <tr>
                 <td colSpan={6} className="text-center">
-                  <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
+                  <span className="loading loading-dots mt-10 mb-10  text-[#4FD1C5] loading-lg"></span>
                 </td>
               </tr>
             </tbody>
@@ -106,7 +103,70 @@ const DeleteUserComponent: React.FC = () => {
   if (error)
     return (
       <div>
-        <div>خطا در دریافت داده‌ها: {error}</div>
+        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2 mt-[15px]">
+            <p className="font-bold text-lg whitespace-nowrap dark:text-white">
+              انصراف ها
+            </p>
+          </div>
+        </div>
+        <div>
+          <table className="w-[156%] bg-white dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
+            <thead>
+              <tr className="border-b-2 flex flex-row justify-around p-8 gap-10">
+                <th>ردیف</th>
+                <th>نام کاربری</th>
+                <th>کد ملی</th>
+                <th>شماره موبایل</th>
+                <th>تاریخ درخواست</th>
+                <th className="pl-5">عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colSpan={6} className="text-center">
+                  <div className="mt-10 mb-10">
+                    خطا در دریافت داده‌ها: {error}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+
+  if (users.length === 0)
+    return (
+      <div>
+        <div className="flex gap-[74%] items-center mb-2 mt-10 mr-3">
+          <div className="mr-2 mt-[15px]">
+            <p className="font-bold text-lg whitespace-nowrap dark:text-white">
+              انصراف ها
+            </p>
+          </div>
+        </div>
+        <div>
+          <table className="w-[156%] bg-white dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
+            <thead>
+              <tr className="border-b-2 flex flex-row justify-around p-8 gap-10">
+                <th>ردیف</th>
+                <th>نام کاربری</th>
+                <th>کد ملی</th>
+                <th>شماره موبایل</th>
+                <th>تاریخ درخواست</th>
+                <th className="pl-5">عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colSpan={6} className="text-center">
+                  <p className="mt-10 mb-10">کاربری یافت نشد</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
 
@@ -120,7 +180,7 @@ const DeleteUserComponent: React.FC = () => {
         </div>
       </div>
       <div>
-        <table className="w-[156%] dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
+        <table className="w-[156%] bg-white dark:bg-[#4F5D74] dark:text-white mt-8 p-10 shadow-md rounded-md">
           <thead>
             <tr className="border-b-2 flex flex-row justify-around p-8 gap-10">
               <th>ردیف</th>
@@ -133,7 +193,10 @@ const DeleteUserComponent: React.FC = () => {
           </thead>
           <tbody>
             {users.map((item, index) => (
-              <tr key={item.id} className="flex flex-row p-8 border-b-2 justify-around my-5">
+              <tr
+                key={item.id}
+                className="flex flex-row p-8 border-b-2 justify-around my-5"
+              >
                 <td>{index + 1}</td>
                 <td>{item.first_name + " " + item.last_name}</td>
                 <td className="-mr-8">{item.national_code}</td>
