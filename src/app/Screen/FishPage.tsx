@@ -46,7 +46,7 @@ function FishPage() {
           </a>
         </div>
         <div className="flex items-center justify-center">
-        <span className="loading loading-dots text-accent loading-lg"></span>
+        <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
         </div>
       </div>
     );
