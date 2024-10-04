@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
-import EyeImage from "@/src/app/assent/Img/adminPanel/eyeWhite.svg";
+import EyeImage from "@/app/assent/Img/adminPanel/eyeWhite.svg";
 
 interface TableSumFishProps {
   userId: number;

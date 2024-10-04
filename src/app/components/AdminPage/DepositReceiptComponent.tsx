@@ -211,7 +211,7 @@ async function fetchUserById(userId: number): Promise<User[]> {
   }
 
   const response = await axios.get(
-    `https://mohammadelia30.ir/shabab/api/installments/show/admin/${userId}`,
+    `https://mohammadelia30.ir/shabab/api/installments/show/admin/2`,
     {
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -279,7 +279,7 @@ function DepositReceiptComponent() {
           </div>
         </div>
         <div>
-          <UserTableReceipt user={null}/>
+          {/* <UserTableReceipt user={null}/> */}
           <div className="flex justify-center items-center -mt-10">
             <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
           </div>
@@ -311,7 +311,7 @@ function DepositReceiptComponent() {
           </div>
         </div>
         <div>
-          <UserTableReceipt user={null}/>
+          {/* <UserTableReceipt user={null}/> */}
           <p className="dark:text-white">خطا: {error.message}</p>
         </div>
         <div className="flex gap-12">

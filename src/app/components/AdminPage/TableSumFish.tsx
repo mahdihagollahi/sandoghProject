@@ -1,32 +1,83 @@
 "use client";
 import React from "react";
+import axios from "axios";
+import { useQuery, QueryClient, QueryClientProvider } from "react-query";
+
+// QueryClient initialization
+const queryClient = new QueryClient();
 
 interface TableSumFishProps {
   userId: number;
 }
 
-const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
-  console.log(userId);
-  const list = [
-    { id: 1, name: "قسط 1", payment: "500,000", date: "1402/11/12" },
-    { id: 2, name: "قسط 2", payment: "500,000", date: "1402/01/22" },
-    { id: 3, name: "قسط 3", payment: "500,000", date: "1402/07/23" },
-    { id: 4, name: "قسط 4", payment: "500,000", date: "1402/12/10" },
-    { id: 5, name: "قسط 5", payment: "500,000", date: "1402/02/12" },
-    { id: 6, name: "قسط 6", payment: "500,000", date: "1402/03/30" },
-  ];
-  const sum = [{ id: 1, sum: "3,000,000" }];
+const fetchFactors = async (userId: number) => {
+  const authToken = localStorage.getItem("authToken");
+  if (!authToken) {
+    throw new Error("Token not found");
+  }
+
+  const { data } = await axios.put(
+    `https://mohammadelia30.ir/shabab/api/factors/index/${userId}`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    }
+  );
+  return data;
+};
+
+const TableSumFish: React.FC<TableSumFishProps> = ({ userId }) => {
+  const { data, isLoading, isError } = useQuery(["factors", userId], () =>
+    fetchFactors(userId)
+  );
+
+  if (isLoading) {
+    return (
+      <div className="">
+        <div className="w-[117%] py-7 shadow-md rounded-md bg-white dark:bg-[#4F5D74] dark:text-white">
+          <div>
+            <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
+          </div>
+          <div className="mr-5 w-[500px] ">
+            <div>
+              <span className="loading loading-dots text-[#4FD1C5] loading-lg my-60 mr-[50%]"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="">
+        <div className="w-[117%] py-7 shadow-md rounded-md bg-white dark:bg-[#4F5D74] dark:text-white">
+          <div>
+            <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
+          </div>
+          <div className="mr-5 w-[500px] ">
+            <div>خطایی رخ داده است</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const list = data?.list || [];
+  const sum = data?.sum || [];
 
   return (
     <div className="">
-      <div className="w-[120%] py-7 shadow-md rounded-md bg-white dark:bg-[#4F5D74] dark:text-white">
+      <div className="w-[117%] py-7 shadow-md rounded-md bg-white dark:bg-[#4F5D74] dark:text-white">
         <div>
           <span className="font-bold mr-12">صورت حساب پرداخت شما</span>
         </div>
         <div className="flex flex-row justify-between mr-5 w-[500px] mt-10 ">
           <div>
             <span className="font-bold dark:text-white">شماره</span>
-            {list.map((item, index) => (
+            {list.map((item: any, index: number) => (
               <div key={index}>
                 <div className="mt-3">
                   <span>{item.name}</span>
@@ -36,7 +87,7 @@ const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
           </div>
           <div>
             <span className="font-bold mr-1 dark:text-white">مبلغ</span>
-            {list.map((item, index) => (
+            {list.map((item: any, index: number) => (
               <div key={index} className="bg-white dark:bg-[#4F5D74]">
                 <div className="mt-3">
                   <span>{item.payment}</span>
@@ -46,7 +97,7 @@ const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
           </div>
           <div>
             <span className="font-bold mr-1">تاریخ</span>
-            {list.map((item, index) => (
+            {list.map((item: any, index: number) => (
               <div key={index}>
                 <div className="mt-3">
                   <span>{item.date}</span>
@@ -57,20 +108,24 @@ const TableSumFish : React.FC<TableSumFishProps> = ({userId}) =>{
         </div>
         <div className="flex flex-row gap-28 mt-5">
           <span className="font-bold mr-10">مجموع مبلغ واریزی : </span>
-          {sum.map((task , index) => (
-            <div key={index} className="flex items-center gap-1" >
-              <p className="text-[#4FD1C5]">
-              {task.sum}
-              </p>
-              <p>
-                میلیون تومان
-              </p>
+          {sum.map((task: any, index: number) => (
+            <div key={index} className="flex items-center gap-1">
+              <p className="text-[#4FD1C5]">{task.sum}</p>
+              <p>میلیون تومان</p>
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default TableSumFish;
+const TableSumFishWrapper: React.FC<{ userId: number }> = ({ userId }) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TableSumFish userId={userId} />
+    </QueryClientProvider>
+  );
+};
+
+export default TableSumFishWrapper;

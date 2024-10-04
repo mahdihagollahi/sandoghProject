@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
-import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
+import IconlytikImage from '@/app/assent/Img/adminPanel/tik.svg';
+import IconlycrossImage from '@/app/assent/Img/adminPanel/cross.svg';
 
 interface UserDetailsProps {
   user: {
