@@ -4,7 +4,6 @@ import axios, { AxiosResponse } from "axios";
 import { useMutation, QueryClient, QueryClientProvider } from "react-query";
 import greenBackground from "@/app/assent/Img/userPanel/GreenBackgound.png";
 import Password2 from "@/app/components/UserPage/Password2";
-import Link from "next/link";
 
 interface LoginResponse {
   token?: string;
@@ -202,15 +201,13 @@ const LoginAdminContent: React.FC = () => {
           )}
 
           <div className="absolute bottom-9 left-1/2 transform -translate-x-1/2">
-            {/* <Link href="/dashboard"> */}
-              <button
-                className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px]"
-                onClick={handleSubmit}
-                disabled={isLoading}
-              >
-                {isLoading ? "در حال ورود..." : "ورود"}
-              </button>
-            {/* </Link> */}
+            <button
+              className="bg-[#4FD1C5] w-[420px] h-[56px] text-white rounded-[5px]"
+              onClick={handleSubmit}
+              disabled={isLoading}
+            >
+              {isLoading ? "در حال ورود..." : "ورود"}
+            </button>
           </div>
         </div>
       </div>

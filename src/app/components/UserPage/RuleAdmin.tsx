@@ -1,10 +1,10 @@
 
-"use client";
+"use client"
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // Import styles
+import "react-quill/dist/quill.snow.css"; 
 import posetiv from "@/app/assent/Img/userPanel/posetiv.svg";
 import negetiv from "@/app/assent/Img/userPanel/negtiv.svg";
 import EditIcon from "@/app/assent/Img/adminPanel/EditIconn.svg";
