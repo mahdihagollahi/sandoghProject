@@ -9,8 +9,10 @@ interface User {
     last_name: string;
     father_name: string;
   }
-
-const InputSearchUser: React.FC = () => {
+interface InputSearchUserProps  {
+  onSearchResults : (results:User[]) => void
+} 
+const InputSearchUser: React.FC = ({onSearchResults}) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [results, setResults] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -19,6 +21,7 @@ const InputSearchUser: React.FC = () => {
   useEffect(() => {
     if (!searchTerm) {
       setResults([]);
+      onSearchResults([])
       setError(null);
       return;
     }
@@ -44,9 +47,10 @@ const InputSearchUser: React.FC = () => {
         const data = response.data;
 
         if (data.users && data.users.length > 0) {
-          setResults(data.users); 
+          onSearchResults(data.users); 
         } else {
-          setResults([]);
+         
+          onSearchResults([])
           setError('کاربری وجود ندارد'); 
         }
         setLoading(false);
