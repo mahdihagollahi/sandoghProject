@@ -1,6 +1,6 @@
  "use client"
 import React from 'react'
-import ExitPage from '@/src/app/Screen/ExitPageUser'
+import ExitPage from '@/app/Screen/ExitPageUser'
 
 function page() {
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import EyeIconImage from '@/src/app/assent/Img/adminPanel/eye.svg';
-import IconlytikImage from '@/src/app/assent/Img/adminPanel/tik.svg';
-import IconlycrossImage from '@/src/app/assent/Img/adminPanel/cross.svg';
+import EyeIconImage from '@/app/assent/Img/adminPanel/eye.svg';
+import IconlytikImage from '@/app/assent/Img/adminPanel/tik.svg';
+import IconlycrossImage from '@/app/assent/Img/adminPanel/cross.svg';
 
-import Paginate from '@/src/app/components/AdminPage/Paginate';
+import Paginate from '@/app/components/AdminPage/Paginate';
 
 // Define the interface for a user
 interface User {

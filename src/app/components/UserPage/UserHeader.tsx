@@ -161,7 +161,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import IconImage from '@/src/app/assent/Img/adminPanel/defultUser.png';
+import IconImage from '@/app/assent/Img/adminPanel/defultUser.png';
 
 interface User {
   name: string;

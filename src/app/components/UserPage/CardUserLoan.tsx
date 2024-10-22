@@ -3,8 +3,8 @@
 
 import React from 'react'
 import Image from 'next/image'
-import CardImage from '@/src/app/assent/Img/adminPanel/Credit Card.png'
-import CopyIcon from '@/src/app/assent/Img/userPanel/copy.svg'
+import CardImage from '@/app/assent/Img/adminPanel/Credit Card.png'
+import CopyIcon from '@/app/assent/Img/userPanel/copy.svg'
 
 function CardUserLoan() {
     const cardNumber = { number: '6037998323457865' }

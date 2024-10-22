@@ -1,5 +1,5 @@
 import React from 'react'
-import SentedMassegeUserPage from '@/src/app/Screen/SentedMassgeUser'
+import SentedMassegeUserPage from '@/app/Screen/SentedMassgeUser'
 
 function page() {
   return (

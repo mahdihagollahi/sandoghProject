@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import no from "@/src/app/assent/Img/userPanel/no.svg"
+import no from "@/app/assent/Img/userPanel/no.svg"
 
 
 

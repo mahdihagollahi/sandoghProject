@@ -1,106 +1,11 @@
-// import React, { useState } from "react";
-// import Image from "next/image";
-// import icon from "@/src/app/assent/Img/userPanel/Iconly (1).svg";
-// import dragcard from "@/src/app/assent/Img/userPanel/drapcart.svg"
-
-
-// export default function DragCart() {
-//   const [uploadedImage , setUplodedImage]=useState(null)
-//   const [dragOver , setDragOver]=useState<boolean>(false)
-
-//   const handelFileUploaded = (event:any) => {
-//     const file = event.target.files[0];
-//     if (file && file.size <= 2 * 1024 * 1024) { // check if the file size is <= 2MB
-//       const reader = new FileReader();
-//       reader.onload = () => {
-        
-//         setUplodedImage(reader.result);
-//       };
-//       reader.readAsDataURL(file);
-//     } else {
-//       alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
-//     }
-//   };
-
-//   const handelDrop = (event:any) =>{
-//     event.preventDefult();
-//     setDragOver(false);
-//     const file = event.target.files[0];
-//     if (file && file.size <= 2 * 1024 * 1024) { 
-//       const reader = new FileReader();
-//       reader.onload = () => {
-//         setUplodedImage(reader.result);
-//       };
-//       reader.readAsDataURL(file);
-//     } else {
-//       alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
-//     }
-
-//   };
-
-//   const handelDragOver = (event:any) =>{
-//     event.preventDefult();
-//     setDragOver(true)
-//   };
-
-//   const handelDragLeave = () =>{
-//     setDragOver(false)
-//   }
-//   const handleRemoveImage = () => {
-//     setUplodedImage(null);
-//   };
-//   return (
-//     <>
-//     <div className="flex flex-col  gap-7">
-//         {/* <div className="border-dashed w-52  p-3 h-52 rounded-md border-2  border-[#4FD1C5]"> */}
-//         <div className={`border-dashed w-52  p-[10px] h-[200px] rounded-md border-2  border-[#4FD1C5] ${dragOver? 'border-[#38B2AC]' : 'border-[#4FD1C5]'}`}
-//         onDragOver={handelDragOver}
-//         onDragLeave={handelDragLeave}
-//         onDrop={handelDrop}
-//         >
-//           <Image
-//             className="mr-[88%] mb-2 "
-//             style={{ width: "18px", height: "18px" }}
-//             onClick={handleRemoveImage}
-//             src={icon}
-//             alt=""
-//           />
-//           <div className="flex flex-col gap-5 justify-center items-center">
-//             {uploadedImage ? (
-//                <Image src={uploadedImage} width={224} height={128} alt="Uploaded" className=" rounded-md" />
-//             ):(
-//               <label className="relative cursor-pointer flex flex-col gap-4 items-center justify-center h-full">
-//               <input type="file"  className="absolute inset-0 opacity-0 cursor-pointer" onChange={handelFileUploaded} />
-//               <Image className="w-5 h-4 mt-2 cursor-pointer" src={dragcard} alt="drag and drop"  />
-           
-//             <p className="text-[#2D3748] text-sm">آپلود عکس  پروفایل از فایل ها</p>
-//             <p className="text-[#809FB8] text-sm">اینجا بکشید و رها کنید</p>
-//             </label>
-//             )}
-          
-//           </div>
-         
-//         </div>
-//         <div>
-//           <ul className="list-disc list-inside flex flex-col gap-3 text-[#2D3748]">
-//             <li>لطفا عکس کارت ملی خود را در کادر قراره داده شده باگذاری کنید </li>
-//             <li>حجم عکس ها بیشتر از 2 مگابایت نباشند</li>
-//             <li>عکس کاملا واضح باشد</li>
-//           </ul>
-//         </div>
-//       </div>
-   
-//     </>
-//   );
-// }
 
 import React, { useState } from "react";
 import Image from "next/image";
-import icon from "@/src/app/assent/Img/userPanel/Iconly (1).svg";
-import dragcard from "@/src/app/assent/Img/userPanel/drapcart.svg";
+import icon from "@/app/assent/Img/userPanel/Iconly (1).svg";
+import dragcard from "@/app/assent/Img/userPanel/drapcart.svg";
 
 export default function DragCart() {
-  const [uploadedImage, setUplodedImage] = useState<string | null>(null); // Updated type
+  const [uploadedImage, setUplodedImage] = useState<string | null>(null); 
   const [dragOver, setDragOver] = useState<boolean>(false);
 
   const handelFileUploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -121,11 +26,11 @@ export default function DragCart() {
   const handelDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(false);
-    const file = event.dataTransfer.files?.[0]; // Use optional chaining
+    const file = event.dataTransfer.files?.[0]; 
     if (file && file.size <= 2 * 1024 * 1024) {
       const reader = new FileReader();
       reader.onload = () => {
-        if (typeof reader.result === 'string') { // Check if result is a string
+        if (typeof reader.result === 'string') { 
           setUplodedImage(reader.result);
         }
       };

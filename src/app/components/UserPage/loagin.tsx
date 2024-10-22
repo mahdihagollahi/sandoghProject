@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
+import greenBackground from "@/app/assent/Img/userPanel/GreenBackgound.png";
 import Link from "next/link";
 
 export default function Loagin() {

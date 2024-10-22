@@ -1,7 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
-import vam from "@/src/app/assent/Img/userPanel/vam.svg";
+import vam from "@/app/assent/Img/userPanel/vam.svg";
 import Link from "next/link";
 export default function Requestbox() {
   return (

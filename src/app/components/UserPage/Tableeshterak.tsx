@@ -142,9 +142,9 @@
 "use client";
 import React from "react";
 import Image from 'next/image';
-import tik from "@/src/app/assent/Img/userPanel/tik.svg";
+import tik from "@/app/assent/Img/userPanel/tik.svg";
 import { useDispatch } from "react-redux";
-import { selectPayment } from "@/src/app/peymentSlice"; 
+import { selectPayment } from "@/app/peymentSlice"; 
 
 function Tableeshterak() {
 

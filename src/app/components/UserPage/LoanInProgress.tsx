@@ -1,4 +1,5 @@
 
+
 // import React from "react";
 
 // const loans = [
@@ -8,7 +9,7 @@
 //     date: "1403/03/17",
 //     description: "برای خرج عروسی و مراسم ازدواج نیاز دارم و حتما باید چک های تالارو پاس کنم بد گیرم اقای قنبری اگه میشه تایید کنید",
 //     grade: "معمولی",
-//     guarantors: ["رحمان مقدم", "موسی مقدم"]
+//     guarantors: ["رحمان مقدم", "موسی مقدم"],
 //   },
 // ];
 
@@ -20,26 +21,26 @@
 //           <table className="w-full border-collapse">
 //             <thead>
 //               <tr className="border-b">
-//                 <th className="p-4  font-bold whitespace-nowrap ">شماره درخواست</th>
-//                 <th className="p-4 ">مبلغ وام</th>
+//                 <th className="p-4 font-bold whitespace-nowrap">شماره درخواست</th>
+//                 <th className="p-4">مبلغ وام</th>
 //                 <th className="p-4 whitespace-nowrap">تاریخ درخواست</th>
-//                 <th className="p-4 ">توضیحات</th>
+//                 <th className="p-4">توضیحات</th>
 //               </tr>
 //             </thead>
 //             <tbody>
 //               {loans.map((loan, index) => (
 //                 <tr key={index} className="border-b">
-//                   <td className="p-4 py-10 ">{loan.requestNumber}</td>
-//                   <td className="p-4 whitespace-nowrap py-10 ">{loan.amount}</td>
-//                   <td className="p-4 py-10 ">{loan.date}</td>
-//                   <td className="p-4 py-10 ">{loan.description}</td>
+//                   <td className="p-4 py-10">{loan.requestNumber}</td>
+//                   <td className="p-4 whitespace-nowrap py-10">{loan.amount}</td>
+//                   <td className="p-4 py-10">{loan.date}</td>
+//                   <td className="p-4 py-10">{loan.description}</td>
 //                 </tr>
 //               ))}
 //             </tbody>
 //           </table>
 //         </div>
 //         {loans.map((loan, index) => (
-//           <div key={index} className="flex flex-col gap-4 ml-[61%]  mt-10">
+//           <div key={index} className="flex flex-col gap-4 ml-[61%] mt-10">
 //             <div className="flex flex-row gap-3 ml-52 justify-end">
 //               <span>درجه وام:</span>
 //               <div className="flex flex-row gap-2 items-center">
@@ -48,12 +49,12 @@
 //                   type="radio"
 //                   name={`radio-${index}`}
 //                   className="radio radio-success"
-//                   checked="checked"
+//                   checked={true} 
 //                   readOnly
 //                 />
 //               </div>
 //             </div>
-//             <div className="flex flex-row gap-6 justify-end  mt-2">
+//             <div className="flex flex-row gap-6 justify-end mt-2">
 //               <span className="whitespace-nowrap flex items-center mr-20">ضامن درخواستی:</span>
 //               <div className="flex flex-row gap-4 -mt-1">
 //                 {loan.guarantors.map((guarantor, gIndex) => (
@@ -76,20 +77,52 @@
 // export default LoanInProgress;
 
 
-import React from "react";
-
-const loans = [
-  {
-    requestNumber: "درخواست 1",
-    amount: "50.000.000 تومان",
-    date: "1403/03/17",
-    description: "برای خرج عروسی و مراسم ازدواج نیاز دارم و حتما باید چک های تالارو پاس کنم بد گیرم اقای قنبری اگه میشه تایید کنید",
-    grade: "معمولی",
-    guarantors: ["رحمان مقدم", "موسی مقدم"],
-  },
-];
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function LoanInProgress() {
+  const [loans, setLoans] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // دریافت توکن از localStorage
+    const token = localStorage.getItem("authToken");
+
+    if (!token) {
+      console.error("توکن یافت نشد");
+      return;
+    }
+
+    // درخواست به API
+    axios
+      .post(
+        "https://mohammadelia30.ir/shabab/api/loans/show",
+        { admin_accept: "pending" },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((response) => {
+        // قرار دادن داده‌ها در state
+        setLoans(response.data.data || []);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("خطا در دریافت اطلاعات:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>در حال بارگذاری...</div>;
+  }
+
+  if (loans.length === 0) {
+    return <div>درخواستی وجود ندارد</div>;
+  }
+
   return (
     <>
       <div className="w-[95%] bg-white mt-7 rounded-md shadow-md p-10">
@@ -125,7 +158,7 @@ function LoanInProgress() {
                   type="radio"
                   name={`radio-${index}`}
                   className="radio radio-success"
-                  checked={true} // Change to your condition
+                  checked={true}
                   readOnly
                 />
               </div>
@@ -151,7 +184,5 @@ function LoanInProgress() {
 }
 
 export default LoanInProgress;
-
-
 
 

@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import UserHeader from "@/src/app/components/UserPage/UserHeader";
-import UserNavbarHeader from "@/src/app/components/UserPage/UserNavbarHeader";
-import UserPageNavbar from "@/src/app/components/UserPage/UserPageNavbar";
-import CardUser from "@/src/app/components/UserPage/CardUser";
-import ChartPament from "@/src/app/components/UserPage/ChartPayment";
-import RequestBox from "@/src/app/components/UserPage/RequestBox";
-import Supportbox from "@/src/app/components/UserPage/Supportbox";
+import UserHeader from "@/app/components/UserPage/UserHeader";
+import UserNavbarHeader from "@/app/components/UserPage/UserNavbarHeader";
+import UserPageNavbar from "@/app/components/UserPage/UserPageNavbar";
+import CardUser from "@/app/components/UserPage/CardUser";
+import ChartPament from "@/app/components/UserPage/ChartPayment";
+import RequestBox from "@/app/components/UserPage/RequestBox";
+import Supportbox from "@/app/components/UserPage/Supportbox";
 
 function UserFirstPage() {
   return (

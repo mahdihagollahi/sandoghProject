@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-import LoginAdmin from "./components/UserPage/LoginAdmin";
+import Loagin from "./components/UserPage/loagin";
 
 function page() {
   return (
     <>
-      <LoginAdmin />
+      <Loagin />
     </>
   );
 }

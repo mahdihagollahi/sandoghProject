@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import loagin from "@/src/app/assent/Img/userPanel/loagin.png";
-import Group from "@/src/app/assent/Img/userPanel/Group 39519.svg";
-import loagimg from "@/src/app/assent/Img/userPanel/menWithBollon.svg";
-
+import loagin from "@/app/assent/Img/userPanel/loagin.png";
+import Group from "@/app/assent/Img/userPanel/Group 39519.svg";
+import loagimg from "@/app/assent/Img/userPanel/menWithBollon.svg"
 export default function Landing() {
   return (
     <>

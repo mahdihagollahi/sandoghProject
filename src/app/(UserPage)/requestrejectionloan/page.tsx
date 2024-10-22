@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import RequestRejectionLoanPage from '@/src/app/Screen/RequestRejectionLoanPage'
+import RequestRejectionLoanPage from '@/app/Screen/RequestRejectionLoanPage'
 
 function page() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image'
 import Link from "next/link";
 
-import computerpepole from "@/src/app/assent/Img/userPanel/camputerpepole.svg";
+import computerpepole from "@/app/assent/Img/userPanel/camputerpepole.svg";
 
 export default function Supportbox() {
     return (

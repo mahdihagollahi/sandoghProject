@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AdminNavbarHeader from "@/src/app/components/AdminPage/AdminNavbarHeader";
+import AdminNavbarHeader from "@/app/components/AdminPage/AdminNavbarHeader";
 import UserPageNavbar from "../components/UserPage/UserPageNavbar";
 import Tableeshterak from "../components/UserPage/Tableeshterak";
 
