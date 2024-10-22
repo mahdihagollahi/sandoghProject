@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import UserAccount from "@/src/app/Screen/UserAccount";
+import UserAccount from "@/app/Screen/UserAccount";
 
 function page() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import SupportTicketPage from '@/src/app/Screen/SupportTicketPage'
+import SupportTicketPage from '@/app/Screen/SupportTicketPage'
 
 function page() {
   return (

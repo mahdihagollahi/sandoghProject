@@ -1,8 +1,8 @@
 
 import React from "react";
 import Image from "next/image";
-import search from "@/src/app/assent/Img/userPanel/Search.png";
-import Exclamation from "@/src/app/assent/Img/userPanel/Exclamation.svg";
+import search from "@/app/assent/Img/userPanel/Search.png";
+import Exclamation from "@/app/assent/Img/userPanel/Exclamation.svg";
 import DatePicker from "react-multi-date-picker";
 import "react-multi-date-picker/styles/colors/green.css";
 import persian from "react-date-object/calendars/persian";

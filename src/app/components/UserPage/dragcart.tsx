@@ -96,19 +96,19 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import icon from "@/src/app/assent/Img/userPanel/Iconly (1).svg";
-import dragcard from "@/src/app/assent/Img/userPanel/drapcart.svg";
+import icon from "@/app/assent/Img/userPanel/Iconly (1).svg";
+import dragcard from "@/app/assent/Img/userPanel/drapcart.svg";
 
 export default function DragCart() {
-  const [uploadedImage, setUplodedImage] = useState<string | null>(null); // Set type to string | null
+  const [uploadedImage, setUplodedImage] = useState<string | null>(null); 
   const [dragOver, setDragOver] = useState<boolean>(false);
 
   const handelFileUploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; // Use optional chaining
-    if (file && file.size <= 2 * 1024 * 1024) { // Check if the file size is <= 2MB
+    const file = event.target.files?.[0]; 
+    if (file && file.size <= 2 * 1024 * 1024) { 
       const reader = new FileReader();
       reader.onload = () => {
-        if (typeof reader.result === 'string') { // Check if result is a string
+        if (typeof reader.result === 'string') {
           setUplodedImage(reader.result);
         }
       };
@@ -121,11 +121,11 @@ export default function DragCart() {
   const handelDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(false);
-    const file = event.dataTransfer.files?.[0]; // Use optional chaining
+    const file = event.dataTransfer.files?.[0]; 
     if (file && file.size <= 2 * 1024 * 1024) { 
       const reader = new FileReader();
       reader.onload = () => {
-        if (typeof reader.result === 'string') { // Check if result is a string
+        if (typeof reader.result === 'string') { 
           setUplodedImage(reader.result);
         }
       };

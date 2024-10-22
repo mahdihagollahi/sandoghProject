@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import CurrentLoanAplicationPage from '@/src/app/Screen/CurrentLoanAplicationPage'
+import CurrentLoanAplicationPage from '@/app/Screen/CurrentLoanAplicationPage'
 
 function page() {
   return (

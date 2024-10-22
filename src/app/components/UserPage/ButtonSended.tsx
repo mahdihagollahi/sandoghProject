@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import send from "@/src/app/assent/Img/userPanel/send.svg"
+import send from "@/app/assent/Img/userPanel/send.svg"
 
 
 

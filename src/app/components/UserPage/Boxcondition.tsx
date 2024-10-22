@@ -1,10 +1,10 @@
 import React ,{useEffect , useState} from "react";
 import Image from "next/image";
-import jaryan from "@/src/app/assent/Img/userPanel/jaryan.svg";
-import radshodeh from "@/src/app/assent/Img/userPanel/radshode.svg";
-import taied from "@/src/app/assent/Img/userPanel/taied.svg";
-import ImageCrossActive from'@/src/app/assent/Img/adminPanel/crossActive.svg'
-import TikImage from '@/src/app/assent/Img/adminPanel/AcceptTik.svg'
+import jaryan from "@/app/assent/Img/userPanel/jaryan.svg";
+import radshodeh from "@/app/assent/Img/userPanel/radshode.svg";
+import taied from "@/app/assent/Img/userPanel/taied.svg";
+import ImageCrossActive from'@/app/assent/Img/adminPanel/crossActive.svg'
+import TikImage from '@/app/assent/Img/adminPanel/AcceptTik.svg'
 import Link from "next/link";
 
 function BoxCondition() {

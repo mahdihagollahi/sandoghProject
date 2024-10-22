@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import eyes from "@/src/app/assent/Img/userPanel/eyes.svg";
-import accept from "@/src/app/assent/Img/userPanel/acsept.svg";
-import reject from "@/src/app/assent/Img/userPanel/reject.svg";
+import eyes from "@/app/assent/Img/userPanel/eyes.svg";
+import accept from "@/app/assent/Img/userPanel/acsept.svg";
+import reject from "@/app/assent/Img/userPanel/reject.svg";
 
 function Tableenseraf() {
   const user = [

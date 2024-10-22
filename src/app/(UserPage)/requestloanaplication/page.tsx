@@ -1,5 +1,5 @@
 import React from 'react'
-import RequestLoanaplicationPage from '@/src/app/Screen/RequestLoanaplicationPage'
+import RequestLoanaplicationPage from '@/app/Screen/RequestLoanaplicationPage'
 
 function page() {
   return (

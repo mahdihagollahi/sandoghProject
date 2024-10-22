@@ -1,6 +1,6 @@
 import React from "react";
 import BoxCondition from "./Boxcondition";
-import InputVam from "@/src/app/components/UserPage/Inputvam";
+import InputVam from "@/app/components/UserPage/Inputvam";
 import ButtonSended from "./ButtonSended";
 import Filter from "./Filter";
 function RequestLoanAplicationComponent() {

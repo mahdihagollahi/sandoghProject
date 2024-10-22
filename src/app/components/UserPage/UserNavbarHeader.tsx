@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import groupImage from '@/src/app/assent/Img/adminPanel/Group 39513.svg'
+import groupImage from '@/app/assent/Img/adminPanel/Group 39513.svg'
 
 function UserPageNavbar() {
   return (

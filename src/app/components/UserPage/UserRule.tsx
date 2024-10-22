@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import backImage from "@/src/app/assent/Img/adminPanel/back.svg"
+import backImage from "@/app/assent/Img/adminPanel/back.svg"
 
 function UserRule() {
   return (

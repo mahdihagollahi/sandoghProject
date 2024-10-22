@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import UserFirstPage from "@/src/app/Screen/UserFirstPage";
+import UserFirstPage from "@/app/Screen/UserFirstPage";
 function page() {
   return (
     <div>

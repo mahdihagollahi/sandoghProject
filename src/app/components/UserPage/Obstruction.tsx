@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import greenBackground from "@/src/app/assent/Img/userPanel/GreenBackgound.png";
-import egnor from "@/src/app/assent/Img/userPanel/egnor.svg"
+import greenBackground from "@/app/assent/Img/userPanel/GreenBackgound.png";
+import egnor from "@/app/assent/Img/userPanel/egnor.svg"
 
 function Obstruction() {
   return (

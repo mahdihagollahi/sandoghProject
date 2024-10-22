@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import RuleUserPage from '@/src/app/Screen/RuleUserPage'
+import RuleUserPage from '@/app/Screen/RuleUserPage'
 
 function page() {
   return (
