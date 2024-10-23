@@ -65,7 +65,7 @@ export default function InputUser() {
         </div>
       </div>
 
-      <div className="mx-auto w-[125vh]">
+      <div className="mx-auto w-[1021px]">
         <div className="bg-white shadow-lg mt-5 p-6">
           <div className="flex flex-wrap justify-center items-center md:flex-wrap">
             <div className="relative">
@@ -209,7 +209,7 @@ export default function InputUser() {
           <div className="flex justify-center mt-8">
             <button
               onClick={handleSubmit}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md"
+              className="bg-[#4FD1C5] text-white w-96 px-4 py-2 rounded-md"
             >
               ارسال اطلاعات
             </button>
