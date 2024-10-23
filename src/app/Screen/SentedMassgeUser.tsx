@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AdminNavbarHeader from "@/app/components/AdminPage/AdminNavbarHeader";
+import UserNavbarHeader from "@/app/components/UserPage/UserNavbarHeader";
 import SentedMassege from "@/app/components/UserPage/sendmassege";
 import UserPageNavbar from "../components/UserPage/UserPageNavbar";
 
@@ -11,7 +11,7 @@ function ManagementAccount() {
         <div className="dark:bg-[#283B4D]">
           <div className="dark:bg-[#283B4D]">
             <div className="dark:bg-[#283B4D]">
-              <AdminNavbarHeader />
+              <UserNavbarHeader />
             </div>
             <div className="dark:bg-[#283B4D]">
               <UserPageNavbar />

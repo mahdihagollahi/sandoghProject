@@ -81,7 +81,13 @@ const DeleteUser: React.FC = () => {
 
 const UserList: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
+  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+
   const { data: users = [], isLoading, error } = useQuery("users", fetchUsers);
+
+  const handleSearchResults = (results: User[]) => {
+    setFilteredUsers(results);
+  };
 
   if (isLoading) {
     return (
@@ -89,13 +95,10 @@ const UserList: React.FC = () => {
         <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <InputSearchUser />
-        </div>
-        <div>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3"></div>
+        <div className="mt-20">
           <RoutTableUser />
           <div>
-            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
             <div className="flex justify-center items-center -mt-5">
               <span className="loading loading-dots text-[#4FD1C5] loading-lg"></span>
             </div>
@@ -111,14 +114,11 @@ const UserList: React.FC = () => {
         <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <InputSearchUser />
-        </div>
-        <div>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3"></div>
+        <div className="mt-20">
           <RoutTableUser />
 
           <div>
-            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
             <div className="flex justify-center dark:text-white items-center -mt-5">
               خطا در بارگزاری داده
             </div>
@@ -134,13 +134,11 @@ const UserList: React.FC = () => {
         <div className="mr-[1%] absolute dark:text-white  z-10 mt-2">
           <p className="font-bold text-lg ">مشاهده کاربران</p>
         </div>
-        <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-          <InputSearchUser />
-        </div>
-        <div>
+        <div className="flex gap-24 items-center mb-2 mt-10 mr-3"></div>
+        <div className="mt-20">
           <RoutTableUser />
           <div>
-            <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
+            <UserDeleteTable users={[]} onUserSelect={setSelectedUserId} />
             <div className="flex justify-center dark:text-white items-center -mt-5">
               کاربری یافت نشد
             </div>
@@ -156,12 +154,15 @@ const UserList: React.FC = () => {
         <p className="font-bold text-lg ">مشاهده کاربران</p>
       </div>
       <div className="flex gap-24 items-center mb-2 mt-10 mr-3">
-        <InputSearchUser />
+        <InputSearchUser onSearchResults={handleSearchResults} />
       </div>
       <div>
         <RoutTableUser />
       </div>
-      <UserDeleteTable users={users} onUserSelect={setSelectedUserId} />
+      <UserDeleteTable
+        users={filteredUsers.length > 0 ? filteredUsers : users}
+        onUserSelect={setSelectedUserId}
+      />
     </div>
   );
 };

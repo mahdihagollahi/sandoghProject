@@ -3,9 +3,9 @@ import UserHeader from "@/app/components/UserPage/UserHeader";
 import UserNavbarHeader from "@/app/components/UserPage/UserNavbarHeader";
 import UserPageNavbar from "@/app/components/UserPage/UserPageNavbar";
 import CardUser from "@/app/components/UserPage/CardUser";
-import ChartPament from "@/app/components/UserPage/ChartPayment";
 import RequestBox from "@/app/components/UserPage/RequestBox";
 import Supportbox from "@/app/components/UserPage/Supportbox";
+import ManagerManoy from "../components/UserPage/ManagerManoy";
 
 function UserFirstPage() {
   return (
@@ -24,13 +24,13 @@ function UserFirstPage() {
 
             <div>
               <div className=" ">
-                <div className="flex    ">
+                <div className="flex  ">
                   <UserHeader />
                 </div>
 
                 <div className="flex flex-row  mt-10   gap-9  ">
                   <div>
-                    <ChartPament />
+                    <ManagerManoy />
                   </div>
                   <div className="">
                     <CardUser />

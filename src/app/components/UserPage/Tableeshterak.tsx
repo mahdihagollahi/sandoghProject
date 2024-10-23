@@ -139,31 +139,127 @@
 
 
 
+// "use client";
+// import React from "react";
+// import Image from 'next/image';
+// import tik from "@/app/assent/Img/userPanel/tik.svg";
+// import { useDispatch } from "react-redux";
+// import { selectPayment } from "@/app/peymentSlice"; 
+
+// function Tableeshterak() {
+
+//   const dispatch = useDispatch();
+
+//   const listghest = [
+//     { id: 1, text: "قسط 1", pyment: "500,000تومان", data: "1403/05/10", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 2, text: "قسط 2", pyment: "500,000تومان", data: "1403/12/30", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 3, text: "قسط 3", pyment: "500,000تومان", data: "1403/02/09", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 4, text: "قسط 4", pyment: "500,000تومان", data: "1403/10/11", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 5, text: "قسط 5", pyment: "500,000تومان", data: "1403/04/06", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 6, text: "قسط 6", pyment: "500,000تومان", data: "1403/11/07", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 7, text: "قسط 7", pyment: "500,000تومان", data: "1403/12/18", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//     { id: 8, text: "قسط 8", pyment: "500,000تومان", data: "1403/09/30", Condition: "پرداخت شده", massge: "بدون توضیح" },
+//   ];
+
+//   const handleCheckboxClick = (item:any) => {
+//     dispatch(selectPayment({ id: item.id, payment: item.pyment, text: item.text }));
+//   };
+
+//   return (
+//     <>
+//       <div className='flex gap-[77%] items-center mb-2 mt-12'>
+//         <div className='mr-2 '>
+//           <p className='font-bold text-lg'>درخواست وام</p>
+//         </div>
+//       </div>
+//       <table className="w-[70%] p-10 mt-5 shadow-md rounded-md">
+//         <thead>
+//           <tr className="border-b-2 flex flex-row justify-around gap-20">
+//             <th>شماره قسط</th>
+//             <th>مبلغ واریز</th>
+//             <th>تاریخ سر رسید</th>
+//             <th>وضعیت</th>
+//             <th>تایید مدیر</th>
+//             <th>پیام مدیر</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {listghest.map((item) => (
+//             <tr key={item.id} className="flex flex-row justify-around gap-20 py-5">
+//               <td><input type="checkbox" onClick={() => handleCheckboxClick(item)} className="checkbox checkbox-md" /></td>
+//               <td>{item.text}</td>
+//               <td>{item.pyment}</td>
+//               <td>{item.data}</td>
+//               <td>{item.Condition}</td>
+//               <td><Image src={tik} alt="" /></td>
+//               <td>{item.massge}</td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </>
+//   );
+// }
+
+// export default Tableeshterak;
+
+
+
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Image from 'next/image';
 import tik from "@/app/assent/Img/userPanel/tik.svg";
 import { useDispatch } from "react-redux";
 import { selectPayment } from "@/app/peymentSlice"; 
 
 function Tableeshterak() {
-
   const dispatch = useDispatch();
+  const [listghest, setListghest] = useState([]);
+  const [loading, setLoading] = useState(true);  
+  const [error, setError] = useState(""); 
 
-  const listghest = [
-    { id: 1, text: "قسط 1", pyment: "500,000تومان", data: "1403/05/10", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 2, text: "قسط 2", pyment: "500,000تومان", data: "1403/12/30", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 3, text: "قسط 3", pyment: "500,000تومان", data: "1403/02/09", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 4, text: "قسط 4", pyment: "500,000تومان", data: "1403/10/11", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 5, text: "قسط 5", pyment: "500,000تومان", data: "1403/04/06", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 6, text: "قسط 6", pyment: "500,000تومان", data: "1403/11/07", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 7, text: "قسط 7", pyment: "500,000تومان", data: "1403/12/18", Condition: "پرداخت شده", massge: "بدون توضیح" },
-    { id: 8, text: "قسط 8", pyment: "500,000تومان", data: "1403/09/30", Condition: "پرداخت شده", massge: "بدون توضیح" },
-  ];
+ 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem('authToken');
+        const response = await axios.post(
+          'https://mohammadelia30.ir/shabab/api/loans/show',
+          {}, 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (response.data.loans && response.data.loans.length > 0) {
+          setListghest(response.data.loans); 
+        } else {
+          setListghest([]);
+        }
+      } catch (error) {
+        setError("خطا در دریافت اطلاعات");
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); 
+      }
+    };
 
-  const handleCheckboxClick = (item:any) => {
+    fetchData();
+  }, []);
+
+  const handleCheckboxClick = (item: any) => {
     dispatch(selectPayment({ id: item.id, payment: item.pyment, text: item.text }));
   };
+
+  if (loading) {
+    return <p>در حال بارگذاری...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <>
@@ -172,39 +268,41 @@ function Tableeshterak() {
           <p className='font-bold text-lg'>درخواست وام</p>
         </div>
       </div>
-      <table className="w-[70%] p-10 mt-5 shadow-md rounded-md">
-        <thead>
-          <tr className="border-b-2 flex flex-row justify-around gap-20">
-            <th>شماره قسط</th>
-            <th>مبلغ واریز</th>
-            <th>تاریخ سر رسید</th>
-            <th>وضعیت</th>
-            <th>تایید مدیر</th>
-            <th>پیام مدیر</th>
-          </tr>
-        </thead>
-        <tbody>
-          {listghest.map((item) => (
-            <tr key={item.id} className="flex flex-row justify-around gap-20 py-5">
-              <td><input type="checkbox" onClick={() => handleCheckboxClick(item)} className="checkbox checkbox-md" /></td>
-              <td>{item.text}</td>
-              <td>{item.pyment}</td>
-              <td>{item.data}</td>
-              <td>{item.Condition}</td>
-              <td><Image src={tik} alt="" /></td>
-              <td>{item.massge}</td>
+
+      {listghest.length === 0 ? (
+        <p>وامی وجود ندارد</p>
+      ) : (
+        <table className="w-[70%] p-10 mt-5 shadow-md rounded-md">
+          <thead>
+            <tr className="border-b-2 flex flex-row justify-around gap-20">
+              <th>شماره قسط</th>
+              <th>مبلغ واریز</th>
+              <th>تاریخ سر رسید</th>
+              <th>وضعیت</th>
+              <th>تایید مدیر</th>
+              <th>پیام مدیر</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {listghest.map((item: any) => (
+              <tr key={item.id} className="flex flex-row justify-around gap-20 py-5">
+                <td><input type="checkbox" onClick={() => handleCheckboxClick(item)} className="checkbox checkbox-md" /></td>
+                <td>{item.text}</td>
+                <td>{item.pyment}</td>
+                <td>{item.data}</td>
+                <td>{item.Condition}</td>
+                <td><Image src={tik} alt="" /></td>
+                <td>{item.massge}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </>
   );
 }
 
 export default Tableeshterak;
-
-
-
 
 
 

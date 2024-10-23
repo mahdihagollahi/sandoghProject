@@ -53,7 +53,7 @@ const UserDeleteTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   const currentPageData = users.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(users.length / itemsPerPage);
 
-  // تابع برای حذف کاربر
+
   const deleteUser = async (userId: number) => {
     const token = localStorage.getItem('authToken');
     if (!token) {
@@ -70,11 +70,11 @@ const UserDeleteTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
 
   const { mutate: deleteUserMutation } = useMutation(deleteUser, {
     onSuccess: () => {
-      // عمل موفقیت‌آمیز (مثلاً بازخوانی اطلاعات)
+     
       console.log('User deleted successfully');
     },
     onError: (error) => {
-      // مدیریت خطا
+ 
       console.error('Error deleting user:', error);
     },
   });
