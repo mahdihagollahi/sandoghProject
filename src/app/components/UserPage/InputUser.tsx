@@ -65,7 +65,7 @@ export default function InputUser() {
         </div>
       </div>
 
-      <div className="mx-auto w-[125vh]">
+      <div className="mx-auto w-[1021px]">
         <div className="bg-white shadow-lg mt-5 p-6">
           <div className="flex flex-wrap justify-center items-center md:flex-wrap">
             <div className="relative">

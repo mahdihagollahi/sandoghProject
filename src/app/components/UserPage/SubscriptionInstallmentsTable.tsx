@@ -6,12 +6,11 @@ import IconlycrossImage from '@/app/assent/Img/adminPanel/cross.svg';
 
 import Paginate from '@/app/components/AdminPage/Paginate';
 
-// Define the interface for a user
 interface User {
-  id: number; // or string based on your ID type
+  id: number; 
   name: string;
-  depositAmount: number; // or string if it's a formatted currency string
-  joinDate: string; // or Date type based on how you handle dates
+  depositAmount: number; 
+  joinDate: string; 
 }
 
 interface UserTableProps {
