@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 import DragPhoto from "@/app/components/UserPage/dragphoto";
@@ -19,11 +18,13 @@ export default function InputUser() {
     additional_info: "",
     sheba_number: "",
     card_number: "",
+    father_name: "",
     profile: null,
     cart: null,
+    address: "",
   });
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
@@ -68,7 +69,9 @@ export default function InputUser() {
         <div className="bg-white shadow-lg mt-5 p-6">
           <div className="flex flex-wrap justify-center items-center md:flex-wrap">
             <div className="relative">
-              <label className="absolute z-10 left-[73%] px-3 bg-white">* نام</label>
+              <label className="absolute z-10 left-[73%] px-3 bg-white">
+                * نام
+              </label>
               <input
                 type="text"
                 name="first_name"
@@ -78,7 +81,9 @@ export default function InputUser() {
               />
             </div>
             <div className="relative w-full md:w-auto">
-              <label className="absolute z-10 left-[59%] px-1 bg-white">* نام خانوادگی</label>
+              <label className="absolute z-10 left-[59%] px-1 bg-white">
+                * نام خانوادگی
+              </label>
               <input
                 type="text"
                 name="last_name"
@@ -88,7 +93,9 @@ export default function InputUser() {
               />
             </div>
             <div className="relative w-full md:w-auto">
-              <label className="absolute z-10 left-[66%] px-3 bg-white">* کد ملی</label>
+              <label className="absolute z-10 left-[66%] px-3 bg-white">
+                * کد ملی
+              </label>
               <input
                 type="text"
                 name="national_id"
@@ -101,7 +108,21 @@ export default function InputUser() {
 
           <div className="flex flex-row gap-3 w-[60%]">
             <div className="relative">
-              <label className="absolute z-10 left-[54%] px-3 bg-white">*شماره موبایل</label>
+              <label className="absolute z-10 left-[68%] px-3 bg-white">
+                * نام پدر
+              </label>
+              <input
+                type="text"
+                name="father_name"
+                value={formData.father_name}
+                onChange={handleChange}
+                className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+              />
+            </div>
+            <div className="relative w-full md:w-auto">
+              <label className="absolute -top-2 z-10 left-[62%] px-1 bg-white py-2">
+                *شماره موبایل
+              </label>
               <input
                 type="text"
                 name="phone_number"
@@ -111,17 +132,9 @@ export default function InputUser() {
               />
             </div>
             <div className="relative w-full md:w-auto">
-              <label className="absolute -top-2 z-10 left-[64%] px-1 bg-white py-2">* تلفن منزل</label>
-              <input
-                type="text"
-                name="home_number"
-                value={formData.home_number}
-                onChange={handleChange}
-                className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
-              />
-            </div>
-            <div className="relative w-full md:w-auto">
-              <label className="absolute z-10 left-[43%] px-1 bg-white">* شماره تماس ضروری</label>
+              <label className="absolute z-10 left-[43%] px-1 bg-white">
+                * شماره تماس ضروری
+              </label>
               <input
                 type="text"
                 name="emergency_number"
@@ -132,8 +145,62 @@ export default function InputUser() {
             </div>
           </div>
 
-          {/* بقیه input ها به همین ترتیب */}
-          
+          <div className="flex flex-row gap-3 w-[60%]">
+            <div className="relative w-full md:w-auto">
+              <label className="absolute -top-2 z-10 left-[65%] px-1 bg-white py-2">
+                * تلفن منزل
+              </label>
+              <input
+                type="text"
+                name="home_number"
+                value={formData.home_number}
+                onChange={handleChange}
+                className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-20 w-[60%]">
+            <div className="relative w-full md:w-auto">
+              <label className="absolute -top-2 z-10 left-[78%] px-1 bg-white py-2">
+                *شماره شبا{" "}
+              </label>
+              <input
+                type="text"
+                name="sheba_number"
+                value={formData.sheba_number}
+                onChange={handleChange}
+                className="border w-[417px] h-[35px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+              />
+            </div>
+
+            <div className="relative w-full md:w-auto">
+              <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white py-2">
+                * تلفن منزل
+              </label>
+              <input
+                type="text"
+                name="home_number"
+                value={formData.home_number}
+                onChange={handleChange}
+                className="border w-[417px] h-[35px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+              />
+            </div>
+          </div>
+
+          <div className="relative w-full md:w-auto">
+            <label className="absolute -top-2 z-10 left-[92%] px-1 bg-white py-2">
+              *آدرس{" "}
+            </label>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              className="border w-[417px] h-[35px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+            />
+          </div>
+
           <div className="flex justify-end mt-4 gap-20">
             <DragCart />
             <DragPhoto />
