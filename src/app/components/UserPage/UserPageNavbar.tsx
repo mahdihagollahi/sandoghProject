@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import dashboardUser from "@/app/assent/Img/userPanel/dashboardUser.svg";
 import ImageDashboardHover from "@/app/assent/Img/userPanel/UserDashboardHover.svg";
@@ -70,6 +71,8 @@ function UserPageNavbar() {
   const [clickedImage, setClickedImage] = useState<number | null>(null);
   const isMobile = useMediaQuery({ maxWidth: 800 });
 
+  const pathname = usePathname();
+
   const handleMouseEnter = (id: number) => {
     setHoverImage((prev) => ({ ...prev, [id]: true }));
   };
@@ -122,9 +125,11 @@ function UserPageNavbar() {
             >
               <Image
                 src={
-                  hoverImage[image.id] || clickedImage === image.id
-                    ? image.hoverSrc
-                    : image.src
+                  pathname === image.link
+                  ? image.hoverSrc
+                  : hoverImage[image.id] || clickedImage === image.id
+                  ? image.hoverSrc
+                  : image.src
                 }
                 alt={`Image ${image.id}`}
                 width={200}
