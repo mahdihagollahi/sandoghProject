@@ -10,7 +10,10 @@ import Supportbox from "@/app/components/UserPage/Supportbox";
 function UserFirstPage() {
   return (
     <Fragment >
-      <div className=" bg-[#F8F9FA]">
+      <div className="relative">
+
+     
+      <div className=" bg-[#F8F9FA] ">
 
     
       <div className="  w-full flex flex-col ">
@@ -28,7 +31,7 @@ function UserFirstPage() {
             <UserHeader />
           </div>
 
-          <div className="flex flex-row  mt-20   gap-9  mr-[27%]">
+          <div className="flex flex-row  mt-10   gap-9  mr-[27%]">
             <div>
               <ChartPament />
             </div>
@@ -45,6 +48,7 @@ function UserFirstPage() {
 
           <Supportbox />
         </div>
+      </div>
       </div>
       </div>
     </Fragment>
