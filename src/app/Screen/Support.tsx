@@ -18,7 +18,7 @@ function Support() {
           </div>
         </div>
         <div className="bg-[#F8F9FA] dark:bg-[#283B4D]">
-          <SupportMessage />
+          {/* <SupportMessage /> */}
         </div>
       </div>
     </div>
