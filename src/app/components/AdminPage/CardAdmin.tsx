@@ -54,7 +54,7 @@ const updateCardNumber = async (newCardNumber: string) => {
 
 function CardAdmin() {
   const queryClient = useQueryClient();
-  const [isEditing, setIsEditing] = useState<Boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [cardNumber, setCardNumber] = useState<string>("");
 
   const queryOptions = {

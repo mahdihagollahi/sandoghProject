@@ -129,7 +129,7 @@ const EveryRequestLoan: React.FC = () => {
           </div>
         </div>
         <div className="mt-4">
-          <EveryLoanAplicationTable users={users} />
+          {/* <EveryLoanAplicationTable users={users} /> */}
           <div className="flex justify-center dark:text-white items-center">
             <div>کاربری یافت نشد</div>
           </div>

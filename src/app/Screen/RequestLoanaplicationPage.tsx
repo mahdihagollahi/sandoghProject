@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import AdminNavbarHeader from '@/app/components/AdminPage/AdminNavbarHeader'
+import UserNavbarHeader from "@/app/components/UserPage/UserNavbarHeader";
 import UserPageNavbar from '../components/UserPage/UserPageNavbar'
 import RequestLoanAplicationComponent from '../components/UserPage/RequestLoanAplicationComponent'
 
@@ -12,7 +12,7 @@ function RequestLoanaplicationPage() {
                
             <div >
           <div>
-            <AdminNavbarHeader />
+            <UserNavbarHeader />
           </div>
           <div>
             <UserPageNavbar />

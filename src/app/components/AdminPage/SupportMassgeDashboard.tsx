@@ -153,7 +153,7 @@ function SupportMassgeDashboard() {
             ))}
           </div>
 
-          <div className="flex  justify-center mt-60 py-8">
+          <div className="flex  justify-center mt-40 py-8">
             <Link href="/support" passHref>
               <button className="bg-[#4FD1C5] text-white py-2 px-24 rounded-lg">
                 دیدن همه
