@@ -9,47 +9,45 @@ import Supportbox from "@/app/components/UserPage/Supportbox";
 
 function UserFirstPage() {
   return (
-    <Fragment >
-      <div className="relative">
-
-     
-      <div className=" bg-[#F8F9FA] ">
-
-    
-      <div className="  w-full flex flex-col ">
-        <div>
-          <div>
-            <UserNavbarHeader />
-          </div>
-          <div>
-            <UserPageNavbar />
-          </div>
-        </div>
-
-        <div className="block xl:-mt-[55%]  md:-mt-[46%]">
-          <div className="flex  w-full   ">
-            <UserHeader />
-          </div>
-
-          <div className="flex flex-row  mt-10   gap-9  mr-[27%]">
+    <Fragment>
+      <div className="">
+        <div className=" bg-[#F8F9FA] ">
+          <div className="  flex  ">
             <div>
-              <ChartPament />
+              <div>
+                <UserNavbarHeader />
+              </div>
+              <div>
+                <UserPageNavbar />
+              </div>
             </div>
-            <div className="">
-              <CardUser />
+
+            <div>
+              <div className=" ">
+                <div className="flex    ">
+                  <UserHeader />
+                </div>
+
+                <div className="flex flex-row  mt-10   gap-9  ">
+                  <div>
+                    <ChartPament />
+                  </div>
+                  <div className="">
+                    <CardUser />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-row justify-end  gap-10 mt-10">
+                <div className="">
+                  <RequestBox />
+                </div>
+
+                <Supportbox />
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="flex flex-row justify-end ml-4 gap-10 mt-10">
-          <div className="">
-            <RequestBox />
-          </div>
-
-          <Supportbox />
-        </div>
-      </div>
-      </div>
       </div>
     </Fragment>
   );

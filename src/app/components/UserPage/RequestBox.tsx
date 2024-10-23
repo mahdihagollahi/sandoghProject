@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Requestbox() {
   return (
     <>
-      <div className="w-[101%] bg-white h-[99%] p-6 text-right rounded-md shadow-md ">
+      <div className="w-[386px] bg-white  h-[99%] p-6 text-right rounded-md shadow-md ">
         <h2 className="font-bold mr-4">
           اگه به وام نیاز داری همین حالا درخواست بده{" "}
         </h2>

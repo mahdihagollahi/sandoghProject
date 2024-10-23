@@ -32,7 +32,7 @@ export default function Loagin() {
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("authToken", response.data.token);
   
-        window.location.href = "/dashboarduser";
+        window.location.href = "/useraccount";
       }
     } catch (err: any) {
       if (err.response && err.response.data) {

@@ -6,7 +6,7 @@ import computerpepole from "@/app/assent/Img/userPanel/camputerpepole.svg";
 
 export default function Supportbox() {
     return (
-        <div className="w-[43%] bg-white h-[95%] p-5 text-right rounded-md shadow-md">
+        <div className="w-[617px] bg-white  p-5 text-right rounded-md shadow-md">
             <h2 className="font-bold">نیاز به پشتیبانی دارید ؟</h2>
             <p className="mt-8 text-slate-600">
                 اگر مشکلی برایتان بوجود آمده همین حالا به مدیر صندوق پیام دهید یا

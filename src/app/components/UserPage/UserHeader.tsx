@@ -174,7 +174,7 @@ function UserHeader() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        // Retrieve the authToken from localStorage
+      
         const authToken = localStorage.getItem('authToken');
 
         if (!authToken) {
@@ -182,7 +182,7 @@ function UserHeader() {
           return;
         }
 
-        // Make the request with the auth token in the headers
+       
         const response = await axios.post(
           'https://mohammadelia30.ir/shabab/api/auth/me',
           {},
@@ -194,7 +194,7 @@ function UserHeader() {
         );
 
         const { first_name, last_name, media } = response.data.user;
-        const imageUrl = media.length > 0 ? media[0].url : IconImage.src; // Use default image if none exists
+        const imageUrl = media.length > 0 ? media[0].url : IconImage.src;
 
         setUser({
           name: `${first_name} ${last_name}`,
@@ -209,14 +209,14 @@ function UserHeader() {
   }, []);
 
   if (!user) {
-    return <div>Loading...</div>; // Show loading state until data is fetched
+    return <div>Loading...</div>; 
   }
 
   return (
-    <div className='w-full'>
-      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[72%] mt-4 ml-3 md:mr-20 md:ml-3 lg:mr-20 lg:ml-3 xl:mr-96 rounded-md shadow-lg py-3 px-6 h-auto md:h-16'>
+    <div className=''>
+      <div className='flex gap-4 flex-col md:flex-row justify-between bg-[#FFFFFF] w-[118%] mt-4 ml-3   rounded-md shadow-lg py-3 px-6 h-auto md:h-16'>
         <div className='flex items-center mb-4 md:mb-0'>
-          <p className='mt-1 text-[#2D3748] font-light text-lg'>
+          <p className='mt-1 text-[#2D3748] whitespace-nowrap font-light text-lg'>
             سلام ، وقت شما بخیر به بخش داشبورد خوش آمدید ، گزارشات مورد نیاز شما در اختیار شماست!
           </p>
         </div>
