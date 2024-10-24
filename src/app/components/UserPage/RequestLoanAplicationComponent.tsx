@@ -22,9 +22,9 @@ function RequestLoanAplicationComponent() {
       <div className="mt-10">
         <InputVam />
       </div>
-      <div className="mt-10">
+      {/* <div className="mt-10">
         <ButtonSended />
-      </div>
+      </div> */}
     </div>
   );
 }

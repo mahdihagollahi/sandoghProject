@@ -3,7 +3,7 @@ import axios from "axios";
 import BankGuarantor from "./BankGuarantor";
 import NotGuarantor from "./NotGuarantor";
 
-function SentedMassege() {
+function Sentmassegesystematic() {
   const [messages, setMessages] = useState([]); 
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ function SentedMassege() {
 
       try {
         const response = await axios.get(
-          "https://mohammadelia30.ir/shabab/api/messages/show/unsystematic", // پیام‌های سیستماتیک
+          "https://mohammadelia30.ir/shabab/api/messages/show/systemic", // پیام‌های سیستماتیک
           {
             headers: {
               Authorization: `Bearer ${authToken}`,
@@ -83,4 +83,4 @@ function SentedMassege() {
   );
 }
 
-export default SentedMassege;
+export default Sentmassegesystematic;
