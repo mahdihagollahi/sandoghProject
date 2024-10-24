@@ -6,20 +6,24 @@ import axios from "axios";
 
 const ManagerManoy = () => {
   const [loans, setLoans] = useState([]); 
-  const [balance, setBalance] = useState(0); 
+  const [balance, setBalance] = useState(null); // مقدار اولیه را null قرار دادیم
 
-  
   const fetchLoans = async () => {
     try {
-      const token = 'your-auth-token'; 
-      const response = await axios.get('https://mohammadelia30.ir/shabab/api/installments/last', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      
-      setLoans(response.data.loans);
-      setBalance(response.data.balance);
+      const token = localStorage.getItem('authToken'); // دریافت توکن از localStorage
+      if (token) {
+        // اگر توکن موجود بود، درخواست API را با توکن ارسال کن
+        const response = await axios.get('https://mohammadelia30.ir/shabab/api/installments/last', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        
+        setLoans(response.data.loans || []); // اگر loans نال یا undefined باشد، یک آرایه خالی قرار می‌دهیم
+        setBalance(response.data.balance); // فرض بر اینکه مقدار معتبر باشد
+      } else {
+        console.error('توکن موجود نیست!');
+      }
     } catch (error) {
       console.error("خطا در دریافت اطلاعات:", error);
     }
@@ -36,7 +40,8 @@ const ManagerManoy = () => {
           <p>مدیریت مالی</p>
           <div className="text-[#4FD1C5]">
             <span>موجودی:</span>
-            <span>{balance.toLocaleString()} تومان</span> 
+            {/* اگر balance نال یا undefined بود، پیام "وجود ندارد" نمایش داده شود */}
+            <span>{balance !== null && balance !== undefined ? balance.toLocaleString() : 'وجود ندارد'} تومان</span> 
           </div>
         </div>
         <div>
@@ -50,14 +55,21 @@ const ManagerManoy = () => {
               </tr>
             </thead>
             <tbody>
-              {loans.map((item, index) => (
-                <tr key={index} className="flex flex-row text-[#4FD1C5] mt-3 gap-12 justify-center items-center mr-10">
-                  <td>{item.name}</td>
-                  <td>{item.money}</td>
-                  <td>{item.data}</td>
-                  <td>{item.status}</td>
+              {/* اگر loans آرایه خالی یا undefined باشد، نمایش ندهد */}
+              {loans.length > 0 ? (
+                loans.map((item, index) => (
+                  <tr key={index} className="flex flex-row text-[#4FD1C5] mt-3 gap-12 justify-center items-center mr-10">
+                    <td>{item.name}</td>
+                    <td>{item.money}</td>
+                    <td>{item.data}</td>
+                    <td>{item.status}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="text-center">اطلاعاتی وجود ندارد</td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>
