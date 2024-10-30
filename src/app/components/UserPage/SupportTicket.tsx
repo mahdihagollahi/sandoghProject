@@ -173,7 +173,7 @@ function SupportTicket() {
 
     try {
       const response = await fetch(
-        "https://mohammadelia30.ir/shabab/api/messages/create",
+        "https://fundcharitynet.com/api/messages/create",
         {
           method: "POST",
           headers: {

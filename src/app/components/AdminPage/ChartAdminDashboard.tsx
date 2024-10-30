@@ -12,7 +12,7 @@ interface ChartData {
 }
 
 const fetchChartData = async (): Promise<ChartData> => {
-  const API_URL = 'https://mohammadelia30.ir/shabab/api/inventory/index';
+  const API_URL = 'https://fundcharitynet.com/api/inventory/index';
 
   const authToken = localStorage.getItem('authToken');
 

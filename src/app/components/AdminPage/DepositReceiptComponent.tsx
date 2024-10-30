@@ -211,7 +211,7 @@ async function fetchUserById(userId: number): Promise<User[]> {
   }
 
   const response = await axios.get(
-    `https://mohammadelia30.ir/shabab/api/installments/show/admin/2`,
+    `https://fundcharitynet.com/api/installments/show/admin/2`,
     {
       headers: {
         Authorization: `Bearer ${authToken}`,

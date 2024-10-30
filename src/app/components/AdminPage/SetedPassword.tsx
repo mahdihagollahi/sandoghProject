@@ -13,7 +13,7 @@ const fetchUserData = async () => {
     throw new Error("توکن موجود نیست.");
   }
 
-  const response = await axios.put<UserData>("https://mohammadelia30.ir/shabab/api/users/index", {}, {
+  const response = await axios.put<UserData>("https://fundcharitynet.com/api/users/index", {}, {
     headers: {
       Authorization: `Bearer ${authToken}`
     },

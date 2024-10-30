@@ -58,7 +58,7 @@ const SupportChatComponent: React.FC = () => {
       throw new Error("شناسه تیکت پیدا نشد");
     }
 
-    const response = await axios.get<FetchMessagesResponse>(`https://mohammadelia30.ir/shabab/api/messages/index/${idFromPath}`, {
+    const response = await axios.get<FetchMessagesResponse>(`https://fundcharitynet.com/api/messages/index/${idFromPath}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },

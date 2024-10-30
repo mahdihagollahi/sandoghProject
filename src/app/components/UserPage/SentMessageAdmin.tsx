@@ -13,7 +13,7 @@ const fetchSentMessages = async () => {
     throw new Error("Token not found");
   }
   const response = await axios.get(
-    "https://mohammadelia30.ir/shabab/api/messages/sentMessages",
+    "https://fundcharitynet.com/api/messages/sentMessages",
     {
       headers: {
         Authorization: `Bearer ${authToken}`,

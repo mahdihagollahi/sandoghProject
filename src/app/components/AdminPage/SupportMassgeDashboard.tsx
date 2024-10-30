@@ -14,7 +14,7 @@ const fetchMessages = async () => {
   }
 
   const { data } = await axios.get(
-    "https://mohammadelia30.ir/shabab/api/messages/index",
+    "https://fundcharitynet.com/api/messages/index",
     {
       headers: {
         Authorization: `Bearer ${token}`,

@@ -13,7 +13,7 @@ const fetchDepositSlip = async () => {
   }
 
   const response = await axios.get(
-    "https://mohammadelia30.ir/shabab/api/factors/factorCnt",
+    "https://fundcharitynet.com/api/factors/factorCnt",
     {
       headers: {
         Authorization: `Bearer ${token}`,

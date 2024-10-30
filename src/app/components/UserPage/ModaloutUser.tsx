@@ -51,7 +51,7 @@ const Modalout: React.FC<ModaloutProps> = ({ handleCloseModal }) => {
 
     try {
       const response = await axios.post(
-        "https://mohammadelia30.ir/shabab/api/auth/logout",
+        "https://fundcharitynet.com/api/auth/logout",
         {},
         {
           headers: {

@@ -22,7 +22,7 @@ const fetchLoans = async (isUrgent: boolean) => {
     const loanType = isUrgent ? 'neccessary' : 'normal';
 
     const response = await axios.post(
-      'https://mohammadelia30.ir/shabab/api/loans/show/admin',
+      'https://fundcharitynet.com/api/loans/show/admin',
       {
         count: 'all',
         type: loanType,

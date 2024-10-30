@@ -63,7 +63,7 @@ function RequestRejection() {
   useEffect(() => {
     const fetchRejections = async () => {
       try {
-        const response = await fetch("https://mohammadelia30.ir/shabab/api/loans/show", {
+        const response = await fetch("https://fundcharitynet.com/api/loans/show", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
