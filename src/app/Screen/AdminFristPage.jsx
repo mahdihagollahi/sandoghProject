@@ -75,7 +75,7 @@ function AdminFristPage() {
         </div>
       </div>
       <div className="flex gap-1">
-        <div className="md:-mt-[34.8%] mr-[28.4%]">
+        <div className="md:-mt-[34.8%] 2xl:-mt-[14.8%] mr-[28.4%]">
           <ChartAdminDashboard />
         </div>
         <div className="md:-mt-[36.5%] -mr-[5%] ">
