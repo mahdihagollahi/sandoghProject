@@ -75,8 +75,8 @@ const EveryRequestLoan: React.FC = () => {
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
         </div>
-        <div className="flex gap-[47.5%] items-center">
-          <div>
+        <div className="flex gap-[47.5%]  items-center">
+          <div >
             <RoutRequestLoan />
           </div>
         </div>

@@ -85,7 +85,7 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col items-center px-5 border border-gray-300 rounded-lg w-[40%] py-4 bg-white">
       <div className="flex justify-end mb-2">
-          <button onClick={onClose} className="flex items-center mr-[470px]">
+          <button onClick={onClose} className="flex items-center mr-[470px] 2xl:mr-[651px]">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </button>
