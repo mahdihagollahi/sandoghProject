@@ -18,7 +18,7 @@ const Paginate: React.FC<PaginateProps> = ({ pageClick, currentPageData, pageCou
 
   const reverseString = (str: string): string => str.split('').reverse().join('');
     return (
-        <div className='bg-inherit -mt-[5%] '  style={{ direction: 'rtl' }}>
+        <div className='bg-inherit -mt-[5%] 2xl:mt-3 2xl:mr-40 '  style={{ direction: 'rtl' }}>
             <div style={{ position: 'sticky', bottom: 0, backgroundColor: 'inherit', padding: '10px 0', display: 'flex', marginRight:'32rem' }}>
                 <ReactPaginate
                     previousLabel={
