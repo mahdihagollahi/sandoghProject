@@ -30,7 +30,7 @@ const acceptLoan = async (data:AcceptLoanData) => {
     throw new Error("No auth token found");
   }
 
-  const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/accept/admin', data, {
+  const response = await axios.post('https://fundcharitynet.com/api/loans/accept/admin', data, {
     headers: {
       Authorization: `Bearer ${token}` 
     }

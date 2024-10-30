@@ -22,7 +22,7 @@ const FishComponent: React.FC<TableSumFishProps> = ({ userId }) => {
         }
 
         const response = await axios.get(
-          `https://mohammadelia30.ir/shabab/api/installments/show/admin/${userId}`,
+          `https://fundcharitynet.com/api/installments/show/admin/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${authToken}`,

@@ -21,7 +21,7 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
     setIsLoading(true);
     try {
       await axios.post(
-        "https://mohammadelia30.ir/shabab/api/messages/create/admin",
+        "https://fundcharitynet.com/api/messages/create/admin",
         {
           user_id: userId,
           title : "loan",

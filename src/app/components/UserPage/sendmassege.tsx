@@ -20,7 +20,7 @@ function SentedMassege() {
 
       try {
         const response = await axios.get(
-          "https://mohammadelia30.ir/shabab/api/messages/show/unsystematic", // پیام‌های سیستماتیک
+          "https://fundcharitynet.com/api/messages/show/unsystematic", // پیام‌های سیستماتیک
           {
             headers: {
               Authorization: `Bearer ${authToken}`,

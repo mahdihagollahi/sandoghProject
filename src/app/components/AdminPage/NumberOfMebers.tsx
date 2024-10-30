@@ -16,7 +16,7 @@ const fetchUserId = async (): Promise<UserIdResponse> => {
     throw new Error('لطفا دوباره لاگین کنید');
   }
 
-  const response = await axios.get<UserIdResponse>('https://mohammadelia30.ir/shabab/api/users/memberCnt', {
+  const response = await axios.get<UserIdResponse>('https://fundcharitynet.com/api/users/memberCnt', {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },

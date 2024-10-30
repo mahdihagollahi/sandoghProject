@@ -85,7 +85,7 @@ const ManagerManoy = () => {
   const fetchLoans = async () => {
     try {
       const token = 'your-auth-token'; 
-      const response = await axios.get('https://mohammadelia30.ir/shabab/api/installments/last', {
+      const response = await axios.get('https://fundcharitynet.com/api/installments/last', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

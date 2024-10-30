@@ -50,7 +50,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   const queryClient = useQueryClient();
 
   const deleteUser = useMutation(
-    (userId: number) => axios.get(`https://mohammadelia30.ir/shabab/api/users/delete?id=${userId}`),
+    (userId: number) => axios.get(`https://fundcharitynet.com/api/users/delete?id=${userId}`),
     {
       onSuccess: () => {
         queryClient.invalidateQueries('users'); 

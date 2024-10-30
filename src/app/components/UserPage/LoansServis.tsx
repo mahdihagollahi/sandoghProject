@@ -5,7 +5,7 @@ import axios from "axios";
 export const fetchLoanDetails = async (token) => {
   try {
     const response = await axios.get(
-      "https://mohammadelia30.ir/shabab/api/loans/loanDetails",
+      "https://fundcharitynet.com/api/loans/loanDetails",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -23,7 +23,7 @@ export const fetchLoanDetails = async (token) => {
 export const searchGuarantor = async (token, nationalCode) => {
   try {
     const response = await axios.post(
-      "https://mohammadelia30.ir/shabab/api/loans/show/guarantors",
+      "https://fundcharitynet.com/api/loans/show/guarantors",
       { national_code: nationalCode },
       {
         headers: {

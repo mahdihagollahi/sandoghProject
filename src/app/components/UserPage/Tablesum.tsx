@@ -96,7 +96,7 @@ function Tablesum() {
       }
 
       try {
-        const response = await axios.post("https://mohammadelia30.ir/shabab/api/installments/sum", {
+        const response = await axios.post("https://fundcharitynet.com/api/installments/sum", {
           payments: selectedPayments 
         }, {
           headers: {

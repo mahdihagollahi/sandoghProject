@@ -61,7 +61,7 @@ function BankGuarantor() {
   useEffect(() => {
     const authToken = "YOUR_AUTH_TOKEN";
 
-    fetch("https://mohammadelia30.ir/shabab/api/loans/requestCnt", {
+    fetch("https://fundcharitynet.com/api/loans/requestCnt", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authToken}`, 

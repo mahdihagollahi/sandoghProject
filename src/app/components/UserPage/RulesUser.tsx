@@ -17,10 +17,10 @@ export default function RulesUser() {
       }
 
       try {
-        const response = await fetch("https://mohammadelia30.ir/shabab/api/settings/index", {
+        const response = await fetch("https://fundcharitynet.com/api/settings/index", {
           method: "GET",
           headers: {
-            "Authorization": `Bearer ${authToken}`, // ارسال توکن به هدر
+            "Authorization": `Bearer ${authToken}`, 
           },
         });
 

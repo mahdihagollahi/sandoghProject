@@ -15,7 +15,7 @@ const loginAdmin = async (loginData: {
   password: string;
 }) => {
   const response: AxiosResponse<LoginResponse> = await axios.post(
-    "https://mohammadelia30.ir/shabab/api/auth/login/admin",
+    "https://fundcharitynet.com/api/auth/login/admin",
     loginData
   );
   return response.data;

@@ -29,7 +29,7 @@ const DeleteUserComponent: React.FC = () => {
     }
 
     const response = await axios.get(
-      "https://mohammadelia30.ir/shabab/api/users/deactiveShow",
+      "https://fundcharitynet.com/api/users/deactiveShow",
       {
         headers: {
           Authorization: `Bearer ${authToken}`,

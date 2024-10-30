@@ -17,7 +17,7 @@ const fetchFactors = async (userId: number) => {
   }
 
   const { data } = await axios.put(
-    `https://mohammadelia30.ir/shabab/api/factors/index/${userId}`,
+    `https://fundcharitynet.com/api/factors/index/${userId}`,
     {},
     {
       headers: {

@@ -68,7 +68,7 @@ function CardUser() {
         const authToken = localStorage.getItem('authToken'); // دریافت توکن از localStorage
         if (authToken) {
           const response = await axios.post(
-            'https://mohammadelia30.ir/shabab/api/settings/edit',
+            'https://fundcharitynet.com/api/settings/edit',
             {}, // اگر پارامتری لازم نیست، می‌توان اینجا خالی فرستاد
             {
               headers: {
