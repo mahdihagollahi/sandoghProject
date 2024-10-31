@@ -161,8 +161,13 @@ function AcceptRequest() {
     // درخواست به API
     axios
       .post(
+<<<<<<< HEAD
+        "https://mohammadelia30.ir/shabab/api/loans/show",
+        { admin_accept: "accepted" },
+=======
         "https://fundcharitynet.com/api/loans/show",
         { admin_accept: "faild" },
+>>>>>>> 2dd083d3a3342f7576667ba821beb54123bea097
         {
           headers: {
             Authorization: `Bearer ${token}`,

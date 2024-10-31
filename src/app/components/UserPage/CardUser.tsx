@@ -68,7 +68,11 @@ function CardUser() {
         const authToken = localStorage.getItem('authToken'); // دریافت توکن از localStorage
         if (authToken) {
           const response = await axios.post(
+<<<<<<< HEAD
+            'https://mohammadelia30.ir/shabab/api/auth/me',
+=======
             'https://fundcharitynet.com/api/settings/edit',
+>>>>>>> 2dd083d3a3342f7576667ba821beb54123bea097
             {}, // اگر پارامتری لازم نیست، می‌توان اینجا خالی فرستاد
             {
               headers: {
@@ -76,13 +80,16 @@ function CardUser() {
               },
             }
           );
-          // فرض می‌کنیم شماره کارت در بخش response.data.cardNumber باشد
-          if (response.data && response.data.cardNumber) {
-            setCardNumber({ number: response.data.cardNumber });
+          // دریافت شماره کارت از response
+          if (response.data && response.data.card_number) {
+            setCardNumber({ number: response.data.card_number });
+          } else {
+            setCardNumber({ number: 'شماره کارت موجود نیست' });
           }
         }
       } catch (error) {
         console.error('خطا در دریافت اطلاعات:', error);
+        setCardNumber({ number: 'خطا در دریافت شماره کارت' });
       }
     };
 
@@ -91,13 +98,15 @@ function CardUser() {
 
   // تابع برای کپی کردن شماره کارت
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(cardNumber.number)
-      .then(() => {
-        alert('شماره کارت کپی شد!');
-      })
-      .catch(err => {
-        console.error('Error copying text: ', err);
-      });
+    if (cardNumber.number && cardNumber.number !== 'شماره کارت موجود نیست') {
+      navigator.clipboard.writeText(cardNumber.number)
+        .then(() => {
+          alert('شماره کارت کپی شد!');
+        })
+        .catch(err => {
+          console.error('Error copying text: ', err);
+        });
+    }
   };
 
   return (
@@ -116,20 +125,19 @@ function CardUser() {
                 height={70}
                 alt='Card'
               /> */}
-
-<p className='mt-5 text-center'>
-              {cardNumber.number ? cardNumber.number : 'در حال دریافت...'}
-            </p>
+              <p className='mt-5 text-center'>
+                {cardNumber.number ? cardNumber.number : 'در حال دریافت...'}
+              </p>
             </div>
-            <div className='mt-8 mx-auto pb-3 pt-2  w-full md:w-80 rounded-md h-10 border border-opacity-50 border-[#394860] cursor-pointer'>
+            <div className='mt-8 mx-auto pb-3 pt-2 w-full md:w-80 rounded-md h-10 border border-opacity-50 border-[#394860] cursor-pointer'>
               <button className='flex items-center justify-center gap-3 text-[#394860] w-full'
                 onClick={copyToClipboard}
+                disabled={cardNumber.number === 'شماره کارت موجود نیست'}
               >
                 <Image src={CopyIcon} width={20} height={20} alt='copy' />
                 شماره کارت را کپی کنید
               </button>
             </div>
-           
           </div>
         </div>
       </div>
@@ -138,4 +146,3 @@ function CardUser() {
 }
 
 export default CardUser;
-

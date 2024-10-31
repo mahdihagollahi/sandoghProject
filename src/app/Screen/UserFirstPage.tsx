@@ -28,7 +28,7 @@ function UserFirstPage() {
                   <UserHeader />
                 </div>
 
-                <div className="flex flex-row  mt-10   gap-9  ">
+                <div className="flex flex-row  mt-8   gap-9  ">
                   <div>
                     <ManagerManoy />
                   </div>
