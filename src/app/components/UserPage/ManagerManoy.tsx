@@ -81,6 +81,7 @@ import axios from "axios";
 
 const ManagerManoy = () => {
   const [loans, setLoans] = useState([]); 
+<<<<<<< HEAD
 
   const [balance, setBalance] = useState(null); // مقدار اولیه را null قرار دادیم
 
@@ -103,6 +104,20 @@ const ManagerManoy = () => {
       } else {
         console.error('توکن موجود نیست!');
       }
+=======
+  const [balance, setBalance] = useState(0); 
+  const fetchLoans = async () => {
+    try {
+      const token = 'your-auth-token'; 
+      const response = await axios.get('https://fundcharitynet.com/api/installments/last', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      setLoans(response.data.loans);
+      setBalance(response.data.balance);
+>>>>>>> 2dd083d3a3342f7576667ba821beb54123bea097
     } catch (error) {
       console.error("خطا در دریافت اطلاعات:", error);
     }
@@ -134,6 +149,7 @@ const ManagerManoy = () => {
               </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
 
               {/* اگر loans آرایه خالی یا undefined باشد، نمایش ندهد */}
               {loans.length > 0 ? (
@@ -141,6 +157,11 @@ const ManagerManoy = () => {
                   <tr key={index} className="flex flex-row text-[#4FD1C5] mt-3 gap-12 justify-center items-center mr-10">
 
             
+=======
+              {loans.length > 0 ? (
+                loans.map((item, index) => (
+                  <tr key={index} className="flex flex-row text-[#4FD1C5] mt-3 gap-12 justify-center items-center p-4 ">
+>>>>>>> 2dd083d3a3342f7576667ba821beb54123bea097
                     <td>{item.name}</td>
                     <td>{item.money}</td>
                     <td>{item.data}</td>
@@ -149,9 +170,13 @@ const ManagerManoy = () => {
                 ))
               ) : (
                 <tr>
+<<<<<<< HEAD
 
                   <td colSpan="4" className="text-center">اطلاعاتی وجود ندارد</td>
 
+=======
+                  <td colSpan="4" className="text-center mt-10 p-8">هیچ وامی برای پرداخت وجود ندارد</td>
+>>>>>>> 2dd083d3a3342f7576667ba821beb54123bea097
                 </tr>
               )}
             </tbody>

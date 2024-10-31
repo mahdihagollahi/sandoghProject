@@ -18,7 +18,7 @@ const fetchUserData = async (): Promise<UserData> => {
   }
 
   const response = await axios.get<{ setting: UserData }>(
-    "https://mohammadelia30.ir/shabab/api/settings/index",
+    "https://fundcharitynet.com/api/settings/index",
     {
       headers: {
         Authorization: `Bearer ${authToken}`,

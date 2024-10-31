@@ -39,7 +39,7 @@ function SupportMessage() {
 
   const fetchMessages = async (): Promise<Message[]> => {
     const response = await axios.get<ApiResponse>(
-      "https://mohammadelia30.ir/shabab/api/messages/index",
+      "https://fundcharitynet.com/api/messages/index",
       {
         headers: {
           Authorization: `Bearer ${authToken}`,

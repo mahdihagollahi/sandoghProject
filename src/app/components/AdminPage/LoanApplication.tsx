@@ -16,7 +16,7 @@ const fetchRequestCount = async (): Promise<UserIdResponse> => {
   }
 
   const response = await axios.get<UserIdResponse>(
-    "https://mohammadelia30.ir/shabab/api/loans/requestCnt",
+    "https://fundcharitynet.com/api/loans/requestCnt",
     {
       headers: {
         Authorization: `Bearer ${authToken}`,

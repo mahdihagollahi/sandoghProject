@@ -155,7 +155,7 @@ function SaveInformation() {
   const mutation = useMutation<any, Error, UserData>({
     mutationFn: async (userData: UserData) => {
       const response = await axios.post(
-        "https://mohammadelia30.ir/shabab/api/users/edit",
+        "https://fundcharitynet.com/api/users/edit",
         userData
       );
       return response.data;

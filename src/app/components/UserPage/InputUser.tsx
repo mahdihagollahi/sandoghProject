@@ -42,7 +42,7 @@ export default function InputUser() {
 
     try {
       const response = await axios.post(
-        "https://mohammadelia30.ir/shabab/api/auth/edit",
+        "https://fundcharitynet.com/api/auth/edit",
         formData,
         {
           headers: {

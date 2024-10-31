@@ -96,7 +96,7 @@ function LoanInProgress() {
     // درخواست به API
     axios
       .post(
-        "https://mohammadelia30.ir/shabab/api/loans/show",
+        "https://fundcharitynet.com/api/loans/show",
         { admin_accept: "pending" },
         {
           headers: {

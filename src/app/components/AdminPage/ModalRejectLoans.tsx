@@ -174,7 +174,7 @@ const ModalRejectLoans: React.FC<TextAreaComponentProps> = ({
       }
 
       const response = await axios.post(
-        'https://mohammadelia30.ir/shabab/api/loans/accept/admin',
+        'https://fundcharitynet.com/api/loans/accept/admin',
         loanData,
         {
           headers: {

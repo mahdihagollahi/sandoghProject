@@ -22,7 +22,7 @@ const fetchLoans = async (isUrgent: boolean) => {
     const loanType = isUrgent ? 'neccessary' : 'normal';
 
     const response = await axios.post(
-      'https://mohammadelia30.ir/shabab/api/loans/show/admin',
+      'https://fundcharitynet.com/api/loans/show/admin',
       {
         count: 'all',
         type: loanType,
@@ -75,8 +75,8 @@ const EveryRequestLoan: React.FC = () => {
             <p className="font-bold text-lg whitespace-nowrap dark:text-white">درخواست وام</p>
           </div>
         </div>
-        <div className="flex gap-[47.5%] items-center">
-          <div>
+        <div className="flex gap-[47.5%]  items-center">
+          <div >
             <RoutRequestLoan />
           </div>
         </div>

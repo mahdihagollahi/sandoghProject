@@ -24,7 +24,7 @@ const Password2: React.FC<Password2Props> = ({ handleCloseModal }) => {
   > = useMutation({
     mutationFn: async (): Promise<ForgetPassResponse> => {
       const response = await axios.post<ForgetPassResponse>(
-        "https://mohammadelia30.ir/shabab/api/auth/forgetPass",
+        "https://fundcharitynet.com/api/auth/forgetPass",
         {
           phone_number: phoneNumber,
         }

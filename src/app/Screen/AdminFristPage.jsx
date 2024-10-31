@@ -43,7 +43,7 @@ function AdminFristPage() {
   return (
     
     <div className="overflow-y-hidden dark:bg-[#283B4D] bg-[#F8F9FA]   pb-[2%] font-custom">
-      <div className="flex ml-40">
+      <div className="flex ml-40 ">
         <div>
           <div>
             <AdminNavbarHeader />
@@ -52,7 +52,7 @@ function AdminFristPage() {
           //  isDarkMode={isDarkMode}
             />
         </div>
-        <div>
+        <div className="">
           <div className="">
             <AdminHeader
             //  toggleTheme={toggleTheme} 
@@ -75,10 +75,10 @@ function AdminFristPage() {
         </div>
       </div>
       <div className="flex gap-1">
-        <div className="md:-mt-[34.8%] mr-[28.4%]">
+        <div className="md:-mt-[34.8%] 2xl:-mt-[25.8%] 2xl:mr-[21.4%] mr-[28.4%]">
           <ChartAdminDashboard />
         </div>
-        <div className="md:-mt-[36.5%] -mr-[5%] ">
+        <div className="md:-mt-[36.5%] -mr-[5%] 2xl:-mt-[27.1%] 2xl:-mr-[3.5%] ">
           <SupportMassgeDashboard />
         </div>
       </div>

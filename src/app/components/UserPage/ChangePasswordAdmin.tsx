@@ -16,7 +16,7 @@ const ChangePasswordAdmin = () => {
     setIsSubmitting(true);
     try {
       const response = await axios.post(
-        "https://mohammadelia30.ir/shabab/api/settings/edit",
+        "https://fundcharitynet.com/api/settings/edit",
         { card_number: cardNumber },
         {
           headers: {

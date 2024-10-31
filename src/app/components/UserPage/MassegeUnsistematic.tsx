@@ -110,7 +110,7 @@ function MassegeUnsistematic() {
 
       try {
         const response = await axios.get(
-          "https://mohammadelia30.ir/shabab/api/messages/show/unsystemic", // پیام‌های غیرسیستماتیک
+          "https://fundcharitynet.com/api/messages/show/unsystemic", // پیام‌های غیرسیستماتیک
           {
             headers: {
               Authorization: `Bearer ${authToken}`,

@@ -20,7 +20,7 @@ function Sentmassegesystematic() {
 
       try {
         const response = await axios.get(
-          "https://mohammadelia30.ir/shabab/api/messages/show/systemic", // پیام‌های سیستماتیک
+          "https://fundcharitynet.com/api/messages/show/systemic", // پیام‌های سیستماتیک
           {
             headers: {
               Authorization: `Bearer ${authToken}`,

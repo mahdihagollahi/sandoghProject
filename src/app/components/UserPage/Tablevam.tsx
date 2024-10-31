@@ -141,7 +141,7 @@ function Tablevam() {
       }
 
       try {
-        const response = await axios.get("https://mohammadelia30.ir/shabab/api/installments/show", {
+        const response = await axios.get("https://fundcharitynet.com/api/installments/show", {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },

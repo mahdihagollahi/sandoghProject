@@ -24,7 +24,7 @@ const fetchUserData = async (): Promise<User> => {
   const response = await axios.post<{
     user: { first_name: string; last_name: string; media: Array<{ url: string }> };
   }>(
-    "https://mohammadelia30.ir/shabab/api/auth/me",
+    "https://fundcharitynet.com/api/auth/me",
     {},
     {
       headers: {

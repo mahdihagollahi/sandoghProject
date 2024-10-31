@@ -30,7 +30,7 @@ const acceptLoan = async (data:AcceptLoanData) => {
     throw new Error("No auth token found");
   }
 
-  const response = await axios.post('https://mohammadelia30.ir/shabab/api/loans/accept/admin', data, {
+  const response = await axios.post('https://fundcharitynet.com/api/loans/accept/admin', data, {
     headers: {
       Authorization: `Bearer ${token}` 
     }
@@ -85,7 +85,7 @@ const ModalAcceptLoans: React.FC<ModalAcceptLoansProps> = ({ isOpen, onClose, se
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col items-center px-5 border border-gray-300 rounded-lg w-[40%] py-4 bg-white">
       <div className="flex justify-end mb-2">
-          <button onClick={onClose} className="flex items-center mr-[470px]">
+          <button onClick={onClose} className="flex items-center mr-[470px] 2xl:mr-[651px]">
             بازگشت
             <Image src={backImage} width={38} height={38} alt="arrow" />
           </button>

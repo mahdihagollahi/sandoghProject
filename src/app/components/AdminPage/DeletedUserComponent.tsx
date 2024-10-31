@@ -46,7 +46,7 @@ const fetchUsers = async (): Promise<User[]> => {
 
   try {
     const { data } = await axios.put<UserResponse>(
-      "https://mohammadelia30.ir/shabab/api/users/index",
+      "https://fundcharitynet.com/api/users/index",
       { permission: "deleted" },
       {
         headers: {

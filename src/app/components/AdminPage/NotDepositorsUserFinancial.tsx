@@ -18,7 +18,7 @@ interface User {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://mohammadelia30.ir/shabab/api",
+  baseURL: "https://fundcharitynet.com/api",
 });
 
 axiosInstance.interceptors.request.use(

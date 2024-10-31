@@ -27,7 +27,7 @@ const fetchUserData = async (userId: string | undefined) => {
   }
 
   const response = await axios.put(
-    `https://mohammadelia30.ir/shabab/api/users/index/${userId}`,
+    `https://fundcharitynet.com/api/users/index/${userId}`,
     {},
     {
       headers: {

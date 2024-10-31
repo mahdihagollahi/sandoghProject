@@ -26,7 +26,7 @@ interface ChartData {
 }
 
 const fetchChartData = async (): Promise<ChartDataInterface> => {
-  const API_URL = "https://mohammadelia30.ir/shabab/api/inventory/index";
+  const API_URL = "https://fundcharitynet.com/api/inventory/index";
   const authToken = localStorage.getItem("authToken");
 
   if (!authToken) {
@@ -210,7 +210,7 @@ const FinancialManagementComponent = () => {
 
       <div className="mt-10">
         <div className="flex items-center md:justify-center xl:justify-center xl:mt-2">
-          <div className="bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-md rounded-md w-[94.5%]">
+          <div className="bg-white dark:bg-[#4F5D74] -mr-[5%] shadow-md rounded-md w-[94.5%] 2xl:-mr-[32.5%] 2xl:w-[67.5%]">
             <div className="flex gap-52 pt-8">
               <div className="mr-[50%]">
                 <DateDropDown onSelectYear={handleSelectYear} />
