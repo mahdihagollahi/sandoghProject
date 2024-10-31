@@ -120,7 +120,7 @@ export default function InputUser() {
               />
             </div>
             <div className="relative w-full md:w-auto">
-              <label className="absolute -top-2 z-10 left-[62%] px-1 bg-white py-2">
+              <label className="absolute  z-10 left-[62%] px-1 bg-white ">
                 *شماره موبایل
               </label>
               <input
@@ -128,7 +128,7 @@ export default function InputUser() {
                 name="phone_number"
                 value={formData.phone_number}
                 onChange={handleChange}
-                className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
+                className="border w-72 h-[55px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
             </div>
             <div className="relative w-full md:w-auto">
@@ -140,7 +140,7 @@ export default function InputUser() {
                 name="emergency_number"
                 value={formData.emergency_number}
                 onChange={handleChange}
-                className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5"
+                className="border w-72 h-[40px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 px-5 py-5"
               />
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function InputUser() {
 
           <div className="flex flex-row gap-20 w-[60%]">
             <div className="relative w-full md:w-auto">
-              <label className="absolute -top-2 z-10 left-[78%] px-1 bg-white py-2">
+              <label className="absolute z-10 left-[78%] px-1 bg-white ">
                 *شماره شبا{" "}
               </label>
               <input
@@ -176,12 +176,12 @@ export default function InputUser() {
 
             <div className="relative w-full md:w-auto">
               <label className="absolute -top-2 z-10 left-[75%] px-1 bg-white py-2">
-                * تلفن منزل
+                * شماره کارت
               </label>
               <input
                 type="text"
-                name="home_number"
-                value={formData.home_number}
+                name="card_number"
+                value={formData.card_number}
                 onChange={handleChange}
                 className="border w-[417px] h-[35px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
@@ -190,7 +190,7 @@ export default function InputUser() {
 
           <div className="relative w-full md:w-auto">
             <label className="absolute -top-2 z-10 left-[92%] px-1 bg-white py-2">
-              *آدرس{" "}
+              *آدرس
             </label>
             <input
               type="text"

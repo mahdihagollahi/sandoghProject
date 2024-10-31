@@ -50,31 +50,37 @@ const SupportChatComponent: React.FC = () => {
 
   const authToken = typeof window !== "undefined" ? localStorage.getItem("authToken") : null;
 
+  
+
   const fetchMessages = async (): Promise<Message[]> => {
     const pathParts = pathname?.split("/");
     const idFromPath = pathParts?.find((part) => /^\d+$/.test(part));
-
+  
     if (!idFromPath) {
       throw new Error("شناسه تیکت پیدا نشد");
     }
-
+  
     const response = await axios.get<FetchMessagesResponse>(`https://mohammadelia30.ir/shabab/api/messages/index/${idFromPath}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
     });
-
-    const ticket = response.data.ticket[0]; 
+  
+    const ticket = response.data.ticket; 
     const user = response.data.user;
-
+  
     setUserId(user.id);
-    // setUserImage(user.media.length > 0 ? user.media[0] : defultUser);
     setUserImage(user.media.length > 0 && user.media[0] ? user.media[0] : defultUser);
-
-    setUserName(user.full_name || user.first_name && user.last_name ? `${user.first_name} ${user.last_name}` : "کاربر ناشناس");
-
-    return [{ id: ticket.id, description: ticket.description, status: ticket.status }];
+    setUserName(user.full_name || (user.first_name && user.last_name ? `${user.first_name} ${user.last_name}` : "کاربر ناشناس"));
+  
+    
+    return ticket.map((item) => ({
+      id: item.id,
+      description: item.description,
+      status: item.status,
+    }));
   };
+  
 
   const { data, isLoading, error } = useQuery("messages", fetchMessages, {
     enabled: !!authToken,

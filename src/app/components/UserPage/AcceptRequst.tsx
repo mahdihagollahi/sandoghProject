@@ -162,7 +162,7 @@ function AcceptRequest() {
     axios
       .post(
         "https://mohammadelia30.ir/shabab/api/loans/show",
-        { admin_accept: "faild" },
+        { admin_accept: "accepted" },
         {
           headers: {
             Authorization: `Bearer ${token}`,
