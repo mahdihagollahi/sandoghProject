@@ -7,15 +7,15 @@ export default function InputUser() {
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
-    national_id: "",
-    phone_number: "",
+    // national_id: "",
+    // phone_number: "",
     home_number: "",
     emergency_number: "",
-    street: "",
-    alley: "",
-    city: "",
-    plaque: "",
-    additional_info: "",
+    // street: "",
+    // alley: "",
+    // city: "",
+    // plaque: "",
+    // additional_info: "",
     sheba_number: "",
     card_number: "",
     father_name: "",
@@ -92,7 +92,7 @@ export default function InputUser() {
                 className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
             </div>
-            <div className="relative w-full md:w-auto">
+            {/* <div className="relative w-full md:w-auto">
               <label className="absolute z-10 left-[66%] px-3 bg-white">
                 * کد ملی
               </label>
@@ -103,7 +103,7 @@ export default function InputUser() {
                 onChange={handleChange}
                 className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-row gap-3 w-[60%]">
@@ -119,7 +119,7 @@ export default function InputUser() {
                 className="border w-72 h-[32px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
             </div>
-            <div className="relative w-full md:w-auto">
+            {/* <div className="relative w-full md:w-auto">
               <label className="absolute  z-10 left-[62%] px-1 bg-white ">
                 *شماره موبایل
               </label>
@@ -130,7 +130,7 @@ export default function InputUser() {
                 onChange={handleChange}
                 className="border w-72 h-[55px] text-[#050505] border-[#B0E4DD] rounded-md relative m-3 py-5 px-5"
               />
-            </div>
+            </div> */}
             <div className="relative w-full md:w-auto">
               <label className="absolute z-10 left-[43%] px-1 bg-white">
                 * شماره تماس ضروری
@@ -203,7 +203,7 @@ export default function InputUser() {
 
           <div className="flex justify-end mt-4 gap-20">
             <DragCart />
-            <DragPhoto />
+            <DragPhoto  formData={formData} handleChange={handleChange} />
           </div>
 
           <div className="flex justify-center mt-8">

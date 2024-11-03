@@ -60,7 +60,7 @@ const UserDeleteTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
       throw new Error('No auth token found');
     }
 
-    const response = await axios.delete(`/api/users/delete/${userId}`, {
+    const response = await axios.get(`https://fundcharitynet.com/api/users/active/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

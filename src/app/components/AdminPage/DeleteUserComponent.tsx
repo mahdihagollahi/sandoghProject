@@ -47,7 +47,7 @@ const DeleteUserComponent: React.FC = () => {
     }
 
     await axios.post(
-      "https://mohammadelia30.ir/shabab/api/users/deactive",
+      "https://fundcharitynet.com/api/users/deactive",
       { user_id, operation },
       {
         headers: {

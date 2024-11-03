@@ -39,7 +39,7 @@ const fetchChartData = async (): Promise<ChartDataInterface> => {
     },
   });
 
-  const data: ChartData = response.data;
+  const inventorData = response.data.inventor;
 
   const labels = [
     "فروردین",
@@ -56,12 +56,15 @@ const fetchChartData = async (): Promise<ChartDataInterface> => {
     "اسفند",
   ];
 
+  const incomeData = inventorData.map((item: { income: number }) => item.income || 0);
+  const outcomeData = inventorData.map((item: { outcome: number }) => parseInt(item.outcome) || 0);
+
   return {
     labels: labels,
     datasets: [
       {
         label: "درآمد",
-        data: data.income || [],
+        data: incomeData,
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         fill: true,
@@ -69,7 +72,7 @@ const fetchChartData = async (): Promise<ChartDataInterface> => {
       },
       {
         label: "هزینه",
-        data: data.outcome || [],
+        data: outcomeData,
         borderColor: "rgba(255, 99, 132, 1)",
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         fill: true,
