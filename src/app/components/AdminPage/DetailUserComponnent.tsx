@@ -63,7 +63,7 @@ const DetailUser: React.FC = () => {
       }
 
       const response = await axios.delete(
-        `https://mohammadelia30.ir/shabab/api/users/delete/${userId}`,
+        `https://fundcharitynet.com/api/users/delete/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -228,7 +228,7 @@ const DetailUser: React.FC = () => {
             />
           </div>
         </div>
-         <DetailUserInput userDetail={userDetail}/>
+         <DetailUserInput userDetail={userDetail} userId={userId}/>
       </div>
     </div>
   );

@@ -48,9 +48,13 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   const itemsPerPage = 7;
   
   const queryClient = useQueryClient();
-
+  const token = localStorage.getItem('authToken');
+    if (!token) {
+      throw new Error('No auth token found');
+    }
   const deleteUser = useMutation(
-    (userId: number) => axios.get(`https://fundcharitynet.com/api/users/delete?id=${userId}`),
+    (userId: number) => axios.get(`https://fundcharitynet.com/api/users/delete/${userId}`)
+    ,
     {
       onSuccess: () => {
         queryClient.invalidateQueries('users'); 

@@ -42,7 +42,7 @@ const updateCardNumber = async (newCardNumber: string) => {
   }
 
   await axios.post(
-    "https://mohammadelia30.ir/shabab/api/settings/edit",
+    "https://fundcharitynet.com/api/settings/edit",
     { card_number: newCardNumber },
     {
       headers: {
