@@ -99,17 +99,55 @@ import Image from "next/image";
 import icon from "@/app/assent/Img/userPanel/Iconly (1).svg";
 import dragcard from "@/app/assent/Img/userPanel/drapcart.svg";
 
-export default function DragCart() {
-  const [uploadedImage, setUplodedImage] = useState<string | null>(null); 
+export default function DragCart({formData, handleChange}) {
+  // const [uploadedImage, setUplodedImage] = useState<string | null>(null); 
+  // const [dragOver, setDragOver] = useState<boolean>(false);
+
+  // const handelFileUploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = event.target.files?.[0]; 
+  //   if (file && file.size <= 2 * 1024 * 1024) { 
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       if (typeof reader.result === 'string') {
+  //         setUplodedImage(reader.result);
+  //       }
+  //     };
+  //     reader.readAsDataURL(file);
+  //   } else {
+  //     alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
+  //   }
+  // };
+
+  // const handelDrop = (event: React.DragEvent<HTMLDivElement>) => {
+  //   event.preventDefault();
+  //   setDragOver(false);
+  //   const file = event.dataTransfer.files?.[0]; 
+  //   if (file && file.size <= 2 * 1024 * 1024) { 
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       if (typeof reader.result === 'string') { 
+  //         setUplodedImage(reader.result);
+  //       }
+  //     };
+  //     reader.readAsDataURL(file);
+  //   } else {
+  //     alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
+  //   }
+  // };
+
+
+
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [dragOver, setDragOver] = useState<boolean>(false);
 
   const handelFileUploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; 
-    if (file && file.size <= 2 * 1024 * 1024) { 
+    const file = event.target.files?.[0];
+    if (file && file.size <= 2 * 1024 * 1024) {
       const reader = new FileReader();
       reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          setUplodedImage(reader.result);
+        if (typeof reader.result === "string") {
+          setUploadedImage(reader.result);
+          handleChange("cart", file); // ارسال فایل با نام "profile"
         }
       };
       reader.readAsDataURL(file);
@@ -121,12 +159,13 @@ export default function DragCart() {
   const handelDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(false);
-    const file = event.dataTransfer.files?.[0]; 
-    if (file && file.size <= 2 * 1024 * 1024) { 
+    const file = event.dataTransfer.files?.[0];
+    if (file && file.size <= 2 * 1024 * 1024) {
       const reader = new FileReader();
       reader.onload = () => {
-        if (typeof reader.result === 'string') { 
-          setUplodedImage(reader.result);
+        if (typeof reader.result === "string") {
+          setUploadedImage(reader.result);
+          handleChange("cart", file); // ارسال فایل با نام "profile"
         }
       };
       reader.readAsDataURL(file);

@@ -115,7 +115,7 @@ export default function DragCart({ formData, handleChange }: DragCartProps) {
       reader.onload = () => {
         if (typeof reader.result === "string") {
           setUploadedImage(reader.result);
-          handleChange(file); // ذخیره فایل در formData
+          handleChange("profile", file); // ارسال فایل با نام "profile"
         }
       };
       reader.readAsDataURL(file);
@@ -133,7 +133,7 @@ export default function DragCart({ formData, handleChange }: DragCartProps) {
       reader.onload = () => {
         if (typeof reader.result === "string") {
           setUploadedImage(reader.result);
-          handleChange(file); // ذخیره فایل در formData
+          handleChange("profile", file); // ارسال فایل با نام "profile"
         }
       };
       reader.readAsDataURL(file);
@@ -141,6 +141,45 @@ export default function DragCart({ formData, handleChange }: DragCartProps) {
       alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
     }
   };
+
+
+// export default function DragCart({ formData, handleChange }: DragCartProps) {
+//   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+//   const [dragOver, setDragOver] = useState<boolean>(false);
+
+//   const handelFileUploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
+//     const file = event.target.files?.[0];
+//     if (file && file.size <= 2 * 1024 * 1024) {
+//       const reader = new FileReader();
+//       reader.onload = () => {
+//         if (typeof reader.result === "string") {
+//           setUploadedImage(reader.result);
+//           handleChange(file); // ذخیره فایل در formData
+//         }
+//       };
+//       reader.readAsDataURL(file);
+//     } else {
+//       alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
+//     }
+//   };
+
+//   const handelDrop = (event: React.DragEvent<HTMLDivElement>) => {
+//     event.preventDefault();
+//     setDragOver(false);
+//     const file = event.dataTransfer.files?.[0];
+//     if (file && file.size <= 2 * 1024 * 1024) {
+//       const reader = new FileReader();
+//       reader.onload = () => {
+//         if (typeof reader.result === "string") {
+//           setUploadedImage(reader.result);
+//           handleChange(file); // ذخیره فایل در formData
+//         }
+//       };
+//       reader.readAsDataURL(file);
+//     } else {
+//       alert("حجم عکس ها باید کمتر از 2 مگابایت باشد");
+//     }
+//   };
 
   const handelDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
