@@ -34,18 +34,20 @@ const fetchLoans = async (isUrgent: boolean) => {
         },
       }
     );
-  
+
     const { loans } = response.data;
 
     return loans.map((loan: any) => ({
       id: loan.id,
-      name: `${loan.user.first_name} ${loan.user.last_name}`,
+      name: `${loan.user.first_name || 'نام'} ${loan.user.last_name || 'نام خانوادگی'}`,
       amount: `${loan.price.toLocaleString()} تومان`,
       date: new Date(loan.created_at).toLocaleDateString('fa-IR'),
       description: loan.user_description || 'بدون توضیح',
       type: loan.type === 'urgent' ? 'ضروری' : 'معمولی',
       requestNumber: loan.loan_number,
-      guarantors: Array.isArray(loan.guarantors) ? loan.guarantors : [],
+      guarantors: Array.isArray(loan.guarantors)
+        ? loan.guarantors.map((guarantor: any) => `${guarantor.first_name} ${guarantor.last_name}`)
+        : [],
     }));
   } catch (error) {
     console.error('Error fetching loan data:', error);
@@ -56,6 +58,7 @@ const fetchLoans = async (isUrgent: boolean) => {
     throw error;
   }
 };
+
 
 const EveryRequestLoan: React.FC = () => {
   const [isUrgent, setIsUrgent] = useState(false);
