@@ -18,19 +18,19 @@ interface Loan {
 
 const fetchLoans = async (isUrgent: boolean) => {
   try {
-    const token = localStorage.getItem("authToken");
-    const loanType = isUrgent ? "neccessary" : "normal";
+    const token = localStorage.getItem('authToken');
+    const loanType = isUrgent ? 'neccessary' : 'normal';
 
     const response = await axios.post(
-      "https://fundcharitynet.com/api/loans/show/admin",
+      'https://fundcharitynet.com/api/loans/show/admin',
       {
-        count: "checked",
+        count: 'checked',
         type: loanType,
       },
       {
         headers: {
           Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       }
     );
@@ -39,19 +39,21 @@ const fetchLoans = async (isUrgent: boolean) => {
 
     return loans.map((loan: any) => ({
       id: loan.id,
-      name: `${loan.user.first_name} ${loan.user.last_name}`,
+      name: `${loan.user.first_name || 'نام'} ${loan.user.last_name || 'نام خانوادگی'}`,
       amount: `${loan.price.toLocaleString()} تومان`,
-      date: new Date(loan.created_at).toLocaleDateString("fa-IR"),
-      description: loan.user_description || "بدون توضیح",
-      type: loan.type === "urgent" ? "ضروری" : "معمولی",
+      date: new Date(loan.created_at).toLocaleDateString('fa-IR'),
+      description: loan.user_description || 'بدون توضیح',
+      type: loan.type === 'urgent' ? 'ضروری' : 'معمولی',
       requestNumber: loan.loan_number,
-      guarantors: Array.isArray(loan.guarantors) ? loan.guarantors : [],
+      guarantors: Array.isArray(loan.guarantors)
+        ? loan.guarantors.map((guarantor: any) => `${guarantor.first_name} ${guarantor.last_name}`)
+        : [],
     }));
   } catch (error) {
-    console.error("Error fetching loan data:", error);
+    console.error('Error fetching loan data:', error);
     if (axios.isAxiosError(error)) {
-      console.error("Error response data:", error.response?.data);
-      console.error("Error response status:", error.response?.status);
+      console.error('Error response data:', error.response?.data);
+      console.error('Error response status:', error.response?.status);
     }
     throw error;
   }
