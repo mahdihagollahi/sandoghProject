@@ -5,6 +5,12 @@ import UserTable from "@/app/components/AdminPage/UserTable";
 import RoutTableUser from "./RoutTableUser";
 import InputSearchUser from "./InputSearchUser";
 
+interface Media {
+  id: number;
+  collection_name: string;
+  original_url: string;
+}
+
 interface User {
   id: number;
   src: string;
@@ -20,22 +26,11 @@ interface User {
   debt: number;
   created_at: string;
   updated_at: string;
+  media: Media[];
 }
 
 interface UserResponse {
-  user: {
-    current_page: number;
-    data: User[];
-    first_page_url: string;
-    last_page: number;
-    last_page_url: string;
-    next_page_url: string | null;
-    path: string;
-    per_page: number;
-    prev_page_url: string | null;
-    to: number;
-    total: number;
-  };
+  user: User[];
 }
 
 const fetchUsers = async (): Promise<User[]> => {
@@ -56,9 +51,7 @@ const fetchUsers = async (): Promise<User[]> => {
       }
     );
 
-    const users = data.user.data;
-
-    return users;
+    return data.user || [];
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;
@@ -90,8 +83,6 @@ const EveryUser: React.FC = () => {
           <div className=" dark:text-white absolute z-10 ">
             <p className="font-bold text-lg">مشاهده کاربران</p>
           </div>
-
-        
         </div>
         <div>
           <RoutTableUser />
@@ -112,8 +103,6 @@ const EveryUser: React.FC = () => {
           <div className="mr-[1%] dark:text-white  absolute z-10 mt-2">
             <p className="font-bold text-lg">مشاهده کاربران</p>
           </div>
-
-         
         </div>
         <div>
           <RoutTableUser />
@@ -129,8 +118,6 @@ const EveryUser: React.FC = () => {
           <div className="mr-[1%] dark:text-white  absolute z-10 mt-2">
             <p className="font-bold text-lg ">مشاهده کاربران</p>
           </div>
-
-        
         </div>
         <div>
           <RoutTableUser />
@@ -158,7 +145,11 @@ const EveryUser: React.FC = () => {
       </div>
 
       <UserTable
-        users={filteredUsers.length > 0 ? filteredUsers : users}
+        users={
+          filteredUsers && filteredUsers.length > 0
+            ? filteredUsers
+            : users || []
+        }
         onUserSelect={setSelectedUserId}
       />
     </div>
