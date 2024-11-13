@@ -210,7 +210,7 @@ const SaveInformation = () => {
               disabled={mutation.isLoading}
             >
               {mutation.isLoading ? "در حال ارسال..." : "ذخیره اطلاعات"}{" "}
-              {/* نمایش پیغام در حال ارسال */}
+        
             </button>
           </div>
 

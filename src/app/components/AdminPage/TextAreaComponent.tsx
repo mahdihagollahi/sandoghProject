@@ -26,8 +26,8 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
           user_id: userId,
           title : "loan",
           message: message,
-          type: "unsystematic",
-          description: "Your description here",
+          type: "systemic",
+          description: "setMessage",
         }
       );
       onSend(message);

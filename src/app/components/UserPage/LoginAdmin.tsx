@@ -176,9 +176,9 @@ const LoginAdminContent: React.FC = () => {
           </div>
 
           {errorMessage && (
-            <div className="bg-[#FFF2F2] text-[#C30000] flex justify-center items-center w-60 mx-auto py-3 rounded-md text-base font-normal text-center absolute top-[380px] left-1/2 transform -translate-x-1/2 m ">
+            <div className="bg-[#FFF2F2] text-[#C30000] flex justify-center items-center w-96 mx-auto py-3 rounded-md text-base font-normal text-center absolute top-[380px] left-1/2 transform -translate-x-1/2 m ">
               <button
-                className="text-[#6B7280] mb-6"
+                className="text-[#6B7280] whitespace-nowrap mb-6"
                 onClick={() => setErrorMessage("")}
               >
                 <svg
@@ -196,7 +196,7 @@ const LoginAdminContent: React.FC = () => {
                   />
                 </svg>
               </button>
-              <span>{errorMessage}</span>
+              <span className="whitespace-nowrap">{errorMessage}</span>
             </div>
           )}
 
