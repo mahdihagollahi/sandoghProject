@@ -62,7 +62,7 @@ const DetailUser: React.FC = () => {
         throw new Error("Authentication token is missing");
       }
 
-      const response = await axios.delete(
+      const response = await axios.get(
         `https://fundcharitynet.com/api/users/delete/${userId}`,
         {
           headers: {

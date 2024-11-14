@@ -49,22 +49,26 @@ const UserTable: React.FC<UserTableProps> = ({ users, onUserSelect }) => {
   
   const queryClient = useQueryClient();
   const token = localStorage.getItem('authToken');
-    if (!token) {
-      throw new Error('No auth token found');
-    }
-  const deleteUser = useMutation(
-    (userId: number) => axios.get(`https://fundcharitynet.com/api/users/delete/${userId}`)
-    ,
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries('users'); 
-      },
-      onError: (error) => {
-        console.error('Error deleting user:', error);
-      },
-    }
-  );
+if (!token) {
+  throw new Error('No auth token found');
+}
 
+const deleteUser = useMutation(
+  (userId: number) => 
+    axios.get(`https://fundcharitynet.com/api/users/delete/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }),
+  {
+    onSuccess: () => {
+      queryClient.invalidateQueries('users'); 
+    },
+    onError: (error) => {
+      console.error('Error deleting user:', error);
+    },
+  }
+);
   const handleDelete = (userId: number) => {
     if (confirm('آیا مطمئن هستید که می‌خواهید این کاربر را حذف کنید؟')) {
       deleteUser.mutate(userId);
