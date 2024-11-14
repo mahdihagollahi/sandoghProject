@@ -20,16 +20,12 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({
   const handleSendClick = async () => {
     setIsLoading(true);
     try {
-      await axios.post(
-        "https://fundcharitynet.com/api/messages/create/admin",
-        {
-          user_id: userId,
-          title : "loan",
-          message: message,
-          type: "systemic",
-          description: "setMessage",
-        }
-      );
+      await axios.post("https://fundcharitynet.com/api/messages/create/admin", {
+        user_id: userId,
+        title: "loan",
+        type: "systemic",
+        description: message, 
+      });
       onSend(message);
       setMessage("");
     } catch (error) {

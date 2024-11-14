@@ -20,22 +20,17 @@ interface User {
   debt: number;
   created_at: string;
   updated_at: string;
+  media: Array<{
+    id: number;
+    collection_name: string;
+    original_url: string;
+  }>;
 }
 
 interface UserResponse {
-  user: {
-    current_page: number;
-    data: User[];
-    first_page_url: string;
-    last_page: number;
-    last_page_url: string;
-    next_page_url: string | null;
-    path: string;
-    per_page: number;
-    prev_page_url: string | null;
-    total: number;
-  };
+  user: User[];
 }
+
 
 const fetchUsers = async (): Promise<User[]> => {
   const token = localStorage.getItem("authToken");
@@ -55,12 +50,13 @@ const fetchUsers = async (): Promise<User[]> => {
       }
     );
 
-    return data.user.data;
+    return data.user;
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;
   }
 };
+
 
 const DeleteUser: React.FC = () => {
   const queryClient = new QueryClient();
